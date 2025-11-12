@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(claude mcp add:*)",
+      "mcp__figma__get_screenshot",
+      "mcp__figma__get_design_context"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
