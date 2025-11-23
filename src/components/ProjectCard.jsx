@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import BlurImage from './BlurImage';
 
 const ProjectCard = ({ title, image, gradient, index, route }) => {
   const gradientClasses = {
@@ -21,13 +22,18 @@ const ProjectCard = ({ title, image, gradient, index, route }) => {
       {/* Card */}
       <div className={`${gradientClasses[gradient]} rounded-card w-full aspect-square max-w-[200px] md:max-w-none md:h-48 relative overflow-hidden transition-all duration-300 group-hover:shadow-2xl`}>
         <div className="absolute inset-0 flex items-center justify-center p-8">
-          <motion.img
-            src={image}
-            alt={title}
-            className={title === 'Vehicle Health' ? 'w-[120%] h-[120%] object-contain' : 'w-full h-full object-contain'}
+          <motion.div
+            className={title === 'Vehicle Health' ? 'w-[120%] h-[120%]' : 'w-full h-full'}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
-          />
+          >
+            <BlurImage
+              src={image}
+              alt={title}
+              className="w-full h-full"
+              objectFit="contain"
+            />
+          </motion.div>
         </div>
       </div>
 

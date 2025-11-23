@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import ProjectNav from '../../components/ProjectNav';
+import BlurImage from '../../components/BlurImage';
 
 // Hero images
 const imgHomeScreen = "https://www.figma.com/api/mcp/asset/2a7c5a69-ee73-411f-b644-1a16c32e72ca";
@@ -17,7 +18,7 @@ const imgSkipSong = "https://www.figma.com/api/mcp/asset/2cddf05e-2492-43cd-9609
 const imgQuality = "https://www.figma.com/api/mcp/asset/e4e461ff-7e83-4c3c-bdef-fc3c52937124";
 
 // NDA Badge
-const imgLockKey = "https://www.figma.com/api/mcp/asset/c1bef21c-dc3e-493c-8222-d87b60423a90";
+const imgLockKey = "https://www.figma.com/api/mcp/asset/93405f41-22be-486d-985f-d009271a2553";
 
 const TeluguStreaming = () => {
   return (
@@ -28,39 +29,45 @@ const TeluguStreaming = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="min-h-screen bg-white pt-32 pb-16 px-8 relative"
+        className="min-h-screen bg-white pt-32 pb-16 px-4 sm:px-8 relative"
       >
         <div className="max-w-[1135px] mx-auto">
           {/* Content Container - max-width 760px centered */}
-          <div className="max-w-[760px] mx-auto flex flex-col gap-[72px]">
+          <div className="max-w-[760px] mx-auto flex flex-col gap-8 sm:gap-[72px]">
             {/* Hero Section */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col gap-16 w-full items-center"
+              className="flex flex-col gap-12 sm:gap-16 w-full items-center"
             >
               {/* Title */}
-              <h1 className="font-['Roboto_Slab'] text-5xl leading-normal text-black text-center w-full" style={{ letterSpacing: '-2.4px' }}>
+              <h1 className="font-['Roboto_Slab'] text-2xl sm:text-5xl leading-normal text-black text-center w-full" style={{ letterSpacing: '-1.2px' }}>
                 Designing seamless subscription flows and multilingual experiences for India's leading Telugu streaming platform
               </h1>
 
               {/* Component Showcase Container */}
               <div className="relative w-full">
-                {/* Shadow */}
-                <div className="absolute left-[38px] top-[247px] w-[660px] h-[151px] bg-white opacity-30 shadow-[0px_0px_250px_22px_rgba(0,0,0,0.25)]" />
+                {/* Shadow - hidden on mobile */}
+                <div className="hidden sm:block absolute left-[19px] top-[247px] w-[660px] h-[151px] bg-white opacity-30 shadow-[0px_0px_250px_22px_rgba(0,0,0,0.25)]" />
 
                 {/* Main Container */}
-                <div className="relative border-8 border-[rgba(0,0,0,0.04)] rounded-xl h-[447px] w-full overflow-hidden" style={{ background: 'linear-gradient(90deg, rgba(255, 202, 138, 0.25) 0%, rgba(255, 202, 138, 0.25) 100%), linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%)' }}>
+                <div className="relative border-4 sm:border-8 border-[rgba(0,0,0,0.04)] rounded-xl h-[194px] sm:h-[447px] w-full overflow-hidden" style={{ background: 'linear-gradient(90deg, rgba(255, 202, 138, 0.25) 0%, rgba(255, 202, 138, 0.25) 100%), linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%)' }}>
                   {/* Home Screen */}
-                  <div className="absolute left-[119px] top-[-48px] w-[706px] h-[469px]">
-                    <img src={imgHomeScreen} alt="Aha Telugu streaming platform home screen" className="w-full h-full object-cover" />
-                  </div>
+                  <BlurImage
+                    src={imgHomeScreen}
+                    alt="Aha Telugu streaming platform home screen"
+                    className="absolute left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-[119px] top-[-20px] sm:top-[-48px] w-[306px] sm:w-[706px] h-[203px] sm:h-[469px]"
+                    priority
+                  />
 
                   {/* Mobile View */}
-                  <div className="absolute left-[66px] top-[113px] w-[220px] h-[354px] rounded-lg shadow-[0px_0px_8px_0px_rgba(255,255,255,0.75)]">
-                    <img src={imgMobileView} alt="Mobile view of streaming platform" className="w-full h-full object-cover rounded-lg" />
-                  </div>
+                  <BlurImage
+                    src={imgMobileView}
+                    alt="Mobile view of streaming platform"
+                    className="absolute left-[16px] sm:left-[66px] top-[49px] sm:top-[113px] w-[95px] sm:w-[220px] h-[153px] sm:h-[354px] rounded-[8px] shadow-[0px_0px_8px_0px_rgba(255,255,255,0.75)]"
+                    priority
+                  />
 
                   {/* Bottom Footer - Reading Time Carousel */}
                   <div className="absolute bottom-0 left-0 right-0 bg-[#FFECD3] py-1 overflow-hidden">
@@ -102,14 +109,16 @@ const TeluguStreaming = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col gap-6 w-full"
+              className="flex flex-col gap-6 sm:gap-6 w-full"
             >
-              <h2 className="font-['Space_Mono'] font-bold text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+              <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                 Style Guide
               </h2>
-              <div className="w-full aspect-[2949/1951]">
-                <img src={imgStyleGuide} alt="Aha Telugu streaming platform style guide showing colors, typography, and components" className="w-full h-full object-cover" />
-              </div>
+              <BlurImage
+                src={imgStyleGuide}
+                alt="Aha Telugu streaming platform style guide showing colors, typography, and components"
+                className="w-full aspect-[2949/1951]"
+              />
             </motion.section>
 
             {/* Subscription Plan Selection */}
@@ -117,26 +126,30 @@ const TeluguStreaming = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col gap-8 w-full"
+              className="flex flex-col gap-8 sm:gap-8 w-full"
             >
               {/* Header */}
-              <div className="flex flex-col gap-3 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+              <div className="flex flex-col gap-3 sm:gap-3 w-full">
+                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Subscription Plan Selection
                 </h2>
-                <p className="font-trispace text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   "Multi-tiered Pricing Strategy Interface" Designed a comprehensive plan selection flow featuring annual, quarterly, and combo subscription options with clear value propositions, pricing transparency, and mobile number verification integration to reduce subscription friction.
                 </p>
               </div>
 
               {/* Subscription Flows */}
-              <div className="flex flex-col gap-8 w-full">
-                <div className="w-full aspect-[2955/1229]">
-                  <img src={imgSubscriptionFlow1} alt="Subscription plan selection interface showing pricing tiers" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-full aspect-[2955/1229]">
-                  <img src={imgSubscriptionFlow2} alt="Subscription verification and payment flow" className="w-full h-full object-cover" />
-                </div>
+              <div className="flex flex-col gap-8 sm:gap-8 w-full">
+                <BlurImage
+                  src={imgSubscriptionFlow1}
+                  alt="Subscription plan selection interface showing pricing tiers"
+                  className="w-full aspect-[2955/1229]"
+                />
+                <BlurImage
+                  src={imgSubscriptionFlow2}
+                  alt="Subscription verification and payment flow"
+                  className="w-full aspect-[2955/1229]"
+                />
               </div>
             </motion.section>
 
@@ -145,26 +158,30 @@ const TeluguStreaming = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col gap-[43px] w-full"
+              className="flex flex-col gap-[43px] sm:gap-[43px] w-full"
             >
               {/* Header */}
-              <div className="flex flex-col gap-3 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+              <div className="flex flex-col gap-3 sm:gap-3 w-full">
+                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Mobile Responsive subscription workflow
                 </h2>
-                <p className="font-trispace text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   The subscription flow emphasizes transparency and choice, with clear pricing structures and limited-time offer highlighting. The verification system reduces drop-off through streamlined OTP processes and multiple contact options. Payment integration supports both traditional and modern payment methods, including UPI, digital wallets, and QR codes.
                 </p>
               </div>
 
               {/* Mobile Workflow Images */}
-              <div className="flex gap-10 items-center w-full">
-                <div className="w-[295px] h-[474px] shrink-0">
-                  <img src={imgMobileHome} alt="Mobile home screen" className="w-full h-full object-cover" />
-                </div>
-                <div className="flex-1 aspect-[1722/1920]">
-                  <img src={imgSubscriptionWorkflow} alt="Mobile subscription workflow screens" className="w-full h-full object-cover" />
-                </div>
+              <div className="flex flex-col gap-[41px] sm:flex-row sm:gap-10 items-center w-full">
+                <BlurImage
+                  src={imgMobileHome}
+                  alt="Mobile home screen"
+                  className="w-full sm:w-[295px] aspect-[684/1098] sm:aspect-auto sm:h-[474px] shrink-0"
+                />
+                <BlurImage
+                  src={imgSubscriptionWorkflow}
+                  alt="Mobile subscription workflow screens"
+                  className="w-full sm:flex-1 aspect-[1722/1920]"
+                />
               </div>
             </motion.section>
 
@@ -173,46 +190,56 @@ const TeluguStreaming = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-col gap-[35px] w-full"
+              className="flex flex-col gap-8 sm:gap-[35px] w-full"
             >
               {/* Header */}
-              <div className="flex flex-col gap-6 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+              <div className="flex flex-col gap-6 sm:gap-6 w-full">
+                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Language Preference Setup
                 </h2>
-                <p className="font-trispace text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   "Regional Content Accessibility" Created an intuitive language selection flow supporting Telugu, Tamil, Malayalam, and English with dual-language content display options, ensuring regional content discoverability while maintaining cross-linguistic accessibility.
                 </p>
               </div>
 
               {/* Language Features */}
-              <div className="flex flex-col gap-[76px] items-end w-full">
-                <div className="w-full aspect-[962/542]">
-                  <img src={imgLanguageOnboarding} alt="Language preference onboarding screen" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-full aspect-[960/540]">
-                  <img src={imgContentRepresentation} alt="Content representation with 4K and Dolby quality indicators" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-full aspect-[2886/1624]">
-                  <img src={imgSkipSong} alt="Video player with skip song functionality" className="w-full h-full object-cover" />
-                </div>
-                <div className="w-full aspect-[962/542]">
-                  <img src={imgQuality} alt="Video player quality settings" className="w-full h-full object-cover" />
-                </div>
+              <div className="flex flex-col gap-8 sm:gap-[76px] items-end w-full">
+                <BlurImage
+                  src={imgLanguageOnboarding}
+                  alt="Language preference onboarding screen"
+                  className="w-full aspect-[962/542]"
+                />
+                <BlurImage
+                  src={imgContentRepresentation}
+                  alt="Content representation with 4K and Dolby quality indicators"
+                  className="w-full aspect-[960/540]"
+                />
+                <BlurImage
+                  src={imgSkipSong}
+                  alt="Video player with skip song functionality"
+                  className="w-full aspect-[2886/1624]"
+                />
+                <BlurImage
+                  src={imgQuality}
+                  alt="Video player quality settings"
+                  className="w-full aspect-[962/542]"
+                />
               </div>
             </motion.section>
           </div>
         </div>
 
         {/* Bottom Gradient Overlay with NDA Badge */}
-        <div className="absolute bottom-0 left-0 right-0 h-[253px] bg-gradient-to-t from-[#29160c] to-transparent overflow-hidden pointer-events-none">
+        <div className="absolute bottom-0 left-0 right-0 h-[75px] sm:h-[253px] bg-gradient-to-t from-[#29160c] to-transparent overflow-hidden pointer-events-none">
           {/* NDA Agreement Badge */}
           <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
-            <div className="bg-[#321807] border border-[#959595] rounded-[99px] px-6 py-[21px] flex gap-4 items-center">
-              <div className="w-[48px] h-[48px]">
-                <img src={imgLockKey} alt="Lock icon" className="w-full h-full object-cover" />
-              </div>
-              <p className="font-['Roboto_Slab'] font-medium text-2xl text-white" style={{ letterSpacing: '-0.48px' }}>
+            <div className="bg-[#321807] border border-[#959595] rounded-[99px] px-3 py-2 sm:px-6 sm:py-[21px] flex items-center">
+              <BlurImage
+                src={imgLockKey}
+                alt="Lock icon"
+                className="w-[28px] h-[22px] sm:w-[48px] sm:h-[48px] shrink-0"
+              />
+              <p className="font-['Roboto_Slab'] font-medium text-xs sm:text-2xl text-white shrink-0" style={{ letterSpacing: '-0.24px' }}>
                 NDA agreement
               </p>
             </div>
