@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import ProjectNav from '../../components/ProjectNav';
 import BlurImage from '../../components/BlurImage';
+import useProjectAnalytics from '../../hooks/useProjectAnalytics';
 
 // Hero images
 const imgHomeScreen = "https://www.figma.com/api/mcp/asset/2a7c5a69-ee73-411f-b644-1a16c32e72ca";
@@ -21,6 +22,9 @@ const imgQuality = "https://www.figma.com/api/mcp/asset/e4e461ff-7e83-4c3c-bdef-
 const imgLockKey = "https://www.figma.com/api/mcp/asset/93405f41-22be-486d-985f-d009271a2553";
 
 const TeluguStreaming = () => {
+  // Track analytics for this project
+  useProjectAnalytics('Telugu Streaming');
+
   return (
     <>
       <ProjectNav />

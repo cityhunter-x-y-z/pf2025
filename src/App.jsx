@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import Navbar from './components/Navbar';
 import BottomNav from './components/BottomNav';
 import Home from './pages/Home';
@@ -12,13 +13,18 @@ import GazeboComplexOrganisms from './pages/projects/GazeboComplexOrganisms';
 import VendingAnalytics from './pages/projects/VendingAnalytics';
 import TeluguStreaming from './pages/projects/TeluguStreaming';
 
+// Initialize Google Analytics
+ReactGA.initialize('G-HN2NX8DVHC');
+
 function App() {
   const location = useLocation();
   const isProjectPage = location.pathname.startsWith('/projects/');
 
-  // Scroll to top on route change
+  // Scroll to top on route change and send pageview to GA
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Send pageview to Google Analytics
+    ReactGA.send({ hitType: 'pageview', page: location.pathname });
   }, [location.pathname]);
 
   return (

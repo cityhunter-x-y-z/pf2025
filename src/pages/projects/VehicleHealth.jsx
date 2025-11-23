@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import ProjectNav from '../../components/ProjectNav';
 import LazyImage from '../../components/LazyImage';
+import useProjectAnalytics from '../../hooks/useProjectAnalytics';
 
 // Images from Figma (temporary URLs - valid for 7 days)
 import imgHeroImage from '../../assets/images/projects/vehicle-health/hero-image.png';
@@ -75,6 +76,9 @@ const VehicleHealth = () => {
   const [isWhyAccordionOpen, setIsWhyAccordionOpen] = useState(true);
   const [isCurrentIssuesOpen, setIsCurrentIssuesOpen] = useState(true);
   const [isDiscoveryOpen, setIsDiscoveryOpen] = useState(true);
+
+  // Track analytics for this project
+  useProjectAnalytics('Vehicle Health');
 
   return (
     <>

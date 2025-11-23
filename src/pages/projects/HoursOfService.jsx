@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import LazyImage from '../../components/LazyImage';
+import useProjectAnalytics from '../../hooks/useProjectAnalytics';
 import contextImage from '../../assets/images/projects/hours-of-service/context-image.png';
 import frameHeader from '../../assets/images/projects/hours-of-service/frame-header.png';
 import videoLogRecords from '../../assets/videos/log-records.mov';
@@ -86,6 +87,9 @@ const HoursOfService = () => {
   const [isDriverBehaviorAccordionOpen, setIsDriverBehaviorAccordionOpen] = useState(true);
   const [isProblemStatementAccordionOpen, setIsProblemStatementAccordionOpen] = useState(true);
   const [isDiscoveryAccordionOpen, setIsDiscoveryAccordionOpen] = useState(true);
+
+  // Track analytics for this project
+  useProjectAnalytics('Hours of Service');
 
   return (
     <>

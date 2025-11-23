@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import ProjectNav from '../../components/ProjectNav';
 import BlurImage from '../../components/BlurImage';
+import useProjectAnalytics from '../../hooks/useProjectAnalytics';
 import coverPhoto from '../../assets/images/projects/gazebo-complex-organisms/cover-photo.png';
 
 // Top Navigation Bar images
@@ -56,6 +57,9 @@ const imgHeaderBg2 = "https://www.figma.com/api/mcp/asset/e215fc81-2aa7-42e4-b61
 const imgGazeboThumbnail = "https://www.figma.com/api/mcp/asset/af57705a-5b5c-47d0-aa2e-3a4f3a62f40c";
 
 const GazeboComplexOrganisms = () => {
+  // Track analytics for this project
+  useProjectAnalytics('Gazebo Complex Organisms');
+
   return (
     <>
       <ProjectNav />

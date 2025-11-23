@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import ProjectNav from '../../components/ProjectNav';
 import BlurImage from '../../components/BlurImage';
 import LazyImage from '../../components/LazyImage';
+import useProjectAnalytics from '../../hooks/useProjectAnalytics';
 
 // Hero images
 const imgDesktopView = "https://www.figma.com/api/mcp/asset/d809e480-02a4-445e-8da1-4711059eee6c";
@@ -13,6 +14,9 @@ const imgKelloggIcon = "https://www.figma.com/api/mcp/asset/21138bfe-65c2-4842-9
 const imgLockKey = "https://www.figma.com/api/mcp/asset/c26db2cc-e498-4e84-85d5-884dea4a88ba";
 
 const VendingAnalytics = () => {
+  // Track analytics for this project
+  useProjectAnalytics('Vending Analytics');
+
   return (
     <>
       <ProjectNav />

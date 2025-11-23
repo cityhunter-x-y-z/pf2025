@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import BlurImage from '../components/BlurImage';
+import { trackEmailCopy, trackExternalLink } from '../utils/analytics';
 
 // Profile Image
 import profileImg from '../assets/images/about/profile.png';
@@ -59,6 +60,7 @@ const About = () => {
     navigator.clipboard.writeText('amiteshdebnath98@gmail.com');
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
+    trackEmailCopy();
   };
 
   // States for drag scrolling
@@ -714,6 +716,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="font-['Roboto'] text-base leading-[1.17em] text-light underline hover:text-text-secondary transition-colors"
                 style={{ letterSpacing: '-0.32px' }}
+                onClick={() => trackExternalLink('Your World of Text')}
               >
                 Leave some thoughts anonymously
               </a>
@@ -741,6 +744,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-text-secondary hover:text-light transition-colors"
                 style={{ letterSpacing: '-0.18px' }}
+                onClick={() => trackExternalLink('LinkedIn')}
               >
                 Linkedin
               </a>

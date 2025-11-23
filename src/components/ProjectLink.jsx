@@ -1,7 +1,16 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 
 const ProjectLink = ({ title, description, image, gradient, link, index }) => {
+  // Track project click
+  const handleClick = () => {
+    ReactGA.event({
+      category: 'Projects',
+      action: 'Click',
+      label: title
+    });
+  };
   const gradientClasses = {
     pink: 'gradient-pink',
     gray: 'gradient-gray',
@@ -21,6 +30,7 @@ const ProjectLink = ({ title, description, image, gradient, link, index }) => {
   return (
     <Component
       {...linkProps}
+      onClick={handleClick}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
