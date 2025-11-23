@@ -23,6 +23,9 @@
 [build.processing.images]
   compress = true
 
+[build.environment]
+  NPM_FLAGS = "--include=dev"
+
 # Headers for caching and performance
 [[headers]]
   # Cache static assets for 1 year
