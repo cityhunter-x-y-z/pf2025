@@ -4,41 +4,41 @@ import BlurImage from '../components/BlurImage';
 import { trackEmailCopy, trackExternalLink } from '../utils/analytics';
 
 // Profile Image
-import profileImg from '../assets/images/about/profile.png';
+import profileImg from '../assets/images/about/profile.webp';
 
 // Interests Images
-import interestsAnime1 from '../assets/images/about/interests-anime-1.png';
-import interestsFestival from '../assets/images/about/interests-festival.png';
-import interestsJeep from '../assets/images/about/interests-jeep.png';
-import interestsPingpong from '../assets/images/about/interests-pingpong.png';
-import interestsChess from '../assets/images/about/interests-chess.png';
-import interestsSuit from '../assets/images/about/interests-suit.png';
-import interestsWoman1 from '../assets/images/about/interests-woman-1.png';
-import interestsBeach1 from '../assets/images/about/interests-beach-1.png';
-import interestsBeach2 from '../assets/images/about/interests-beach-2.png';
-import interestsFood from '../assets/images/about/interests-food.png';
-import interestsWoman2 from '../assets/images/about/interests-woman-2.png';
-import interestsAnime2 from '../assets/images/about/interests-anime-2.png';
-import interestsShooting from '../assets/images/about/interests-shooting.png';
-import interestsTv from '../assets/images/about/interests-tv.png';
-import interestsAnime3 from '../assets/images/about/interests-anime-3.png';
+import interestsAnime1 from '../assets/images/about/interests-anime-1.webp';
+import interestsFestival from '../assets/images/about/interests-festival.webp';
+import interestsJeep from '../assets/images/about/interests-jeep.webp';
+import interestsPingpong from '../assets/images/about/interests-pingpong.webp';
+import interestsChess from '../assets/images/about/interests-chess.webp';
+import interestsSuit from '../assets/images/about/interests-suit.webp';
+import interestsWoman1 from '../assets/images/about/interests-woman-1.webp';
+import interestsBeach1 from '../assets/images/about/interests-beach-1.webp';
+import interestsBeach2 from '../assets/images/about/interests-beach-2.webp';
+import interestsFood from '../assets/images/about/interests-food.webp';
+import interestsWoman2 from '../assets/images/about/interests-woman-2.webp';
+import interestsAnime2 from '../assets/images/about/interests-anime-2.webp';
+import interestsShooting from '../assets/images/about/interests-shooting.webp';
+import interestsTv from '../assets/images/about/interests-tv.webp';
+import interestsAnime3 from '../assets/images/about/interests-anime-3.webp';
 
 // Flexing Images
-import flexing1 from '../assets/images/about/flexing-1.png';
-import flexing2 from '../assets/images/about/flexing-2.png';
-import flexing3 from '../assets/images/about/flexing-3.png';
-import flexing4 from '../assets/images/about/flexing-4.png';
-import flexing5 from '../assets/images/about/flexing-5.png';
-import flexing6 from '../assets/images/about/flexing-6.png';
+import flexing1 from '../assets/images/about/flexing-1.webp';
+import flexing2 from '../assets/images/about/flexing-2.webp';
+import flexing3 from '../assets/images/about/flexing-3.webp';
+import flexing4 from '../assets/images/about/flexing-4.webp';
+import flexing5 from '../assets/images/about/flexing-5.webp';
+import flexing6 from '../assets/images/about/flexing-6.webp';
 
 // Book Images
-import book1 from '../assets/images/about/book-1.png';
-import book2 from '../assets/images/about/book-2.png';
-import book3 from '../assets/images/about/book-3.png';
-import book4 from '../assets/images/about/book-4.png';
-import book5 from '../assets/images/about/book-5.png';
-import book6 from '../assets/images/about/book-6.png';
-import book7 from '../assets/images/about/book-7.png';
+import book1 from '../assets/images/about/book-1.webp';
+import book2 from '../assets/images/about/book-2.webp';
+import book3 from '../assets/images/about/book-3.webp';
+import book4 from '../assets/images/about/book-4.webp';
+import book5 from '../assets/images/about/book-5.webp';
+import book6 from '../assets/images/about/book-6.webp';
+import book7 from '../assets/images/about/book-7.webp';
 
 const About = () => {
   const flexingImages = [flexing1, flexing2, flexing3, flexing4, flexing5, flexing6];

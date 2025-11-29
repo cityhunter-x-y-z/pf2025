@@ -2,84 +2,79 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import LazyImage from '../../components/LazyImage';
 import useProjectAnalytics from '../../hooks/useProjectAnalytics';
-import contextImage from '../../assets/images/projects/hours-of-service/context-image.png';
-import frameHeader from '../../assets/images/projects/hours-of-service/frame-header.png';
+import contextImage from '../../assets/images/projects/hours-of-service/context-image.webp';
+import frameHeader from '../../assets/images/projects/hours-of-service/frame-header.webp';
 import videoLogRecords from '../../assets/videos/log-records.mov';
 import videoCertificationOfLogs from '../../assets/videos/hours-of-service-3.mov';
 import videoInspectorMode from '../../assets/videos/hours-of-service-1.mov';
 import videoAutoChangeEld from '../../assets/videos/auto-change-eld.mov';
 
-// Cover photo images from Figma
-const imgDasboard1 = "https://www.figma.com/api/mcp/asset/b031b43d-7705-4c84-a1df-fe8216c72a2a";
-const imgDasboard = "https://www.figma.com/api/mcp/asset/e3e59caf-c19a-49a5-8bc4-24466b54b676";
-const imgDasboard71001 = "https://www.figma.com/api/mcp/asset/90354666-e79b-4012-8c4d-964572b68166";
+// Cover photo images
+const imgDasboard1 = "https://www.figma.com/api/mcp/asset/9b75f209-8a09-4ebf-bbb8-0c005b83c8a0";
+const imgDasboard = "https://www.figma.com/api/mcp/asset/adb37140-b1a4-4b73-973f-1bb6df14514e";
+const imgDasboard71001 = "https://www.figma.com/api/mcp/asset/cbd85b7f-efa4-4fa9-9fa9-d1a0600a71ef";
 
 // GreenZone Score screen
 const imgGreenZoneScore = "https://www.figma.com/api/mcp/asset/011fcc52-5fda-4e12-a745-f368f46960d4";
 
-// Vehicle Inspection screen
-const imgVehicleInspection = "https://www.figma.com/api/mcp/asset/2d20cfd0-cfd5-482b-bab1-90e62fdd96e8";
-import businessCaseIcon from '../../assets/images/projects/hours-of-service/business-case-icon.png';
-import thirdPartyApp1 from '../../assets/images/projects/hours-of-service/third-party-app-1.png';
-import thirdPartyApp2 from '../../assets/images/projects/hours-of-service/third-party-app-2.png';
-import legacyIcon from '../../assets/images/projects/hours-of-service/legacy-icon.png';
-import homescreen1 from '../../assets/images/projects/hours-of-service/homescreen-1.png';
-import dashboard7101 from '../../assets/images/projects/hours-of-service/dashboard-7101.png';
-import thirdGen1 from '../../assets/images/projects/hours-of-service/3rd-gen-1.png';
-import driverBehaviorIcon from '../../assets/images/projects/hours-of-service/driver-behavior-icon.png';
-import driverBehaviorWorkflow from '../../assets/images/projects/hours-of-service/driver-behavior-workflow.png';
-import vehicleSelectionPhone from '../../assets/images/projects/hours-of-service/vehicle-selection-phone.png';
-import vehicleSelectionItems from '../../assets/images/projects/hours-of-service/vehicle-selection-items.png';
-import vehicleInspectionPhone from '../../assets/images/projects/hours-of-service/vehicle-inspection-phone.png';
-import vehicleInspectionItems from '../../assets/images/projects/hours-of-service/vehicle-inspection-items.png';
-import problemStatementIcon from '../../assets/images/projects/hours-of-service/problem-statement-icon.png';
-import problemStatementMain from '../../assets/images/projects/hours-of-service/problem-statement-main.png';
-import geotab1 from '../../assets/images/projects/hours-of-service/geotab-1.png';
-import geotab2 from '../../assets/images/projects/hours-of-service/geotab-2.png';
-import samsara1 from '../../assets/images/projects/hours-of-service/samsara-1.png';
-import samsara2 from '../../assets/images/projects/hours-of-service/samsara-2.png';
-import samsara3 from '../../assets/images/projects/hours-of-service/samsara-3.png';
-import lytx1 from '../../assets/images/projects/hours-of-service/lytx-1.png';
-import discoveryIcon from '../../assets/images/projects/hours-of-service/discovery-icon.png';
-import devicesIcon from '../../assets/images/projects/hours-of-service/devices-icon.png';
-import inCabMonitor from '../../assets/images/projects/hours-of-service/in-cab-monitor.png';
-import tablet from '../../assets/images/projects/hours-of-service/tablet.png';
-import mobilePhone from '../../assets/images/projects/hours-of-service/mobile-phone.png';
-import cabinEstablishmentIcon from '../../assets/images/projects/hours-of-service/cabin-establishment-icon.png';
-import cabinEstablishment1 from '../../assets/images/projects/hours-of-service/cabin-establishment-1.png';
-import cabinEstablishment2 from '../../assets/images/projects/hours-of-service/cabin-establishment-2.png';
-import driverPersonasIcon from '../../assets/images/projects/hours-of-service/driver-personas-icon.png';
-import personaGajeel from '../../assets/images/projects/hours-of-service/persona-gajeel.png';
-import personaLaxus from '../../assets/images/projects/hours-of-service/persona-laxus.png';
-import workflowsIcon from '../../assets/images/projects/hours-of-service/workflows-icon.png';
+import businessCaseIcon from '../../assets/images/projects/hours-of-service/business-case-icon.webp';
+import thirdPartyApp1 from '../../assets/images/projects/hours-of-service/third-party-app-1.webp';
+import thirdPartyApp2 from '../../assets/images/projects/hours-of-service/third-party-app-2.webp';
+import legacyIcon from '../../assets/images/projects/hours-of-service/legacy-icon.webp';
+import homescreen1 from '../../assets/images/projects/hours-of-service/homescreen-1.webp';
+import dashboard7101 from '../../assets/images/projects/hours-of-service/dashboard-7101.webp';
+import thirdGen1 from '../../assets/images/projects/hours-of-service/3rd-gen-1.webp';
+import driverBehaviorIcon from '../../assets/images/projects/hours-of-service/driver-behavior-icon.webp';
+import driverBehaviorWorkflow from '../../assets/images/projects/hours-of-service/driver-behavior-workflow.webp';
+import vehicleSelectionItems from '../../assets/images/projects/hours-of-service/vehicle-selection-items.webp';
+import vehicleInspectionPhone from '../../assets/images/projects/hours-of-service/vehicle-inspection-phone.webp';
+import vehicleInspectionItems from '../../assets/images/projects/hours-of-service/vehicle-inspection-items.webp';
+import problemStatementIcon from '../../assets/images/projects/hours-of-service/problem-statement-icon.webp';
+import problemStatementMain from '../../assets/images/projects/hours-of-service/problem-statement-main.webp';
+import geotab1 from '../../assets/images/projects/hours-of-service/geotab-1.webp';
+import geotab2 from '../../assets/images/projects/hours-of-service/geotab-2.webp';
+import samsara1 from '../../assets/images/projects/hours-of-service/samsara-1.webp';
+import samsara2 from '../../assets/images/projects/hours-of-service/samsara-2.webp';
+import samsara3 from '../../assets/images/projects/hours-of-service/samsara-3.webp';
+import lytx1 from '../../assets/images/projects/hours-of-service/lytx-1.webp';
+import discoveryIcon from '../../assets/images/projects/hours-of-service/discovery-icon.webp';
+import devicesIcon from '../../assets/images/projects/hours-of-service/devices-icon.webp';
+import inCabMonitor from '../../assets/images/projects/hours-of-service/in-cab-monitor.webp';
+import tablet from '../../assets/images/projects/hours-of-service/tablet.webp';
+import mobilePhone from '../../assets/images/projects/hours-of-service/mobile-phone.webp';
+import cabinEstablishmentIcon from '../../assets/images/projects/hours-of-service/cabin-establishment-icon.webp';
+import cabinEstablishment1 from '../../assets/images/projects/hours-of-service/cabin-establishment-1.webp';
+import cabinEstablishment2 from '../../assets/images/projects/hours-of-service/cabin-establishment-2.webp';
+import driverPersonasIcon from '../../assets/images/projects/hours-of-service/driver-personas-icon.webp';
+import personaGajeel from '../../assets/images/projects/hours-of-service/persona-gajeel.webp';
+import personaLaxus from '../../assets/images/projects/hours-of-service/persona-laxus.webp';
+import workflowsIcon from '../../assets/images/projects/hours-of-service/workflows-icon.webp';
 import ProjectNav from '../../components/ProjectNav';
 
-// Arc images from Figma (temporary URLs - valid for 7 days)
-const imgF11 = "https://www.figma.com/api/mcp/asset/43a29faa-f0e8-4829-8b84-10bd82f16a5c";
-const imgF2 = "https://www.figma.com/api/mcp/asset/f8f5ff8b-51c2-43e1-940b-498f7a281e65";
-const imgF32 = "https://www.figma.com/api/mcp/asset/715f4c4e-f324-45d9-ae50-3fb544e5f695";
-const imgF6 = "https://www.figma.com/api/mcp/asset/c04ac3cd-3626-4eb9-810f-68b91e43fd68";
-const imgF10 = "https://www.figma.com/api/mcp/asset/7c00a948-099a-421e-b875-26b8de0faca1";
-const imgDasboard7103 = "https://www.figma.com/api/mcp/asset/92a77f9d-8505-464c-bf38-6675a6c0322b";
-const imgScreenRecording20250929At21516Am1 = "https://www.figma.com/api/mcp/asset/307ee3d2-560c-4b6e-8b7b-50f215a5287b";
-const imgF52 = "https://www.figma.com/api/mcp/asset/f74e14a7-9b11-46c6-948c-e90efb1bc34e";
-const imgImage44 = "https://www.figma.com/api/mcp/asset/826fef48-d14d-4595-b8bb-b479c1189952";
-const imgF7 = "https://www.figma.com/api/mcp/asset/8511987a-92a7-4c4c-96c2-84b21e8ad8ed";
-const imgDasboard7104 = "https://www.figma.com/api/mcp/asset/37a08385-e42a-4731-bd4c-e0abb614b9f1";
-const imgScreenRecording20250929At21858Am1 = "https://www.figma.com/api/mcp/asset/11bcbea6-1890-4dcd-adbf-a5eac7ced881";
-const imgF9 = "https://www.figma.com/api/mcp/asset/11370c2b-5991-4c35-9037-dd161362552a";
-const imgF12 = "https://www.figma.com/api/mcp/asset/c1aaa69c-ac3c-4035-93d0-5f28269a4203";
-const imgF15 = "https://www.figma.com/api/mcp/asset/705d8869-4b7c-43a8-976c-b476dffdd902";
-const imgDasboard7105 = "https://www.figma.com/api/mcp/asset/ad090632-4a9e-4a22-ac46-2e07bc9dc6f5";
-const imgScreenRecording20250929At23954Am1 = "https://www.figma.com/api/mcp/asset/47471735-c229-4f7f-a6cb-3a2b22df11b0";
-const imgEdits1 = "https://www.figma.com/api/mcp/asset/29634a8c-7c8d-40b7-96df-35d06ddd2f16";
-const imgScreenRecording20250929At30629Am1 = "https://www.figma.com/api/mcp/asset/b1323abe-a0d3-4689-a4df-e4bc8c2abbf8";
-const imgF13 = "https://www.figma.com/api/mcp/asset/d6f8c8f5-6a3d-479a-b1cf-8c29b492f19a";
-const imgF14 = "https://www.figma.com/api/mcp/asset/1141a1f8-0f1d-4816-87c2-5442ed369cd9";
+// Arc images
+const imgF11 = "https://www.figma.com/api/mcp/asset/fc14b61a-02c0-4798-b9f1-b94bc3d6281a";
+import imgF2 from '../../assets/images/projects/hours-of-service/f2.webp';
+import imgF32 from '../../assets/images/projects/hours-of-service/f3-2.webp';
+import imgF6 from '../../assets/images/projects/hours-of-service/f6.webp';
+import imgF10 from '../../assets/images/projects/hours-of-service/f10.webp';
+import imgDasboard7103 from '../../assets/images/projects/hours-of-service/dasboard-7103.webp';
+import imgF52 from '../../assets/images/projects/hours-of-service/f5-2.webp';
+import imgImage44 from '../../assets/images/projects/hours-of-service/image-44.webp';
+import imgF7 from '../../assets/images/projects/hours-of-service/f7.webp';
+import imgDasboard7104 from '../../assets/images/projects/hours-of-service/dasboard-7104.webp';
+import imgF9 from '../../assets/images/projects/hours-of-service/f9.webp';
+import imgF12 from '../../assets/images/projects/hours-of-service/f12.webp';
+import imgF15 from '../../assets/images/projects/hours-of-service/f15.webp';
+import imgDasboard7105 from '../../assets/images/projects/hours-of-service/dasboard-7105.webp';
+import imgEdits1 from '../../assets/images/projects/hours-of-service/edits-1.webp';
+import imgF13 from '../../assets/images/projects/hours-of-service/f13.webp';
+import imgF14 from '../../assets/images/projects/hours-of-service/f14.webp';
 const imgF16 = "https://www.figma.com/api/mcp/asset/3c3d0271-9725-41a0-8843-b8720180263e";
-const imgScreenRecording20250929At31513Am1 = "https://www.figma.com/api/mcp/asset/cd367239-c180-46af-a217-a3db1b1c6871";
-const imgDataTransfer1 = "https://www.figma.com/api/mcp/asset/8340c110-9f95-4d9e-b4c7-d6aa0b052389";
-const imgEld11 = "https://www.figma.com/api/mcp/asset/c3d43579-5725-40f3-8bc5-85f00dc9a840";
+import imgDataTransfer1 from '../../assets/images/projects/hours-of-service/datatransfer-1.webp';
+import imgEld11 from '../../assets/images/projects/hours-of-service/eld-1-1.webp';
+
+// Use the already imported vehicleInspectionPhone instead of the old Figma link
+const imgVehicleInspection = vehicleInspectionPhone;
 
 const HoursOfService = () => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(true);

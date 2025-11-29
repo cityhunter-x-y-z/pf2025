@@ -4,48 +4,48 @@ import ProjectNav from '../../components/ProjectNav';
 import LazyImage from '../../components/LazyImage';
 import useProjectAnalytics from '../../hooks/useProjectAnalytics';
 
-// Images from Figma (temporary URLs - valid for 7 days)
-import imgHeroImage from '../../assets/images/projects/vehicle-health/hero-image.png';
-const imgWhyIcon = "https://www.figma.com/api/mcp/asset/9c04c1de-12fe-44be-be55-28e1b08372b9";
-const imgCurrentIssuesIcon = "https://www.figma.com/api/mcp/asset/a69903ea-8a31-4308-a498-47a4a37b3ea2";
-const imgCaretCircleDown = "https://www.figma.com/api/mcp/asset/1fb67a35-1636-4ce7-9777-cebfc0ddf202";
-import imgPersonasIcon from '../../assets/images/projects/vehicle-health/personas-icon.png';
+// Images from Figma
+import imgHeroImage from '../../assets/images/projects/vehicle-health/hero-image.webp';
+import imgWhyIcon from '../../assets/images/projects/vehicle-health/why-icon.webp';
+import imgCurrentIssuesIcon from '../../assets/images/projects/vehicle-health/current-issues-icon.webp';
+import imgCaretCircleDown from '../../assets/images/projects/vehicle-health/caret-circle-down.webp';
+import imgPersonasIcon from '../../assets/images/projects/vehicle-health/personas-icon.webp';
 
 // Cover photo images
-import imgCoverPhoto from '../../assets/images/projects/vehicle-health/cover-photo.png';
+import imgCoverPhoto from '../../assets/images/projects/vehicle-health/cover-photo.webp';
 
 // Arc 1 images
-import imgS1B1 from '../../assets/images/projects/vehicle-health/arc1-scene1-b1.png';
-const imgS1B2 = "https://www.figma.com/api/mcp/asset/408727ce-f347-4021-b8f8-3d8a3193df07"; // No B2.png in fixing folder
-import imgS1B3 from '../../assets/images/projects/vehicle-health/arc1-s1b3.png';
-import imgS1B4 from '../../assets/images/projects/vehicle-health/arc1-s1b4.png';
-import imgS2B1 from '../../assets/images/projects/vehicle-health/arc1-s2b1.png';
-import imgS2B2 from '../../assets/images/projects/vehicle-health/arc1-s2b2.png';
-import imgS2B3 from '../../assets/images/projects/vehicle-health/arc1-s2b3.png';
-import imgS2B4 from '../../assets/images/projects/vehicle-health/arc1-s2b4.png';
-import imgS2B5 from '../../assets/images/projects/vehicle-health/arc1-s2b5.png';
-import imgS2B61 from '../../assets/images/projects/vehicle-health/arc1-s2b61.png';
+import imgS1B1 from '../../assets/images/projects/vehicle-health/arc1-scene1-b1.webp';
+import imgS1B2 from '../../assets/images/projects/vehicle-health/arc1-s1b2.webp';
+import imgS1B3 from '../../assets/images/projects/vehicle-health/arc1-s1b3.webp';
+import imgS1B4 from '../../assets/images/projects/vehicle-health/arc1-s1b4.webp';
+import imgS2B1 from '../../assets/images/projects/vehicle-health/arc1-s2b1.webp';
+import imgS2B2 from '../../assets/images/projects/vehicle-health/arc1-s2b2.webp';
+import imgS2B3 from '../../assets/images/projects/vehicle-health/arc1-s2b3.webp';
+import imgS2B4 from '../../assets/images/projects/vehicle-health/arc1-s2b4.webp';
+import imgS2B5 from '../../assets/images/projects/vehicle-health/arc1-s2b5.webp';
+import imgS2B61 from '../../assets/images/projects/vehicle-health/arc1-s2b61.webp';
 
 // Arc 2 images
-import imgS3B1 from '../../assets/images/projects/vehicle-health/arc2-s3b1.png';
-import imgS3B4 from '../../assets/images/projects/vehicle-health/arc2-s3b4.png';
-import imgImage6 from '../../assets/images/projects/vehicle-health/arc2-image6.png';
-import imgS3B2 from '../../assets/images/projects/vehicle-health/arc2-s3b2.png';
-import imgS3B5 from '../../assets/images/projects/vehicle-health/arc2-s3b5.png';
-import imgS3B6 from '../../assets/images/projects/vehicle-health/arc2-s3b6.png';
-import imgS4B1 from '../../assets/images/projects/vehicle-health/arc2-s4b1.png';
-import imgS4B2 from '../../assets/images/projects/vehicle-health/arc2-s4b2.png';
-import imgS4B3 from '../../assets/images/projects/vehicle-health/arc2-s4b3.png';
-import imgT1B1 from '../../assets/images/projects/vehicle-health/arc2-t1b1.png';
-import imgT1B5 from '../../assets/images/projects/vehicle-health/arc2-t1b5.png';
-import imgT1S2 from '../../assets/images/projects/vehicle-health/arc2-t1s2.png';
-import imgT1B4 from '../../assets/images/projects/vehicle-health/arc2-t1b4.png';
-import imgT3B1 from '../../assets/images/projects/vehicle-health/arc2-t3b1.png';
+import imgS3B1 from '../../assets/images/projects/vehicle-health/arc2-s3b1.webp';
+import imgS3B4 from '../../assets/images/projects/vehicle-health/arc2-s3b4.webp';
+import imgImage6 from '../../assets/images/projects/vehicle-health/arc2-image6.webp';
+import imgS3B2 from '../../assets/images/projects/vehicle-health/arc2-s3b2.webp';
+import imgS3B5 from '../../assets/images/projects/vehicle-health/arc2-s3b5.webp';
+import imgS3B6 from '../../assets/images/projects/vehicle-health/arc2-s3b6.webp';
+import imgS4B1 from '../../assets/images/projects/vehicle-health/arc2-s4b1.webp';
+import imgS4B2 from '../../assets/images/projects/vehicle-health/arc2-s4b2.webp';
+import imgS4B3 from '../../assets/images/projects/vehicle-health/arc2-s4b3.webp';
+import imgT1B1 from '../../assets/images/projects/vehicle-health/arc2-t1b1.webp';
+import imgT1B5 from '../../assets/images/projects/vehicle-health/arc2-t1b5.webp';
+import imgT1S2 from '../../assets/images/projects/vehicle-health/arc2-t1s2.webp';
+import imgT1B4 from '../../assets/images/projects/vehicle-health/arc2-t1b4.webp';
+import imgT3B1 from '../../assets/images/projects/vehicle-health/arc2-t3b1.webp';
 
 // Device images
-import imgDeviceDesktop from '../../assets/images/projects/vehicle-health/device-desktop.png';
-import imgDeviceTablet from '../../assets/images/projects/vehicle-health/device-tablet.png';
-import imgDeviceMobile from '../../assets/images/projects/vehicle-health/device-mobile.png';
+import imgDeviceDesktop from '../../assets/images/projects/vehicle-health/device-desktop.webp';
+import imgDeviceTablet from '../../assets/images/projects/vehicle-health/device-tablet.webp';
+import imgDeviceMobile from '../../assets/images/projects/vehicle-health/device-mobile.webp';
 
 // Screen images and videos - Assigning Technician
 import videoAssigningTechnicianDesktop from '../../assets/videos/assigning-technician-pmi.mov';
@@ -55,10 +55,10 @@ import videoAssigningTechnicianDashboard from '../../assets/videos/assigning-tec
 import videoTechnicianInspecting from '../../assets/videos/technician-inspecting-defects.mov';
 import videoInspectionByManager from '../../assets/videos/inspection-by-manager.mov';
 import videoApprovingInspection from '../../assets/videos/approving-inspection.mov';
-import imgSchedulingMaintenance from '../../assets/images/projects/vehicle-health/scheduling-maintenance.png';
-import imgDefectStatus1 from '../../assets/images/projects/vehicle-health/defect-status-1.png';
-import imgDefectStatus2 from '../../assets/images/projects/vehicle-health/defect-status-2.png';
-const imgEllipse = "https://www.figma.com/api/mcp/asset/c37bbfd9-2014-4e43-a208-68ce185c3934";
+import imgSchedulingMaintenance from '../../assets/images/projects/vehicle-health/scheduling-maintenance.webp';
+import imgDefectStatus1 from '../../assets/images/projects/vehicle-health/defect-status-1.webp';
+import imgDefectStatus2 from '../../assets/images/projects/vehicle-health/defect-status-2.webp';
+import imgEllipse from '../../assets/images/projects/vehicle-health/ellipse.webp';
 
 // Objective section icon
 const imgObjectiveIcon = "https://www.figma.com/api/mcp/asset/fd289db0-04d8-4efa-b452-63a33de21605";
@@ -68,9 +68,9 @@ const imgDiscoveryIcon = "https://www.figma.com/api/mcp/asset/ea36951f-ad2c-4158
 const imgDiscoveryCaretDown = "https://www.figma.com/api/mcp/asset/da1ea322-fca8-41af-911c-afa3d376bbfc";
 
 // Local persona images
-import imgNatsu from '../../assets/images/projects/vehicle-health/persona-natsu.png';
-import imgMacao from '../../assets/images/projects/vehicle-health/persona-macao.png';
-import imgGray from '../../assets/images/projects/vehicle-health/persona-gray.png';
+import imgNatsu from '../../assets/images/projects/vehicle-health/persona-natsu.webp';
+import imgMacao from '../../assets/images/projects/vehicle-health/persona-macao.webp';
+import imgGray from '../../assets/images/projects/vehicle-health/persona-gray.webp';
 
 const VehicleHealth = () => {
   const [isWhyAccordionOpen, setIsWhyAccordionOpen] = useState(true);

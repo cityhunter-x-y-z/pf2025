@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import ProjectLink from '../components/ProjectLink';
-import hoursOfService from '../assets/images/hours-of-service.png';
-import vehicleHealth from '../assets/images/vehicle-health.png';
-import gazeboDs from '../assets/images/gazebo-ds.png';
-import vendingAnalytics from '../assets/images/vending-analytics.png';
-import teluguStreaming from '../assets/images/telugu-streaming.png';
-import behanceProfile from '../assets/images/behance-profile.png';
+import hoursOfService from '../assets/images/hours-of-service.webp';
+import vehicleHealth from '../assets/images/vehicle-health.webp';
+import gazeboDs from '../assets/images/gazebo-ds.webp';
+import vendingAnalytics from '../assets/images/vending-analytics.webp';
+import teluguStreaming from '../assets/images/telugu-streaming.webp';
+import behanceProfile from '../assets/images/behance-profile.webp';
 
 const Works = () => {
   const projects = [

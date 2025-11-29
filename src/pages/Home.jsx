@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
-import hoursOfService from '../assets/images/hours-of-service.png';
-import vehicleHealth from '../assets/images/vehicle-health.png';
-import gazeboDs from '../assets/images/gazebo-ds.png';
+import hoursOfService from '../assets/images/hours-of-service.webp';
+import vehicleHealth from '../assets/images/vehicle-health.webp';
+import gazeboDs from '../assets/images/gazebo-ds.webp';
 
 const Home = () => {
   const projects = [

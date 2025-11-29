@@ -3,52 +3,52 @@ import { useState } from 'react';
 import ProjectNav from '../../components/ProjectNav';
 import BlurImage from '../../components/BlurImage';
 import useProjectAnalytics from '../../hooks/useProjectAnalytics';
-import coverPhoto from '../../assets/images/projects/gazebo-complex-organisms/cover-photo.png';
+import coverPhoto from '../../assets/images/projects/gazebo-complex-organisms/cover-photo.webp';
 
 // Top Navigation Bar images
-const imgTopbarPreAuth = "https://www.figma.com/api/mcp/asset/f8c8e14a-903b-4019-83f5-e35ff48dfb30";
-const imgTopbarPostAuth = "https://www.figma.com/api/mcp/asset/966dfcf5-8d4e-4879-a6f3-bd11fa9e6ab3";
-const imgTopbarSearch = "https://www.figma.com/api/mcp/asset/5d6e2e1c-d6bd-4973-a5b5-4279023793f9";
+import imgTopbarPreAuth from '../../assets/images/projects/gazebo-complex-organisms/topbar-pre-auth.webp';
+import imgTopbarPostAuth from '../../assets/images/projects/gazebo-complex-organisms/topbar-post-auth.webp';
+import imgTopbarSearch from '../../assets/images/projects/gazebo-complex-organisms/topbar-search.webp';
 
 // Search Box images
-const imgSearchDefault = "https://www.figma.com/api/mcp/asset/08371c75-82d6-48b9-a552-60cc5ea252ec";
-const imgSearchFocused = "https://www.figma.com/api/mcp/asset/f08ed7a3-dc56-42c5-b29f-cdb0f042632a";
-const imgSearchInteraction = "https://www.figma.com/api/mcp/asset/285f9d16-a01f-4b5a-acca-7d09e3ee7470";
+import imgSearchDefault from '../../assets/images/projects/gazebo-complex-organisms/search-default.webp';
+import imgSearchFocused from '../../assets/images/projects/gazebo-complex-organisms/search-focused.webp';
+import imgSearchInteraction from '../../assets/images/projects/gazebo-complex-organisms/search-interaction.webp';
 
 // Notification Bell images
-const imgNotificationDefault = "https://www.figma.com/api/mcp/asset/3c66c52e-2747-4211-b733-dc893ad567a9";
-const imgNotificationHovered = "https://www.figma.com/api/mcp/asset/d1c65e41-6366-4fc7-b72f-788b3027fd9b";
-const imgNotificationActive = "https://www.figma.com/api/mcp/asset/f549f112-765c-48f0-b66e-865f0ae95a36";
-const imgNotificationAction = "https://www.figma.com/api/mcp/asset/0dfa13fb-95d7-4196-b578-1081ae8e80e0";
-const imgNotificationPanel = "https://www.figma.com/api/mcp/asset/b878122b-4e13-49ea-83fd-1d6deafa7849";
+import imgNotificationDefault from '../../assets/images/projects/gazebo-complex-organisms/notification-default.webp';
+import imgNotificationHovered from '../../assets/images/projects/gazebo-complex-organisms/notification-hovered.webp';
+import imgNotificationActive from '../../assets/images/projects/gazebo-complex-organisms/notification-active.webp';
+import imgNotificationAction from '../../assets/images/projects/gazebo-complex-organisms/notification-action.webp';
+import imgNotificationPanel from '../../assets/images/projects/gazebo-complex-organisms/notification-panel.webp';
 
 // 9 Dot Mega Menu images
-const imgMegaMenuDefault = "https://www.figma.com/api/mcp/asset/5e1d066e-1332-49ac-a5b8-889f87fc6ea9";
-const imgMegaMenuFocus = "https://www.figma.com/api/mcp/asset/3a38db1e-2e60-4759-ac2f-3fc79c327296";
+import imgMegaMenuDefault from '../../assets/images/projects/gazebo-complex-organisms/mega-menu-default.webp';
+import imgMegaMenuFocus from '../../assets/images/projects/gazebo-complex-organisms/mega-menu-focus.webp';
 
 // Job Application Dashboard images
-const imgJobOpeningsDashboard = "https://www.figma.com/api/mcp/asset/4451135b-67ee-4ba5-8fb6-51298fc0cc9b";
-const imgOngoingApplicationDashboard = "https://www.figma.com/api/mcp/asset/0c6185bc-2cb6-4daa-acbc-d815a52d31f7";
+import imgJobOpeningsDashboard from '../../assets/images/projects/gazebo-complex-organisms/job-openings-dashboard.webp';
+import imgOngoingApplicationDashboard from '../../assets/images/projects/gazebo-complex-organisms/ongoing-application-dashboard.webp';
 
 // Application Progress Status images
-const imgProgressDefault = "https://www.figma.com/api/mcp/asset/49a6ffde-1bd5-407d-bdb5-040e88f42cf1";
-const imgProgressExpanded = "https://www.figma.com/api/mcp/asset/d601705e-e256-4cd8-b219-b5d935854571";
+import imgProgressDefault from '../../assets/images/projects/gazebo-complex-organisms/progress-default.webp';
+import imgProgressExpanded from '../../assets/images/projects/gazebo-complex-organisms/progress-expanded.webp';
 
 // Recruiter Dashboard images
-const imgRecruiterDash = "https://www.figma.com/api/mcp/asset/af979160-4a68-41ba-b4ed-a213593f2109";
-const imgJobItemBreakdown = "https://www.figma.com/api/mcp/asset/58ff197e-fde7-4190-8b52-3939909224ec";
-const imgApplicationBadge = "https://www.figma.com/api/mcp/asset/ecb4cfb3-a4d1-4a78-af3b-e21ce15822ad";
-const imgJobTexts = "https://www.figma.com/api/mcp/asset/ebb51c69-7660-4fdd-89a0-dbddeb3011f5";
-const imgEnvelopeIcon = "https://www.figma.com/api/mcp/asset/877ab101-2961-49d9-ad00-8d0ae0d40dbc";
+import imgRecruiterDash from '../../assets/images/projects/gazebo-complex-organisms/recruiter-dash.webp';
+import imgJobItemBreakdown from '../../assets/images/projects/gazebo-complex-organisms/job-item-breakdown.webp';
+import imgApplicationBadge from '../../assets/images/projects/gazebo-complex-organisms/application-badge.webp';
+import imgJobTexts from '../../assets/images/projects/gazebo-complex-organisms/job-texts.webp';
+import imgEnvelopeIcon from '../../assets/images/projects/gazebo-complex-organisms/envelope-icon.webp';
 
 // Job Card Details images
-const imgJobCardDetails = "https://www.figma.com/api/mcp/asset/93c7e3e2-139a-4f19-a140-e5e2efa3a81e";
-const imgButtonStates = "https://www.figma.com/api/mcp/asset/94e562ec-a89e-4e09-948f-2b7b46251920";
+import imgJobCardDetails from '../../assets/images/projects/gazebo-complex-organisms/job-card-details.webp';
+import imgButtonStates from '../../assets/images/projects/gazebo-complex-organisms/button-states.webp';
 
 // Bulk Management images
-const imgBulkSelection = "https://www.figma.com/api/mcp/asset/94042318-279a-4a9a-8647-b4655b2f7b4f";
-const imgBulkActionFlow = "https://www.figma.com/api/mcp/asset/831539c5-2368-43e8-827f-1cfb9e2b3a93";
-const imgBulkCompose = "https://www.figma.com/api/mcp/asset/922572b4-5b2e-4e01-8d7f-5c06380c35da";
+import imgBulkSelection from '../../assets/images/projects/gazebo-complex-organisms/bulk-selection.webp';
+import imgBulkActionFlow from '../../assets/images/projects/gazebo-complex-organisms/bulk-action-flow.webp';
+import imgBulkCompose from '../../assets/images/projects/gazebo-complex-organisms/bulk-compose.webp';
 
 // Other Pages images
 const imgContentBg = "https://www.figma.com/api/mcp/asset/dc2351ae-4952-4db6-b482-89eb80da2dfb";
@@ -403,503 +403,501 @@ const GazeboComplexOrganisms = () => {
                   States
                 </p>
                 <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
-                  Scaled - 1:3
-                </p>
-              </div>
+                    Scaled - 1:3
+                  </p>
+                </div>
 
-              {/* States */}
-              <div className="flex gap-6 sm:gap-10 items-start">
+                {/* States */}
+                <div className="flex gap-6 sm:gap-10 items-start">
+                  {/* Default State */}
+                  <div className="flex flex-col gap-3 w-auto sm:w-[110px]">
+                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                      Default
+                    </p>
+                    <div className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]">
+                      <BlurImage src={imgMegaMenuDefault} alt="9 dot mega menu default state" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+
+                  {/* Focus State */}
+                  <div className="flex flex-col gap-3 w-auto sm:w-[110px]">
+                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                      Focus
+                    </p>
+                    <div className="w-[70px] h-[73px] sm:w-[106px] sm:h-[110px]">
+                      <BlurImage src={imgMegaMenuFocus} alt="9 dot mega menu focus state" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
+              </motion.section>
+
+              {/* Job Application Dashboard for Candidate */}
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                className="flex flex-col gap-8 sm:gap-12 w-full"
+              >
+                {/* Header */}
+                <div className="flex flex-col gap-4 w-full">
+                  <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    Job Application Dashboard for Candidate
+                  </h2>
+                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Application launcher that provides access to additional tools and services within the product ecosystem. The nine-dot grid follows established patterns from major platforms, offering familiar navigation for secondary applications and integrations.
+                  </p>
+
+                  {/* Types Label */}
+                  <div className="flex gap-3 items-center py-3">
+                    <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                      Types
+                    </p>
+                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
+                      Scaled - 0.75:1
+                    </p>
+                  </div>
+                </div>
+
+                {/* Dashboard Types */}
+                <div className="flex flex-col gap-8 sm:gap-16 w-full">
+                  {/* Dashboard for Job Openings */}
+                  <div className="flex flex-col gap-4 sm:gap-6 w-full">
+                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                      Dashboard for Job Openings
+                    </h3>
+                    <div className="w-full aspect-[2868/1564]">
+                      <BlurImage src={imgJobOpeningsDashboard} alt="Dashboard showing job openings with filters and application cards" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+
+                  {/* Dashboard Ongoing Application */}
+                  <div className="flex flex-col gap-4 sm:gap-6 w-full">
+                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                      Dashboard Ongoing Application
+                    </h3>
+                    <div className="w-full aspect-[2868/2030]">
+                      <BlurImage src={imgOngoingApplicationDashboard} alt="Dashboard showing ongoing applications with detailed progress tracking" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
+              </motion.section>
+
+              {/* Application Progress Status */}
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.4 }}
+                className="flex flex-col gap-8 sm:gap-16 w-full"
+              >
+                {/* Header */}
+                <div className="flex flex-col gap-4 w-full">
+                  <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    Application Progress Status
+                  </h2>
+                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Individual job application tracking component that displays current status, key details, and available actions. This card-based format enables quick scanning of application progress while providing access to detailed job information and next steps.
+                  </p>
+                </div>
+
                 {/* Default State */}
-                <div className="flex flex-col gap-3 w-auto sm:w-[110px]">
+                <div className="flex flex-col gap-4 sm:gap-6 w-full sm:w-[515px]">
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Default
                   </p>
-                  <div className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]">
-                    <BlurImage src={imgMegaMenuDefault} alt="9 dot mega menu default state" className="w-full h-full object-cover" />
+                  <div className="w-full sm:w-[515px] h-[77px] sm:h-[115px]">
+                    <BlurImage src={imgProgressDefault} alt="Application progress card showing Site Engineer position in default collapsed state" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
-                {/* Focus State */}
-                <div className="flex flex-col gap-3 w-auto sm:w-[110px]">
+                {/* Expanded State */}
+                <div className="flex flex-col gap-4 sm:gap-6 w-full sm:w-[515px]">
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                    Focus
+                    Expanded
                   </p>
-                  <div className="w-[70px] h-[73px] sm:w-[106px] sm:h-[110px]">
-                    <BlurImage src={imgMegaMenuFocus} alt="9 dot mega menu focus state" className="w-full h-full object-cover" />
+                  <div className="w-full sm:w-[515px] h-[142px] sm:h-[213px]">
+                    <BlurImage src={imgProgressExpanded} alt="Application progress card showing Architect position with expanded details and conversion probability" className="w-full h-full object-cover" />
                   </div>
                 </div>
-              </div>
-            </motion.section>
 
-            {/* Job Application Dashboard for Candidate */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              className="flex flex-col gap-8 sm:gap-12 w-full"
-            >
-              {/* Header */}
-              <div className="flex flex-col gap-4 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                  Job Application Dashboard for Candidate
-                </h2>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Application launcher that provides access to additional tools and services within the product ecosystem. The nine-dot grid follows established patterns from major platforms, offering familiar navigation for secondary applications and integrations.
-                </p>
-
-                {/* Types Label */}
-                <div className="flex gap-3 items-center py-3">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                    Types
-                  </p>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
-                    Scaled - 0.75:1
-                  </p>
-                </div>
-              </div>
-
-              {/* Dashboard Types */}
-              <div className="flex flex-col gap-8 sm:gap-16 w-full">
-                {/* Dashboard for Job Openings */}
-                <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                  <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
-                    Dashboard for Job Openings
+                {/* Conversion Probability Explanation */}
+                <div className="flex flex-col gap-2 w-full">
+                  <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
+                    The 44% conversion probability value is typically calculated using a combination of data-driven factors and predictive algorithms. Example Calculation of Scoring -
                   </h3>
-                  <div className="w-full aspect-[2868/1564]">
-                    <BlurImage src={imgJobOpeningsDashboard} alt="Dashboard showing job openings with filters and application cards" className="w-full h-full object-cover" />
+                  <div className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    <p className="leading-[1.34em] mb-0">Let's say a scoring algorithm looks like this:</p>
+                    <ul className="list-disc mb-0">
+                      <li className="mb-0 ml-6">
+                        <span className="leading-[1.34em]">Pool-based normalization: 25% (based on 330 applications)</span>
+                      </li>
+                      <li className="mb-0 ml-6">
+                        <span className="leading-[1.34em]">Stage elevated to "Viewed": +10%</span>
+                      </li>
+                      <li className="mb-0 ml-6">
+                        <span className="leading-[1.34em]">Strong profile match: +5%</span>
+                      </li>
+                      <li className="mb-0 ml-6">
+                        <span className="leading-[1.34em]">Recruiter pinned the job: +4%</span>
+                      </li>
+                      <li className="ml-6">
+                        <span className="leading-[1.34em]">
+                          Historic conversion at this stage: Weighted average adjustment ±0%
+                          <br />
+                          = Total: 44%
+                        </span>
+                      </li>
+                    </ul>
+                    <p className="leading-[1.34em]">Each factor contributes a weighted score. The sum indicates your real-time conversion probability.</p>
                   </div>
                 </div>
+              </motion.section>
 
-                {/* Dashboard Ongoing Application */}
-                <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                  <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
-                    Dashboard Ongoing Application
-                  </h3>
-                  <div className="w-full aspect-[2868/2030]">
-                    <BlurImage src={imgOngoingApplicationDashboard} alt="Dashboard showing ongoing applications with detailed progress tracking" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-              </div>
-            </motion.section>
-
-            {/* Application Progress Status */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
-              className="flex flex-col gap-8 sm:gap-16 w-full"
-            >
-              {/* Header */}
-              <div className="flex flex-col gap-4 w-full">
+              {/* Application Status Tags */}
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.6 }}
+                className="flex flex-col gap-4 sm:gap-6 w-full"
+              >
+                {/* Title */}
                 <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                  Application Progress Status
+                  Application Status Tags
                 </h2>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Individual job application tracking component that displays current status, key details, and available actions. This card-based format enables quick scanning of application progress while providing access to detailed job information and next steps.
-                </p>
-              </div>
 
-              {/* Default State */}
-              <div className="flex flex-col gap-4 sm:gap-6 w-full sm:w-[515px]">
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Default
-                </p>
-                <div className="w-full sm:w-[515px] h-[77px] sm:h-[115px]">
-                  <BlurImage src={imgProgressDefault} alt="Application progress card showing Site Engineer position in default collapsed state" className="w-full h-full object-cover" />
-                </div>
-              </div>
-
-              {/* Expanded State */}
-              <div className="flex flex-col gap-4 sm:gap-6 w-full sm:w-[515px]">
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Expanded
-                </p>
-                <div className="w-full sm:w-[515px] h-[142px] sm:h-[213px]">
-                  <BlurImage src={imgProgressExpanded} alt="Application progress card showing Architect position with expanded details and conversion probability" className="w-full h-full object-cover" />
-                </div>
-              </div>
-
-              {/* Conversion Probability Explanation */}
-              <div className="flex flex-col gap-2 w-full">
-                <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
-                  The 44% conversion probability value is typically calculated using a combination of data-driven factors and predictive algorithms. Example Calculation of Scoring -
-                </h3>
-                <div className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  <p className="leading-[1.34em] mb-0">Let's say a scoring algorithm looks like this:</p>
-                  <ul className="list-disc mb-0">
-                    <li className="mb-0 ml-6">
-                      <span className="leading-[1.34em]">Pool-based normalization: 25% (based on 330 applications)</span>
-                    </li>
-                    <li className="mb-0 ml-6">
-                      <span className="leading-[1.34em]">Stage elevated to "Viewed": +10%</span>
-                    </li>
-                    <li className="mb-0 ml-6">
-                      <span className="leading-[1.34em]">Strong profile match: +5%</span>
-                    </li>
-                    <li className="mb-0 ml-6">
-                      <span className="leading-[1.34em]">Recruiter pinned the job: +4%</span>
-                    </li>
-                    <li className="ml-6">
-                      <span className="leading-[1.34em]">
-                        Historic conversion at this stage: Weighted average adjustment ±0%
-                        <br />
-                        = Total: 44%
-                      </span>
-                    </li>
-                  </ul>
-                  <p className="leading-[1.34em]">Each factor contributes a weighted score. The sum indicates your real-time conversion probability.</p>
-                </div>
-              </div>
-            </motion.section>
-
-            {/* Application Status Tags */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.6 }}
-              className="flex flex-col gap-4 sm:gap-6 w-full"
-            >
-              {/* Title */}
-              <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                Application Status Tags
-              </h2>
-
-              {/* Applied */}
-              <div className="flex gap-2 items-start w-full">
-                <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
-                  <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#FFEAD5] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                    <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#EC4A0A]">
-                      Applied
-                    </p>
-                  </div>
-                </div>
-                <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Your job application has been successfully submitted and is awaiting review by the employer.
-                </p>
-              </div>
-
-              {/* Viewed */}
-              <div className="flex gap-2 items-start w-full">
-                <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
-                  <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#EBE9FE] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                    <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#6938EF]">
-                      Viewed
-                    </p>
-                  </div>
-                </div>
-                <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Your application has been opened and reviewed by the recruitment team or hiring manager.
-                </p>
-              </div>
-
-              {/* Shortlisted */}
-              <div className="flex gap-2 items-start w-full">
-                <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
-                  <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#F0FDE2] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                    <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#3B7C0F]">
-                      Shortlisted
-                    </p>
-                  </div>
-                </div>
-                <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Congratulations! Your profile matches the job requirements and has been moved forward for further consideration.
-                </p>
-              </div>
-
-              {/* Processing */}
-              <div className="flex gap-2 items-start w-full">
-                <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
-                  <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#E3FFF8] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                    <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#107569]">
-                      Processing
-                    </p>
-                  </div>
-                </div>
-                <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Your application has been opened and reviewed by the recruitment team or hiring manager.
-                </p>
-              </div>
-
-              {/* Selected */}
-              <div className="flex gap-2 items-start w-full">
-                <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
-                  <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#0BA5EC] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                    <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#F5F5F5]">
-                      Selected
-                    </p>
-                  </div>
-                </div>
-                <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  You have been chosen for the role. Expect follow-up communication regarding next steps or onboarding.
-                </p>
-              </div>
-
-              {/* Filled */}
-              <div className="flex gap-2 items-start w-full">
-                <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
-                  <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#667085] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                    <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#F5F5F5]">
-                      Filled
-                    </p>
-                  </div>
-                </div>
-                <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  The open position has been filled, and the application process for this role is now closed.
-                </p>
-              </div>
-
-              {/* Pending */}
-              <div className="flex gap-2 items-start w-full">
-                <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
-                  <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#FEE4E2] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                    <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#B42318]">
-                      Pending
-                    </p>
-                  </div>
-                </div>
-                <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Your application is awaiting further actions or additional information, and the next steps will be communicated soon.
-                </p>
-              </div>
-            </motion.section>
-
-            {/* Candidate Application manager Recruiter Dashboard */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.8 }}
-              className="flex flex-col gap-8 sm:gap-[53px] w-full"
-            >
-              {/* Header */}
-              <div className="flex flex-col gap-4 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                  Candidate Application manager Recruiter Dashboard
-                </h2>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Recruiter-focused dashboard built from modular components that enable efficient candidate pipeline management. This interface consolidates application tracking, job posting management, and candidate evaluation tools into a unified workflow for hiring teams.
-                </p>
-              </div>
-
-              {/* Content */}
-              <div className="flex flex-col gap-8 sm:gap-16 w-full">
-                {/* Job Listings by the Recruiter */}
-                <div className="flex flex-col gap-3 w-full">
-                  <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
-                    Job Listings by the Recruiter
-                  </h3>
-                  <div className="w-full aspect-[2838/831]">
-                    <BlurImage src={imgRecruiterDash} alt="Recruiter dashboard showing job listings with application counts and filters" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-
-                {/* Job List Item Break down */}
-                <div className="flex flex-col gap-4 sm:gap-8 w-full">
-                  {/* Breakdown Title and Image */}
-                  <div className="flex flex-col gap-4 sm:gap-8 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
-                      Job List Item Break dowm
-                    </h3>
-                    <div className="w-full sm:w-[590px] h-[44px] sm:h-[65.318px]">
-                      <BlurImage src={imgJobItemBreakdown} alt="Job list item component breakdown" className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-
-                  {/* Application Badge Explanation */}
-                  <div className="flex gap-3 items-center w-full">
-                    <div className="flex items-start w-[100px] sm:w-[150px] py-1">
-                      <div className="w-[30px] h-[30px] sm:w-[45px] sm:h-[45px]">
-                        <BlurImage src={imgApplicationBadge} alt="Application count badge showing 99+" className="w-full h-full object-cover" />
-                      </div>
-                    </div>
-                    <div className="font-['Roboto'] text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
-                      <p className="mb-0">Tentative number of application received,</p>
-                      <p className="mb-0">99 is the visual limit, further details  needs to be viewed on clicking the details.</p>
-                    </div>
-                  </div>
-
-                  {/* Job Texts Explanation */}
-                  <div className="flex gap-3 items-center w-full">
-                    <div className="w-[100px] sm:w-[150px] h-[34px] sm:h-[51px]">
-                      <BlurImage src={imgJobTexts} alt="Job role and location text fields" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="flex gap-3 items-center">
-                      <p className="font-['Roboto'] text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
-                        Job Role, Vacancy in respective Team, Location
+                {/* Applied */}
+                <div className="flex gap-2 items-start w-full">
+                  <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
+                    <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#FFEAD5] rounded-[1123.875px] h-[27px] min-w-[45px]">
+                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#EC4A0A]">
+                        Applied
                       </p>
                     </div>
                   </div>
+                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Your job application has been successfully submitted and is awaiting review by the employer.
+                  </p>
+                </div>
 
-                  {/* Envelope Icon Explanation */}
-                  <div className="flex gap-3 items-center w-full">
-                    <div className="w-[100px] sm:w-[150px] h-4 sm:h-6">
-                      <BlurImage src={imgEnvelopeIcon} alt="Envelope icon with notification badge" className="w-full h-full object-cover" />
+                {/* Viewed */}
+                <div className="flex gap-2 items-start w-full">
+                  <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
+                    <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#EBE9FE] rounded-[1123.875px] h-[27px] min-w-[45px]">
+                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#6938EF]">
+                        Viewed
+                      </p>
                     </div>
-                    <p className="font-['Roboto'] text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
-                      When Candidates will send response the envelope will display a badge.
+                  </div>
+                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Your application has been opened and reviewed by the recruitment team or hiring manager.
+                  </p>
+                </div>
+
+                {/* Shortlisted */}
+                <div className="flex gap-2 items-start w-full">
+                  <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
+                    <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#F0FDE2] rounded-[1123.875px] h-[27px] min-w-[45px]">
+                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#3B7C0F]">
+                        Shortlisted
+                      </p>
+                    </div>
+                  </div>
+                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Congratulations! Your profile matches the job requirements and has been moved forward for further consideration.
+                  </p>
+                </div>
+
+                {/* Processing */}
+                <div className="flex gap-2 items-start w-full">
+                  <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
+                    <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#E3FFF8] rounded-[1123.875px] h-[27px] min-w-[45px]">
+                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#107569]">
+                        Processing
+                      </p>
+                    </div>
+                  </div>
+                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Your application has been opened and reviewed by the recruitment team or hiring manager.
+                  </p>
+                </div>
+
+                {/* Selected */}
+                <div className="flex gap-2 items-start w-full">
+                  <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
+                    <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#0BA5EC] rounded-[1123.875px] h-[27px] min-w-[45px]">
+                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#F5F5F5]">
+                        Selected
+                      </p>
+                    </div>
+                  </div>
+                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    You have been chosen for the role. Expect follow-up communication regarding next steps or onboarding.
+                  </p>
+                </div>
+
+                {/* Filled */}
+                <div className="flex gap-2 items-start w-full">
+                  <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
+                    <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#667085] rounded-[1123.875px] h-[27px] min-w-[45px]">
+                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#F5F5F5]">
+                        Filled
+                      </p>
+                    </div>
+                  </div>
+                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    The open position has been filled, and the application process for this role is now closed.
+                  </p>
+                </div>
+
+                {/* Pending */}
+                <div className="flex gap-2 items-start w-full">
+                  <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
+                    <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#FEE4E2] rounded-[1123.875px] h-[27px] min-w-[45px]">
+                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#B42318]">
+                        Pending
+                      </p>
+                    </div>
+                  </div>
+                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Your application is awaiting further actions or additional information, and the next steps will be communicated soon.
+                  </p>
+                </div>
+              </motion.section>
+
+              {/* Candidate Application manager Recruiter Dashboard */}
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.8 }}
+                className="flex flex-col gap-8 sm:gap-[53px] w-full"
+              >
+                {/* Header */}
+                <div className="flex flex-col gap-4 w-full">
+                  <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    Candidate Application manager Recruiter Dashboard
+                  </h2>
+                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Recruiter-focused dashboard built from modular components that enable efficient candidate pipeline management. This interface consolidates application tracking, job posting management, and candidate evaluation tools into a unified workflow for hiring teams.
+                  </p>
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col gap-8 sm:gap-16 w-full">
+                  {/* Job Listings by the Recruiter */}
+                  <div className="flex flex-col gap-3 w-full">
+                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                      Job Listings by the Recruiter
+                    </h3>
+                    <div className="w-full aspect-[2838/831]">
+                      <BlurImage src={imgRecruiterDash} alt="Recruiter dashboard showing job listings with application counts and filters" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+
+                  {/* Job List Item Break down */}
+                  <div className="flex flex-col gap-4 sm:gap-8 w-full">
+                    {/* Breakdown Title and Image */}
+                    <div className="flex flex-col gap-4 sm:gap-8 w-full">
+                      <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                        Job List Item Break dowm
+                      </h3>
+                      <div className="w-full sm:w-[590px] h-[44px] sm:h-[65.318px]">
+                        <BlurImage src={imgJobItemBreakdown} alt="Job list item component breakdown" className="w-full h-full object-cover" />
+                      </div>
+                    </div>
+
+                    {/* Application Badge Explanation */}
+                    <div className="flex gap-3 items-center w-full">
+                      <div className="flex items-start w-[100px] sm:w-[150px] py-1">
+                        <div className="w-[30px] h-[30px] sm:w-[45px] sm:h-[45px]">
+                          <BlurImage src={imgApplicationBadge} alt="Application count badge showing 99+" className="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                      <div className="font-['Roboto'] text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+                        <p className="mb-0">Tentative number of application received,</p>
+                        <p className="mb-0">99 is the visual limit, further details  needs to be viewed on clicking the details.</p>
+                      </div>
+                    </div>
+
+                    {/* Job Texts Explanation */}
+                    <div className="flex gap-3 items-center w-full">
+                      <div className="w-[100px] sm:w-[150px] h-[34px] sm:h-[51px]">
+                        <BlurImage src={imgJobTexts} alt="Job role and location text fields" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="flex gap-3 items-center">
+                        <p className="font-['Roboto'] text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+                          Job Role, Vacancy in respective Team, Location
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Envelope Icon Explanation */}
+                    <div className="flex gap-3 items-center w-full">
+                      <div className="w-[100px] sm:w-[150px] h-4 sm:h-6">
+                        <BlurImage src={imgEnvelopeIcon} alt="Envelope icon with notification badge" className="w-full h-full object-cover" />
+                      </div>
+                      <p className="font-['Roboto'] text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+                        When Candidates will send response the envelope will display a badge.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.section>
+
+              {/* On Click Job Card Details */}
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 2.0 }}
+                className="flex flex-col gap-4 sm:gap-8 w-full"
+              >
+                {/* Title */}
+                <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                  On Click Job Card Details
+                </h3>
+
+                {/* Job Card Details Dashboard */}
+                <div className="w-full aspect-[2898/1902]">
+                  <BlurImage src={imgJobCardDetails} alt="Detailed view of job card showing candidate applications with filters and status options" className="w-full h-full object-cover" />
+                </div>
+
+                {/* Button States */}
+                <div className="w-full aspect-[3000/744]">
+                  <BlurImage src={imgButtonStates} alt="Mark As button states showing Fit, Unfit, and Onhold options with dropdown menus" className="w-full h-full object-cover" />
+                </div>
+
+                {/* Reset Note */}
+                <div className="flex flex-col gap-4 sm:gap-8 h-auto sm:h-10 items-start w-full">
+                  <div className="flex flex-1 flex-col justify-center items-center w-full">
+                    <p className="font-['Space_Mono'] font-bold text-sm sm:text-lg leading-[1.36em] text-text-quaternary text-center" style={{ letterSpacing: '-0.08px' }}>
+                      "Reset" will change the state of the Button to "Mark as"
                     </p>
                   </div>
                 </div>
-              </div>
-            </motion.section>
+              </motion.section>
 
-            {/* On Click Job Card Details */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 2.0 }}
-              className="flex flex-col gap-4 sm:gap-8 w-full"
-            >
-              {/* Title */}
-              <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
-                On Click Job Card Details
-              </h3>
-
-              {/* Job Card Details Dashboard */}
-              <div className="w-full aspect-[2898/1902]">
-                <BlurImage src={imgJobCardDetails} alt="Detailed view of job card showing candidate applications with filters and status options" className="w-full h-full object-cover" />
-              </div>
-
-              {/* Button States */}
-              <div className="w-full aspect-[3000/744]">
-                <BlurImage src={imgButtonStates} alt="Mark As button states showing Fit, Unfit, and Onhold options with dropdown menus" className="w-full h-full object-cover" />
-              </div>
-
-              {/* Reset Note */}
-              <div className="flex flex-col gap-4 sm:gap-8 h-auto sm:h-10 items-start w-full">
-                <div className="flex flex-1 flex-col justify-center items-center w-full">
-                  <p className="font-['Space_Mono'] font-bold text-sm sm:text-lg leading-[1.36em] text-text-quaternary text-center" style={{ letterSpacing: '-0.08px' }}>
-                    "Reset" will change the state of the Button to "Mark as"
+              {/* Management of Candidate in Bulk */}
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 2.2 }}
+                className="flex flex-col gap-8 sm:gap-12 w-full"
+              >
+                {/* Header */}
+                <div className="flex flex-col gap-4 w-full">
+                  <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    Management of Candidate in Bulk
+                  </h2>
+                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Bulk candidate selection and management interface for efficient multi-candidate processing and communication workflows.
                   </p>
                 </div>
-              </div>
-            </motion.section>
 
-            {/* Management of Candidate in Bulk */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 2.2 }}
-              className="flex flex-col gap-8 sm:gap-12 w-full"
-            >
-              {/* Header */}
-              <div className="flex flex-col gap-4 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                  Management of Candidate in Bulk
-                </h2>
+                {/* Bulk Selection Interface */}
+                <div className="w-full aspect-[2058/1452]">
+                  <BlurImage src={imgBulkSelection} alt="Bulk candidate selection interface with checkboxes and status filters" className="w-full h-full object-cover" />
+                </div>
+
+                {/* Bulk Action Flow */}
+                <div className="w-full aspect-[2805/1932]">
+                  <BlurImage src={imgBulkActionFlow} alt="Bulk action flow showing candidate selection and routing path" className="w-full h-full object-cover" />
+                </div>
+
+                {/* Compose Description */}
                 <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Bulk candidate selection and management interface for efficient multi-candidate processing and communication workflows.
+                  Compose interface for bulk candidate communication with rich text editing and recipient management capabilities.
                 </p>
-              </div>
 
-              {/* Bulk Selection Interface */}
-              <div className="w-full aspect-[2058/1452]">
-                <BlurImage src={imgBulkSelection} alt="Bulk candidate selection interface with checkboxes and status filters" className="w-full h-full object-cover" />
-              </div>
+                {/* Bulk Compose Interface */}
+                <div className="w-full aspect-[2058/1517]">
+                  <BlurImage src={imgBulkCompose} alt="Compose interface for bulk candidate communication with rich text editor" className="w-full h-full object-cover" />
+                </div>
+              </motion.section>
 
-              {/* Bulk Action Flow */}
-              <div className="w-full aspect-[2805/1932]">
-                <BlurImage src={imgBulkActionFlow} alt="Bulk action flow showing candidate selection and routing path" className="w-full h-full object-cover" />
-              </div>
+              {/* Stacked Other Pages Section */}
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 2.4 }}
+                className="flex flex-col items-start w-full"
+              >
+                {/* Job Application Dashboard for Candidate */}
+                <div className="flex flex-col py-4 sm:py-6 w-full border-t border-ui-gray">
+                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    Job Application Dashboard for Candidate
+                  </h3>
+                </div>
 
-              {/* Compose Description */}
-              <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                Compose interface for bulk candidate communication with rich text editing and recipient management capabilities.
-              </p>
+                {/* Configuration Page */}
+                <div className="flex flex-col py-4 sm:py-6 w-full border-t border-ui-gray">
+                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    Configuration Page
+                  </h3>
+                </div>
 
-              {/* Bulk Compose Interface */}
-              <div className="w-full aspect-[2058/1517]">
-                <BlurImage src={imgBulkCompose} alt="Compose interface for bulk candidate communication with rich text editor" className="w-full h-full object-cover" />
-              </div>
-            </motion.section>
+                {/* Recruiter Dashboard */}
+                <div className="flex flex-col gap-2 sm:gap-3 py-4 sm:py-6 w-full border-t border-ui-gray">
+                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    Recruiter Dashboard
+                  </h3>
+                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Repetitive elements converted as components which infact is the created by using multiple 'molecules' and 'organisms' of atomic design structure. Perplexity please generate some text content for here.
+                  </p>
+                </div>
 
-            {/* Stacked Other Pages Section */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 2.4 }}
-              className="flex flex-col items-start w-full"
-            >
-              {/* Job Application Dashboard for Candidate */}
-              <div className="flex flex-col py-4 sm:py-6 w-full border-t border-ui-gray">
-                <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                  Job Application Dashboard for Candidate
-                </h3>
-              </div>
+                {/* Organization Profile Page */}
+                <div className="flex flex-col gap-2 sm:gap-3 py-4 sm:py-6 w-full border-t border-ui-gray">
+                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    Organization Profile Page
+                  </h3>
+                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    Repetitive elements converted as components which infact is the created by using multiple 'molecules' and 'organisms' of atomic design structure.
+                  </p>
+                </div>
 
-              {/* Configuration Page */}
-              <div className="flex flex-col py-4 sm:py-6 w-full border-t border-ui-gray">
-                <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                  Configuration Page
-                </h3>
-              </div>
+                {/* Ellipsis Section */}
+                <div className="flex flex-col gap-2 sm:gap-3 py-4 sm:py-6 w-full border-t border-ui-gray">
+                  <p className="font-['Roboto_Slab'] font-medium text-lg sm:text-[24px] leading-normal text-ui-gray" style={{ letterSpacing: '-0.48px' }}>
+                    •••
+                  </p>
+                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    ...
+                  </p>
+                </div>
 
-              {/* Recruiter Dashboard */}
-              <div className="flex flex-col gap-2 sm:gap-3 py-4 sm:py-6 w-full border-t border-ui-gray">
-                <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                  Recruiter Dashboard
-                </h3>
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Repetitive elements converted as components which infact is the created by using multiple 'molecules' and 'organisms' of atomic design structure. Perplexity please generate some text content for here.
-                </p>
-              </div>
-
-              {/* Organization Profile Page */}
-              <div className="flex flex-col gap-2 sm:gap-3 py-4 sm:py-6 w-full border-t border-ui-gray">
-                <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
-                  Organization Profile Page
-                </h3>
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  Repetitive elements converted as components which infact is the created by using multiple 'molecules' and 'organisms' of atomic design structure.
-                </p>
-              </div>
-
-              {/* Ellipsis Section */}
-              <div className="flex flex-col gap-2 sm:gap-3 py-4 sm:py-6 w-full border-t border-ui-gray">
-                <p className="font-['Roboto_Slab'] font-medium text-lg sm:text-[24px] leading-normal text-ui-gray" style={{ letterSpacing: '-0.48px' }}>
-                  •••
-                </p>
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
-                  ...
-                </p>
-              </div>
-
-              {/* All Components DS Card */}
-              <div className="bg-[#FFF8E6] flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 rounded-[16px] sm:rounded-[24px] w-full mt-4 sm:mt-6 items-center sm:items-center overflow-visible">
-                <div className="bg-[#FEE4E2] rounded-2xl px-8 py-6 sm:px-6 sm:py-4 shrink-0">
-                  <div className="flex flex-col items-center justify-center">
+                {/* All Components DS Card */}
+                <div className="bg-[#FFF8E6] flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 rounded-[16px] sm:rounded-[24px] w-full mt-4 sm:mt-6 items-center sm:items-center overflow-visible">
+                  <div className="bg-[#FEE4E2] rounded-2xl px-8 py-6 sm:px-6 sm:py-4 shrink-0">
                     <p className="font-['Roboto_Slab'] font-medium text-2xl sm:text-xl text-[#F04438]">Gazebo</p>
                     <p className="font-['Roboto'] text-sm text-[#F04438]">Design System</p>
                   </div>
-                </div>
-                <div className="flex flex-col gap-2 flex-1 min-w-0">
-                  <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-[#111111]" style={{ letterSpacing: '-0.08px' }}>
-                    All Components DS
-                  </h3>
-                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-[#565C6F] break-words" style={{ letterSpacing: '-0.28px' }}>
-                    The above components are the key ones I worked on. To view all, please check out this linked Figma file.
-                  </p>
-                  <div className="flex gap-1.5 items-center flex-wrap">
-                    <a
-                      href="https://www.figma.com/design/7WfEeCID05qU0gdKCtJHHY/Gazebo-Design-System?node-id=10338-7383&t=SxTZJtDpaC5NWzcS-1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-['Roboto'] font-medium text-sm sm:text-base leading-normal text-[#4A4AFC] underline cursor-pointer"
-                      style={{ letterSpacing: '-0.32px', textUnderlinePosition: 'from-font' }}
-                    >
-                      Visit the File
-                    </a>
-                    <span className="font-['Inter'] font-medium text-sm sm:text-base leading-normal text-[#4A4AFC]" style={{ letterSpacing: '-0.8px' }}>
-                      →
-                    </span>
+                  <div className="flex flex-col gap-2 flex-1 min-w-0">
+                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-[#111111]" style={{ letterSpacing: '-0.08px' }}>
+                      All Components DS
+                    </h3>
+                    <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-[#565C6F] break-words" style={{ letterSpacing: '-0.28px' }}>
+                      The above components are the key ones I worked on. To view all, please check out this linked Figma file.
+                    </p>
+                    <div className="flex gap-1.5 items-center flex-wrap">
+                      <a
+                        href="https://www.figma.com/design/7WfEeCID05qU0gdKCtJHHY/Gazebo-Design-System?node-id=10338-7383&t=SxTZJtDpaC5NWzcS-1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-['Roboto'] font-medium text-sm sm:text-base leading-normal text-[#4A4AFC] underline cursor-pointer"
+                        style={{ letterSpacing: '-0.32px', textUnderlinePosition: 'from-font' }}
+                      >
+                        Visit the File
+                      </a>
+                      <span className="font-['Inter'] font-medium text-sm sm:text-base leading-normal text-[#4A4AFC]" style={{ letterSpacing: '-0.8px' }}>
+                        →
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.section>
+              </motion.section>
+            </div>
           </div>
-        </div>
-      </motion.main>
-    </>
-  );
-};
+        </motion.main>
+      </>
+    );
+  };
 
 export default GazeboComplexOrganisms;

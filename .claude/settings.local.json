@@ -8,7 +8,15 @@
       "mcp__figma__get_metadata",
       "mcp__ide__getDiagnostics",
       "Bash(npm install:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(convert:*)",
+      "Bash(node scripts/download-figma-images.js:*)",
+      "Bash(npm run build:*)",
+      "Bash(ls:*)",
+      "Bash(node scripts/download-figma-images-vh.js:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []
