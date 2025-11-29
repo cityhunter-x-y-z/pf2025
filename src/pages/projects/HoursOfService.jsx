@@ -55,6 +55,7 @@ import ProjectNav from '../../components/ProjectNav';
 const imgF11 = "https://www.figma.com/api/mcp/asset/fc14b61a-02c0-4798-b9f1-b94bc3d6281a";
 import imgF2 from '../../assets/images/projects/hours-of-service/f2.webp';
 import imgF32 from '../../assets/images/projects/hours-of-service/f3-2.webp';
+const imgF31 = "https://www.figma.com/api/mcp/asset/78bf5dd3-7520-495e-a8dd-4da24fbb1c0d";
 import imgF6 from '../../assets/images/projects/hours-of-service/f6.webp';
 import imgF10 from '../../assets/images/projects/hours-of-service/f10.webp';
 import imgDasboard7103 from '../../assets/images/projects/hours-of-service/dasboard-7103.webp';
@@ -67,8 +68,10 @@ import imgF12 from '../../assets/images/projects/hours-of-service/f12.webp';
 import imgF15 from '../../assets/images/projects/hours-of-service/f15.webp';
 import imgDasboard7105 from '../../assets/images/projects/hours-of-service/dasboard-7105.webp';
 import imgEdits1 from '../../assets/images/projects/hours-of-service/edits-1.webp';
-import imgF13 from '../../assets/images/projects/hours-of-service/f13.webp';
-import imgF14 from '../../assets/images/projects/hours-of-service/f14.webp';
+// Arc 4 images
+const imgArc4Scene1B1 = "https://www.figma.com/api/mcp/asset/11468597-638b-4296-8ed5-02ecc6aa570b";
+const imgF13 = "https://www.figma.com/api/mcp/asset/0702a625-81d4-4a6a-aae9-36a2b41a014c";
+const imgF14 = "https://www.figma.com/api/mcp/asset/022052c0-f619-4050-825c-52886c7cd50c";
 const imgF16 = "https://www.figma.com/api/mcp/asset/3c3d0271-9725-41a0-8843-b8720180263e";
 import imgDataTransfer1 from '../../assets/images/projects/hours-of-service/datatransfer-1.webp';
 import imgEld11 from '../../assets/images/projects/hours-of-service/eld-1-1.webp';
@@ -1640,11 +1643,11 @@ const HoursOfService = () => {
               </div>
 
               <div className="w-full h-[358px] sm:h-[760px] rounded-lg overflow-hidden">
-                <LazyImage src={imgF13} alt="Police inspection" className="w-full h-full object-cover" />
+                <LazyImage src={imgArc4Scene1B1} alt="Regular routine" className="w-full h-full object-cover" />
               </div>
 
               <div className="w-full h-[358px] sm:h-[760px] rounded-lg overflow-hidden">
-                <LazyImage src={imgF14} alt="Traffic stop" className="w-full h-full object-cover" />
+                <LazyImage src={imgF13} alt="Police inspection" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -1660,11 +1663,11 @@ const HoursOfService = () => {
               </div>
 
               <div className="w-full h-[238px] sm:h-[507px] rounded-lg overflow-hidden">
-                <LazyImage src={imgF16} alt="Log request" className="w-full h-full object-cover" />
+                <LazyImage src={imgF14} alt="Log request" className="w-full h-full object-cover" />
               </div>
 
               <div className="w-full h-[256px] sm:h-[544px] rounded-lg overflow-hidden">
-                <LazyImage src={imgF32} alt="Showing logs" className="w-full h-full object-cover" />
+                <LazyImage src={imgF31} alt="Showing logs" className="w-full h-full object-cover" />
               </div>
             </div>
 
