@@ -31,6 +31,7 @@ const LazyImage = ({
   rootMargin = '50px',
   style = {},
   objectFit = 'cover',
+  objectPosition = 'center',
   useModernFormats = false,
   sizes = '100vw',
   ...props
@@ -130,7 +131,7 @@ const LazyImage = ({
               onLoad={handleLoad}
               onError={handleError}
               className={imageClassName}
-              style={{ objectFit }}
+              style={{ objectFit, objectPosition }}
               {...props}
             />
           </picture>
@@ -144,7 +145,7 @@ const LazyImage = ({
             onLoad={handleLoad}
             onError={handleError}
             className={imageClassName}
-            style={{ objectFit }}
+            style={{ objectFit, objectPosition }}
             {...props}
           />
         )

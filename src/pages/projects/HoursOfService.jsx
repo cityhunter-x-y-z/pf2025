@@ -80,11 +80,11 @@ import imgEld11 from '../../assets/images/projects/hours-of-service/eld-1-1.webp
 const imgVehicleInspection = vehicleInspectionPhone;
 
 const HoursOfService = () => {
-  const [isAccordionOpen, setIsAccordionOpen] = useState(true);
-  const [isLegacyAccordionOpen, setIsLegacyAccordionOpen] = useState(true);
-  const [isDriverBehaviorAccordionOpen, setIsDriverBehaviorAccordionOpen] = useState(true);
-  const [isProblemStatementAccordionOpen, setIsProblemStatementAccordionOpen] = useState(true);
-  const [isDiscoveryAccordionOpen, setIsDiscoveryAccordionOpen] = useState(true);
+  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+  const [isLegacyAccordionOpen, setIsLegacyAccordionOpen] = useState(false);
+  const [isDriverBehaviorAccordionOpen, setIsDriverBehaviorAccordionOpen] = useState(false);
+  const [isProblemStatementAccordionOpen, setIsProblemStatementAccordionOpen] = useState(false);
+  const [isDiscoveryAccordionOpen, setIsDiscoveryAccordionOpen] = useState(false);
 
   // Track analytics for this project
   useProjectAnalytics('Hours of Service');

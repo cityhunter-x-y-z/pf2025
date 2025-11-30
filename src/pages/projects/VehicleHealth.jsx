@@ -61,11 +61,11 @@ import imgDefectStatus2 from '../../assets/images/projects/vehicle-health/defect
 import imgEllipse from '../../assets/images/projects/vehicle-health/ellipse.webp';
 
 // Objective section icon
-const imgObjectiveIcon = "https://www.figma.com/api/mcp/asset/fd289db0-04d8-4efa-b452-63a33de21605";
+import imgObjectiveIcon from '../../assets/images/projects/vehicle-health/objective-icon.webp';
 
 // Discovery section icons
-const imgDiscoveryIcon = "https://www.figma.com/api/mcp/asset/ea36951f-ad2c-4158-9769-b62d49c1c64d";
-const imgDiscoveryCaretDown = "https://www.figma.com/api/mcp/asset/da1ea322-fca8-41af-911c-afa3d376bbfc";
+import imgDiscoveryIcon from '../../assets/images/projects/vehicle-health/discovery-icon.webp';
+import imgDiscoveryCaretDown from '../../assets/images/projects/vehicle-health/discovery-caret-down.webp';
 
 // Local persona images
 import imgNatsu from '../../assets/images/projects/vehicle-health/persona-natsu.webp';
@@ -73,9 +73,9 @@ import imgMacao from '../../assets/images/projects/vehicle-health/persona-macao.
 import imgGray from '../../assets/images/projects/vehicle-health/persona-gray.webp';
 
 const VehicleHealth = () => {
-  const [isWhyAccordionOpen, setIsWhyAccordionOpen] = useState(true);
-  const [isCurrentIssuesOpen, setIsCurrentIssuesOpen] = useState(true);
-  const [isDiscoveryOpen, setIsDiscoveryOpen] = useState(true);
+  const [isWhyAccordionOpen, setIsWhyAccordionOpen] = useState(false);
+  const [isCurrentIssuesOpen, setIsCurrentIssuesOpen] = useState(false);
+  const [isDiscoveryOpen, setIsDiscoveryOpen] = useState(false);
 
   // Track analytics for this project
   useProjectAnalytics('Vehicle Health');
@@ -1037,7 +1037,7 @@ const VehicleHealth = () => {
                 <div className="w-8 h-8 sm:w-16 sm:h-16 flex-shrink-0">
                   <LazyImage src={imgDiscoveryIcon} alt="Discovery Icon" className="w-full h-full object-contain" />
                 </div>
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray flex-1" style={{ letterSpacing: '-1%' }}>
+                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray flex-1" style={{ letterSpacing: '-0.32px' }}>
                   Discovery
                 </h2>
                 <div className="w-8 h-8 sm:w-16 sm:h-16 flex-shrink-0">

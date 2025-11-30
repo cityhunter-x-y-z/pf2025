@@ -1,17 +1,16 @@
 import { motion } from 'framer-motion';
 import ProjectNav from '../../components/ProjectNav';
-import BlurImage from '../../components/BlurImage';
 import LazyImage from '../../components/LazyImage';
 import useProjectAnalytics from '../../hooks/useProjectAnalytics';
 
 // Hero images
-const imgDesktopView = "https://www.figma.com/api/mcp/asset/d809e480-02a4-445e-8da1-4711059eee6c";
-const imgMobileScreen1 = "https://www.figma.com/api/mcp/asset/b30b84b1-3638-4d26-bf71-939d1497dcc1";
-const imgMobileScreen2 = "https://www.figma.com/api/mcp/asset/39191860-c08c-43a9-b2bd-2de96e248f37";
+import imgDesktopView from '../../assets/images/projects/vending-analytics/desktop-view.webp';
+import imgMobileScreen1 from '../../assets/images/projects/vending-analytics/mobile-screen-1.webp';
+import imgMobileScreen2 from '../../assets/images/projects/vending-analytics/mobile-screen-2.webp';
 
 // NDA and Logo images
-const imgKelloggIcon = "https://www.figma.com/api/mcp/asset/21138bfe-65c2-4842-9f07-ef6ca90a28ea";
-const imgLockKey = "https://www.figma.com/api/mcp/asset/c26db2cc-e498-4e84-85d5-884dea4a88ba";
+import imgKelloggIcon from '../../assets/images/projects/vending-analytics/kellogg-icon.webp';
+import imgLockKey from '../../assets/images/projects/vending-analytics/lock-key.webp';
 
 const VendingAnalytics = () => {
   // Track analytics for this project
@@ -48,21 +47,23 @@ const VendingAnalytics = () => {
                 <div className="hidden sm:block absolute left-[38px] top-[247px] w-[691px] h-[151px] bg-white opacity-30 shadow-[0px_0px_250px_22px_rgba(0,0,0,0.25)]" />
 
                 {/* Main Container */}
-                <div className="relative border-4 sm:border-8 border-[rgba(0,0,0,0.04)] rounded-xl h-[194px] sm:h-[447px] w-full overflow-hidden" style={{ background: 'linear-gradient(90deg, rgba(255, 138, 183, 0.05) 0%, rgba(255, 138, 183, 0.05) 100%), linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%)' }}>
+                <div className="relative border-4 sm:border-8 border-[rgba(0,0,0,0.04)] rounded-[12px] h-[194px] sm:h-[447px] w-full overflow-hidden" style={{ background: 'linear-gradient(90deg, rgba(255, 138, 183, 0.05) 0%, rgba(255, 138, 183, 0.05) 100%), linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%)' }}>
                   {/* Desktop View */}
-                  <LazyImage
-                    src={imgDesktopView}
-                    alt="Kellogg's analytics dashboard desktop view"
-                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[346px] sm:w-[679px] h-[178px] sm:h-[350px]"
-                    priority
-                  />
+                  <div className="absolute bottom-0 left-[calc(50%+0.5px)] -translate-x-1/2 w-[346px] sm:w-[679px] h-[178px] sm:h-[350px]">
+                    <LazyImage
+                      src={imgDesktopView}
+                      alt="Kellogg's analytics dashboard desktop view"
+                      className="w-full h-full"
+                      objectFit="cover"
+                      objectPosition="bottom"
+                      priority
+                    />
+                  </div>
 
                   {/* Bottom Footer - Reading Time Carousel */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#FFF6FB] py-1 overflow-hidden">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#FFF6FB] px-2 py-1 overflow-hidden z-10">
                     <div className="flex gap-3 items-center whitespace-nowrap animate-marquee">
                       {/* First set */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
@@ -72,10 +73,10 @@ const VendingAnalytics = () => {
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       {/* Duplicate set for seamless loop */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
@@ -85,6 +86,8 @@ const VendingAnalytics = () => {
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                     </div>
                   </div>

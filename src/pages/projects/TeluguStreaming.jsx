@@ -4,22 +4,22 @@ import BlurImage from '../../components/BlurImage';
 import useProjectAnalytics from '../../hooks/useProjectAnalytics';
 
 // Hero images
-const imgHomeScreen = "https://www.figma.com/api/mcp/asset/2a7c5a69-ee73-411f-b644-1a16c32e72ca";
-const imgMobileView = "https://www.figma.com/api/mcp/asset/2d1b7438-33b3-4baf-b46c-07dbacd79fbe";
+import imgHomeScreen from '../../assets/images/projects/telugu-streaming/home-selected.webp';
+import imgMobileView from '../../assets/images/projects/telugu-streaming/mobile-homepage.webp';
 
 // Style Guide and Features images
-const imgStyleGuide = "https://www.figma.com/api/mcp/asset/6b21599d-6bc5-445c-85de-766f5e62b0f4";
-const imgSubscriptionFlow1 = "https://www.figma.com/api/mcp/asset/6f8aa55c-cca9-4c7b-88d1-53cd5e0738b0";
-const imgSubscriptionFlow2 = "https://www.figma.com/api/mcp/asset/261fcda9-8d5e-4701-b053-44950b66bba9";
-const imgMobileHome = "https://www.figma.com/api/mcp/asset/2da465fa-5780-47f3-8ca7-4fe00f6ee4fa";
-const imgSubscriptionWorkflow = "https://www.figma.com/api/mcp/asset/8992cc7b-38cb-4564-b8c6-f06b421c217b";
-const imgLanguageOnboarding = "https://www.figma.com/api/mcp/asset/ff1c777d-c4e4-42f8-9137-781af1b08615";
-const imgContentRepresentation = "https://www.figma.com/api/mcp/asset/ba37f3e9-22d6-4a2b-bc56-b68d97f2d35c";
-const imgSkipSong = "https://www.figma.com/api/mcp/asset/2cddf05e-2492-43cd-9609-351f6acdef3d";
-const imgQuality = "https://www.figma.com/api/mcp/asset/e4e461ff-7e83-4c3c-bdef-fc3c52937124";
+import imgStyleGuide from '../../assets/images/projects/telugu-streaming/style-guide.webp';
+import imgSubscriptionFlow1 from '../../assets/images/projects/telugu-streaming/subscription-flow-1.webp';
+import imgSubscriptionFlow2 from '../../assets/images/projects/telugu-streaming/subscription-flow-2.webp';
+import imgMobileHome from '../../assets/images/projects/telugu-streaming/mobile-homepage.webp';
+import imgSubscriptionWorkflow from '../../assets/images/projects/telugu-streaming/subscription-workflow.webp';
+import imgLanguageOnboarding from '../../assets/images/projects/telugu-streaming/language-onboarding.webp';
+import imgContentRepresentation from '../../assets/images/projects/telugu-streaming/content-4k-dolby.webp';
+import imgSkipSong from '../../assets/images/projects/telugu-streaming/skip-song-player.webp';
+import imgQuality from '../../assets/images/projects/telugu-streaming/quality-player.webp';
 
 // NDA Badge
-const imgLockKey = "https://www.figma.com/api/mcp/asset/93405f41-22be-486d-985f-d009271a2553";
+import imgLockKey from '../../assets/images/projects/telugu-streaming/nda-lock-icon.webp';
 
 const TeluguStreaming = () => {
   // Track analytics for this project
@@ -77,8 +77,6 @@ const TeluguStreaming = () => {
                   <div className="absolute bottom-0 left-0 right-0 bg-[#FFECD3] py-1 overflow-hidden">
                     <div className="flex gap-3 items-center whitespace-nowrap animate-marquee">
                       {/* First set */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
@@ -88,10 +86,10 @@ const TeluguStreaming = () => {
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       {/* Duplicate set for seamless loop */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
@@ -101,6 +99,8 @@ const TeluguStreaming = () => {
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                       <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
                       <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
                     </div>
                   </div>

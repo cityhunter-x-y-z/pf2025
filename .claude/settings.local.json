@@ -16,7 +16,11 @@
       "Bash(node scripts/download-figma-images-vh.js:*)",
       "Bash(netstat:*)",
       "Bash(findstr:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "WebFetch(domain:www.figma.com)",
+      "Bash(node scripts/download-figma-images-telugu.js:*)",
+      "Bash(node scripts/download-nda-icon.js:*)",
+      "Bash(node scripts/download-discovery-icons.js:*)"
     ],
     "deny": [],
     "ask": []
