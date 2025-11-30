@@ -1,79 +1,28 @@
-# Netlify Custom Headers
-# Additional cache control and performance headers
-
-# All assets in /assets directory (Vite build output)
-/assets/*
+# Cache images for 1 year
+/assets/images/*
   Cache-Control: public, max-age=31536000, immutable
-  X-Content-Type-Options: nosniff
 
-# Images - aggressive caching (1 year)
+# Cache fonts for 1 year  
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache all WebP images aggressively
 /*.webp
   Cache-Control: public, max-age=31536000, immutable
 
-/*.png
+# Cache JavaScript and CSS for 1 year
+/assets/*.js
   Cache-Control: public, max-age=31536000, immutable
 
-/*.jpg
+/assets/*.css
   Cache-Control: public, max-age=31536000, immutable
 
-/*.jpeg
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.avif
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.gif
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.svg
-  Cache-Control: public, max-age=31536000, immutable
-
-# Videos
-/*.mp4
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.mov
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.webm
-  Cache-Control: public, max-age=31536000, immutable
-
-# Fonts
-/*.woff2
-  Cache-Control: public, max-age=31536000, immutable
-  Access-Control-Allow-Origin: *
-
-/*.woff
-  Cache-Control: public, max-age=31536000, immutable
-  Access-Control-Allow-Origin: *
-
-/*.ttf
-  Cache-Control: public, max-age=31536000, immutable
-  Access-Control-Allow-Origin: *
-
-# PDF files
-/*.pdf
-  Cache-Control: public, max-age=86400
-
-# JavaScript and CSS (hashed by Vite)
-/*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.css
-  Cache-Control: public, max-age=31536000, immutable
-
-# HTML pages - shorter cache, must revalidate
+# Don't cache HTML files
 /*.html
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: public, max-age=0, must-revalidate
 
-# Root index
-/
-  Cache-Control: public, max-age=3600, must-revalidate
-
-# Security headers for all routes
+# Security headers
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
-  X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
