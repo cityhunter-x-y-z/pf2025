@@ -102,15 +102,16 @@ const VehicleHealth = () => {
             >
               {/* Hero Image */}
               <div className="w-full max-w-[500px] h-auto aspect-[500/334] rounded-2xl sm:rounded-[32px] overflow-hidden">
-                <img
+                <LazyImage
                   src={imgHeroImage}
                   alt="Fleet Management"
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
 
               {/* Main Title */}
-              <h1 className="font-['Roboto_Slab'] text-2xl sm:text-5xl leading-[1.32em] text-ui-gray text-center w-full" style={{ letterSpacing: '-5%' }}>
+              <h1 className="font-roboto text-2xl sm:text-5xl leading-[1.32em] text-ui-gray text-center w-full" style={{ letterSpacing: '-5%' }}>
                 Integrated Fleet Management — Maintenance, Inspections & Defect Workflows for the Fleet Safety Dashboard
               </h1>
 
@@ -124,31 +125,31 @@ const VehicleHealth = () => {
                   <div className="absolute bottom-0 left-0 right-0 bg-[#F9F6DA] py-1 overflow-hidden">
                     <div className="flex gap-3 items-center whitespace-nowrap animate-marquee">
                       {/* First set */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
                       {/* Duplicate set for seamless loop */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
                     </div>
                   </div>
                 </div>
@@ -162,7 +163,7 @@ const VehicleHealth = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="flex flex-col gap-4 sm:gap-8 w-full"
             >
-              <h2 className="font-['Space_Mono'] font-bold text-2xl sm:text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+              <h2 className="font-space font-bold text-2xl sm:text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                 Introduction
               </h2>
               <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
@@ -185,7 +186,7 @@ const VehicleHealth = () => {
                 <div className="w-8 h-8 sm:w-24 sm:h-24 flex-shrink-0 rounded-lg overflow-hidden shadow-[inset_0px_0px_12px_2px_rgba(255,255,255,0.5),inset_0px_0px_6px_2px_rgba(153,153,153,0.25)]">
                   <LazyImage src={imgWhyIcon} alt="Why Icon" className="w-full h-full object-cover" />
                 </div>
-                <h2 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] leading-[1.34em] text-ui-gray flex-1" style={{ letterSpacing: '-0.5%' }}>
+                <h2 className="font-space font-bold text-base sm:text-[32px] leading-[1.34em] text-ui-gray flex-1" style={{ letterSpacing: '-0.5%' }}>
                   Why Maintenance Dashboard is required?
                 </h2>
                 <div className="w-8 h-8 sm:w-16 sm:h-16 flex-shrink-0">
@@ -224,27 +225,27 @@ const VehicleHealth = () => {
                   <div className="relative h-[222px] sm:h-[298px] w-full">
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-wrap justify-center gap-3 sm:gap-4">
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-[99px] px-6 py-3 transform -rotate-6">
-                        <p className="font-['Space_Mono'] font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Centralized Visibility
                         </p>
                       </div>
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-[99px] px-6 py-3 transform rotate-6">
-                        <p className="font-['Space_Mono'] font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Proactive Maintenance Planning
                         </p>
                       </div>
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-[99px] px-6 py-3 transform -rotate-3">
-                        <p className="font-['Space_Mono'] font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Defect Tracking & Resolution
                         </p>
                       </div>
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-[99px] px-6 py-3 transform rotate-3">
-                        <p className="font-['Space_Mono'] font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Data-Driven Insights
                         </p>
                       </div>
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-[99px] px-6 py-3 transform -rotate-2">
-                        <p className="font-['Space_Mono'] font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-sm text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Compliance & Accountability
                         </p>
                       </div>
@@ -269,7 +270,7 @@ const VehicleHealth = () => {
                 <div className="w-8 h-8 sm:w-16 sm:h-16 flex-shrink-0">
                   <LazyImage src={imgCurrentIssuesIcon} alt="Current Issues" className="w-full h-full object-cover" />
                 </div>
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray flex-1" style={{ letterSpacing: '-1%' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray flex-1" style={{ letterSpacing: '-1%' }}>
                   Current Issues
                 </h2>
                 <div className="w-8 h-8 sm:w-16 sm:h-16 flex-shrink-0">
@@ -333,10 +334,10 @@ const VehicleHealth = () => {
                   <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full">
                     {/* Tile 1: Lost / damaged records */}
                     <div className="flex-1 bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col gap-1">
-                      <h3 className="font-['Space_Mono'] font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <h3 className="font-space font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Lost / damaged records
                       </h3>
-                      <p className="font-['Space_Mono'] font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         15-20%
                       </p>
                       <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -346,10 +347,10 @@ const VehicleHealth = () => {
 
                     {/* Tile 2: Fragmented workflow */}
                     <div className="flex-1 bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1">
-                      <h3 className="font-['Space_Mono'] font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <h3 className="font-space font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Fragmented workflow
                       </h3>
-                      <p className="font-['Space_Mono'] font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         ~30%
                       </p>
                       <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -364,20 +365,20 @@ const VehicleHealth = () => {
                     <div className="flex flex-col gap-2 sm:gap-3 flex-1">
                       {/* Tile 3: Delayed Visibility */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1">
-                        <h3 className="font-['Space_Mono'] font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h3 className="font-space font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Delayed Visibility
                         </h3>
                         <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           managers receive inspection data late
                         </p>
-                        <p className="font-['Space_Mono'] font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           10hrs - 1 day
                         </p>
                       </div>
 
                       {/* Tile 4: Limited customization */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1">
-                        <h3 className="font-['Space_Mono'] font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h3 className="font-space font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Limited customization
                         </h3>
                         <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -390,10 +391,10 @@ const VehicleHealth = () => {
                     <div className="flex flex-col gap-2 sm:gap-3 w-full sm:w-auto sm:flex-1">
                       {/* Tile 5: Missed Repairs */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1">
-                        <h3 className="font-['Space_Mono'] font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h3 className="font-space font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Missed Repairs
                         </h3>
-                        <p className="font-['Space_Mono'] font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           ~10%
                         </p>
                         <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -403,10 +404,10 @@ const VehicleHealth = () => {
 
                       {/* Tile 6: Duplicated effort */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1">
-                        <h3 className="font-['Space_Mono'] font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h3 className="font-space font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Duplicated effort
                         </h3>
-                        <p className="font-['Space_Mono'] font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           ~15%
                         </p>
                         <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -425,7 +426,7 @@ const VehicleHealth = () => {
                         <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Lost / damaged records
                         </p>
-                        <p className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           15-20%
                         </p>
                         <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -436,7 +437,7 @@ const VehicleHealth = () => {
                         <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Fragmented workflow
                         </p>
-                        <p className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           ~30%
                         </p>
                         <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -455,7 +456,7 @@ const VehicleHealth = () => {
                           <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                             managers receive inspection data late
                           </p>
-                          <p className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                          <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             10hrs - 1 day
                           </p>
                         </div>
@@ -481,7 +482,7 @@ const VehicleHealth = () => {
                           <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                             Missed Repairs
                           </p>
-                          <p className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                          <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             ~10%
                           </p>
                           <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -492,7 +493,7 @@ const VehicleHealth = () => {
                           <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                             Duplicated effort
                           </p>
-                          <p className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                          <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             ~15%
                           </p>
                           <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -518,7 +519,7 @@ const VehicleHealth = () => {
                 <div className="w-8 h-8 sm:w-12 sm:h-12 flex-shrink-0">
                   <LazyImage src={imgPersonasIcon} alt="Personas icon" className="w-full h-full object-cover" />
                 </div>
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   Maintenance Personas
                 </h2>
               </div>
@@ -532,10 +533,10 @@ const VehicleHealth = () => {
                   </div>
                   <div className="flex flex-col gap-2 sm:gap-3 flex-1">
                     <div className="flex flex-col gap-1">
-                      <p className="font-['Space_Mono'] font-bold text-lg sm:text-2xl text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <p className="font-space font-bold text-lg sm:text-2xl text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Macao G.
                       </p>
-                      <p className="font-['Space_Mono'] text-lg sm:text-base text-text-quaternary" style={{ letterSpacing: '-1%' }}>
+                      <p className="font-space text-lg sm:text-base text-text-quaternary" style={{ letterSpacing: '-1%' }}>
                         Maintenance Manager
                       </p>
                     </div>
@@ -552,10 +553,10 @@ const VehicleHealth = () => {
                   </div>
                   <div className="flex flex-col gap-2 sm:gap-3 flex-1">
                     <div className="flex flex-col gap-1">
-                      <p className="font-['Space_Mono'] font-bold text-lg sm:text-2xl text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <p className="font-space font-bold text-lg sm:text-2xl text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Gray F.
                       </p>
-                      <p className="font-['Space_Mono'] text-lg sm:text-base text-text-quaternary" style={{ letterSpacing: '-1%' }}>
+                      <p className="font-space text-lg sm:text-base text-text-quaternary" style={{ letterSpacing: '-1%' }}>
                         Maintenance Technician
                       </p>
                     </div>
@@ -572,10 +573,10 @@ const VehicleHealth = () => {
                   </div>
                   <div className="flex flex-col gap-2 sm:gap-3 flex-1">
                     <div className="flex flex-col gap-1">
-                      <p className="font-['Space_Mono'] font-bold text-lg sm:text-2xl text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <p className="font-space font-bold text-lg sm:text-2xl text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Natsu D.
                       </p>
-                      <p className="font-['Space_Mono'] text-lg sm:text-base text-text-quaternary" style={{ letterSpacing: '-1%' }}>
+                      <p className="font-space text-lg sm:text-base text-text-quaternary" style={{ letterSpacing: '-1%' }}>
                         Maintenance Technician
                       </p>
                     </div>
@@ -596,10 +597,10 @@ const VehicleHealth = () => {
             >
               {/* Arc Title */}
               <div className="flex flex-col gap-2 sm:gap-4">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   Arc 1 :
                 </h2>
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   The Daily Grind at Speedy Wheels Logistics
                 </h2>
               </div>
@@ -608,10 +609,10 @@ const VehicleHealth = () => {
               <div className="flex flex-col gap-3 sm:gap-5 w-full">
                 {/* Scene 1: Morning Inspections */}
                 <div className="flex flex-col gap-1">
-                  <p className="font-['Space_Mono'] font-bold text-sm sm:text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-sm sm:text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Scene 1:
                   </p>
-                  <p className="font-['Space_Mono'] font-bold text-sm sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-sm sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                     Morning Inspections - The Technician's Burden
                   </p>
                 </div>
@@ -631,7 +632,7 @@ const VehicleHealth = () => {
                   <div className="border-[3px] sm:border-[5px] border-ui-gray h-auto sm:h-[497px] w-full sm:w-[301px] sm:flex-shrink-0 overflow-hidden relative">
                     <LazyImage src={imgS1B3} alt="Manual logs" className="w-full h-auto sm:absolute" style={{ maxWidth: '301px' }} />
                     <div className="absolute bg-white border-2 border-ui-gray p-3 w-[140px] hidden sm:block" style={{ left: '16px', top: '362px' }}>
-                      <p className="font-['Comic_Sans_MS'] font-bold text-sm text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-comic font-bold text-sm text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                         MANUAL LOGS - DETAILED INSPECTIONS WITH CLEAR STUTES
                       </p>
                     </div>
@@ -643,10 +644,10 @@ const VehicleHealth = () => {
 
                 {/* Scene 2: Office Chaos */}
                 <div className="flex flex-col gap-1 mt-2 sm:mt-3">
-                  <p className="font-['Space_Mono'] font-bold text-sm sm:text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-sm sm:text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Scene 2:
                   </p>
-                  <p className="font-['Space_Mono'] font-bold text-sm sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-sm sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                     Office Chaos - The Manager's Struggle
                   </p>
                 </div>
@@ -655,7 +656,7 @@ const VehicleHealth = () => {
                 <div className="border-[3px] sm:border-[5px] border-ui-gray h-auto sm:h-[434px] w-full overflow-hidden relative">
                   <LazyImage src={imgS2B1} alt="Manager at office" className="w-full h-auto sm:absolute" style={{ maxWidth: '760px' }} />
                   <div className="absolute bg-white border-2 border-ui-gray p-3 w-[108px] h-[222px] items-center justify-center hidden sm:flex" style={{ left: '27px', top: '194px' }}>
-                    <p className="font-['Comic_Sans_MS'] font-bold text-sm text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-comic font-bold text-sm text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                       LATER THAT DAY, MACAO TRIES TO MAKE SENSE OF THE INSPECTION RECORDS
                     </p>
                   </div>
@@ -666,7 +667,7 @@ const VehicleHealth = () => {
                   <div className="border-[3px] sm:border-[5px] border-ui-gray h-auto sm:h-[537px] w-full sm:w-[350px] sm:flex-shrink-0 overflow-hidden relative">
                     <LazyImage src={imgS2B2} alt="Inspection records" className="w-full h-auto sm:absolute" style={{ maxWidth: '350px' }} />
                     <div className="absolute bg-white border-2 border-ui-gray p-3 w-[112px] h-[211px] items-center justify-center hidden sm:flex" style={{ left: '218px', top: '302px' }}>
-                      <p className="font-['Comic_Sans_MS'] font-bold text-sm text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-comic font-bold text-sm text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                         DOZENS OF ROWS, MISSING ENTRIES, AND INCONSISTENT LOGS, THE STORY REPEATS.
                       </p>
                     </div>
@@ -688,10 +689,10 @@ const VehicleHealth = () => {
 
                 {/* Scene 3: Wish for Improvement */}
                 <div className="flex flex-col gap-1 mt-2 sm:mt-3">
-                  <p className="font-['Space_Mono'] font-bold text-sm sm:text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-sm sm:text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Scene 3:
                   </p>
-                  <p className="font-['Space_Mono'] font-bold text-sm sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-sm sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                     Wish for Improvement
                   </p>
                 </div>
@@ -715,7 +716,7 @@ const VehicleHealth = () => {
                 <div className="w-8 h-8 sm:w-16 sm:h-16 flex-shrink-0">
                   <LazyImage src={imgObjectiveIcon} alt="Objective Icon" className="w-full h-full object-contain" />
                 </div>
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray flex-1" style={{ letterSpacing: '-1%' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray flex-1" style={{ letterSpacing: '-1%' }}>
                   Objective and User Journey Hypothesis
                 </h2>
               </div>
@@ -743,7 +744,7 @@ const VehicleHealth = () => {
 
               {/* Technician Manager - Current Journey */}
               <div className="flex flex-col gap-4 sm:gap-6 items-center w-full">
-                <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] leading-[1.36em] text-ui-gray text-center" style={{ letterSpacing: '-1%' }}>
+                <h3 className="font-space font-bold text-base sm:text-[32px] leading-[1.36em] text-ui-gray text-center" style={{ letterSpacing: '-1%' }}>
                   Technician Manager - User Current Journey / experience
                 </h3>
                 <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary text-center" style={{ letterSpacing: '-0.5%' }}>
@@ -812,7 +813,7 @@ const VehicleHealth = () => {
 
               {/* Technician Personal - Current Journey */}
               <div className="flex flex-col gap-4 sm:gap-6 items-start w-full">
-                <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <h3 className="font-space font-bold text-base sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   Technician Personal - User Current Journey / experience
                 </h3>
 
@@ -887,13 +888,13 @@ const VehicleHealth = () => {
               </div>
 
               {/* Hypothesis Label */}
-              <p className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-1%' }}>
+              <p className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-1%' }}>
                 Hypothesis
               </p>
 
               {/* Technician Manager - Desired Journey */}
               <div className="flex flex-col gap-4 sm:gap-6 items-start w-full">
-                <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <h3 className="font-space font-bold text-base sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   Technician Manager - User Desied Journey / experience
                 </h3>
 
@@ -959,7 +960,7 @@ const VehicleHealth = () => {
 
               {/* Technician Personal - Desired Journey */}
               <div className="flex flex-col gap-4 sm:gap-6 items-start w-full">
-                <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <h3 className="font-space font-bold text-base sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   Technician Personal - User Desired Journey / experience
                 </h3>
 
@@ -1037,11 +1038,11 @@ const VehicleHealth = () => {
                 <div className="w-8 h-8 sm:w-16 sm:h-16 flex-shrink-0">
                   <LazyImage src={imgDiscoveryIcon} alt="Discovery Icon" className="w-full h-full object-contain" />
                 </div>
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray flex-1" style={{ letterSpacing: '-0.32px' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray flex-1" style={{ letterSpacing: '-0.32px' }}>
                   Discovery
                 </h2>
                 <div className="w-8 h-8 sm:w-16 sm:h-16 flex-shrink-0">
-                  <img
+                  <LazyImage
                     src={imgDiscoveryCaretDown}
                     alt="Toggle"
                     className="w-full h-full object-contain transition-transform duration-300"
@@ -1064,7 +1065,7 @@ const VehicleHealth = () => {
                   {/* Fleet Categories */}
                   <div className="flex flex-row flex-wrap gap-3 sm:gap-[22px] w-full">
                     <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-4 sm:p-8 sm:py-4 flex-1 min-w-[calc(50%-6px)] sm:min-w-0 sm:w-[303px] min-h-[120px] sm:h-[169px] flex flex-col gap-2 sm:gap-3 justify-center">
-                      <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Small Fleets
                       </h3>
                       <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1072,7 +1073,7 @@ const VehicleHealth = () => {
                       </p>
                     </div>
                     <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-4 sm:p-8 sm:py-4 flex-1 min-w-[calc(50%-6px)] sm:min-w-0 min-h-[120px] sm:h-[169px] flex flex-col gap-2 sm:gap-3 justify-center sm:flex-1">
-                      <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Larger Fleets
                       </h3>
                       <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1080,7 +1081,7 @@ const VehicleHealth = () => {
                       </p>
                     </div>
                     <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-4 sm:p-8 sm:py-4 w-full min-h-[120px] sm:h-[169px] flex flex-col gap-2 sm:gap-3 justify-center">
-                      <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Emerging Trend
                       </h3>
                       <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1091,7 +1092,7 @@ const VehicleHealth = () => {
 
                   {/* Regulatory Research */}
                   <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                    <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                       Regulatory Reseach
                     </h3>
                     <div className="flex flex-col gap-0">
@@ -1109,7 +1110,7 @@ const VehicleHealth = () => {
                   {/* Affinity Mapping */}
                   <div className="flex flex-col gap-4 sm:gap-6 w-full">
                     <div className="flex flex-col gap-4 sm:gap-6">
-                      <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                      <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Affinity Mapping Based on User Journey
                       </h3>
                       <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
@@ -1120,7 +1121,7 @@ const VehicleHealth = () => {
                     <div className="flex flex-row gap-3 sm:gap-[36px_20px] w-full">
                       {/* Pain Points Column */}
                       <div className="flex flex-col gap-3 sm:gap-6 flex-1">
-                        <h4 className="font-['Space_Mono'] font-bold text-xs sm:text-lg text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-xs sm:text-lg text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Pain Point
                         </h4>
                         <div className="flex flex-col gap-2 sm:gap-4">
@@ -1149,7 +1150,7 @@ const VehicleHealth = () => {
 
                       {/* Possible Solutions Column */}
                       <div className="flex flex-col gap-3 sm:gap-6 flex-1">
-                        <h4 className="font-['Space_Mono'] font-bold text-xs sm:text-lg text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-xs sm:text-lg text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Possible Solution
                         </h4>
                         <div className="flex flex-col gap-2 sm:gap-4">
@@ -1180,17 +1181,17 @@ const VehicleHealth = () => {
 
                   {/* Customer Needs / Tenants organisation scales */}
                   <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                    <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                       Customer Needs / Tenants organisation scales
                     </h3>
 
                     <div className="flex flex-col gap-4 sm:gap-6">
                       {/* Small Size Fleets */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-6 sm:p-8 py-6 sm:py-12 flex flex-col gap-2 sm:gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Small Size Fleets
                         </h4>
-                        <p className="font-['Space_Mono'] font-bold text-xl sm:text-[44px] text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-space font-bold text-xl sm:text-[44px] text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                           1 - 25 vehicles
                         </p>
                         <p className="font-trispace text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
@@ -1209,10 +1210,10 @@ const VehicleHealth = () => {
 
                       {/* Medium Size Fleets */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-6 sm:p-8 py-6 sm:py-12 flex flex-col gap-2 sm:gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Medium Size Fleets
                         </h4>
-                        <p className="font-['Space_Mono'] font-bold text-xl sm:text-[44px] text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-space font-bold text-xl sm:text-[44px] text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                           25 - 100 vehicles
                         </p>
                         <p className="font-trispace text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
@@ -1231,10 +1232,10 @@ const VehicleHealth = () => {
 
                       {/* Large Size Fleets */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-6 sm:p-8 py-6 sm:py-12 flex flex-col gap-2 sm:gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Large Size Fleets
                         </h4>
-                        <p className="font-['Space_Mono'] font-bold text-xl sm:text-[44px] text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-space font-bold text-xl sm:text-[44px] text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                           100+ vehicles
                         </p>
                         <p className="font-trispace text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
@@ -1255,14 +1256,14 @@ const VehicleHealth = () => {
 
                   {/* Strategy-Based Insights */}
                   <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                    <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                       Strategy-Based Insights / What we learned and how we'll approach it
                     </h3>
 
                     <div className="flex flex-col gap-4 sm:gap-6">
                       {/* Need for a Unified Operational View */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-4 sm:p-8 flex flex-col gap-2 sm:gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Need for a Unified Operational View
                         </h4>
                         <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1275,7 +1276,7 @@ const VehicleHealth = () => {
 
                       {/* Role-Specific Context and Permissions */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-4 sm:p-8 flex flex-col gap-2 sm:gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Role-Specific Context and Permissions
                         </h4>
                         <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1288,7 +1289,7 @@ const VehicleHealth = () => {
 
                       {/* Simplified Inspection Workflows */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-4 sm:p-8 flex flex-col gap-2 sm:gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Simplified Inspection Workflows
                         </h4>
                         <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1301,7 +1302,7 @@ const VehicleHealth = () => {
 
                       {/* Defect Lifecycle Transparency */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-4 sm:p-8 flex flex-col gap-2 sm:gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Defect Lifecycle Transparency
                         </h4>
                         <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1314,7 +1315,7 @@ const VehicleHealth = () => {
 
                       {/* Predictive Maintenance Opportunities */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-4 sm:p-8 flex flex-col gap-2 sm:gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Predictive Maintenance Opportunities
                         </h4>
                         <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1328,7 +1329,7 @@ const VehicleHealth = () => {
                       {/* Scalability Across Fleet Sizes (with "Good to have" callout) */}
                       <div className="relative pb-[59px]">
                         <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-8 flex flex-col gap-3">
-                          <h4 className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                          <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             Scalability Across Fleet Sizes
                           </h4>
                           <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1353,7 +1354,7 @@ const VehicleHealth = () => {
 
                       {/* Data-Driven Accountability */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Data-Driven Accountability
                         </h4>
                         <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1368,14 +1369,14 @@ const VehicleHealth = () => {
 
                   {/* Brainstorming → How might we solve it? */}
                   <div className="flex flex-col gap-8 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                    <h3 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                       Brainstorming → How might we solve it?
                     </h3>
 
                     <div className="flex flex-col gap-6">
                       {/* HMW 1 */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Help managers get a unified view of fleet safety and maintenance?
                         </h4>
                         <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1385,7 +1386,7 @@ const VehicleHealth = () => {
 
                       {/* HMW 2 */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           make vehicle inspections faster and error-free for technicians?
                         </h4>
                         <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1395,7 +1396,7 @@ const VehicleHealth = () => {
 
                       {/* HMW 3 */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           help managers prioritize repairs across the fleet?
                         </h4>
                         <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1405,7 +1406,7 @@ const VehicleHealth = () => {
 
                       {/* HMW 4 */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           ensure defects are tracked through to resolution?
                         </h4>
                         <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1415,7 +1416,7 @@ const VehicleHealth = () => {
 
                       {/* HMW 5 */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                        <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           encourage accountability and transparency?
                         </h4>
                         <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1427,7 +1428,7 @@ const VehicleHealth = () => {
 
                   {/* How might we (HMW) Summary */}
                   <div className="flex flex-col gap-4 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                    <h3 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                       How might we (HMW) ..
                     </h3>
                     <ol className="font-trispace text-base text-ui-gray list-decimal pl-6 space-y-0" style={{ letterSpacing: '-2%' }}>
@@ -1445,14 +1446,14 @@ const VehicleHealth = () => {
 
                   {/* Hypothesis Generation */}
                   <div className="flex flex-col gap-6 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[30px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    <h3 className="font-space font-bold text-lg sm:text-[30px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                       Hypothesis Generation → What assumptions are we testing?
                     </h3>
 
                     <div className="flex flex-col gap-6">
                       {/* Hypothesis 1: Unified Dashboard Efficiency */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-base sm:text-[32px] leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
+                        <h4 className="font-space font-bold text-base sm:text-[32px] leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                           Unified Dashboard Efficiency
                         </h4>
                         <div className="flex flex-col gap-0">
@@ -1477,7 +1478,7 @@ const VehicleHealth = () => {
 
                       {/* Hypothesis 2: Mobile-First Inspection Adoption */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                        <h4 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                           Mobile-First Inspection Adoption
                         </h4>
                         <div className="flex flex-col gap-0">
@@ -1502,7 +1503,7 @@ const VehicleHealth = () => {
 
                       {/* Hypothesis 3: Role-Based Dashboards Reduce Cognitive Load */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                        <h4 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                           Role-Based Dashboards Reduce Cognitive Load
                         </h4>
                         <div className="flex flex-col gap-0">
@@ -1527,7 +1528,7 @@ const VehicleHealth = () => {
 
                       {/* Hypothesis 4: Closed-Loop Defect Management */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                        <h4 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                           Closed-Loop Defect Management
                         </h4>
                         <div className="flex flex-col gap-0">
@@ -1552,7 +1553,7 @@ const VehicleHealth = () => {
 
                       {/* Hypothesis 5: Predictive Maintenance Planning */}
                       <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 flex flex-col gap-3">
-                        <h4 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                        <h4 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                           Predictive Maintenance Planning
                         </h4>
                         <div className="flex flex-col gap-0">
@@ -1587,16 +1588,16 @@ const VehicleHealth = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col gap-8 w-full"
             >
-              <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+              <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                 Arc 2: Macao brings in upgraded way of daily report submission to ensure smooth work flow
               </h2>
 
               {/* Scene 1: Macao explaining the upgrade to the technicians */}
               <div className="flex flex-col gap-1">
-                <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                   Scene 1
                 </p>
-                <p className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <p className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   Macao explaining the upgrade to the technicians
                 </p>
               </div>
@@ -1607,7 +1608,7 @@ const VehicleHealth = () => {
                 <div className="border-[3px] sm:border-[5px] border-ui-gray h-auto sm:h-[707px] w-full overflow-hidden relative">
                   <LazyImage src={imgS3B1} alt="A week later - the team rolls out the new digital maintenance system" className="w-full h-auto sm:h-full sm:object-cover" />
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white border-2 border-ui-gray px-3 py-3 max-w-[322px] w-[90%]">
-                    <p className="font-['Comic_Sans_MS'] font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-comic font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                       A WEEK LATER - THE TEAM ROLLS OUT THE NEW DIGITAL MAINTENANCE SYSTEM
                     </p>
                   </div>
@@ -1624,7 +1625,7 @@ const VehicleHealth = () => {
                   <div className="border-[3px] sm:border-[5px] border-ui-gray h-auto sm:h-[512px] w-full sm:w-[379px] overflow-hidden relative">
                     <LazyImage src={imgImage6} alt="Device with defect visibility" className="w-full h-auto sm:h-full sm:object-cover" />
                     <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-white border-2 border-ui-gray px-3 py-3 max-w-[324px] w-[90%]">
-                      <p className="font-['Comic_Sans_MS'] font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-comic font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                         EVERY TECHNICIAN NOW HAS REAL-TIME DEFECT VISIBILITY ON THEIR DEVICE.
                       </p>
                     </div>
@@ -1635,7 +1636,7 @@ const VehicleHealth = () => {
                 <div className="border-[3px] sm:border-[5px] border-ui-gray h-auto sm:h-[450px] w-full overflow-hidden relative">
                   <LazyImage src={imgS3B2} alt="Digital maintenance system in action" className="w-full h-auto sm:h-full sm:object-cover" />
                   <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 bg-white border border-ui-gray px-3 py-3 max-w-[297px] w-[90%] flex items-center justify-center">
-                    <p className="font-['Comic_Sans_MS'] font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-comic font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       THE NEW DIGITAL MAINTENANCE SYSTEM PROMPTS OPERATION, PUTTING VITAL INFORMATION AT THEIR FIGERTIPS.
                     </p>
                   </div>
@@ -1644,10 +1645,10 @@ const VehicleHealth = () => {
 
               {/* Scene 2: Natsu and Gray in work with the upgrade */}
               <div className="flex flex-col gap-1 mt-3">
-                <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                   Scene 2
                 </p>
-                <p className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <p className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   Natsu and Gray in work with the upgrade and Macao receiving the update in real time.
                 </p>
               </div>
@@ -1658,7 +1659,7 @@ const VehicleHealth = () => {
                 <div className="border-[3px] sm:border-[5px] border-ui-gray h-auto sm:h-[504px] w-full overflow-hidden relative">
                   <LazyImage src={imgS3B5} alt="Digital inspection in progress" className="w-full h-auto sm:h-full sm:object-cover" />
                   <div className="absolute bottom-3 sm:bottom-[12px] left-1/2 transform -translate-x-1/2 bg-white border-2 border-ui-gray px-3 py-3 max-w-[260px] sm:w-[358px]">
-                    <p className="font-['Comic_Sans_MS'] font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.07px' }}>
+                    <p className="font-comic font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.07px' }}>
                       DIGITAL INSPECTION IN PROGRESS.
                     </p>
                   </div>
@@ -1670,7 +1671,7 @@ const VehicleHealth = () => {
                   <div className="border-[3px] sm:border-[5px] border-ui-gray h-auto sm:h-[484px] w-full sm:w-[275px] overflow-hidden relative">
                     <LazyImage src={imgS3B6} alt="Instant submission" className="w-full h-auto sm:h-full sm:object-cover" />
                     <div className="absolute bottom-3 left-1/2 sm:left-[29px] transform -translate-x-1/2 sm:translate-x-0 bg-white border-2 border-ui-gray px-3 py-3 max-w-[260px] sm:w-[217px]">
-                      <p className="font-['Comic_Sans_MS'] font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.07px' }}>
+                      <p className="font-comic font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.07px' }}>
                         INSTANT SUBMISSION - NO PAPER, NO DELAYS.
                       </p>
                     </div>
@@ -1693,7 +1694,7 @@ const VehicleHealth = () => {
                   <div className="border-[3px] sm:border-[5px] border-ui-gray h-auto sm:h-[366px] w-full sm:w-[372px] overflow-hidden relative">
                     <LazyImage src={imgS4B3} alt="Manager monitoring dashboard" className="w-full h-auto sm:h-full sm:object-cover" />
                     <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 bg-white border-2 border-ui-gray px-3 py-3 w-[90%] sm:w-[335px]">
-                      <p className="font-['Comic_Sans_MS'] font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.07px' }}>
+                      <p className="font-comic font-bold text-xs sm:text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.07px' }}>
                         MACAO VIEWS THEM IN HIS DASHBOARD
                       </p>
                     </div>
@@ -1703,10 +1704,10 @@ const VehicleHealth = () => {
 
               {/* Scene 3: Gray spotted a repetition */}
               <div className="flex flex-col gap-1 mt-3">
-                <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                   Scene 3
                 </p>
-                <p className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <p className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   Gray spotted a repetition of a repair task, he instantly reached out to Macao, decreasing trouble shooting time by 90%.
                 </p>
               </div>
@@ -1753,7 +1754,7 @@ const VehicleHealth = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col gap-11 w-full"
             >
-              <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+              <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                 Considering the Devices the Technician and the Manger persona will be using
               </h2>
 
@@ -1764,7 +1765,7 @@ const VehicleHealth = () => {
                     <LazyImage src={imgDeviceDesktop} alt="Desktop PC" className="w-full h-full object-contain" />
                   </div>
                   <div className="flex-1 flex flex-col gap-2">
-                    <p className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
+                    <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                       Desktop / PC
                     </p>
                     <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
@@ -1781,7 +1782,7 @@ const VehicleHealth = () => {
                     </div>
                   </div>
                   <div className="flex-1 flex flex-col gap-2">
-                    <p className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
+                    <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                       Tablet
                     </p>
                     <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
@@ -1798,7 +1799,7 @@ const VehicleHealth = () => {
                     </div>
                   </div>
                   <div className="flex-1 flex flex-col gap-2">
-                    <p className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
+                    <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                       Mobile
                     </p>
                     <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
@@ -1818,7 +1819,7 @@ const VehicleHealth = () => {
             >
               {/* After NUX 2.0 Badge */}
               <div className="bg-[#FAFFD8] border border-ui-gray rounded-full px-6 py-2 inline-flex items-center justify-center w-fit">
-                <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   After NUX 2.0
                 </p>
               </div>
@@ -1839,13 +1840,13 @@ const VehicleHealth = () => {
                 </div>
 
                 {/* Numbered Title */}
-                <ol className="list-decimal pl-12 font-['Space_Mono'] font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <ol className="list-decimal pl-12 font-space font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   <li>Assigning Technician to a PMI row.</li>
                 </ol>
 
                 {/* Flow Details */}
                 <div className="flex flex-col gap-2">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
                   <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1872,7 +1873,7 @@ const VehicleHealth = () => {
                     </video>
                   </div>
                 </div>
-                <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#90A2C3]" style={{ letterSpacing: '-1%' }}>
+                <p className="font-space font-bold text-lg leading-[1.36em] text-[#90A2C3]" style={{ letterSpacing: '-1%' }}>
                   Desktop View
                 </p>
               </div>
@@ -1897,7 +1898,7 @@ const VehicleHealth = () => {
                       </video>
                     </div>
                   </div>
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#90A2C3]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-[#90A2C3]" style={{ letterSpacing: '-1%' }}>
                     Tablet Responsive
                   </p>
                 </div>
@@ -1920,7 +1921,7 @@ const VehicleHealth = () => {
                       </video>
                     </div>
                   </div>
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#90A2C3]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-[#90A2C3]" style={{ letterSpacing: '-1%' }}>
                     Mobile Responsive
                   </p>
                 </div>
@@ -1950,13 +1951,13 @@ const VehicleHealth = () => {
                 </div>
 
                 {/* Numbered Title */}
-                <ol className="list-decimal pl-12 font-['Space_Mono'] font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={2}>
+                <ol className="list-decimal pl-12 font-space font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={2}>
                   <li>Assigning Technician from Dashboard and Removing</li>
                 </ol>
 
                 {/* Flow Details */}
                 <div className="flex flex-col gap-2">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
                   <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -1994,7 +1995,7 @@ const VehicleHealth = () => {
               {/* Before NUX 2.0 Badge */}
               <div className="flex flex-col gap-[10px] w-full">
                 <div className="bg-[#FAFFD8] border border-ui-gray rounded-full px-6 py-2 inline-flex items-center justify-center w-fit">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                     Before NUX 2.0
                   </p>
                 </div>
@@ -2016,13 +2017,13 @@ const VehicleHealth = () => {
                 </div>
 
                 {/* Numbered Title */}
-                <ol className="list-decimal pl-12 font-['Space_Mono'] font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={3}>
+                <ol className="list-decimal pl-12 font-space font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={3}>
                   <li>Technician Inspecting and marking the Defects.</li>
                 </ol>
 
                 {/* Flow Details */}
                 <div className="flex flex-col gap-2">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
                   <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -2075,13 +2076,13 @@ const VehicleHealth = () => {
                 </div>
 
                 {/* Numbered Title */}
-                <ol className="list-decimal pl-12 font-['Space_Mono'] font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={4}>
+                <ol className="list-decimal pl-12 font-space font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={4}>
                   <li>Inspection Completed in the Desktop Dashboard by manager when in need.</li>
                 </ol>
 
                 {/* Flow Details */}
                 <div className="flex flex-col gap-2">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
                   <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -2132,13 +2133,13 @@ const VehicleHealth = () => {
                 </div>
 
                 {/* Title without numbering */}
-                <p className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+                <p className="font-space font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                   5. Approving the Inspection
                 </p>
 
                 {/* Flow Details */}
                 <div className="flex flex-col gap-2">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
                   <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -2189,13 +2190,13 @@ const VehicleHealth = () => {
                 </div>
 
                 {/* Numbered Title */}
-                <ol className="list-decimal pl-12 font-['Space_Mono'] font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={6}>
+                <ol className="list-decimal pl-12 font-space font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={6}>
                   <li>Scheduling Maintenance</li>
                 </ol>
 
                 {/* Flow Details */}
                 <div className="flex flex-col gap-2 py-6">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
                   <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -2233,13 +2234,13 @@ const VehicleHealth = () => {
                 </div>
 
                 {/* Numbered Title */}
-                <ol className="list-decimal pl-12 font-['Space_Mono'] font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={7}>
+                <ol className="list-decimal pl-12 font-space font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }} start={7}>
                   <li>Defect Status Updates</li>
                 </ol>
 
                 {/* Flow Details */}
                 <div className="flex flex-col gap-2 py-6">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
                   <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
@@ -2266,7 +2267,7 @@ const VehicleHealth = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col gap-3 h-[213px] items-start justify-center px-6 py-6 w-full"
             >
-              <div className="font-['Space_Mono'] font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
+              <div className="font-space font-bold text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                 <p className="mb-0">...</p>
                 <p className="mb-0">&nbsp;</p>
                 <p className="mb-0">10+ more flows and use cases</p>

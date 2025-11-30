@@ -46,7 +46,7 @@ const TeluguStreaming = () => {
               className="flex flex-col gap-12 sm:gap-16 w-full items-center"
             >
               {/* Title */}
-              <h1 className="font-['Roboto_Slab'] text-2xl sm:text-5xl leading-normal text-black text-center w-full" style={{ letterSpacing: '-1.2px' }}>
+              <h1 className="font-roboto text-2xl sm:text-5xl leading-normal text-black text-center w-full" style={{ letterSpacing: '-1.2px' }}>
                 Designing seamless subscription flows and multilingual experiences for India's leading Telugu streaming platform
               </h1>
 
@@ -77,31 +77,31 @@ const TeluguStreaming = () => {
                   <div className="absolute bottom-0 left-0 right-0 bg-[#FFECD3] py-1 overflow-hidden">
                     <div className="flex gap-3 items-center whitespace-nowrap animate-marquee">
                       {/* First set */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
                       {/* Duplicate set for seamless loop */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
                     </div>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ const TeluguStreaming = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col gap-6 sm:gap-6 w-full"
             >
-              <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+              <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                 Style Guide
               </h2>
               <BlurImage
@@ -134,7 +134,7 @@ const TeluguStreaming = () => {
             >
               {/* Header */}
               <div className="flex flex-col gap-3 sm:gap-3 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                <h2 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Subscription Plan Selection
                 </h2>
                 <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -166,7 +166,7 @@ const TeluguStreaming = () => {
             >
               {/* Header */}
               <div className="flex flex-col gap-3 sm:gap-3 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                <h2 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Mobile Responsive subscription workflow
                 </h2>
                 <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -198,7 +198,7 @@ const TeluguStreaming = () => {
             >
               {/* Header */}
               <div className="flex flex-col gap-6 sm:gap-6 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                <h2 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Language Preference Setup
                 </h2>
                 <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -243,7 +243,7 @@ const TeluguStreaming = () => {
                 alt="Lock icon"
                 className="w-[28px] h-[22px] sm:w-[48px] sm:h-[48px] shrink-0"
               />
-              <p className="font-['Roboto_Slab'] font-medium text-xs sm:text-2xl text-white shrink-0" style={{ letterSpacing: '-0.24px' }}>
+              <p className="font-roboto font-medium text-xs sm:text-2xl text-white shrink-0" style={{ letterSpacing: '-0.24px' }}>
                 NDA agreement
               </p>
             </div>

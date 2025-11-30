@@ -67,7 +67,7 @@ const ProjectLink = ({ title, description, image, gradient, link, index }) => {
       <div className="flex flex-col justify-between flex-1 gap-4">
         {/* Title and Description */}
         <div className="flex flex-col gap-3">
-          <h3 className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-light" style={{ letterSpacing: '-0.18px' }}>
+          <h3 className="font-space font-bold text-lg leading-[1.36em] text-light" style={{ letterSpacing: '-0.18px' }}>
             {title}
           </h3>
           <p className="font-trispace text-base leading-[1.34em] text-text-secondary" style={{ letterSpacing: '-0.32px' }}>
@@ -80,7 +80,7 @@ const ProjectLink = ({ title, description, image, gradient, link, index }) => {
           <span className="font-trispace text-base leading-[1.34em]" style={{ letterSpacing: '-0.32px' }}>
             Visit
           </span>
-          <span className="font-['Inter'] font-medium text-base leading-[1.21em]" style={{ letterSpacing: '-0.8px' }}>
+          <span className="font-inter font-medium text-base leading-[1.21em]" style={{ letterSpacing: '-0.8px' }}>
             →
           </span>
         </div>

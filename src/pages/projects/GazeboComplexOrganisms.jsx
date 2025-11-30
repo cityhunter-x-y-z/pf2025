@@ -51,10 +51,11 @@ import imgBulkActionFlow from '../../assets/images/projects/gazebo-complex-organ
 import imgBulkCompose from '../../assets/images/projects/gazebo-complex-organisms/bulk-compose.webp';
 
 // Other Pages images
-const imgContentBg = "https://www.figma.com/api/mcp/asset/dc2351ae-4952-4db6-b482-89eb80da2dfb";
-const imgHeaderBg1 = "https://www.figma.com/api/mcp/asset/271f0029-5e32-4205-a0d9-959dd804d200";
-const imgHeaderBg2 = "https://www.figma.com/api/mcp/asset/e215fc81-2aa7-42e4-b610-5d7acf77e8d4";
-const imgGazeboThumbnail = "https://www.figma.com/api/mcp/asset/af57705a-5b5c-47d0-aa2e-3a4f3a62f40c";
+// Images - Backgrounds (using colors instead)
+// const imgContentBg = "https://www.figma.com/api/mcp/asset/dc2351ae-4952-4db6-b482-89eb80da2dfb";
+// const imgHeaderBg1 = "https://www.figma.com/api/mcp/asset/271f0029-5e32-4205-a0d9-959dd804d200";
+// const imgHeaderBg2 = "https://www.figma.com/api/mcp/asset/e215fc81-2aa7-42e4-b610-5d7acf77e8d4";
+// const imgGazeboThumbnail = "https://www.figma.com/api/mcp/asset/af57705a-5b5c-47d0-aa2e-3a4f3a62f40c";
 
 const GazeboComplexOrganisms = () => {
   // Track analytics for this project
@@ -81,7 +82,7 @@ const GazeboComplexOrganisms = () => {
               className="flex flex-col items-center gap-8 sm:gap-16 w-full"
             >
               {/* Title */}
-              <h1 className="font-['Roboto_Slab'] text-2xl sm:text-5xl leading-normal sm:leading-[1.32em] text-ui-gray text-center w-full" style={{ letterSpacing: '-1.2px' }}>
+              <h1 className="font-roboto text-2xl sm:text-5xl leading-normal sm:leading-[1.32em] text-ui-gray text-center w-full" style={{ letterSpacing: '-1.2px' }}>
                 Gazebo Complex Organisms Component Structures
               </h1>
 
@@ -91,38 +92,45 @@ const GazeboComplexOrganisms = () => {
                 <div className="relative border-4 sm:border-8 border-[rgba(0,0,0,0.04)] rounded-lg sm:rounded-[12px] h-[160px] sm:h-[447px] w-full overflow-hidden" style={{ background: 'linear-gradient(90deg, rgba(128, 161, 127, 0.25) 0%, rgba(128, 161, 127, 0.25) 100%), linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%)' }}>
                   {/* Cover image positioned right-aligned */}
                   <div className="absolute top-2 sm:top-6 right-0 bottom-6 sm:bottom-8 left-auto w-[90%] sm:w-[92%]">
-                    <img src={coverPhoto} alt="Gazebo Complex Organisms Cover" className="w-full h-full object-cover object-right-top rounded-md sm:rounded-lg shadow-lg" />
+                    <BlurImage 
+                      src={coverPhoto} 
+                      alt="Gazebo Complex Organisms Cover" 
+                      className="w-full h-full rounded-md sm:rounded-lg shadow-lg"
+                      objectFit="cover"
+                      style={{ objectPosition: 'right top' }}
+                      priority 
+                    />
                   </div>
 
                   {/* Bottom Footer - Reading Time Carousel */}
                   <div className="absolute bottom-0 left-0 right-0 bg-[#BDEBD7] py-1 overflow-hidden">
                     <div className="flex gap-3 items-center whitespace-nowrap animate-marquee">
                       {/* First set */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
                       {/* Duplicate set for seamless loop */}
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">4 mins read</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
-                      <span className="font-['Roboto_Mono'] text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
-                      <span className="font-['Roboto_Slab'] text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">4 mins read</span>
+                      <span className="font-roboto text-sm text-black">•</span>
+                      <span className="font-roboto-mono text-sm text-black tracking-[-0.7px]">1 min Skimming</span>
+                      <span className="font-roboto text-sm text-black">•</span>
                     </div>
                   </div>
                 </div>
@@ -136,7 +144,7 @@ const GazeboComplexOrganisms = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col gap-4 w-full"
             >
-              <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+              <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                 Scalable Design System Approach
               </h2>
               <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -153,7 +161,7 @@ const GazeboComplexOrganisms = () => {
             >
               {/* Header */}
               <div className="flex flex-col gap-4 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Top Navigation Bar
                 </h2>
                 <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -165,7 +173,7 @@ const GazeboComplexOrganisms = () => {
               <div className="flex flex-col gap-8 sm:gap-16 w-full">
                 {/* States Label */}
                 <div className="flex gap-3 items-center">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     States
                   </p>
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
@@ -208,7 +216,7 @@ const GazeboComplexOrganisms = () => {
               <div className="flex flex-col gap-8 sm:gap-16 w-full">
                 {/* User Need */}
                 <div className="flex flex-col gap-4 w-full">
-                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h3 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     User Need
                   </h3>
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -218,7 +226,7 @@ const GazeboComplexOrganisms = () => {
 
                 {/* Parent Components */}
                 <div className="flex flex-col gap-4 w-full">
-                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h3 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Parent Components
                   </h3>
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -229,7 +237,7 @@ const GazeboComplexOrganisms = () => {
                 {/* Brand Logo */}
                 <div className="flex flex-col gap-4 sm:gap-6 w-full">
                   <div className="flex flex-col gap-4">
-                    <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    <h3 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                       Brand Logo
                     </h3>
                     <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -239,11 +247,11 @@ const GazeboComplexOrganisms = () => {
 
                   {/* Gazebo Logo */}
                   <div className="flex gap-1 items-start">
-                    <p className="font-['Outfit'] font-medium text-[16.8px] leading-6 text-[#FCBF49] tracking-[0.16px]">
+                    <p className="font-outfit font-medium text-[16.8px] leading-6 text-[#FCBF49] tracking-[0.16px]">
                       Gazebo
                     </p>
                     <div className="bg-[#4280FF] rounded-sm px-0.5 py-0.5 flex items-center justify-center">
-                      <p className="font-['Red_Hat_Display'] font-medium text-[6px] leading-[7.5px] text-white">
+                      <p className="font-redhat font-medium text-[6px] leading-[7.5px] text-white">
                         Beta
                       </p>
                     </div>
@@ -261,7 +269,7 @@ const GazeboComplexOrganisms = () => {
             >
               {/* Header */}
               <div className="flex flex-col gap-4 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Search Box
                 </h2>
                 <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -312,7 +320,7 @@ const GazeboComplexOrganisms = () => {
             >
               {/* Header */}
               <div className="flex flex-col gap-4 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Notification Bell
                 </h2>
                 <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -324,7 +332,7 @@ const GazeboComplexOrganisms = () => {
               <div className="flex flex-col gap-8 w-full">
                 {/* States Label */}
                 <div className="flex gap-3 items-center">
-                  <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     States
                   </p>
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
@@ -389,7 +397,7 @@ const GazeboComplexOrganisms = () => {
             >
               {/* Header */}
               <div className="flex flex-col gap-4 w-full">
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   9 Dot Mega Menu
                 </h2>
                 <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -399,7 +407,7 @@ const GazeboComplexOrganisms = () => {
 
               {/* States Label */}
               <div className="flex gap-3 items-center">
-                <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   States
                 </p>
                 <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
@@ -440,7 +448,7 @@ const GazeboComplexOrganisms = () => {
               >
                 {/* Header */}
                 <div className="flex flex-col gap-4 w-full">
-                  <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Job Application Dashboard for Candidate
                   </h2>
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -449,7 +457,7 @@ const GazeboComplexOrganisms = () => {
 
                   {/* Types Label */}
                   <div className="flex gap-3 items-center py-3">
-                    <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                    <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                       Types
                     </p>
                     <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
@@ -462,7 +470,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex flex-col gap-8 sm:gap-16 w-full">
                   {/* Dashboard for Job Openings */}
                   <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                    <h3 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
                       Dashboard for Job Openings
                     </h3>
                     <div className="w-full aspect-[2868/1564]">
@@ -472,7 +480,7 @@ const GazeboComplexOrganisms = () => {
 
                   {/* Dashboard Ongoing Application */}
                   <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                    <h3 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
                       Dashboard Ongoing Application
                     </h3>
                     <div className="w-full aspect-[2868/2030]">
@@ -491,7 +499,7 @@ const GazeboComplexOrganisms = () => {
               >
                 {/* Header */}
                 <div className="flex flex-col gap-4 w-full">
-                  <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Application Progress Status
                   </h2>
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -521,7 +529,7 @@ const GazeboComplexOrganisms = () => {
 
                 {/* Conversion Probability Explanation */}
                 <div className="flex flex-col gap-2 w-full">
-                  <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
+                  <h3 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                     The 44% conversion probability value is typically calculated using a combination of data-driven factors and predictive algorithms. Example Calculation of Scoring -
                   </h3>
                   <div className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -560,7 +568,7 @@ const GazeboComplexOrganisms = () => {
                 className="flex flex-col gap-4 sm:gap-6 w-full"
               >
                 {/* Title */}
-                <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Application Status Tags
                 </h2>
 
@@ -568,7 +576,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex gap-2 items-start w-full">
                   <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
                     <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#FFEAD5] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#EC4A0A]">
+                      <p className="font-redhat font-semibold text-[13.5px] leading-[1.6] text-[#EC4A0A]">
                         Applied
                       </p>
                     </div>
@@ -582,7 +590,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex gap-2 items-start w-full">
                   <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
                     <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#EBE9FE] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#6938EF]">
+                      <p className="font-redhat font-semibold text-[13.5px] leading-[1.6] text-[#6938EF]">
                         Viewed
                       </p>
                     </div>
@@ -596,7 +604,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex gap-2 items-start w-full">
                   <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
                     <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#F0FDE2] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#3B7C0F]">
+                      <p className="font-redhat font-semibold text-[13.5px] leading-[1.6] text-[#3B7C0F]">
                         Shortlisted
                       </p>
                     </div>
@@ -610,7 +618,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex gap-2 items-start w-full">
                   <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
                     <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#E3FFF8] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#107569]">
+                      <p className="font-redhat font-semibold text-[13.5px] leading-[1.6] text-[#107569]">
                         Processing
                       </p>
                     </div>
@@ -624,7 +632,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex gap-2 items-start w-full">
                   <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
                     <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#0BA5EC] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#F5F5F5]">
+                      <p className="font-redhat font-semibold text-[13.5px] leading-[1.6] text-[#F5F5F5]">
                         Selected
                       </p>
                     </div>
@@ -638,7 +646,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex gap-2 items-start w-full">
                   <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
                     <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#667085] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#F5F5F5]">
+                      <p className="font-redhat font-semibold text-[13.5px] leading-[1.6] text-[#F5F5F5]">
                         Filled
                       </p>
                     </div>
@@ -652,7 +660,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex gap-2 items-start w-full">
                   <div className="flex flex-col gap-2.5 items-start w-[80px] sm:w-[100px]">
                     <div className="flex items-center justify-center px-[9px] py-[4.5px] bg-[#FEE4E2] rounded-[1123.875px] h-[27px] min-w-[45px]">
-                      <p className="font-['Red_Hat_Display'] font-semibold text-[13.5px] leading-[1.6] text-[#B42318]">
+                      <p className="font-redhat font-semibold text-[13.5px] leading-[1.6] text-[#B42318]">
                         Pending
                       </p>
                     </div>
@@ -672,7 +680,7 @@ const GazeboComplexOrganisms = () => {
               >
                 {/* Header */}
                 <div className="flex flex-col gap-4 w-full">
-                  <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Candidate Application manager Recruiter Dashboard
                   </h2>
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -684,7 +692,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex flex-col gap-8 sm:gap-16 w-full">
                   {/* Job Listings by the Recruiter */}
                   <div className="flex flex-col gap-3 w-full">
-                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                    <h3 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
                       Job Listings by the Recruiter
                     </h3>
                     <div className="w-full aspect-[2838/831]">
@@ -696,7 +704,7 @@ const GazeboComplexOrganisms = () => {
                   <div className="flex flex-col gap-4 sm:gap-8 w-full">
                     {/* Breakdown Title and Image */}
                     <div className="flex flex-col gap-4 sm:gap-8 w-full">
-                      <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                      <h3 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
                         Job List Item Break dowm
                       </h3>
                       <div className="w-full sm:w-[590px] h-[44px] sm:h-[65.318px]">
@@ -711,7 +719,7 @@ const GazeboComplexOrganisms = () => {
                           <BlurImage src={imgApplicationBadge} alt="Application count badge showing 99+" className="w-full h-full object-cover" />
                         </div>
                       </div>
-                      <div className="font-['Roboto'] text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+                      <div className="font-roboto-sans text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
                         <p className="mb-0">Tentative number of application received,</p>
                         <p className="mb-0">99 is the visual limit, further details  needs to be viewed on clicking the details.</p>
                       </div>
@@ -723,7 +731,7 @@ const GazeboComplexOrganisms = () => {
                         <BlurImage src={imgJobTexts} alt="Job role and location text fields" className="w-full h-full object-cover" />
                       </div>
                       <div className="flex gap-3 items-center">
-                        <p className="font-['Roboto'] text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+                        <p className="font-roboto-sans text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
                           Job Role, Vacancy in respective Team, Location
                         </p>
                       </div>
@@ -734,7 +742,7 @@ const GazeboComplexOrganisms = () => {
                       <div className="w-[100px] sm:w-[150px] h-4 sm:h-6">
                         <BlurImage src={imgEnvelopeIcon} alt="Envelope icon with notification badge" className="w-full h-full object-cover" />
                       </div>
-                      <p className="font-['Roboto'] text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+                      <p className="font-roboto-sans text-sm sm:text-base text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
                         When Candidates will send response the envelope will display a badge.
                       </p>
                     </div>
@@ -750,7 +758,7 @@ const GazeboComplexOrganisms = () => {
                 className="flex flex-col gap-4 sm:gap-8 w-full"
               >
                 {/* Title */}
-                <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
+                <h3 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.08px' }}>
                   On Click Job Card Details
                 </h3>
 
@@ -767,7 +775,7 @@ const GazeboComplexOrganisms = () => {
                 {/* Reset Note */}
                 <div className="flex flex-col gap-4 sm:gap-8 h-auto sm:h-10 items-start w-full">
                   <div className="flex flex-1 flex-col justify-center items-center w-full">
-                    <p className="font-['Space_Mono'] font-bold text-sm sm:text-lg leading-[1.36em] text-text-quaternary text-center" style={{ letterSpacing: '-0.08px' }}>
+                    <p className="font-space font-bold text-sm sm:text-lg leading-[1.36em] text-text-quaternary text-center" style={{ letterSpacing: '-0.08px' }}>
                       "Reset" will change the state of the Button to "Mark as"
                     </p>
                   </div>
@@ -783,7 +791,7 @@ const GazeboComplexOrganisms = () => {
               >
                 {/* Header */}
                 <div className="flex flex-col gap-4 w-full">
-                  <h2 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Management of Candidate in Bulk
                   </h2>
                   <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -821,21 +829,21 @@ const GazeboComplexOrganisms = () => {
               >
                 {/* Job Application Dashboard for Candidate */}
                 <div className="flex flex-col py-4 sm:py-6 w-full border-t border-ui-gray">
-                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h3 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Job Application Dashboard for Candidate
                   </h3>
                 </div>
 
                 {/* Configuration Page */}
                 <div className="flex flex-col py-4 sm:py-6 w-full border-t border-ui-gray">
-                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h3 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Configuration Page
                   </h3>
                 </div>
 
                 {/* Recruiter Dashboard */}
                 <div className="flex flex-col gap-2 sm:gap-3 py-4 sm:py-6 w-full border-t border-ui-gray">
-                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h3 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Recruiter Dashboard
                   </h3>
                   <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -845,7 +853,7 @@ const GazeboComplexOrganisms = () => {
 
                 {/* Organization Profile Page */}
                 <div className="flex flex-col gap-2 sm:gap-3 py-4 sm:py-6 w-full border-t border-ui-gray">
-                  <h3 className="font-['Space_Mono'] font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
+                  <h3 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Organization Profile Page
                   </h3>
                   <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -855,7 +863,7 @@ const GazeboComplexOrganisms = () => {
 
                 {/* Ellipsis Section */}
                 <div className="flex flex-col gap-2 sm:gap-3 py-4 sm:py-6 w-full border-t border-ui-gray">
-                  <p className="font-['Roboto_Slab'] font-medium text-lg sm:text-[24px] leading-normal text-ui-gray" style={{ letterSpacing: '-0.48px' }}>
+                  <p className="font-roboto font-medium text-lg sm:text-[24px] leading-normal text-ui-gray" style={{ letterSpacing: '-0.48px' }}>
                     •••
                   </p>
                   <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
@@ -866,11 +874,11 @@ const GazeboComplexOrganisms = () => {
                 {/* All Components DS Card */}
                 <div className="bg-[#FFF8E6] flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 rounded-[16px] sm:rounded-[24px] w-full mt-4 sm:mt-6 items-center sm:items-center overflow-visible">
                   <div className="bg-[#FEE4E2] rounded-2xl px-8 py-6 sm:px-6 sm:py-4 shrink-0">
-                    <p className="font-['Roboto_Slab'] font-medium text-2xl sm:text-xl text-[#F04438]">Gazebo</p>
-                    <p className="font-['Roboto'] text-sm text-[#F04438]">Design System</p>
+                    <p className="font-roboto font-medium text-2xl sm:text-xl text-[#F04438]">Gazebo</p>
+                    <p className="font-roboto-sans text-sm text-[#F04438]">Design System</p>
                   </div>
                   <div className="flex flex-col gap-2 flex-1 min-w-0">
-                    <h3 className="font-['Space_Mono'] font-bold text-base sm:text-lg leading-[1.36em] text-[#111111]" style={{ letterSpacing: '-0.08px' }}>
+                    <h3 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-[#111111]" style={{ letterSpacing: '-0.08px' }}>
                       All Components DS
                     </h3>
                     <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-[#565C6F] break-words" style={{ letterSpacing: '-0.28px' }}>
@@ -881,12 +889,12 @@ const GazeboComplexOrganisms = () => {
                         href="https://www.figma.com/design/7WfEeCID05qU0gdKCtJHHY/Gazebo-Design-System?node-id=10338-7383&t=SxTZJtDpaC5NWzcS-1"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-['Roboto'] font-medium text-sm sm:text-base leading-normal text-[#4A4AFC] underline cursor-pointer"
+                        className="font-roboto-sans font-medium text-sm sm:text-base leading-normal text-[#4A4AFC] underline cursor-pointer"
                         style={{ letterSpacing: '-0.32px', textUnderlinePosition: 'from-font' }}
                       >
                         Visit the File
                       </a>
-                      <span className="font-['Inter'] font-medium text-sm sm:text-base leading-normal text-[#4A4AFC]" style={{ letterSpacing: '-0.8px' }}>
+                      <span className="font-inter font-medium text-sm sm:text-base leading-normal text-[#4A4AFC]" style={{ letterSpacing: '-0.8px' }}>
                         →
                       </span>
                     </div>

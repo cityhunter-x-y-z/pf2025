@@ -422,11 +422,11 @@ const About = () => {
 
             {/* Header Text */}
             <div className="flex flex-col gap-[8px] flex-1">
-              <p className="font-['Space_Mono'] font-bold text-[24px] leading-[1.36] text-light" style={{ letterSpacing: '-0.24px' }}>
+              <p className="font-space font-bold text-[24px] leading-[1.36] text-light" style={{ letterSpacing: '-0.24px' }}>
                 Hi, I am
               </p>
               <h1
-                className="font-['Space_Mono'] font-bold text-[32px] leading-[1.36] bg-clip-text bg-gradient-to-r from-[#b1292c] to-[#cd6115]"
+                className="font-space font-bold text-[32px] leading-[1.36] bg-clip-text bg-gradient-to-r from-[#b1292c] to-[#cd6115]"
                 style={{
                   letterSpacing: '-0.32px',
                   WebkitTextFillColor: 'transparent'
@@ -434,7 +434,7 @@ const About = () => {
               >
                 Amitesh Debnath,
               </h1>
-              <p className="font-['Space_Mono'] font-bold text-[24px] leading-[1.36] text-light" style={{ letterSpacing: '-0.24px' }}>
+              <p className="font-space font-bold text-[24px] leading-[1.36] text-light" style={{ letterSpacing: '-0.24px' }}>
                 An Architect by Qualification, Designer by Disposition, focused on crafting experiences for the new internet users.
               </p>
             </div>
@@ -448,7 +448,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex flex-col gap-8 overflow-x-hidden"
           >
-            <h2 className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-text-secondary" style={{ letterSpacing: '-0.24px' }}>
+            <h2 className="font-space font-bold text-2xl leading-[1.36em] text-text-secondary" style={{ letterSpacing: '-0.24px' }}>
               Interests
             </h2>
 
@@ -630,7 +630,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col gap-8"
           >
-            <h2 className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-text-secondary" style={{ letterSpacing: '-0.24px' }}>
+            <h2 className="font-space font-bold text-2xl leading-[1.36em] text-text-secondary" style={{ letterSpacing: '-0.24px' }}>
               Flexing
             </h2>
 
@@ -668,7 +668,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col gap-8"
           >
-            <h2 className="font-['Space_Mono'] font-bold text-2xl leading-[1.36em] text-text-secondary" style={{ letterSpacing: '-0.24px' }}>
+            <h2 className="font-space font-bold text-2xl leading-[1.36em] text-text-secondary" style={{ letterSpacing: '-0.24px' }}>
               My Book Shelf
             </h2>
 
@@ -707,14 +707,14 @@ const About = () => {
           >
             {/* Row 1 */}
             <div className="flex items-center gap-3">
-              <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-light" style={{ letterSpacing: '-0.18px' }}>
+              <p className="font-space font-bold text-lg leading-[1.36em] text-light" style={{ letterSpacing: '-0.18px' }}>
                 Hope you found my place interesting.
               </p>
               <a
                 href="https://www.yourworldoftext.com/archisapien"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-['Roboto'] text-base leading-[1.17em] text-light underline hover:text-text-secondary transition-colors"
+                className="font-roboto-sans text-base leading-[1.17em] text-light underline hover:text-text-secondary transition-colors"
                 style={{ letterSpacing: '-0.32px' }}
                 onClick={() => trackExternalLink('Your World of Text')}
               >
@@ -724,11 +724,11 @@ const About = () => {
 
             {/* Row 2 */}
             <div className="flex items-center gap-3">
-              <p className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-light" style={{ letterSpacing: '-0.18px' }}>
+              <p className="font-space font-bold text-lg leading-[1.36em] text-light" style={{ letterSpacing: '-0.18px' }}>
                 Want to Connect
               </p>
               <button
-                className="font-['Roboto'] text-base leading-[1.17em] text-light underline hover:text-text-secondary transition-colors"
+                className="font-roboto-sans text-base leading-[1.17em] text-light underline hover:text-text-secondary transition-colors"
                 style={{ letterSpacing: '-0.32px' }}
                 onClick={handleCopyEmail}
               >
@@ -742,7 +742,7 @@ const About = () => {
                 href="https://www.linkedin.com/in/amiteshdebnath"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-['Space_Mono'] font-bold text-lg leading-[1.36em] text-text-secondary hover:text-light transition-colors"
+                className="font-space font-bold text-lg leading-[1.36em] text-text-secondary hover:text-light transition-colors"
                 style={{ letterSpacing: '-0.18px' }}
                 onClick={() => trackExternalLink('LinkedIn')}
               >
@@ -768,7 +768,7 @@ const About = () => {
           exit={{ opacity: 0, y: 50 }}
           className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-light text-dark px-6 py-3 rounded-lg shadow-lg z-50"
         >
-          <p className="font-['Space_Mono'] font-bold text-base">Email copied!</p>
+          <p className="font-space font-bold text-base">Email copied!</p>
         </motion.div>
       )}
     </motion.main>

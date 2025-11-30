@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rancho&family=Roboto:wght@400&family=Roboto+Slab:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Trispace:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&family=Rancho&family=Red+Hat+Display:wght@400;500;600&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400;500&family=Roboto+Slab:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Trispace:wght@300;400;500;600&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -19,6 +19,13 @@
   --font-rancho: 'Rancho', cursive;
   --font-roboto: 'Roboto Slab', serif;
   --font-trispace: 'Trispace', monospace;
+  --font-space: 'Space Mono', monospace;
+  --font-comic: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-redhat: 'Red Hat Display', sans-serif;
+  --font-roboto-mono: 'Roboto Mono', monospace;
+  --font-roboto-sans: 'Roboto', sans-serif;
 
   /* Font Sizes */
   --font-size-heading-desktop: 64px;
