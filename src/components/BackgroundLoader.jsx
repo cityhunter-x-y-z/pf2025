@@ -35,9 +35,26 @@ const BackgroundLoader = () => {
     // Convert to array of URLs
     const allImages = Object.values(modules);
 
-    // Simple prioritization (Heroes first roughly based on naming conventions if needed, 
-    // but sequential is already a big win. We can refine if needed.)
-    // For now, we just load them all in the order file system returns them.
+    // PRIORITIZATION LOGIC:
+    // We sort the images so that "heavy" story assets (Arcs/Scenes) and
+    // priority projects (Hours of Service, Vehicle Health) load FIRST.
+    allImages.sort((a, b) => {
+      const getScore = (url) => {
+        let score = 0;
+        const lowerUrl = url.toLowerCase();
+        
+        // Critical Story Assets (Arcs/Scenes) - Highest Priority
+        if (lowerUrl.includes('arc') || lowerUrl.includes('scene')) score += 20;
+        
+        // Priority Projects
+        if (lowerUrl.includes('hours-of-service')) score += 10;
+        if (lowerUrl.includes('vehicle-health')) score += 10;
+        
+        return score;
+      };
+
+      return getScore(b) - getScore(a); // Descending order (higher score first)
+    });
 
     // 3. Queue Processor
     const loadQueue = async () => {
@@ -59,7 +76,7 @@ const BackgroundLoader = () => {
         }
         
         // Tiny breathing room between requests to keep UI responsive
-        await new Promise(r => setTimeout(r, 50));
+        await new Promise(r => setTimeout(r, 10));
       }
       // console.log('BackgroundLoader: Queue complete');
     };
