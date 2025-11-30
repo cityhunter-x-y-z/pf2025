@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ReactGA from 'react-ga4';
+import { useState } from 'react';
 
 const ProjectLink = ({ title, description, image, gradient, link, index }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   // Track project click
   const handleClick = () => {
     ReactGA.event({
@@ -11,6 +14,7 @@ const ProjectLink = ({ title, description, image, gradient, link, index }) => {
       label: title
     });
   };
+
   const gradientClasses = {
     pink: 'gradient-pink',
     gray: 'gradient-gray',
@@ -41,10 +45,20 @@ const ProjectLink = ({ title, description, image, gradient, link, index }) => {
       {/* Image Card */}
       <div className={`${gradientClasses[gradient]} rounded-card w-full md:w-[140px] h-[140px] flex-shrink-0 relative overflow-hidden`}>
         <div className="absolute inset-0 flex items-center justify-center p-6">
+          {/* Loading skeleton */}
+          {!imageLoaded && (
+            <div className="absolute inset-0 bg-gray-800 animate-pulse rounded-card" />
+          )}
+          
           <img
             src={image}
             alt={title}
-            className="max-w-full max-h-full object-contain"
+            loading="lazy"
+            decoding="async"
+            onLoad={() => setImageLoaded(true)}
+            className={`max-w-full max-h-full object-contain transition-opacity duration-300 ${
+              imageLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
           />
         </div>
       </div>
