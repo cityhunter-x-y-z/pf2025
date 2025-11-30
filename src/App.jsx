@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import ReactGA from 'react-ga4';
 import Navbar from './components/Navbar';
 import BottomNav from './components/BottomNav';
+import BackgroundLoader from './components/BackgroundLoader';
 import Home from './pages/Home';
 import Works from './pages/Works';
 import About from './pages/About';
@@ -29,6 +30,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-dark text-light-DEFAULT">
+      {/* Background Image Prefetcher */}
+      <BackgroundLoader />
+
       {/* Top Navigation - Hide on project pages */}
       {!isProjectPage && <Navbar />}
 
