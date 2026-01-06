@@ -147,7 +147,7 @@ const GazeboComplexOrganisms = () => {
               <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                 Scalable Design System Approach
               </h2>
-              <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+              <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                 Repetitive elements converted as components which infact is the created by using multiple 'molecules' and 'organisms' of atomic design structure. Modular navigation components built from atomic design elements that scale across different user contexts. This navigation system adapts to authentication states while maintaining consistent functionality and visual hierarchy.
               </p>
             </motion.section>
@@ -164,7 +164,7 @@ const GazeboComplexOrganisms = () => {
                 <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Top Navigation Bar
                 </h2>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   Adaptive navigation system built from modular components that respond to user authentication and interaction states.
                 </p>
               </div>
@@ -176,14 +176,14 @@ const GazeboComplexOrganisms = () => {
                   <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     States
                   </p>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
                     Scaled - 0.75:1
                   </p>
                 </div>
 
                 {/* Pre-Authentication */}
                 <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Pre-Authentication
                   </p>
                   <div className="w-full aspect-[2820/180]">
@@ -193,7 +193,7 @@ const GazeboComplexOrganisms = () => {
 
                 {/* Post-Authentication */}
                 <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Post-Authentication
                   </p>
                   <div className="w-full aspect-[2820/180]">
@@ -203,7 +203,7 @@ const GazeboComplexOrganisms = () => {
 
                 {/* Clicked on Search */}
                 <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Clicked on Search
                   </p>
                   <div className="w-full aspect-[2820/180]">
@@ -219,7 +219,7 @@ const GazeboComplexOrganisms = () => {
                   <h3 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     User Need
                   </h3>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     To navigate across the application to access the required functions. Placed on top based on the general thumbnail and years of user training where the users generally expects it's position to be. Persistent top navigation following web conventions for reliable access to core application functions.
                   </p>
                 </div>
@@ -229,7 +229,7 @@ const GazeboComplexOrganisms = () => {
                   <h3 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Parent Components
                   </h3>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     The navigation bar serves as a container for multiple child components including search functionality, user controls, and brand elements. This modular approach enables flexible customization while maintaining structural consistency across different application states.
                   </p>
                 </div>
@@ -240,7 +240,7 @@ const GazeboComplexOrganisms = () => {
                     <h3 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                       Brand Logo
                     </h3>
-                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                       Clickable brand identifier that provides instant recognition and serves as a homepage navigation shortcut. The logo maintains consistent sizing and positioning to reinforce brand presence and provide reliable navigation behaviour.
                     </p>
                   </div>
@@ -272,7 +272,7 @@ const GazeboComplexOrganisms = () => {
                 <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Search Box
                 </h2>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   Expandable search interface that transforms from compact to focused state when activated. The search functionality provides contextual suggestions and maintains user input while preserving the overall navigation structure and accessibility.
                 </p>
               </div>
@@ -281,7 +281,7 @@ const GazeboComplexOrganisms = () => {
               <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-start w-full">
                 {/* Default State */}
                 <div className="flex flex-col gap-4">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Default
                   </p>
                   <div className="w-[120px] sm:w-[188px]">
@@ -291,7 +291,7 @@ const GazeboComplexOrganisms = () => {
 
                 {/* Focused State */}
                 <div className="flex flex-col gap-4 flex-1">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Focused
                   </p>
                   <div className="w-full sm:w-[469px]">
@@ -302,7 +302,7 @@ const GazeboComplexOrganisms = () => {
 
               {/* Interaction State */}
               <div className="flex flex-col gap-4 w-full">
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   Interaction
                 </p>
                 <div className="w-full sm:w-[505px]">
@@ -323,7 +323,7 @@ const GazeboComplexOrganisms = () => {
                 <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Notification Bell
                 </h2>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   Alert indicator that communicates the presence of new notifications or messages. The bell icon provides immediate visual feedback about system updates and enables quick access to notification details through clear state variations.
                 </p>
               </div>
@@ -335,7 +335,7 @@ const GazeboComplexOrganisms = () => {
                   <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     States
                   </p>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
                     Scaled - 1:3
                   </p>
                 </div>
@@ -344,7 +344,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex gap-6 sm:gap-10 items-center w-full">
                   {/* Default State */}
                   <div className="flex flex-col gap-3 w-auto sm:w-[110px]">
-                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                       Default
                     </p>
                     <div className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]">
@@ -354,7 +354,7 @@ const GazeboComplexOrganisms = () => {
 
                   {/* Hovered State */}
                   <div className="flex flex-col gap-3 w-auto sm:w-[110px]">
-                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                       Hovered
                     </p>
                     <div className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]">
@@ -364,7 +364,7 @@ const GazeboComplexOrganisms = () => {
 
                   {/* Active State */}
                   <div className="flex flex-col gap-3 w-auto sm:w-[101px]">
-                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                       Active
                     </p>
                     <div className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]">
@@ -375,7 +375,7 @@ const GazeboComplexOrganisms = () => {
 
                 {/* Action State */}
                 <div className="flex flex-col gap-4 sm:gap-6 w-full">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Action
                   </p>
                   <div className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]">
@@ -400,7 +400,7 @@ const GazeboComplexOrganisms = () => {
                 <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   9 Dot Mega Menu
                 </h2>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   Application launcher that provides access to additional tools and services within the product ecosystem. The nine-dot grid follows established patterns from major platforms, offering familiar navigation for secondary applications and integrations.
                 </p>
               </div>
@@ -410,7 +410,7 @@ const GazeboComplexOrganisms = () => {
                 <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   States
                 </p>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
                     Scaled - 1:3
                   </p>
                 </div>
@@ -419,7 +419,7 @@ const GazeboComplexOrganisms = () => {
                 <div className="flex gap-6 sm:gap-10 items-start">
                   {/* Default State */}
                   <div className="flex flex-col gap-3 w-auto sm:w-[110px]">
-                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                       Default
                     </p>
                     <div className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]">
@@ -429,7 +429,7 @@ const GazeboComplexOrganisms = () => {
 
                   {/* Focus State */}
                   <div className="flex flex-col gap-3 w-auto sm:w-[110px]">
-                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                    <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                       Focus
                     </p>
                     <div className="w-[70px] h-[73px] sm:w-[106px] sm:h-[110px]">
@@ -451,7 +451,7 @@ const GazeboComplexOrganisms = () => {
                   <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Job Application Dashboard for Candidate
                   </h2>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Application launcher that provides access to additional tools and services within the product ecosystem. The nine-dot grid follows established patterns from major platforms, offering familiar navigation for secondary applications and integrations.
                   </p>
 
@@ -460,7 +460,7 @@ const GazeboComplexOrganisms = () => {
                     <p className="font-space font-bold text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                       Types
                     </p>
-                    <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
+                    <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-[#90A2C3]" style={{ letterSpacing: '-0.28px' }}>
                       Scaled - 0.75:1
                     </p>
                   </div>
@@ -502,14 +502,14 @@ const GazeboComplexOrganisms = () => {
                   <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Application Progress Status
                   </h2>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Individual job application tracking component that displays current status, key details, and available actions. This card-based format enables quick scanning of application progress while providing access to detailed job information and next steps.
                   </p>
                 </div>
 
                 {/* Default State */}
                 <div className="flex flex-col gap-4 sm:gap-6 w-full sm:w-[515px]">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Default
                   </p>
                   <div className="w-full sm:w-[515px] h-[77px] sm:h-[115px]">
@@ -519,7 +519,7 @@ const GazeboComplexOrganisms = () => {
 
                 {/* Expanded State */}
                 <div className="flex flex-col gap-4 sm:gap-6 w-full sm:w-[515px]">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Expanded
                   </p>
                   <div className="w-full sm:w-[515px] h-[142px] sm:h-[213px]">
@@ -532,7 +532,7 @@ const GazeboComplexOrganisms = () => {
                   <h3 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                     The 44% conversion probability value is typically calculated using a combination of data-driven factors and predictive algorithms. Example Calculation of Scoring -
                   </h3>
-                  <div className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <div className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     <p className="leading-[1.34em] mb-0">Let's say a scoring algorithm looks like this:</p>
                     <ul className="list-disc mb-0">
                       <li className="mb-0 ml-6">
@@ -581,7 +581,7 @@ const GazeboComplexOrganisms = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="flex-1 font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Your job application has been successfully submitted and is awaiting review by the employer.
                   </p>
                 </div>
@@ -595,7 +595,7 @@ const GazeboComplexOrganisms = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="flex-1 font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Your application has been opened and reviewed by the recruitment team or hiring manager.
                   </p>
                 </div>
@@ -609,7 +609,7 @@ const GazeboComplexOrganisms = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="flex-1 font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Congratulations! Your profile matches the job requirements and has been moved forward for further consideration.
                   </p>
                 </div>
@@ -623,7 +623,7 @@ const GazeboComplexOrganisms = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="flex-1 font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Your application has been opened and reviewed by the recruitment team or hiring manager.
                   </p>
                 </div>
@@ -637,7 +637,7 @@ const GazeboComplexOrganisms = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="flex-1 font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     You have been chosen for the role. Expect follow-up communication regarding next steps or onboarding.
                   </p>
                 </div>
@@ -651,7 +651,7 @@ const GazeboComplexOrganisms = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="flex-1 font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     The open position has been filled, and the application process for this role is now closed.
                   </p>
                 </div>
@@ -665,7 +665,7 @@ const GazeboComplexOrganisms = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="flex-1 font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="flex-1 font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Your application is awaiting further actions or additional information, and the next steps will be communicated soon.
                   </p>
                 </div>
@@ -683,7 +683,7 @@ const GazeboComplexOrganisms = () => {
                   <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Candidate Application manager Recruiter Dashboard
                   </h2>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Recruiter-focused dashboard built from modular components that enable efficient candidate pipeline management. This interface consolidates application tracking, job posting management, and candidate evaluation tools into a unified workflow for hiring teams.
                   </p>
                 </div>
@@ -794,7 +794,7 @@ const GazeboComplexOrganisms = () => {
                   <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Management of Candidate in Bulk
                   </h2>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Bulk candidate selection and management interface for efficient multi-candidate processing and communication workflows.
                   </p>
                 </div>
@@ -810,7 +810,7 @@ const GazeboComplexOrganisms = () => {
                 </div>
 
                 {/* Compose Description */}
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   Compose interface for bulk candidate communication with rich text editing and recipient management capabilities.
                 </p>
 
@@ -846,7 +846,7 @@ const GazeboComplexOrganisms = () => {
                   <h3 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Recruiter Dashboard
                   </h3>
-                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Repetitive elements converted as components which infact is the created by using multiple 'molecules' and 'organisms' of atomic design structure. Perplexity please generate some text content for here.
                   </p>
                 </div>
@@ -856,7 +856,7 @@ const GazeboComplexOrganisms = () => {
                   <h3 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                     Organization Profile Page
                   </h3>
-                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     Repetitive elements converted as components which infact is the created by using multiple 'molecules' and 'organisms' of atomic design structure.
                   </p>
                 </div>
@@ -866,7 +866,7 @@ const GazeboComplexOrganisms = () => {
                   <p className="font-roboto font-medium text-lg sm:text-[24px] leading-normal text-ui-gray" style={{ letterSpacing: '-0.48px' }}>
                     •••
                   </p>
-                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                     ...
                   </p>
                 </div>
@@ -881,7 +881,7 @@ const GazeboComplexOrganisms = () => {
                     <h3 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-[#111111]" style={{ letterSpacing: '-0.08px' }}>
                       All Components DS
                     </h3>
-                    <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-[#565C6F] break-words" style={{ letterSpacing: '-0.28px' }}>
+                    <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-[#565C6F] break-words" style={{ letterSpacing: '-0.28px' }}>
                       The above components are the key ones I worked on. To view all, please check out this linked Figma file.
                     </p>
                     <div className="flex gap-1.5 items-center flex-wrap">

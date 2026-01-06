@@ -70,14 +70,14 @@ const ProjectLink = ({ title, description, image, gradient, link, index }) => {
           <h3 className="font-space font-bold text-lg leading-[1.36em] text-light" style={{ letterSpacing: '-0.18px' }}>
             {title}
           </h3>
-          <p className="font-trispace text-base leading-[1.34em] text-text-secondary" style={{ letterSpacing: '-0.32px' }}>
+          <p className="font-outfit text-base leading-[1.34em] text-text-secondary" style={{ letterSpacing: '-0.32px' }}>
             {description}
           </p>
         </div>
 
         {/* Visit Button */}
         <div className="flex items-center gap-2.5 text-light group-hover:gap-4 transition-all duration-300">
-          <span className="font-trispace text-base leading-[1.34em]" style={{ letterSpacing: '-0.32px' }}>
+          <span className="font-outfit text-base leading-[1.34em]" style={{ letterSpacing: '-0.32px' }}>
             Visit
           </span>
           <span className="font-inter font-medium text-base leading-[1.21em]" style={{ letterSpacing: '-0.8px' }}>

@@ -39,7 +39,7 @@ const ProjectCard = ({ title, image, gradient, index, route }) => {
 
       {/* Title */}
       <motion.p
-        className="text-body font-trispace text-text-secondary text-center transition-colors duration-300 group-hover:text-light-DEFAULT"
+        className="text-body font-outfit text-text-secondary text-center transition-colors duration-300 group-hover:text-light-DEFAULT"
       >
         {title}
       </motion.p>

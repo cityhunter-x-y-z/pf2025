@@ -107,7 +107,7 @@ const VendingAnalytics = () => {
                 <h2 className="font-space font-bold text-base sm:text-2xl leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                   Converting dense desktop analytics into mobile screens while maintaining data integrity and usability for sales representatives who need quick access to critical performance metrics in the field.
                 </h2>
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   Impact: Enabled Kellogg's sales teams to monitor retail partner performance, identify replenishment opportunities, and make data-driven decisions directly from mobile devices during store visits and client meetings.
                 </p>
               </div>

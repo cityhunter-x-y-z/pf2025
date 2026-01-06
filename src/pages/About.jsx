@@ -754,7 +754,7 @@ const About = () => {
 
         {/* Bottom Footer */}
         <footer className="text-center mt-16">
-          <p className="font-trispace text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+          <p className="font-outfit text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
             © 2025 Made with ❤️ by Amitesh using Claude code and Figma MCP
           </p>
         </footer>

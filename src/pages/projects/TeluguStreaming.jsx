@@ -137,7 +137,7 @@ const TeluguStreaming = () => {
                 <h2 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Subscription Plan Selection
                 </h2>
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   "Multi-tiered Pricing Strategy Interface" Designed a comprehensive plan selection flow featuring annual, quarterly, and combo subscription options with clear value propositions, pricing transparency, and mobile number verification integration to reduce subscription friction.
                 </p>
               </div>
@@ -169,7 +169,7 @@ const TeluguStreaming = () => {
                 <h2 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Mobile Responsive subscription workflow
                 </h2>
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   The subscription flow emphasizes transparency and choice, with clear pricing structures and limited-time offer highlighting. The verification system reduces drop-off through streamlined OTP processes and multiple contact options. Payment integration supports both traditional and modern payment methods, including UPI, digital wallets, and QR codes.
                 </p>
               </div>
@@ -201,7 +201,7 @@ const TeluguStreaming = () => {
                 <h2 className="font-space font-bold text-lg sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                   Language Preference Setup
                 </h2>
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                   "Regional Content Accessibility" Created an intuitive language selection flow supporting Telugu, Tamil, Malayalam, and English with dual-language content display options, ensuring regional content discoverability while maintaining cross-linguistic accessibility.
                 </p>
               </div>

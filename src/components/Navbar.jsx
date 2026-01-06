@@ -64,7 +64,7 @@ const Navbar = () => {
           {/* Right section */}
           <div className="flex items-center gap-8">
             {/* Time - hidden on mobile */}
-            <span className="hidden md:block text-base leading-[1.34em] text-text-tertiary font-trispace" style={{ letterSpacing: '-0.32px' }}>
+            <span className="hidden md:block text-base leading-[1.34em] text-text-tertiary font-outfit" style={{ letterSpacing: '-0.32px' }}>
               {time}
             </span>
 

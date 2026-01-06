@@ -166,7 +166,7 @@ const VehicleHealth = () => {
               <h2 className="font-space font-bold text-2xl sm:text-xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                 Introduction
               </h2>
-              <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+              <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                 Fleet operators manage vehicle inspections and maintenance in fragmented ways — smaller fleets still rely on pen-and-paper logs, while larger fleets depend on costly third-party tools. To address these inefficiencies, we designed an integrated solution that brings maintenance scheduling, mobile inspections, and defect lifecycle tracking into a single platform, improving operational efficiency while supporting long-term business goals.
               </p>
             </motion.section>
@@ -217,7 +217,7 @@ const VehicleHealth = () => {
                 style={{ overflow: 'hidden' }}
               >
                 <div className="flex flex-col gap-6 sm:gap-16">
-                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
                     Fleet operations involve dozens or even hundreds of vehicles, each with its own maintenance schedules, inspection histories, and defect records. Without a centralized dashboard, this information is often scattered across paper logs, spreadsheets, or third-party systems — making it difficult for managers to keep track of vehicle health and plan proactively.
                   </p>
 
@@ -304,25 +304,25 @@ const VehicleHealth = () => {
                   {/* Mobile Bullet Lists - Hidden on SM and up */}
                   <div className="flex flex-col gap-6 sm:hidden">
                     <ul className="list-disc list-outside ml-6 space-y-2">
-                      <li className="font-trispace text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <li className="font-outfit text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         <span className="font-bold text-ui-gray">Lost / damaged records</span> → up to <span className="font-bold text-ui-gray">15–20%</span> of inspection <span className="font-bold text-ui-gray">sheets misplaced</span> monthly.
                       </li>
-                      <li className="font-trispace text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <li className="font-outfit text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         <span className="font-bold text-ui-gray">Delayed visibility</span> → managers receive inspection data <span className="font-bold text-ui-gray">2–3 days late</span> on average.
                       </li>
-                      <li className="font-trispace text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <li className="font-outfit text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         <span className="font-bold text-ui-gray">Missed repairs → ~10%</span> of reported defects never reach the technician due to manual handoffs.
                       </li>
                     </ul>
 
                     <ul className="list-disc list-outside ml-6 space-y-2">
-                      <li className="font-trispace text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <li className="font-outfit text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         <span className="font-bold text-ui-gray">Fragmented workflow</span> → managers spend <span className="font-bold text-ui-gray">~30% more time switching</span> between safety and maintenance apps.
                       </li>
-                      <li className="font-trispace text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <li className="font-outfit text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         <span className="font-bold text-ui-gray">Duplicated effort</span> → same vehicle/defect details entered twice across systems.
                       </li>
-                      <li className="font-trispace text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <li className="font-outfit text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         <span className="font-bold text-ui-gray">Limited customization</span> → rigid workflows <span className="font-bold text-ui-gray">force operators to adapt to the tool</span> instead of the other way around.
                       </li>
                     </ul>
@@ -340,7 +340,7 @@ const VehicleHealth = () => {
                       <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         15-20%
                       </p>
-                      <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                         sheets misplaced monthly
                       </p>
                     </div>
@@ -353,7 +353,7 @@ const VehicleHealth = () => {
                       <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         ~30%
                       </p>
-                      <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                         more time switching between safety and maintenance apps.
                       </p>
                     </div>
@@ -368,7 +368,7 @@ const VehicleHealth = () => {
                         <h3 className="font-space font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Delayed Visibility
                         </h3>
-                        <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           managers receive inspection data late
                         </p>
                         <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
@@ -381,7 +381,7 @@ const VehicleHealth = () => {
                         <h3 className="font-space font-bold text-base sm:text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Limited customization
                         </h3>
-                        <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           rigid workflows force operators to adapt to the tool instead of the other way around
                         </p>
                       </div>
@@ -397,7 +397,7 @@ const VehicleHealth = () => {
                         <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           ~10%
                         </p>
-                        <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           of reported defects never reach the technician due to manual handoffs.
                         </p>
                       </div>
@@ -410,7 +410,7 @@ const VehicleHealth = () => {
                         <p className="font-space font-bold text-2xl sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           ~15%
                         </p>
-                        <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           same vehicle/defect details entered twice across systems.
                         </p>
                       </div>
@@ -423,24 +423,24 @@ const VehicleHealth = () => {
                     {/* Row 1 */}
                     <div className="flex gap-2 w-full min-w-0">
                       <div className="flex-1 min-w-0 bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col gap-1">
-                        <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-['Outfit'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Lost / damaged records
                         </p>
                         <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           15-20%
                         </p>
-                        <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           sheets misplaced monthly
                         </p>
                       </div>
                       <div className="flex-1 min-w-0 bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1">
-                        <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-['Outfit'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Fragmented workflow
                         </p>
                         <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           ~30%
                         </p>
-                        <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           more time switching between safety and maintenance apps.
                         </p>
                       </div>
@@ -450,10 +450,10 @@ const VehicleHealth = () => {
                     <div className="flex gap-2 w-full min-w-0">
                       <div className="flex flex-col gap-2 flex-1 min-w-0">
                         <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1">
-                          <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                          <p className="font-['Outfit'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                             Delayed Visibility
                           </p>
-                          <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                             managers receive inspection data late
                           </p>
                           <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
@@ -461,42 +461,42 @@ const VehicleHealth = () => {
                           </p>
                         </div>
                         <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1">
-                          <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                          <p className="font-['Outfit'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                             Limited customization
                           </p>
-                          <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                             rigid workflows force operators to adapt to the tool instead of the other way around
                           </p>
                         </div>
                         <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1">
-                          <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                          <p className="font-['Outfit'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                             Limited customization
                           </p>
-                          <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                             rigid workflows force operators to adapt to the tool instead of the other way around
                           </p>
                         </div>
                       </div>
                       <div className="flex flex-col gap-2 w-[35%] min-w-[120px] max-w-[141px]">
                         <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1 min-h-[221px]">
-                          <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                          <p className="font-['Outfit'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                             Missed Repairs
                           </p>
                           <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             ~10%
                           </p>
-                          <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                             of reported defects never reach the technician due to manual handoffs.
                           </p>
                         </div>
                         <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg p-3 flex flex-col justify-center gap-1 min-h-[202px]">
-                          <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                          <p className="font-['Outfit'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                             Duplicated effort
                           </p>
                           <p className="font-space font-bold text-2xl leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             ~15%
                           </p>
-                          <p className="font-trispace text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-sm leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                             same vehicle/defect details entered twice across systems.
                           </p>
                         </div>
@@ -540,7 +540,7 @@ const VehicleHealth = () => {
                         Maintenance Manager
                       </p>
                     </div>
-                    <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                    <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                       The Maintenance Manager ensures fleet safety, reliability, and optimal performance through preventive maintenance programs, technician supervision and training, budget management, regulatory compliance, and data-driven decision-making to minimize downtime.
                     </p>
                   </div>
@@ -560,7 +560,7 @@ const VehicleHealth = () => {
                         Maintenance Technician
                       </p>
                     </div>
-                    <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                    <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                       The Maintenance Technician inspects, diagnoses, and repairs fleet vehicles, performing preventive maintenance to ensure safety, reliability, and compliance while minimizing downtime.
                     </p>
                   </div>
@@ -580,7 +580,7 @@ const VehicleHealth = () => {
                         Maintenance Technician
                       </p>
                     </div>
-                    <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                    <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                       The Maintenance Technician inspects, diagnoses, and repairs fleet vehicles, performing preventive maintenance to ensure safety, reliability, and compliance while minimizing downtime.
                     </p>
                   </div>
@@ -723,21 +723,21 @@ const VehicleHealth = () => {
 
               {/* Objective Text */}
               <div className="flex flex-col gap-0">
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-2%' }}>
+                <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-2%' }}>
                   The objective of this project is to enable fleet operators to manage the complete maintenance lifecycle of their vehicles in a single platform. Users should be able to:
                 </p>
-                <ul className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary list-disc pl-6 mt-2 space-y-1" style={{ letterSpacing: '-2%' }}>
+                <ul className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary list-disc pl-6 mt-2 space-y-1" style={{ letterSpacing: '-2%' }}>
                   <li>
-                    Track the <span className="font-['Trispace'] font-bold text-ui-gray">maintenance status</span> of each vehicle.
+                    Track the <span className="font-['Outfit'] font-bold text-ui-gray">maintenance status</span> of each vehicle.
                   </li>
                   <li>
-                    Monitor <span className="font-['Trispace'] font-bold text-ui-gray">upcoming maintenance dates</span> and receive timely alerts.
+                    Monitor <span className="font-['Outfit'] font-bold text-ui-gray">upcoming maintenance dates</span> and receive timely alerts.
                   </li>
                   <li>
-                    Conduct vehicle inspections to <span className="font-['Trispace'] font-bold text-ui-gray">survey and identify defects</span>.
+                    Conduct vehicle inspections to <span className="font-['Outfit'] font-bold text-ui-gray">survey and identify defects</span>.
                   </li>
                   <li>
-                    <span className="font-['Trispace'] font-bold text-ui-gray">Log, assign, and resolve defects</span> through structured workflows.
+                    <span className="font-['Outfit'] font-bold text-ui-gray">Log, assign, and resolve defects</span> through structured workflows.
                   </li>
                 </ul>
               </div>
@@ -747,14 +747,14 @@ const VehicleHealth = () => {
                 <h3 className="font-space font-bold text-base sm:text-[32px] leading-[1.36em] text-ui-gray text-center" style={{ letterSpacing: '-1%' }}>
                   Technician Manager - User Current Journey / experience
                 </h3>
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary text-center" style={{ letterSpacing: '-0.5%' }}>
+                <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary text-center" style={{ letterSpacing: '-0.5%' }}>
                   The process takes 1-2 days
                 </p>
 
                 <div className="flex flex-col gap-4 sm:gap-7 items-center w-full max-w-[400px]">
                   {/* Step 1 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Wait for Technician to Submit Inspection
                     </p>
                   </div>
@@ -763,15 +763,15 @@ const VehicleHealth = () => {
                   {/* Step 2 with pain point */}
                   <div className="flex flex-col items-center gap-3">
                     <div className="bg-white border border-[#5D6C87] rounded-[99px] shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)] w-full max-w-[253px]" style={{ padding: '12px 24px' }}>
-                      <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                         Manually reviews reports
                       </p>
                     </div>
                     <div className="bg-white border border-[#5D6C87] rounded-2xl shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)] w-full max-w-[290.53px] flex flex-col justify-center gap-2 sm:gap-3 sm:transform sm:rotate-[-4deg]" style={{ padding: '12px 24px' }}>
-                      <p className="font-['Trispace'] font-bold text-sm sm:text-base text-[#FC4949]" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-['Outfit'] font-bold text-sm sm:text-base text-[#FC4949]" style={{ letterSpacing: '-0.5%' }}>
                         Pain Point
                       </p>
-                      <p className="font-trispace text-sm sm:text-base text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-outfit text-sm sm:text-base text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                         Repetitions , chances of missing Reports on a bad day.
                       </p>
                     </div>
@@ -780,7 +780,7 @@ const VehicleHealth = () => {
 
                   {/* Step 3 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[326px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Assigns repair tasks to technicians verbally
                     </p>
                   </div>
@@ -788,7 +788,7 @@ const VehicleHealth = () => {
 
                   {/* Step 4 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[326px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Assigns repair tasks to technicians verbally
                     </p>
                   </div>
@@ -796,7 +796,7 @@ const VehicleHealth = () => {
 
                   {/* Step 5 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[250px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Follows up with technician
                     </p>
                   </div>
@@ -804,7 +804,7 @@ const VehicleHealth = () => {
 
                   {/* Step 6 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[168px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Resolve Defects
                     </p>
                   </div>
@@ -821,15 +821,15 @@ const VehicleHealth = () => {
                   {/* Step 1 with pain point */}
                   <div className="flex flex-col w-full max-w-[377px] gap-3">
                     <div className="bg-white border border-[#5D6C87] rounded-[99px] shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)] w-full" style={{ padding: '12px 24px' }}>
-                      <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                         Conducts physical inspection with a checklist
                       </p>
                     </div>
                     <div className="bg-white border border-[#5D6C87] rounded-2xl shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)] w-full max-w-[325px] flex flex-col justify-center gap-2 sm:gap-3 sm:transform sm:rotate-[-3deg]" style={{ padding: '12px 24px' }}>
-                      <p className="font-['Trispace'] font-bold text-sm sm:text-base text-[#FC4949]" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-['Outfit'] font-bold text-sm sm:text-base text-[#FC4949]" style={{ letterSpacing: '-0.5%' }}>
                         Pain Point
                       </p>
-                      <p className="font-trispace text-sm sm:text-base text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-outfit text-sm sm:text-base text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                         Totally relying on technician's integrity, no image capture exist.
                       </p>
                     </div>
@@ -838,7 +838,7 @@ const VehicleHealth = () => {
 
                   {/* Step 2 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[217px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Notes defects manually
                     </p>
                   </div>
@@ -846,7 +846,7 @@ const VehicleHealth = () => {
 
                   {/* Step 3 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[294px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Submits sheet to manager
                     </p>
                   </div>
@@ -854,7 +854,7 @@ const VehicleHealth = () => {
 
                   {/* Step 4 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[334px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Receives Repair tasks later (verbal/written)
                     </p>
                   </div>
@@ -862,7 +862,7 @@ const VehicleHealth = () => {
 
                   {/* Step 5 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[250px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Completes repair
                     </p>
                   </div>
@@ -871,15 +871,15 @@ const VehicleHealth = () => {
                   {/* Step 6 with pain point */}
                   <div className="flex flex-col gap-3 w-full max-w-[360px] items-center">
                     <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[250px]">
-                      <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                         Submits Report
                       </p>
                     </div>
                     <div className="bg-white border border-text-quaternary rounded-2xl px-4 sm:px-6 py-2 sm:py-3 w-full max-w-[280px] sm:max-w-[216px] sm:transform sm:rotate-[3deg] sm:relative sm:left-[100px] sm:-top-12">
-                      <p className="font-['Trispace'] font-bold text-sm sm:text-base text-[#FC4949] mb-2 sm:mb-3" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-['Outfit'] font-bold text-sm sm:text-base text-[#FC4949] mb-2 sm:mb-3" style={{ letterSpacing: '-0.5%' }}>
                         Pain Point
                       </p>
-                      <p className="font-trispace text-sm sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-outfit text-sm sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                         Submission is not immediate
                       </p>
                     </div>
@@ -901,7 +901,7 @@ const VehicleHealth = () => {
                 <div className="flex flex-col gap-4 sm:gap-7 items-center w-full">
                   {/* Step 1 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[204px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Opens mobile app
                     </p>
                   </div>
@@ -909,7 +909,7 @@ const VehicleHealth = () => {
 
                   {/* Step 2 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[338px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       follows a guided digital inspection checklist
                     </p>
                   </div>
@@ -917,7 +917,7 @@ const VehicleHealth = () => {
 
                   {/* Step 3 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[278px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Reviews defects, assigns tasks
                     </p>
                   </div>
@@ -926,15 +926,15 @@ const VehicleHealth = () => {
                   {/* Step 4 with pain point */}
                   <div className="flex flex-col gap-3 w-full items-center">
                     <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[278px]">
-                      <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                         Tracks repair progress live.
                       </p>
                     </div>
                     <div className="bg-white border border-text-quaternary rounded-2xl p-3 sm:p-4 w-full max-w-[280px] sm:max-w-[314px] sm:transform sm:rotate-[4deg] sm:relative sm:left-[80px] sm:-top-12">
-                      <p className="font-['Trispace'] font-bold text-sm sm:text-base text-[#FC4949] mb-2 sm:mb-3" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-['Outfit'] font-bold text-sm sm:text-base text-[#FC4949] mb-2 sm:mb-3" style={{ letterSpacing: '-0.5%' }}>
                         Pain Point
                       </p>
-                      <p className="font-trispace text-sm sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                      <p className="font-outfit text-sm sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                         dev difficulty impliment acc to current code infra.
                       </p>
                     </div>
@@ -943,7 +943,7 @@ const VehicleHealth = () => {
 
                   {/* Step 5 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[416px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Generates compliance/maintenance reports instantly.
                     </p>
                   </div>
@@ -951,7 +951,7 @@ const VehicleHealth = () => {
 
                   {/* Step 6 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[225px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Completes Inspection
                     </p>
                   </div>
@@ -967,7 +967,7 @@ const VehicleHealth = () => {
                 <div className="flex flex-col gap-4 sm:gap-7 items-center w-full">
                   {/* Step 1 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[204px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Opens dashboard
                     </p>
                   </div>
@@ -975,7 +975,7 @@ const VehicleHealth = () => {
 
                   {/* Step 2 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[384px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       sees all vehicles with current maintenance status.
                     </p>
                   </div>
@@ -983,7 +983,7 @@ const VehicleHealth = () => {
 
                   {/* Step 3 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[392px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Receives real-time inspection submissions from technicians.
                     </p>
                   </div>
@@ -991,7 +991,7 @@ const VehicleHealth = () => {
 
                   {/* Step 4 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[204px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Reviews defects
                     </p>
                   </div>
@@ -999,7 +999,7 @@ const VehicleHealth = () => {
 
                   {/* Step 5 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[315px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       assigns tasks with due dates in the system.
                     </p>
                   </div>
@@ -1007,7 +1007,7 @@ const VehicleHealth = () => {
 
                   {/* Step 6 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[233px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Tracks repair progress live.
                     </p>
                   </div>
@@ -1015,7 +1015,7 @@ const VehicleHealth = () => {
 
                   {/* Step 7 */}
                   <div className="bg-white border border-text-quaternary rounded-[99px] px-6 sm:px-8 py-3 sm:py-4 w-full max-w-[400px]">
-                    <p className="font-trispace text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
+                    <p className="font-outfit text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.5%' }}>
                       Generates compliance/maintenance reports instantly.
                     </p>
                   </div>
@@ -1068,7 +1068,7 @@ const VehicleHealth = () => {
                       <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Small Fleets
                       </h3>
-                      <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                         Often rely on pen and paper inspection logs or basic spread sheets.
                       </p>
                     </div>
@@ -1076,7 +1076,7 @@ const VehicleHealth = () => {
                       <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Larger Fleets
                       </h3>
-                      <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                         Use third party fleet management tools. (geotab, samsara etc.)
                       </p>
                     </div>
@@ -1084,7 +1084,7 @@ const VehicleHealth = () => {
                       <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Emerging Trend
                       </h3>
-                      <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                         Predictive maintenance using telematics data (mileage, engine diagnostics, driver behavior) to forecast service needs.
                       </p>
                     </div>
@@ -1096,10 +1096,10 @@ const VehicleHealth = () => {
                       Regulatory Reseach
                     </h3>
                     <div className="flex flex-col gap-0">
-                      <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-2%' }}>
-                        <span className="font-['Trispace'] font-bold text-ui-gray">FMCSA</span> (US context) and similar transport authorities in other regions mandate:
+                      <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-2%' }}>
+                        <span className="font-['Outfit'] font-bold text-ui-gray">FMCSA</span> (US context) and similar transport authorities in other regions mandate:
                       </p>
-                      <ul className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary list-disc pl-6 mt-2" style={{ letterSpacing: '-2%' }}>
+                      <ul className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary list-disc pl-6 mt-2" style={{ letterSpacing: '-2%' }}>
                         <li>Daily vehicle inspections by drivers.</li>
                         <li>Defect reporting and tracking for compliance.</li>
                         <li>Proper logging of maintenance and repair actions.</li>
@@ -1113,7 +1113,7 @@ const VehicleHealth = () => {
                       <h3 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Affinity Mapping Based on User Journey
                       </h3>
-                      <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         After mapping the current and desired user journeys for both Technician Managers and Technicians, I conducted an affinity mapping exercise to synthesize insights from user interviews, observations, and workflow pain points.
                       </p>
                     </div>
@@ -1126,22 +1126,22 @@ const VehicleHealth = () => {
                         </h4>
                         <div className="flex flex-col gap-2 sm:gap-4">
                           <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 sm:py-4 min-h-[80px] sm:h-[135px] flex items-center">
-                            <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                            <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                               Managers had no real-time view of inspection or repair status.
                             </p>
                           </div>
                           <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 sm:py-4 min-h-[80px] sm:h-[135px] flex items-center">
-                            <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                            <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                               Defects were logged but not always resolved or tracked to closure.
                             </p>
                           </div>
                           <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 sm:py-4 min-h-[80px] sm:h-[135px] flex items-center">
-                            <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                            <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                               Technicians received assignments verbally or through scattered messages.
                             </p>
                           </div>
                           <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 sm:py-4 min-h-[80px] sm:h-[135px] flex items-center">
-                            <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                            <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                               Paper logs and manual entries led to errors and missing data.
                             </p>
                           </div>
@@ -1155,22 +1155,22 @@ const VehicleHealth = () => {
                         </h4>
                         <div className="flex flex-col gap-2 sm:gap-4">
                           <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 sm:py-4 min-h-[80px] sm:h-[135px] flex items-center">
-                            <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                            <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                               Create a central dashboard with live status updates for every vehicle and technician.
                             </p>
                           </div>
                           <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 sm:py-4 min-h-[80px] sm:h-[135px] flex items-center">
-                            <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                            <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                               Introduce a defect lifecycle workflow with clear ownership and completion tracking.
                             </p>
                           </div>
                           <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 sm:py-4 min-h-[80px] sm:h-[135px] flex items-center">
-                            <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                            <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                               Enable in-app task assignments and real-time notifications.
                             </p>
                           </div>
                           <div className="bg-[#EBF0F5] border border-ui-gray rounded-lg sm:rounded-2xl p-3 sm:p-8 sm:py-4 min-h-[80px] sm:h-[135px] flex items-center">
-                            <p className="font-trispace text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                            <p className="font-outfit text-xs sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                               Design digital inspection forms with mandatory fields and photo uploads.
                             </p>
                           </div>
@@ -1194,16 +1194,16 @@ const VehicleHealth = () => {
                         <p className="font-space font-bold text-xl sm:text-[44px] text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                           1 - 25 vehicles
                         </p>
-                        <p className="font-trispace text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-outfit text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Rely on paper logs and spread sheets.
                         </p>
-                        <ul className="font-trispace text-xs sm:text-base text-text-quaternary list-disc pl-5 sm:pl-6 space-y-1" style={{ letterSpacing: '-0.5%' }}>
-                          <li>Simple, <span className="font-['Trispace'] font-bold text-ui-gray">low-effort</span> inspection process.</li>
-                          <li>Clear view of <span className="font-['Trispace'] font-bold text-ui-gray">upcoming maintenance tasks</span>.</li>
-                          <li>Basic <span className="font-['Trispace'] font-bold text-ui-gray">defect logging</span> and <span className="font-['Trispace'] font-bold text-ui-gray">closure tracking</span>.</li>
+                        <ul className="font-outfit text-xs sm:text-base text-text-quaternary list-disc pl-5 sm:pl-6 space-y-1" style={{ letterSpacing: '-0.5%' }}>
+                          <li>Simple, <span className="font-['Outfit'] font-bold text-ui-gray">low-effort</span> inspection process.</li>
+                          <li>Clear view of <span className="font-['Outfit'] font-bold text-ui-gray">upcoming maintenance tasks</span>.</li>
+                          <li>Basic <span className="font-['Outfit'] font-bold text-ui-gray">defect logging</span> and <span className="font-['Outfit'] font-bold text-ui-gray">closure tracking</span>.</li>
                           <li>Affordable solution — minimal cost overhead.</li>
                         </ul>
-                        <p className="font-trispace text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-outfit text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Provide a lightweight, mobile-first solution with essential workflows and minimal setup.
                         </p>
                       </div>
@@ -1216,16 +1216,16 @@ const VehicleHealth = () => {
                         <p className="font-space font-bold text-xl sm:text-[44px] text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                           25 - 100 vehicles
                         </p>
-                        <p className="font-trispace text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-outfit text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Mix of manual and third-party tools.
                         </p>
-                        <ul className="font-trispace text-xs sm:text-base text-text-quaternary list-disc pl-5 sm:pl-6 space-y-1" style={{ letterSpacing: '-0.5%' }}>
-                          <li><span className="font-['Trispace'] font-bold text-ui-gray">Role-based access</span> (manager, technician).</li>
-                          <li><span className="font-['Trispace'] font-bold text-ui-gray">Real-time visibility</span> into ongoing maintenance.</li>
-                          <li><span className="font-['Trispace'] font-bold text-ui-gray">Historical tracking</span> of repairs and inspections.</li>
+                        <ul className="font-outfit text-xs sm:text-base text-text-quaternary list-disc pl-5 sm:pl-6 space-y-1" style={{ letterSpacing: '-0.5%' }}>
+                          <li><span className="font-['Outfit'] font-bold text-ui-gray">Role-based access</span> (manager, technician).</li>
+                          <li><span className="font-['Outfit'] font-bold text-ui-gray">Real-time visibility</span> into ongoing maintenance.</li>
+                          <li><span className="font-['Outfit'] font-bold text-ui-gray">Historical tracking</span> of repairs and inspections.</li>
                           <li>Exportable reports for compliance and audits.</li>
                         </ul>
-                        <p className="font-trispace text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-outfit text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Enable structured dashboards and data-driven tracking while maintaining simplicity.
                         </p>
                       </div>
@@ -1238,16 +1238,16 @@ const VehicleHealth = () => {
                         <p className="font-space font-bold text-xl sm:text-[44px] text-ui-gray leading-[1.34em]" style={{ letterSpacing: '-0.5%' }}>
                           100+ vehicles
                         </p>
-                        <p className="font-trispace text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-outfit text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Use multiple integrated systems (safety + maintenance + telematics).
                         </p>
-                        <ul className="font-trispace text-xs sm:text-base text-text-quaternary list-disc pl-5 sm:pl-6 space-y-1" style={{ letterSpacing: '-0.5%' }}>
-                          <li><span className="font-['Trispace'] font-bold text-ui-gray">Unified system</span> combining safety and maintenance.</li>
-                          <li><span className="font-['Trispace'] font-bold text-ui-gray">Integration</span> with existing <span className="font-['Trispace'] font-bold text-ui-gray">telematics</span> and ERP systems.</li>
+                        <ul className="font-outfit text-xs sm:text-base text-text-quaternary list-disc pl-5 sm:pl-6 space-y-1" style={{ letterSpacing: '-0.5%' }}>
+                          <li><span className="font-['Outfit'] font-bold text-ui-gray">Unified system</span> combining safety and maintenance.</li>
+                          <li><span className="font-['Outfit'] font-bold text-ui-gray">Integration</span> with existing <span className="font-['Outfit'] font-bold text-ui-gray">telematics</span> and ERP systems.</li>
                           <li>Detailed analytics and custom reports.</li>
-                          <li><span className="font-['Trispace'] font-bold text-ui-gray">Permission-based controls</span> for large teams.</li>
+                          <li><span className="font-['Outfit'] font-bold text-ui-gray">Permission-based controls</span> for large teams.</li>
                         </ul>
-                        <p className="font-trispace text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-outfit text-xs sm:text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Design a scalable architecture with advanced dashboards, analytics, and integration flexibility.
                         </p>
                       </div>
@@ -1266,10 +1266,10 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Need for a Unified Operational View
                         </h4>
-                        <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Fleet managers frequently switch between multiple tools to track safety metrics, inspections, and maintenance, resulting in lost context and missed follow-ups.
                         </p>
-                        <p className="font-['Trispace'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-['Outfit'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Consolidate maintenance and safety workflows into a single, integrated dashboard that gives managers end-to-end visibility — from defect identification to resolution.
                         </p>
                       </div>
@@ -1279,10 +1279,10 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Role-Specific Context and Permissions
                         </h4>
-                        <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Technicians, drivers, and managers have distinct responsibilities, yet existing systems expose them to irrelevant information.
                         </p>
-                        <p className="font-['Trispace'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-['Outfit'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Introduce role-based interfaces — simplifying the technician's experience for task execution, while providing managers with summary-level analytics, notifications, and controls.
                         </p>
                       </div>
@@ -1292,10 +1292,10 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Simplified Inspection Workflows
                         </h4>
-                        <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Technicians often skip or delay inspections due to lengthy, redundant forms and poor mobile usability.
                         </p>
-                        <p className="font-['Trispace'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-['Outfit'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Create a mobile-first, quick-scan inspection flow with structured checklists, photo uploads, and voice-enabled inputs to improve completion rates.
                         </p>
                       </div>
@@ -1305,10 +1305,10 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Defect Lifecycle Transparency
                         </h4>
-                        <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Defects logged during inspections often go untracked or unresolved, leading to repeated vehicle issues.
                         </p>
-                        <p className="font-['Trispace'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-['Outfit'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Design a defect lifecycle tracker that captures each defect's journey — reported, assigned, repaired, verified, and closed — ensuring accountability across roles.
                         </p>
                       </div>
@@ -1318,10 +1318,10 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-base sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Predictive Maintenance Opportunities
                         </h4>
-                        <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Fleet operators want to move from reactive to preventive maintenance but lack the data and visibility to plan effectively.
                         </p>
-                        <p className="font-['Trispace'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-['Outfit'] font-bold text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Implement historical trend analysis and maintenance scheduling that leverage inspection and defect data to predict upcoming repairs.
                         </p>
                       </div>
@@ -1332,20 +1332,20 @@ const VehicleHealth = () => {
                           <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             Scalability Across Fleet Sizes
                           </h4>
-                          <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                             Smaller fleets prefer simplicity and cost-effectiveness; larger fleets require analytics, integrations, and audit compliance.
                           </p>
-                          <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                          <p className="font-['Outfit'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                             Build a modular platform — lightweight for smaller fleets and extensible for enterprise tenants with advanced data and API integrations.
                           </p>
                         </div>
                         {/* Good to have callout */}
                         <div className="absolute bottom-0 right-0 transform rotate-[-6deg]">
                           <div className="bg-white border border-text-quaternary rounded-2xl px-8 py-4 w-[264px]">
-                            <p className="font-['Trispace'] font-bold text-base text-[#AD7F00]" style={{ letterSpacing: '-0.5%' }}>
+                            <p className="font-['Outfit'] font-bold text-base text-[#AD7F00]" style={{ letterSpacing: '-0.5%' }}>
                               Good to have
                             </p>
-                            <p className="font-trispace text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                            <p className="font-outfit text-base text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                               but will decrease the velocity to MVP.
                             </p>
                           </div>
@@ -1357,10 +1357,10 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Data-Driven Accountability
                         </h4>
-                        <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Maintenance performance metrics (missed inspections, delayed repairs) are not easily measurable in current setups.
                         </p>
-                        <p className="font-['Trispace'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
+                        <p className="font-['Outfit'] font-bold text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.5%' }}>
                           Integrate performance dashboards and KPIs for both managers and technicians, enabling data-driven review and accountability.
                         </p>
                       </div>
@@ -1379,7 +1379,7 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           Help managers get a unified view of fleet safety and maintenance?
                         </h4>
-                        <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Merge both modules into a shared dashboard with toggles between "Safety" and "Maintenance." Include quick-glance alerts for overdue inspections or unresolved defects.
                         </p>
                       </div>
@@ -1389,7 +1389,7 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           make vehicle inspections faster and error-free for technicians?
                         </h4>
-                        <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Introduce mobile-first checklists, auto-saved progress, photo & voice inputs, and quick "pass/fail" toggles.
                         </p>
                       </div>
@@ -1399,7 +1399,7 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           help managers prioritize repairs across the fleet?
                         </h4>
-                        <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Add filters by severity, downtime cost, or vehicle utilization. Show upcoming maintenance schedules.Email Notifiactions.
                         </p>
                       </div>
@@ -1409,7 +1409,7 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           ensure defects are tracked through to resolution?
                         </h4>
-                        <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Create a defect workflow — "Reported → Assigned → Fixed → Verified → Closed" — with status indicators and manager notifications.
                         </p>
                       </div>
@@ -1419,7 +1419,7 @@ const VehicleHealth = () => {
                         <h4 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                           encourage accountability and transparency?
                         </h4>
-                        <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                        <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                           Add technician dashboards, inspection history logs, and timestamps for every workflow stage.
                         </p>
                       </div>
@@ -1431,7 +1431,7 @@ const VehicleHealth = () => {
                     <h3 className="font-space font-bold text-xl sm:text-[32px] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                       How might we (HMW) ..
                     </h3>
-                    <ol className="font-trispace text-base text-ui-gray list-decimal pl-6 space-y-0" style={{ letterSpacing: '-2%' }}>
+                    <ol className="font-outfit text-base text-ui-gray list-decimal pl-6 space-y-0" style={{ letterSpacing: '-2%' }}>
                       <li className="leading-[1.34em]">
                         Unified Fleet Health Dashboard – merges maintenance and safety data.
                       </li>
@@ -1457,20 +1457,20 @@ const VehicleHealth = () => {
                           Unified Dashboard Efficiency
                         </h4>
                         <div className="flex flex-col gap-0">
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Assumption:
                             <br />
                             If we consolidate fleet safety and maintenance modules into a single dashboard, managers will spend less time switching between tools and have better oversight.
                           </p>
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Expected outcome:
                           </p>
-                          <ul className="font-['Trispace'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
+                          <ul className="font-['Outfit'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">30% reduction</span> in time spent navigating between applications.
+                              <span className="font-['Outfit'] font-bold text-ui-gray">30% reduction</span> in time spent navigating between applications.
                             </li>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">Improved accuracy in identifying vehicles requiring immediate attention.</span>
+                              <span className="font-['Outfit'] font-bold text-ui-gray">Improved accuracy in identifying vehicles requiring immediate attention.</span>
                             </li>
                           </ul>
                         </div>
@@ -1482,20 +1482,20 @@ const VehicleHealth = () => {
                           Mobile-First Inspection Adoption
                         </h4>
                         <div className="flex flex-col gap-0">
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Assumption:
                             <br />
                             If technicians can perform inspections via a simplified mobile workflow with photo and voice input, inspection completion rates will increase.
                           </p>
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Expected outcome:
                           </p>
-                          <ul className="font-['Trispace'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
+                          <ul className="font-['Outfit'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">40% faster inspection completion.</span>
+                              <span className="font-['Outfit'] font-bold text-ui-gray">40% faster inspection completion.</span>
                             </li>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">25% increase in daily inspection compliance rate.</span>
+                              <span className="font-['Outfit'] font-bold text-ui-gray">25% increase in daily inspection compliance rate.</span>
                             </li>
                           </ul>
                         </div>
@@ -1507,20 +1507,20 @@ const VehicleHealth = () => {
                           Role-Based Dashboards Reduce Cognitive Load
                         </h4>
                         <div className="flex flex-col gap-0">
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Assumption:
                             <br />
                             If managers and technicians have context-specific dashboards, overall task completion efficiency and user satisfaction will improve.
                           </p>
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Expected outcome:
                           </p>
-                          <ul className="font-['Trispace'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
+                          <ul className="font-['Outfit'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">20% faster task completion.</span>
+                              <span className="font-['Outfit'] font-bold text-ui-gray">20% faster task completion.</span>
                             </li>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">Higher SUS (System Usability Scale) score in usability testing (&gt;80).</span>
+                              <span className="font-['Outfit'] font-bold text-ui-gray">Higher SUS (System Usability Scale) score in usability testing (&gt;80).</span>
                             </li>
                           </ul>
                         </div>
@@ -1532,20 +1532,20 @@ const VehicleHealth = () => {
                           Closed-Loop Defect Management
                         </h4>
                         <div className="flex flex-col gap-0">
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Assumption:
                             <br />
                             If every defect follows a structured status flow (Reported → Assigned → Repaired → Verified → Closed), defect resolution time will decrease significantly.
                           </p>
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Expected outcome:
                           </p>
-                          <ul className="font-['Trispace'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
+                          <ul className="font-['Outfit'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">35% reduction in unresolved or recurring defects.</span>
+                              <span className="font-['Outfit'] font-bold text-ui-gray">35% reduction in unresolved or recurring defects.</span>
                             </li>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">Higher accountability among technicians.</span>
+                              <span className="font-['Outfit'] font-bold text-ui-gray">Higher accountability among technicians.</span>
                             </li>
                           </ul>
                         </div>
@@ -1557,20 +1557,20 @@ const VehicleHealth = () => {
                           Predictive Maintenance Planning
                         </h4>
                         <div className="flex flex-col gap-0">
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Assumption:
                             <br />
                             If the system uses historical inspection and defect data to recommend upcoming maintenance, downtime will reduce and planning efficiency will improve.
                           </p>
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary mt-2 mb-0" style={{ letterSpacing: '-0.28px' }}>
                             Expected outcome:
                           </p>
-                          <ul className="font-['Trispace'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
+                          <ul className="font-['Outfit'] font-normal text-sm sm:text-base text-text-quaternary list-disc pl-6 mt-2 space-y-0" style={{ letterSpacing: '-0.28px' }}>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">15% reduction in unplanned downtime.</span>
+                              <span className="font-['Outfit'] font-bold text-ui-gray">15% reduction in unplanned downtime.</span>
                             </li>
                             <li className="leading-[1.34em]">
-                              <span className="font-['Trispace'] font-bold text-ui-gray">Higher perceived system value by fleet managers.</span>
+                              <span className="font-['Outfit'] font-bold text-ui-gray">Higher perceived system value by fleet managers.</span>
                             </li>
                           </ul>
                         </div>
@@ -1768,7 +1768,7 @@ const VehicleHealth = () => {
                     <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                       Desktop / PC
                     </p>
-                    <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+                    <p className="font-['Outfit'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
                       Mostly will be used by Macao as he will be monitoring the Dashboard.
                     </p>
                   </div>
@@ -1785,7 +1785,7 @@ const VehicleHealth = () => {
                     <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                       Tablet
                     </p>
-                    <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+                    <p className="font-['Outfit'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
                       Will be used by Natsu and Gray for portability purpose as they have to be on the maintenance floor, requires them to be around the vehicle
                     </p>
                   </div>
@@ -1802,7 +1802,7 @@ const VehicleHealth = () => {
                     <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                       Mobile
                     </p>
-                    <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
+                    <p className="font-['Outfit'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>
                       Similar to the tablet, will also be used by the technicians for it's connivence and based on the device assigned to each.
                     </p>
                   </div>
@@ -1828,13 +1828,13 @@ const VehicleHealth = () => {
               <div className="flex flex-col gap-3 w-full">
                 {/* Breadcrumb */}
                 <div className="flex gap-2 items-center">
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Inspection Tab
                   </p>
                   <div className="w-1 h-1">
                     <LazyImage src={imgEllipse} alt="" className="w-full h-full" />
                   </div>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Maintenance Manager Persona
                   </p>
                 </div>
@@ -1849,7 +1849,7 @@ const VehicleHealth = () => {
                   <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Maintanance Manager Hovers on a row to Select a Vehicle Inspection. Opens a Drawer from the Left Side to
                   </p>
                 </div>
@@ -1939,13 +1939,13 @@ const VehicleHealth = () => {
               <div className="flex flex-col gap-3 w-full">
                 {/* Breadcrumb */}
                 <div className="flex gap-2 items-center">
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Inspection Tab
                   </p>
                   <div className="w-1 h-1">
                     <LazyImage src={imgEllipse} alt="" className="w-full h-full" />
                   </div>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Maintenance Manager Persona
                   </p>
                 </div>
@@ -1960,7 +1960,7 @@ const VehicleHealth = () => {
                   <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Maintenance Manager Hovers on a the Technician name to get the action for edit the assigned technician.
                   </p>
                 </div>
@@ -2005,13 +2005,13 @@ const VehicleHealth = () => {
               <div className="flex flex-col gap-3 w-full">
                 {/* Breadcrumb */}
                 <div className="flex gap-2 items-center">
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Inspection Tab
                   </p>
                   <div className="w-1 h-1">
                     <LazyImage src={imgEllipse} alt="" className="w-full h-full" />
                   </div>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Maintenance Technician Persona
                   </p>
                 </div>
@@ -2026,7 +2026,7 @@ const VehicleHealth = () => {
                   <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Technician fills up the form marking the defects and submits it to the Manager.
                     <br />
                     The manager can view the details of the inspection in his dashboard
@@ -2064,13 +2064,13 @@ const VehicleHealth = () => {
               <div className="flex flex-col gap-3 w-full">
                 {/* Breadcrumb */}
                 <div className="flex gap-2 items-center">
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Inspection Tab
                   </p>
                   <div className="w-1 h-1">
                     <LazyImage src={imgEllipse} alt="" className="w-full h-full" />
                   </div>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Maintenance Manager Persona
                   </p>
                 </div>
@@ -2085,7 +2085,7 @@ const VehicleHealth = () => {
                   <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     This is 1 in 10 times flow and a corner case, in general managers do not need to complete inspections.
                   </p>
                 </div>
@@ -2121,13 +2121,13 @@ const VehicleHealth = () => {
               <div className="flex flex-col gap-3 w-full">
                 {/* Breadcrumb */}
                 <div className="flex gap-2 items-center">
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Inspection Tab
                   </p>
                   <div className="w-1 h-1">
                     <LazyImage src={imgEllipse} alt="" className="w-full h-full" />
                   </div>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Maintenance Manager Persona
                   </p>
                 </div>
@@ -2142,7 +2142,7 @@ const VehicleHealth = () => {
                   <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Manager needs to acknowledge and approve the inspection.
                   </p>
                 </div>
@@ -2178,13 +2178,13 @@ const VehicleHealth = () => {
               <div className="flex flex-col gap-3 w-full">
                 {/* Breadcrumb */}
                 <div className="flex gap-2 items-center">
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Inspection Tab
                   </p>
                   <div className="w-1 h-1">
                     <LazyImage src={imgEllipse} alt="" className="w-full h-full" />
                   </div>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Maintenance Manager Persona
                   </p>
                 </div>
@@ -2199,7 +2199,7 @@ const VehicleHealth = () => {
                   <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Manager needs to acknowledge and approve the inspection.
                   </p>
                 </div>
@@ -2222,13 +2222,13 @@ const VehicleHealth = () => {
               <div className="flex flex-col gap-3 w-full">
                 {/* Breadcrumb */}
                 <div className="flex gap-2 items-center">
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Inspection Tab
                   </p>
                   <div className="w-1 h-1">
                     <LazyImage src={imgEllipse} alt="" className="w-full h-full" />
                   </div>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Maintenance Manager Persona
                   </p>
                 </div>
@@ -2243,7 +2243,7 @@ const VehicleHealth = () => {
                   <p className="font-space font-bold text-lg leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-1%' }}>
                     Flow Details
                   </p>
-                  <p className="font-trispace text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     After Inspection, identified defects are assigned to technicians for repair which they complete and update in the upgraded system.
                   </p>
                 </div>

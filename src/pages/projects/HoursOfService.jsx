@@ -194,7 +194,7 @@ const HoursOfService = () => {
               <h2 className="font-space font-bold text-lg sm:text-[32px] leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                 Context
               </h2>
-              <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+              <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                 I designed and launched an in-house Hours-of-Service (HOS) feature in the Driveri app, replacing a $6/device third-party solution. The project balanced FMCSA compliance, driver usability, and cost savings, while also giving fleet managers better visibility and control through a dedicated web portal.
               </p>
             </div>
@@ -276,7 +276,7 @@ const HoursOfService = () => {
                 </p>
 
                 {/* Calculation Example */}
-                <ul className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray sm:text-text-quaternary w-full list-disc pl-6 space-y-0" style={{ letterSpacing: '-2%' }}>
+                <ul className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray sm:text-text-quaternary w-full list-disc pl-6 space-y-0" style={{ letterSpacing: '-2%' }}>
                   <li>Monthly saved = number_of_devices X $6</li>
                   <li>Annual saved = number_of_devices X $6 X 12</li>
                   <li>Example: 1,000 devices → monthly $6,000 → annual $72,000</li>
@@ -288,7 +288,7 @@ const HoursOfService = () => {
                 </h3>
 
                 {/* Condition Description */}
-                <ul className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray sm:text-text-quaternary w-full list-disc pl-6 space-y-0" style={{ letterSpacing: '-2%' }}>
+                <ul className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray sm:text-text-quaternary w-full list-disc pl-6 space-y-0" style={{ letterSpacing: '-2%' }}>
                   <li>Driving data was being shared with the external vendor.</li>
                   <li>Vehicle and driver assignment in the native app was rudimentary.</li>
                   <li>The system served a large scale: ~270,000 drivers.</li>
@@ -305,7 +305,7 @@ const HoursOfService = () => {
                 </div>
 
                 {/* Final Description */}
-                <ul className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray w-full list-disc pl-6 space-y-0" style={{ letterSpacing: '-2%' }}>
+                <ul className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray w-full list-disc pl-6 space-y-0" style={{ letterSpacing: '-2%' }}>
                   <li>The fleet was relying on a third-party ELD integration for compliance. This came at a cost of $6 per driver per device, and despite having a native driver app, drivers spent most of their time on the Geotab mobile app to manage their Hours of Service (HoS).</li>
                   <li>The above shown is from the mentioned third party app, our app was not used by the Driver for this requirement.</li>
                 </ul>
@@ -361,7 +361,7 @@ const HoursOfService = () => {
             >
               <div className="flex flex-col gap-6 sm:gap-8">
                 {/* Description */}
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray sm:text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
+                <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray sm:text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
                   The Driver Dashboard UI had largely remained unchanged since launch. New features had been added piecemeal over the years, but the overall experience felt outdated.
                 </p>
 
@@ -374,7 +374,7 @@ const HoursOfService = () => {
                       <div className="w-full sm:w-[163px] h-auto sm:h-[332px] overflow-hidden">
                         <LazyImage src={homescreen1} alt="HomeScreen 1" className="w-full h-full object-cover" />
                       </div>
-                      <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                         The main legacy Layout used for major years.
                       </p>
                     </div>
@@ -384,7 +384,7 @@ const HoursOfService = () => {
                       <div className="w-full sm:w-[163px] h-auto sm:h-[332px] overflow-hidden">
                         <LazyImage src={dashboard7101} alt="Dashboard 7101" className="w-full h-full object-cover" />
                       </div>
-                      <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                         Recent Update but not pushed to all tenants
                       </p>
                     </div>
@@ -394,7 +394,7 @@ const HoursOfService = () => {
                       <div className="w-[156.878px] h-[327px] rounded-[12.224px] overflow-hidden shadow-[0px_0px_0px_4.075px_rgba(159,159,159,0.25)] bg-white">
                         <LazyImage src={thirdGen1} alt="3rd Generation" className="w-full h-full object-cover" />
                       </div>
-                      <p className="font-trispace text-base leading-[1.34em] text-ui-gray w-[233px]" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-base leading-[1.34em] text-ui-gray w-[233px]" style={{ letterSpacing: '-2%' }}>
                         Proposed future update considering the DS refreshment and new feature integration
                       </p>
                     </div>
@@ -405,7 +405,7 @@ const HoursOfService = () => {
                     <div className="w-[150px] h-auto rounded-xl overflow-hidden shadow-[0px_0px_0px_4px_rgba(159,159,159,0.25)] bg-white">
                       <LazyImage src={thirdGen1} alt="3rd Generation" className="w-full h-full object-cover" />
                     </div>
-                    <p className="font-trispace text-sm leading-[1.34em] text-ui-gray w-full" style={{ letterSpacing: '-2%' }}>
+                    <p className="font-outfit text-sm leading-[1.34em] text-ui-gray w-full" style={{ letterSpacing: '-2%' }}>
                       Proposed future update considering the DS refreshment and new feature integration
                     </p>
                   </div>
@@ -462,7 +462,7 @@ const HoursOfService = () => {
             >
               <div className="flex flex-col gap-6 sm:gap-16 sm:items-center">
                 {/* Description */}
-                <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
+                <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
                   Drivers typically pick up a vehicle or trailer from the company yard, complete their service runs, and often take the truck home overnight. The next day, depending on the shipment, they may continue with the same vehicle or switch to a different one.
                 </p>
 
@@ -482,7 +482,7 @@ const HoursOfService = () => {
                   </div>
 
                   {/* Subtitle */}
-                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray w-full" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray w-full" style={{ letterSpacing: '-2%' }}>
                     Drivers about to get in the vehicle, they need to select the same in the app
                   </p>
 
@@ -511,7 +511,7 @@ const HoursOfService = () => {
                           <h4 className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                             Remove Selection
                           </h4>
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                             Allow the driver to clear current selections, enhancing user experience.
                           </p>
                         </div>
@@ -521,7 +521,7 @@ const HoursOfService = () => {
                           <h4 className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.08px' }}>
                             Vehicle Already Selected
                           </h4>
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                             Prevents double selection by informing the driver.
                           </p>
                         </div>
@@ -534,7 +534,7 @@ const HoursOfService = () => {
                           <h4 className="font-space font-bold text-lg sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                             Shipping Document Limit
                           </h4>
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                             Enforce character limits for shipping documents
                           </p>
                         </div>
@@ -544,7 +544,7 @@ const HoursOfService = () => {
                           <h4 className="font-space font-bold text-lg sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.18px' }}>
                             No Internet Connection
                           </h4>
-                          <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+                          <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                             Implements a retry mechanism to ensure data sync.
                           </p>
                         </div>
@@ -561,7 +561,7 @@ const HoursOfService = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
                     If mandated by the manager profile, the Driver needs to do a vehicle inspection. Otherwise on clicking the "Create DVIR" button the Driver will be shown the screen to →The driver needs to accept that the vehicle is safe to drive if the defects are repaired.
                   </p>
 
@@ -580,7 +580,7 @@ const HoursOfService = () => {
                           <h5 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             No Defects
                           </h5>
-                          <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                             We do not show anything if there are no defects.
                           </p>
                         </div>
@@ -590,7 +590,7 @@ const HoursOfService = () => {
                           <h5 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             Defects Not Repaired
                           </h5>
-                          <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                             If defects are present and the status is not repaired, the user shall not drive / call the support team.
                           </p>
                         </div>
@@ -603,7 +603,7 @@ const HoursOfService = () => {
                           <h5 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             Defects Repaired
                           </h5>
-                          <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                             If defects are present but the status is safe to drive, the driver needs to approve and sign to start driving.
                           </p>
                         </div>
@@ -613,7 +613,7 @@ const HoursOfService = () => {
                           <h5 className="font-space font-bold text-base sm:text-lg leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                             No Defects but Unsafe
                           </h5>
-                          <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                          <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                             If defects are not there and the status is repaired and safe, the driver needs to approve and sign,
                           </p>
                         </div>
@@ -683,7 +683,7 @@ const HoursOfService = () => {
               <div className="flex flex-col gap-8 sm:gap-16">
                 {/* Main Description and Image */}
                 <div className="flex flex-col gap-6 sm:gap-16">
-                  <div className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
+                  <div className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full" style={{ letterSpacing: '-2%' }}>
                     <p className="mb-0">Build a native ELD feature within the driver app, fully managed by the web dashboard for fleet managers, replacing the costly third-party system.</p>
                     <p className="mb-0">The goals:</p>
                     <ul className="list-disc pl-6">
@@ -705,7 +705,7 @@ const HoursOfService = () => {
                     North Star & Outcomes
                   </h3>
 
-                  <ul className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full list-disc pl-6" style={{ letterSpacing: '-2%' }}>
+                  <ul className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary w-full list-disc pl-6" style={{ letterSpacing: '-2%' }}>
                     <li>Seamless duty status management – easy to change, automated where possible.</li>
                     <li>Prominent notifications – violations, log edits, and duty transitions surfaced clearly.</li>
                     <li>Driver trust – transparent logs, editable mistakes, and smoother roadside inspections.</li>
@@ -717,7 +717,7 @@ const HoursOfService = () => {
                       <h4 className="font-space font-bold text-base leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Duty Status
                       </h4>
-                      <p className="font-trispace text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         Easily change duty status automatically.
                       </p>
                     </div>
@@ -726,7 +726,7 @@ const HoursOfService = () => {
                       <h4 className="font-space font-bold text-base leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Notifications
                       </h4>
-                      <p className="font-trispace text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         Violations and duty changes are clearly displayed
                       </p>
                     </div>
@@ -735,7 +735,7 @@ const HoursOfService = () => {
                       <h4 className="font-space font-bold text-base leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                         Driver Trust
                       </h4>
-                      <p className="font-trispace text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                      <p className="font-outfit text-sm leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                         Transparent logs and and easy mistake edits.
                       </p>
                     </div>
@@ -753,13 +753,13 @@ const HoursOfService = () => {
                     {/* Row 1 */}
                     <div className="flex gap-3 sm:gap-8 w-full">
                       <div className="flex-1 sm:w-[250px] sm:flex-initial bg-[#EBF0F5] border border-ui-gray rounded-2xl p-3 sm:p-6 flex flex-col justify-center gap-1 sm:h-[150px]">
-                        <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                        <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                           Missed or incorrect duty status changes → led to unassigned logs.
                         </p>
                       </div>
 
                       <div className="flex-1 sm:w-[250px] sm:flex-initial bg-[#EBF0F5] border border-ui-gray rounded-2xl p-3 sm:p-6 flex flex-col justify-center gap-1 sm:h-[150px]">
-                        <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                        <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                           Log certification was confusing and often skipped.
                         </p>
                       </div>
@@ -768,13 +768,13 @@ const HoursOfService = () => {
                     {/* Row 2 */}
                     <div className="flex gap-3 sm:gap-8 w-full sm:mt-8">
                       <div className="flex-1 sm:w-[250px] sm:flex-initial bg-[#EBF0F5] border border-ui-gray rounded-2xl p-3 sm:p-6 flex flex-col justify-center gap-1 sm:h-[150px]">
-                        <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                        <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                           Drivers had to juggle two apps (native + third-party).
                         </p>
                       </div>
 
                       <div className="flex-1 sm:w-[250px] sm:flex-initial bg-[#EBF0F5] border border-ui-gray rounded-2xl p-3 sm:p-6 flex flex-col justify-center gap-1 sm:h-[150px]">
-                        <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                        <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                           Managers lacked visibility into unassigned logs and edits.
                         </p>
                       </div>
@@ -782,7 +782,7 @@ const HoursOfService = () => {
 
                     {/* Row 3 - Full Width */}
                     <div className="bg-[#EBF0F5] border border-ui-gray rounded-2xl p-3 sm:p-6 flex flex-col justify-center gap-1 sm:h-[150px] sm:mt-8">
-                      <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                      <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                         Data transfer to govt. body was not smooth and stress rises when cops pull over on road.
                       </p>
                     </div>
@@ -797,7 +797,7 @@ const HoursOfService = () => {
 
                   <p className="text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     <span className="font-space font-bold" style={{ letterSpacing: '-0.5%' }}>Jacob's Law</span>
-                    <span className="font-trispace"> : users expect familiar interaction patterns.</span>
+                    <span className="font-outfit"> : users expect familiar interaction patterns.</span>
                   </p>
 
                   {/* Jacob's Law Note */}
@@ -805,12 +805,12 @@ const HoursOfService = () => {
                     <h4 className="font-space font-bold text-base leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-1%' }}>
                       Here is a catch about Jacob's law here
                     </h4>
-                    <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
+                    <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-2%' }}>
                       We tried to improve the experience which might alter the general user expected behaviour, if we do not train and correct it, then in future some other product might do we might lose customers.
                     </p>
                   </div>
 
-                  <p className="font-trispace text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
+                  <p className="font-outfit text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-2%' }}>
                     Reviewed other fleet management apps → noted limited competition, meaning switching costs for tenants are high.
                   </p>
 
@@ -963,7 +963,7 @@ const HoursOfService = () => {
                   {/* Row 1: Two cards side by side */}
                   <div className="flex gap-3 sm:gap-8">
                     <div className="flex-1 sm:w-[250px] sm:flex-initial h-[180px] bg-[#EBF0F5] border border-ui-gray rounded-2xl p-6 flex flex-col justify-center gap-3 sm:shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)]">
-                      <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                      <p className="font-['Outfit'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                         Logs:
                         <br />
                         duty status, timestamps, duration, location, comments.
@@ -971,7 +971,7 @@ const HoursOfService = () => {
                     </div>
 
                     <div className="flex-1 sm:w-[250px] sm:flex-initial h-[180px] bg-[#EBF0F5] border border-ui-gray rounded-2xl p-6 flex flex-col justify-center gap-3 sm:shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)]">
-                      <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                      <p className="font-['Outfit'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                         Edits: prevent overlaps, allow recertification.
                       </p>
                     </div>
@@ -979,7 +979,7 @@ const HoursOfService = () => {
 
                   {/* Row 2: Full width card with bulleted list */}
                   <div className="w-full sm:w-[533px] h-[300px] bg-[#EBF0F5] border border-ui-gray rounded-2xl p-6 flex flex-col justify-center gap-3 shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)] mt-3 sm:mt-8">
-                    <ul className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray list-disc ml-6" style={{ letterSpacing: '-0.32px' }}>
+                    <ul className="font-['Outfit'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray list-disc ml-6" style={{ letterSpacing: '-0.32px' }}>
                       <li>30-minute break required after 8 hours driving.</li>
                       <li>Max 11 hours Driving per shift, 14 hours On Duty.</li>
                       <li>10 consecutive hours Off Duty required after a shift.</li>
@@ -991,7 +991,7 @@ const HoursOfService = () => {
                   {/* Row 3: Two cards side by side */}
                   <div className="flex gap-3 sm:gap-8 mt-3 sm:mt-8">
                     <div className="flex-1 sm:w-[250px] sm:flex-initial h-[150px] bg-[#EBF0F5] border border-ui-gray rounded-2xl p-6 flex flex-col justify-center gap-3 shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)]">
-                      <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                      <p className="font-['Outfit'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                         Manager log transfers → driver approval/rejection.
                       </p>
                     </div>
@@ -999,7 +999,7 @@ const HoursOfService = () => {
                     {/* Special card with gradient background and 50+ text overlay */}
                     <div className="flex-1 sm:w-[250px] sm:flex-initial h-[150px] relative">
                       <div className="absolute inset-0 bg-gradient-to-b from-[rgba(5,16,14,0.7)] to-transparent rounded-2xl px-6 py-4 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]" style={{ filter: 'blur(2.15px)' }}>
-                        <p className="font-['Trispace'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                        <p className="font-['Outfit'] font-normal text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                           Alerts for violations (hours, daily/weekly cycles).
                         </p>
                       </div>
@@ -1046,7 +1046,7 @@ const HoursOfService = () => {
                   <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray sm:text-[#9A9CAD]" style={{ letterSpacing: '-0.08px' }}>
                     In-Cab Monitor (786px–1056px)
                   </p>
-                  <p className="font-['Trispace'] font-normal sm:font-space sm:font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary sm:text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                  <p className="font-['Outfit'] font-normal sm:font-space sm:font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary sm:text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                     Exist in modern trucks.
                   </p>
                 </div>
@@ -1063,7 +1063,7 @@ const HoursOfService = () => {
                   <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray sm:text-[#9A9CAD]" style={{ letterSpacing: '-0.08px' }}>
                     Tablets (786px–1056px)
                   </p>
-                  <p className="font-['Trispace'] font-normal sm:font-space sm:font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary sm:text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                  <p className="font-['Outfit'] font-normal sm:font-space sm:font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary sm:text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                     Given to the Driver by the fleet.
                   </p>
                 </div>
@@ -1080,7 +1080,7 @@ const HoursOfService = () => {
                   <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-ui-gray sm:text-[#9A9CAD]" style={{ letterSpacing: '-0.08px' }}>
                     Mobile phones (360px–786px)
                   </p>
-                  <p className="font-['Trispace'] font-normal sm:font-space sm:font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary sm:text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+                  <p className="font-['Outfit'] font-normal sm:font-space sm:font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-text-quaternary sm:text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                     Drivers log in to there own device to maintain their records.
                   </p>
                 </div>
@@ -1149,7 +1149,7 @@ const HoursOfService = () => {
                       Active Driver
                     </p>
                   </div>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray w-full" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray w-full" style={{ letterSpacing: '-0.28px' }}>
                     The Maintenance Manager ensures fleet safety, reliability, and optimal performance through preventive maintenance programs, technician supervision and training, budget management, regulatory compliance, and data-driven decision-making to minimize downtime.
                   </p>
                 </div>
@@ -1169,7 +1169,7 @@ const HoursOfService = () => {
                       Co-Driver
                     </p>
                   </div>
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray w-full" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray w-full" style={{ letterSpacing: '-0.28px' }}>
                     The Maintenance Technician inspects, diagnoses, and repairs fleet vehicles, performing preventive maintenance to ensure safety, reliability, and compliance while minimizing downtime.
                   </p>
                 </div>
@@ -1205,7 +1205,7 @@ const HoursOfService = () => {
               <div className="w-full sm:w-[602px] flex flex-col sm:flex-row items-center gap-3 sm:gap-8">
                 {/* Note 1: Authentication */}
                 <div className="w-full sm:w-[231px] bg-white border border-text-quaternary rounded-[99px] px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-center shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)]">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.28px' }}>
                     Authentication + permissions.
                   </p>
                 </div>
@@ -1219,7 +1219,7 @@ const HoursOfService = () => {
 
                 {/* Note 2: Tooltips */}
                 <div className="w-full sm:w-[235px] bg-white border border-text-quaternary rounded-[99px] px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-center shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)]">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-lg leading-[1.34em] text-ui-gray text-center" style={{ letterSpacing: '-0.28px' }}>
                     Tooltips where necessary.
                   </p>
                 </div>
@@ -1234,35 +1234,35 @@ const HoursOfService = () => {
               <div className="flex flex-wrap content-start items-start gap-3 sm:gap-6 w-full">
                 {/* Selecting Vehicle */}
                 <div className="bg-white border border-text-quaternary rounded-[99px] px-4 sm:px-8 py-3 sm:py-4 flex flex-col items-center justify-center gap-[10px] sm:shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)]">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
                     Selecting Vehicle
                   </p>
                 </div>
 
                 {/* Selecting Trailer */}
                 <div className="bg-white border border-text-quaternary rounded-[99px] px-4 sm:px-8 py-3 sm:py-4 flex flex-col items-center justify-center gap-[10px] sm:shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)]">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
                     Selecting Trailer
                   </p>
                 </div>
 
                 {/* Shipping Document */}
                 <div className="bg-white border border-text-quaternary rounded-[99px] px-4 sm:px-8 py-3 sm:py-4 flex flex-col items-center justify-center gap-[10px] sm:shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)]">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
                     Shipping Document
                   </p>
                 </div>
 
                 {/* Prompt to perform Vehicle Inspection */}
                 <div className="bg-white border border-text-quaternary rounded-[99px] px-4 sm:px-8 py-3 sm:py-4 flex flex-col items-center justify-center gap-[10px] sm:shadow-[0px_4px_12px_0px_rgba(249,249,249,0.25)]">
-                  <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
+                  <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
                     Prompt to perform Vehicle Inspection
                   </p>
                 </div>
               </div>
 
               {/* Experience remains the same note */}
-              <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
+              <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.32px' }}>
                 [Experience remains the same]
               </p>
             </div>
@@ -1353,9 +1353,9 @@ const HoursOfService = () => {
             {/* Flow Details for Arc 1 */}
             <div className="flex flex-col gap-4 sm:gap-8 py-6 sm:border-y-2 sm:border-[#EBF0F5]">
               <div className="flex gap-2 items-center">
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
                 <div className="w-1 h-1 rounded-full bg-ui-gray"></div>
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
               </div>
 
               <ol className="list-decimal ml-7">
@@ -1368,7 +1368,7 @@ const HoursOfService = () => {
                 <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-0.08px' }}>
                   Flow Details
                 </p>
-                <ul className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray list-disc ml-5" style={{ letterSpacing: '-0.28px' }}>
+                <ul className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray list-disc ml-5" style={{ letterSpacing: '-0.28px' }}>
                   <li>Changing of Duty states</li>
                   <li>Personal Conveyance & Yard move annotations</li>
                 </ul>
@@ -1453,9 +1453,9 @@ const HoursOfService = () => {
             {/* Flow Details for Arc 2 */}
             <div className="flex flex-col gap-3 sm:gap-8 py-6 sm:border-y-2 sm:border-[#EBF0F5]">
               <div className="flex gap-2 items-center">
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
                 <div className="w-1 h-1 rounded-full bg-ui-gray"></div>
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
               </div>
 
               <ol className="list-decimal ml-7" start={2}>
@@ -1468,7 +1468,7 @@ const HoursOfService = () => {
                 <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-0.08px' }}>
                   Flow Details
                 </p>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
                   User can view and maintain their logs from the HoS tab in the APP.
                 </p>
               </div>
@@ -1541,9 +1541,9 @@ const HoursOfService = () => {
             {/* Flow Details for Arc 3 */}
             <div className="flex flex-col gap-4 sm:gap-8 py-6 sm:border-y-2 sm:border-[#EBF0F5]">
               <div className="flex gap-2 items-center">
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
                 <div className="w-1 h-1 rounded-full bg-ui-gray"></div>
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
               </div>
 
               <ol className="list-decimal ml-7" start={3}>
@@ -1556,7 +1556,7 @@ const HoursOfService = () => {
                 <p className="font-space font-bold text-base sm:text-lg leading-[1.34em] sm:leading-[1.36em] text-[#9A9CAD]" style={{ letterSpacing: '-0.08px' }}>
                   Flow Details
                 </p>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
                   In the end of every 14 day cycle the driver needs to certify 14 days log as a mandatory action also they are able to certify each day's logs.
                 </p>
               </div>
@@ -1581,9 +1581,9 @@ const HoursOfService = () => {
             {/* Flow Details - Editing / Managing the Logs */}
             <div className="flex flex-col gap-4 sm:gap-8 py-6 sm:border-y-2 sm:border-[#EBF0F5]">
               <div className="flex gap-2 items-center">
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
                 <div className="w-1 h-1 rounded-full bg-ui-gray"></div>
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
               </div>
 
               <ol className="list-decimal ml-7" start={4}>
@@ -1596,7 +1596,7 @@ const HoursOfService = () => {
                 <p className="font-space font-bold text-base leading-[1.34em] text-[#9A9CAD]" style={{ letterSpacing: '-0.08px' }}>
                   Flow Details
                 </p>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
                   Drivers can edit their logs, add annotations, and manage discrepancies.
                 </p>
               </div>
@@ -1673,9 +1673,9 @@ const HoursOfService = () => {
             {/* Flow Details for Arc 4 - Inspector Mode */}
             <div className="flex flex-col gap-8 sm:gap-8 py-6 sm:border-y-2 sm:border-[#EBF0F5]">
               <div className="flex gap-2 items-center">
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
                 <div className="w-1 h-1 rounded-full bg-ui-gray"></div>
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
               </div>
 
               <ol className="list-decimal ml-7" start={4}>
@@ -1688,7 +1688,7 @@ const HoursOfService = () => {
                 <p className="font-space font-bold text-base leading-[1.34em] text-[#9A9CAD]" style={{ letterSpacing: '-0.08px' }}>
                   Flow Details
                 </p>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
                   When the Cops pull over the driver, they need to show their log records in a secure manner.
                 </p>
               </div>
@@ -1721,9 +1721,9 @@ const HoursOfService = () => {
           >
             <div className="flex flex-col gap-3 sm:gap-8 py-6 sm:border-y-2 sm:border-[#EBF0F5]">
               <div className="flex gap-2 items-center">
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver•i App</p>
                 <div className="w-1 h-1 rounded-full bg-ui-gray"></div>
-                <p className="font-['Trispace'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
+                <p className="font-['Outfit'] font-normal text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.32px' }}>Driver Persona</p>
               </div>
 
               <ol className="list-decimal ml-7" start={5}>
@@ -1736,7 +1736,7 @@ const HoursOfService = () => {
                 <p className="font-space font-bold text-base leading-[1.34em] text-[#9A9CAD]" style={{ letterSpacing: '-0.08px' }}>
                   Flow Details
                 </p>
-                <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
+                <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-ui-gray" style={{ letterSpacing: '-0.28px' }}>
                   ~50% of the Drivers use In Cab monitors as their Device, mostly a tab, which is portable. The Layout slightly changes from that of the Mobile layot.
                 </p>
               </div>
@@ -1761,7 +1761,7 @@ const HoursOfService = () => {
                   Unassigned Driving Log
                 </li>
               </ol>
-              <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+              <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                 In an ideal world, good chances drivers make mistakes or misses to change the Duty status to start their shift, when the vehicle is in motion a log is recorded from data that is derived from the device, the log is technically not assigned to any driver.
               </p>
             </div>
@@ -1773,7 +1773,7 @@ const HoursOfService = () => {
                   Log Updates from Web portals
                 </li>
               </ol>
-              <p className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
+              <p className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary" style={{ letterSpacing: '-0.28px' }}>
                 From the Web Portal, when the fleet managers edit the logs, the Drivers can choose to accept/reject the logs. If they accept, their log records will be updated.
               </p>
             </div>
@@ -1785,7 +1785,7 @@ const HoursOfService = () => {
                   Auto duty transitions:
                 </li>
               </ol>
-              <ul className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary list-disc ml-[21px]" style={{ letterSpacing: '-0.28px' }}>
+              <ul className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary list-disc ml-[21px]" style={{ letterSpacing: '-0.28px' }}>
                 <li>On Duty → Driving when vehicle motion detected (with 60-second override).</li>
                 <li>Driving → On Duty when idle.</li>
               </ul>
@@ -1798,7 +1798,7 @@ const HoursOfService = () => {
                   Log Certification
                 </li>
               </ol>
-              <ul className="font-['Trispace'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary list-disc ml-[21px]" style={{ letterSpacing: '-0.28px' }}>
+              <ul className="font-['Outfit'] font-normal text-sm sm:text-base leading-[1.34em] text-text-quaternary list-disc ml-[21px]" style={{ letterSpacing: '-0.28px' }}>
                 <li>Drivers must certify previous day's logs daily.</li>
                 <li>Recertification required after edits.</li>
                 <li>14-day certification backlog compliance.</li>
