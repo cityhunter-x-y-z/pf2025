@@ -1,0 +1,610 @@
+# Home 2.2 — a design system for a surface that can change its mind
+
+The `/home-2.2` page is Amitesh's portfolio rendered as a chat surface. As of
+this change it can also render as a **different design** — same components,
+same elements, same copy, different material — chosen by the visitor from a
+drawer in the header.
+
+This document is the reference: what the system is made of, why it is built
+this way, and what the rules are. The one-page working contract lives next to
+the code at [`src/design/README.md`](../src/design/README.md).
+
+---
+
+## 1. The premise
+
+Two ways to let a user change the look of a product:
+
+1. **Fork the UI.** Write the components twice, switch between trees.
+2. **Change the material.** Write the components once, express every visual
+   decision as a named value, and swap the values.
+
+The first is how most "theme" features die: two trees drift, a fix lands in one
+of them, and the second design quietly rots. The second is how design systems
+are supposed to work, and it is what is implemented here — strictly: no
+component outside `src/design/` branches on a theme id, or knows one exists.
+
+The constraint that produced it was explicit: **add a second look without
+changing the components or the elements.** That is a stronger constraint than it
+sounds, and it is what forced the interesting part of the architecture (§4).
+
+## 2. The themes
+
+| | Ground | Surfaces & edges | Type | Material |
+| --- | --- | --- | --- | --- |
+| **Liquid Glass** (default) | near-black `#060609`, bloom, vignette | translucent, `blur(20px)`, 1px gradient rim, soft `0 20px 50px` | Outfit, medium, `-0.03em` | physical refraction |
+| **Neo Brutalism** | bone `#efede6`, cut shapes, dot-grid | opaque white, 2px ink, offset `4px 4px 0` | Outfit, bold, `-0.02em` | six ink bands, blue |
+| **16-Bit Handheld** | yellow `#fbdd65`, clouds, scanlines | cream, 3px plum + bone inner ring, offset `5px 5px 0` | Pixelify Sans / Silkscreen | four bands, 56-block pixel grid |
+| **Neubrutalism** | ivory `#fefce8`, four hard colour blocks | white, 3px black, offset `5px 5px 0`, **radius 0** | Inter 900 | five bands, saturated pink |
+| **Brutalism** | white, exposed 1px column rules | white, 4px black, **no shadow**, **radius 0**, **no transitions** | system mono + Helvetica 900, uppercase | four bands, near-black |
+| **Minimal & Direct** | white, nothing on it at all | white, 1px `#e5e7eb`, no shadow, **640px single column**, `1.75` leading | Inter, four colours total | eight bands, graphite |
+| **Maximalism** | `#ffff00`, multiply overprint, plaid stripes | white/colour-cycled, 4px black, `6px 6px 0`, **tilted ±1.6°**, radius 0 | Inter 900 uppercase, magenta offset shadow | four bands, pure magenta |
+| **Anti-Polish / Raw** | `#fafaf8` paper, SVG grain, kraft blobs | cream, 2px `#1a1a1a`, no shadow, **hand-drawn corners**, tilted ±0.5° | Patrick Hand, sentence case | five bands, sepia |
+| **Magazine** | white page, nothing on it | boxless — a 2px black rule ends every panel, chips underlined, radius 0 | Inter 700, red caps kickers, **drop cap** | six bands, press red |
+| **Swiss International** | bone `#f5f1e8`, nothing on it | white cards, 1px black, no shadow, **2rem grid**, 1120px wide, radius 0 | Inter **400** display, caps kickers, **numbered cards** | six bands, tan |
+| **Realism** | anodised plate, photographed brushed grain | paper sheets with fibre, moulded keycaps that **travel on press** | system UI face, engraved glyphs | **none — stays refractive** |
+| **Y2K** | bubblegum → lavender → cyan | frosted glass cards, Aqua pills, white rims, gloss | Inter 900 caps, **chrome-gradient display**, ✦ kickers | eight bands, chrome |
+| **Pixel Art** | PICO-8 `#1d2b53`, 8px pixel grid | black dialogs, 3px cream border, **stepped corners**, no easing | VT323 body, Press Start 2P kickers | four bands, **28-block sprite** |
+
+The neo theme follows the reference the work was briefed against: white cards,
+black outlines, hard offset shadows, an electric blue primary, and yellow /
+violet shapes cut into the ground.
+
+The 16-bit theme's rule is that **nothing feathers**: every gradient in it is a
+two-stop with both stops at the same position, which is the shading grammar of
+the era's sprite art. Its cream panels carry a double ring — plum outside, bone
+inside — which is how the reference draws a window frame, and it costs nothing
+because `--lg-surface-shadow` can hold an inset and an offset at once.
+
+**Three brutalisms, on purpose.** They are three readings of one movement, and
+the drawer is meant to let you feel the difference rather than read about it:
+
+- **Neo Brutalism** — the paper-and-ink reading. One accent, a quiet ground,
+  rounding as authored.
+- **Neubrutalism** — [the guide's](https://www.uistyleguide.com/style/neubrutalism)
+  2020s product reading, "think Figma and Notion": the whole primary palette at
+  once, 3px black outlines, `5px 5px 0` shadows, sharp corners. Two tokens
+  deviate from it for contrast — the active-state pink is darkened to `#db2777`
+  (5.0:1 on white against the reference's 2.2:1), and the send button takes the
+  reference's own black-on-white button rather than a mid-tone primary.
+- **Brutalism** — [the guide's](https://www.uistyleguide.com/style/brutalism)
+  raw reading, and the one the other two are softenings of. Take neubrutalism's
+  drop shadow and its warmth away and this is what is left: white, black,
+  hairline structure, unmixed primaries, and type nobody art-directed. Its CSS
+  line is `border-radius: 0px, transition: none, font-weight: 700+, border:
+  2-4px solid`, and all four are literal here.
+
+Brutalism is also the only theme that loads **no webfont at all**. "Default
+fonts" is in the style's own description, so it asks for the system's own mono
+and grotesque rather than downloading a face that imitates them. That is a
+design position, not an optimisation, and it should stay that way.
+
+**One deliberate departure from the neo reference.** The reference puts a
+full-bleed blue band behind its header and hero. Ink on `#0a6cff` measures
+about 3.4:1, which fails AA for the 11–16px copy that covers most of this
+surface, and there is no per-theme markup hook to give the header its own
+on-band colour without breaking rule §5.1. So the blue survives as fills,
+edges, the cube's ink and corner blocks — everywhere it never has small text on
+top of it — and the running text always sits on paper. The look holds; the
+contrast holds with it.
+
+The set now covers three different kinds of argument, which is the more useful
+way to read it than by era:
+
+- **Surface** — glass, neo, gba, neub, brutal. What the material is made of.
+- **Layout** — minimal. How much room things get.
+- **Placement** — maximalism, anti-polish. Where things sit, and whether they
+  sit straight.
+- **Structure** — magazine, swiss. What separates one thing from the next: a
+  rule and some space rather than a container.
+- **Depth** — realism, y2k. Whether the surface has a third dimension at all.
+
+**Realism is the only theme that adds depth back**, and the only one besides
+glass that keeps the cube refractive (`flat: 0`). Every other theme re-inks it
+because a flat surface cannot host a physically-rendered object; this one is
+built on the opposite premise, so the cube becomes the glass paperweight on the
+desk. Its plate and paper are real photographed material — two CC0 tiles from
+ambientCG, 7KB together — tone-mapped so they carry *grain* and the tokens
+underneath still carry the colour. And its keys move: 32ms down against 90ms
+up, because a cap is driven down by a finger and returned by a spring, and
+those are not the same force.
+
+**Y2K is the other depth theme and the opposite kind of depth** — not mass but
+gloss. Frosted cards over a bubblegum gradient, Aqua pills split hard at the
+equator, and a chrome display line.
+
+**16-Bit Handheld and Pixel Art are two halves of one idea**, which is how a
+second pixel theme earns its place. The handheld is the *console*: a sunlit
+screen, cream window panels, the UI a game draws around itself. Pixel Art is
+the *canvas*: the dark editor the sprite is drawn on, at half the resolution
+(28 blocks against 56), in a palette with a name. Using PICO-8's actual sixteen
+rather than inventing sixteen plausible colours is the difference between pixel
+art and pixel-ish — the constraint is the medium. It is also the first dark
+theme since glass, which is why it has no `--color-white` remap and no entry in
+the opacity floor: those exist for light themes, and the utilities were written
+for a dark ground in the first place.
+
+**Swiss and Minimal are opposite arguments**, which is why both earn a place.
+Minimal *removes* until one thing is left: pure white, a 640px single column,
+four colours. Swiss *organises* until everything has a place: bone paper, a
+1120px grid at the guide's own 2rem gap, cards numbered 01…06 by a CSS counter
+with no markup involved. The clearest tell between them and the magazine theme
+is weight — a Swiss headline is large, not heavy, which is what
+`--lg-display-weight` exists to say.
+
+**Anti-Polish / Raw** is the one that proved the parts compose. It needed no
+new mechanism at all: the radius layer built for sharp corners carries its
+hand-drawn ones, the `rotate` layer built for chaos carries its ±0.5° tilt at a
+quarter of the volume, the jitter keyframe and the no-transitions reset are
+shared with the themes that asked for them first, and its paper grain is an
+inline `feTurbulence` in a token that already existed. One genuinely new token
+(`--lg-media-filter`) and the rest is reuse.
+
+**Minimal & Direct** is the odd one out, and usefully so. Every theme before it
+changed how the surface *looks*; this one changes how it is *laid out*. Its own
+CSS line is `max-width: 640px, line-height: 1.75, single-column` — no colour in
+it at all — which is what finally made measure and leading into tokens rather
+than literals sitting in the markup. It also holds itself to exactly the four
+colours the guide lists: the "listening" state and the live dot are the same
+blue as everything else, because a fifth colour is the thing the style exists
+to remove.
+
+## 2b. Light, dark, and the site toggle
+
+Every theme now declares a `mode` in the registry: `glass` and `pixel` are dark,
+the other eleven are light. CSS knows each theme's ground colour but cannot say
+which side of the line it falls on, and the site-wide light/dark toggle needs
+exactly that, so it lives in `themes.js` next to the other things CSS cannot
+express.
+
+The toggle and the drawer are two controls over one state, and they write to
+each other:
+
+- **The toggle is the mode control.** Flipping it moves to a theme of that mode:
+  the last one used in this session, or `DEFAULT_BY_MODE` (`glass` / `min`).
+- **The drawer is the theme control.** Picking Magazine is a choice of a light
+  theme, so the toggle follows it to light.
+
+They talk over a `site-theme-change` window event rather than shared state, so
+`useSiteTheme` does not have to know this page exists.
+
+**On load, the site-wide choice outranks the remembered theme.** The other way
+round is worse than it sounds: someone who set the site to light, and whose last
+theme here was Liquid Glass, would land on this page and have it quietly flip
+the whole site back to dark. It opens in the light member instead, and the
+drawer is right there.
+
+`min` is the light default rather than `real` because someone flipping a toggle
+wants a plainly light page, not an opinion. `real` is arguably the truer pair
+for `glass`, being the only other theme that leaves the cube refractive.
+
+---
+
+## 3. The layers
+
+```
+                       data-lg-theme on <html>          ← one DOM write, ThemeProvider
+                                │
+   ┌────────────────────────────┴────────────────────────────┐
+   │  Layer 1   tokens            design/themes.css          │  ~60 custom properties,
+   │                                                         │  declared identically per theme
+   ├─────────────────────────────────────────────────────────┤
+   │  Layer 2   primitives        styles/liquid-glass.css    │  .lg-surface, .lg-hairline,
+   │                              + inline style={{ }}       │  .lg-focus, .lg-scroll …
+   ├─────────────────────────────────────────────────────────┤
+   │  Layer 3   utility remap     --color-white, per theme   │  retargets Tailwind's
+   │                              + opacity floor + radius   │  white-alpha utilities
+   └─────────────────────────────────────────────────────────┘
+                                │
+                     components — unchanged, theme-blind
+```
+
+JavaScript participates in exactly one place: `useTheme()` hands the WebGL cube
+two numbers that CSS cannot deliver into a shader.
+
+## 4. The mechanism worth knowing about
+
+The components were full of Tailwind utilities like `text-white/45`,
+`bg-white/10`, `placeholder:text-white/35` — the correct vocabulary for a dark
+glass surface, and completely wrong for paper. Rewriting them was off the table.
+
+Tailwind v4 compiles those utilities to
+
+```css
+.text-white\/45 { color: color-mix(in oklab, var(--color-white) 45%, transparent) }
+```
+
+— a **variable**, not a baked hex. So:
+
+```css
+[data-lg-theme='neo'] .lg-root { --color-white: #0b0b0f; }
+```
+
+retargets every white-alpha utility in the subtree in one line. "White" stops
+meaning white and starts meaning *the ink of this surface*, which is what those
+utilities were always expressing.
+
+Two consequences, both handled:
+
+- **Things that must stay light.** The send button's icon and the prism well's
+  icon sit on a dark fill in every theme. They name `--lg-on-accent` /
+  `--lg-on-well` in an inline `style`, which beats the class.
+- **Alpha is not perceptually symmetric.** White at 28% on near-black is
+  readable fine print; ink at 28% on paper is a smudge. Light themes therefore
+  re-map the low-alpha ladder (`/20`…`/75`) to stronger values. This is the one
+  place the system reaches into Tailwind's generated class names, it is
+  quarantined to a single labelled block in `themes.css`, and it is what buys
+  the rest of the surface the right to keep its markup. Every light theme joins
+  the block's `:is()` list — `:is()` takes the specificity of its strongest
+  argument, so adding one never quietly outranks the others. The utility class
+  sits inside `:where()`, which contributes no specificity — deliberately, and
+  it is what makes this a *floor* rather than a ceiling. It still outranks the
+  bare utility, but a theme rule that wants to colour one of these elements
+  outranks it in turn. Found the hard way: the magazine theme's kicker rule
+  matched, computed, and lost on source order because both landed on the same
+  specificity.
+
+**Corner radius** is the second — and so far last — reach into the utility
+layer. Tailwind compiles the named steps (`rounded-2xl`) to `var(--radius-*)`,
+which could be rebound the way `--color-white` was, but `rounded-full` and
+`rounded-[26px]` compile to literals and would not follow. A theme rebinding
+only half of them would come out half-rounded, which looks like a bug rather
+than a decision. So a theme whose premise *is* the corner overrides it
+outright:
+
+```css
+:is([data-lg-theme='neub'], …) .lg-root [class*='rounded'] { border-radius: 0 }
+
+[data-lg-theme='raw'] .lg-root [class*='rounded'] {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+```
+
+The substring match catches every rounding utility regardless of spelling, and
+takes the circles with it — avatar, status dot, icon wells. That is the correct
+reading of both styles rather than a casualty of either: squares for the sharp
+themes, and for the hand-drawn one a corner where the horizontal and vertical
+radii disagree, so the browser draws four different ellipse segments and the
+box stops looking machined. CSS scales those radii down proportionally when
+they exceed the box, which is why one value works on a 760px prompt bar and a
+36px button.
+
+Browsers without `color-mix()` fall back to Tailwind's baked `#fff` — i.e. to
+the behaviour that shipped before this change, not to a new bug.
+
+### 4b. Placement, and why it is `rotate` and not `transform`
+
+The maximalism theme tilts things. The obvious way to write that is
+
+```css
+transform: rotate(-1.6deg);   /* wrong */
+```
+
+and it would have worked on about half the surface. Framer writes `transform`
+**inline** on every element it animates, and an inline style beats any rule —
+so a transform-based tilt lands on the plain elements and silently does nothing
+on the animated ones, which is the worst kind of bug: a theme that looks
+finished and is half-applied. The independent `rotate` property composes with
+an inline `transform` instead of being overwritten by it:
+
+```css
+[data-lg-theme='chaos'] .lg-root [role='list'] > *:nth-child(3n + 1) { rotate: -1.6deg }
+```
+
+Verified rather than assumed — those buttons compute `rotate: -1.6deg` with
+`transform: none` at rest, and keep the rotation when Framer writes a transform
+on hover.
+
+Two more notes on that block. The variety comes from `nth-child` cycling angle
+and fill, so one component renders as a collage; it is keyed to `[role="list"]`,
+an ARIA attribute, rather than to a generated class name. And the jitter fires
+on hover and focus only — a permanent shake across a page of controls is where
+this style stops being a joke and starts being an accessibility problem — with
+an explicit `prefers-reduced-motion` opt-out on top.
+
+The other thing this theme taught, the hard way: **a decorative blob cannot
+know where the text will land.** A blue circle parked mid-canvas put black
+display type on `#0000ff` at 2.4:1. The fix was not to move it but to change
+its kind — blue became a stripe set, and stripes tint evenly, so every word
+keeps the ground's contrast wherever it falls. Corner blobs are safe; anything
+crossing the reading column has to be a texture, not a shape.
+
+### 4c. Semantic hooks
+
+Four exist now — `data-lg-block`, `data-lg-kicker`, `data-lg-key` and
+`data-lg-display` — added as themes needed to name a part of the content model
+that no token and no Tailwind class could reach: the lead paragraph of an
+answer, the label above a card, the one key that is the primary action, and the
+display line.
+
+The magazine theme needed two things no token can say and no Tailwind class
+means: *the lead paragraph of an answer* (for a drop cap) and *the label above
+a card* (for a red kicker). Both got a `data-` attribute on the element that
+already existed:
+
+```jsx
+<p data-lg-block="p" …>          <span data-lg-kicker="" …>
+<button data-lg-key="send" …>    <span data-lg-display="" …>
+```
+
+```css
+[data-lg-theme='mag'] .lg-root [data-lg-block='p']:first-child::first-letter { … }
+[data-lg-theme='mag'] .lg-root [data-lg-kicker] { color: #dc2626 }
+```
+
+These are hooks the design system owns, describing what content *is*. That
+makes them categorically different from the utility-layer reaches in §4 — those
+target class names Tailwind generated and could rename; these target meaning
+the components declare. Add them freely when a theme needs to name a part of
+the content model. Do not add them to stand in for a token.
+
+**One deliberate omission.** The guide asks for `column-count` on body text,
+which is the signature of the style — and it is wrong here. This transcript
+streams a word at a time, and text reflowing between two columns as it arrives
+is unreadable. The device assumes finished text. Everything else the guide
+asks for is implemented; this one is a considered no, not an oversight.
+
+### 4cc. `filter` is a containing block, and that has teeth
+
+The pixel theme draws its stepped corners with `clip-path`, and its hard
+shadow with `filter: drop-shadow` rather than `box-shadow` — a filter follows
+the clipped silhouette, where a box-shadow would be clipped away with it.
+
+That pairing is applied to the chips and the suggestion cards, and pointedly
+*not* to `.lg-surface` as a whole. `filter` makes an element a containing block
+for `position: fixed` descendants. The prompt bar is a `.lg-surface`, and it
+contains the depth and tone menus whose click-away layer is `fixed inset-0` —
+filtering the bar would trap that layer inside it and the menus would quietly
+stop dismissing on an outside click. The two selectors it *is* applied to have
+no fixed descendants.
+
+Worth knowing before reaching for `filter`, `transform` or `backdrop-filter` in
+a theme rule: all three do this, and the failure is silent and interaction-only,
+so it will not show up in a screenshot.
+
+### 4d. Two things that only showed up on screen
+
+Both were tuned by eye against a flat value and both were wrong once the theme
+was rendered. They are recorded because the mistake generalises.
+
+**A surface that will be lit has to start below the value it should end at.**
+The realism plate carries a sheen gradient, a vignette and an overlay-blended
+texture, and every one of those lightens. `#d6d7d9` arrived looking white and
+the paper stopped separating from it; the base had to drop to `#c2c4c7`.
+
+**Chrome needs a dark horizon.** The first Y2K display ramp ran white → light
+grey → white and was unreadable on a pale ground: no value below 60%, so the
+glyphs had nothing to hold an edge with. Real chrome is a reflection of a sky
+meeting a ground, and the dark band at the join is both what makes it read as
+metal and what makes it legible. The same fix served both purposes, which is
+usually the sign that the original was wrong rather than merely unlucky.
+
+## 5. Rules
+
+### 5.1 No component knows a theme's name
+
+There is no `themeId === 'neo'` anywhere outside the design folder, and there
+never should be. A component that branches on a theme has to be edited for
+every future theme; a component that reads a token does not.
+
+### 5.2 No literals below Layer 1
+
+`liquid-glass.css` and every component `style` object read `var(--lg-…)`.
+Adding a value means adding a token to **every** theme first. A token declared
+in one theme and not the other does not fall back to something sensible — it
+inherits whatever the cascade last set, and breaks in one state nobody checks.
+
+### 5.3 Per-frame code reads the theme through a ref
+
+`GlassCube` takes `material` and stores it in a ref, exactly as it already did
+with `phase`. Making it an effect dependency would drop the WebGL context and
+restart the rigid-body simulation every time someone opened the drawer. The
+same instinct applies to anything else that owns a loop.
+
+### 5.4 Framer Motion resolves CSS variables for colours, not for transforms
+
+`animate={{ backgroundColor: 'var(--x)' }}` works; `animate={{ y: 'var(--x)' }}`
+is not reliable. Hover lifts stay plain numbers.
+
+### 5.5 Themes cross-fade unless a theme refuses
+
+`background-color`, `color` and `border-color` transition over 280ms on the
+root and both surface primitives — enough to read as a material change rather
+than a page reload. `box-shadow` and `backdrop-filter` are deliberately *not*
+transitioned: animating either across a page of glass is expensive and looks
+worse than the cut it replaces. Everything stops under
+`prefers-reduced-motion`.
+
+The duration is `--lg-theme-transition` rather than a fixed rule, because a
+theme is allowed to say no. `transition: none` is a stated requirement of the
+brutal theme, and a surface that cuts on every other state change should not
+dissolve into view. That theme also resets the utility layer's transitions
+across its whole subtree — `transition-colors` sits on most interactive
+elements, and a theme that declares no transitions has to mean it.
+
+The limit worth knowing: Framer's spring-driven layout motion is JavaScript and
+keeps running. Stopping it would mean branching a component on a theme id,
+which rule §5.1 forbids, so `prefers-reduced-motion` remains the only thing
+that halts it. A theme can flatten CSS, not physics.
+
+## 6. The control
+
+The Home button in the header became the appearance control, which is what the
+brief asked for and is also the better use of the slot — on a surface with its
+own shell, "go home" was the least interesting thing a visitor could do there.
+
+- **Trigger** — the same `PrismButton`, now icon-only: the half-filled disc
+  that means *appearance* from iOS to VS Code. No label; a tooltip on hover and
+  an `aria-label` for everyone else. The prism ring itself is tokenised, so in
+  the neo theme it becomes a hard four-stop wheel with no bloom.
+- **Drawer** — opens downward, right-aligned, spring-in. Each row is previewed
+  by its own three-colour swatch rather than described, because a swatch is the
+  only honest description of a theme.
+- **Semantics** — `role="menu"` with `menuitemradio` rows, `aria-expanded`,
+  `aria-controls`, Escape to close, click-away to close, focus-leaves to close
+  (but not on window blur, or alt-tabbing would dismiss it).
+- **Densities** — the full pill above `sm`, a plain round button below, which
+  is exactly the arrangement the header already used.
+
+Choice persists to `localStorage` under `ad:home-2.2:theme` and is applied in a
+layout effect, so a returning visitor never sees a frame of the wrong theme.
+The attribute is removed on unmount: the rest of the site is a separate design
+and must never inherit these tokens.
+
+## 7. The material
+
+The cube is the one live object on the page, so a flat theme cannot simply hide
+it. Instead it is re-inked. A theme's `material` in `themes.js` is four numbers
+that become shader uniforms:
+
+| | `flat` | `tint` | `bands` | `pixel` |
+| --- | --- | --- | --- | --- |
+| Glass | 0 | — | — | 0 |
+| Neo | 1 | blue | 6 | 0 |
+| 16-bit | 1 | handheld blue | 4 | 56 |
+| Neubrutalism | 1 | saturated pink | 5 | 0 |
+| Brutalism | 1 | near-black | 4 | 0 |
+| Minimal | 1 | graphite | 8 | 0 |
+| Maximalism | 1 | pure magenta | 4 | 0 |
+| Anti-Polish | 1 | sepia | 5 | 0 |
+| Magazine | 1 | press red | 6 | 0 |
+| Swiss | 1 | tan | 6 | 0 |
+| Realism | **0** | — | — | 0 |
+| Y2K | 1 | chrome | 8 | 0 |
+| Pixel Art | 1 | PICO-8 blue | 4 | **28** |
+
+Minimal is the only flat theme that wants *more* bands, not fewer. Its
+restraint is about decoration, not about crudeness — eight steps is the
+quietest the cube can be while still reading as a solid.
+
+Three bands was the first value tried for the neubrutalism cube, on the logic
+that "flat colours" means as few steps as possible. It was wrong in practice:
+below about five steps the bevels stop separating and the cube reads as a blob
+rather than a solid. Flatness is a property of the *shading*, not of the form.
+
+A flat material also loses the miss-path halo — `a *= 1.0 - uFlat`. The halo is
+light bleeding around a refractive solid; a printed one is not emitting
+anything, and on a light ground it read as a smudge rather than a glow.
+
+**The poster pass** runs last, after the render:
+
+```glsl
+float steps = max(uBands, 1.0);
+float lum   = clamp(dot(col, vec3(0.299, 0.587, 0.114)), 0.0, 1.0);
+float band  = floor(lum * steps + 0.5) / steps;
+vec3  ink   = uTint * (0.30 + 1.15 * band) + vec3(band * band * 0.55);
+col = mix(col, ink, uFlat);
+a   = mix(a, smoothstep(0.20, 0.42, a), uFlat);      // hard silhouette, no halo
+```
+
+Fewer bands read as older hardware.
+
+**The pixel grid** runs first, and this is the part that matters. It snaps the
+*ray's origin*, not the finished image:
+
+```glsl
+vec2 frag = gl_FragCoord.xy;
+if (uPixel > 0.0) {
+  float block = min(uRes.x, uRes.y) / uPixel;
+  frag = (floor(frag / block) + 0.5) * block;
+}
+```
+
+Every block therefore traces exactly one ray: edges land on block boundaries
+and the refraction inside a block is a single honest sample. That is a genuine
+low-resolution render rather than a full-resolution render downsampled to look
+like one — the difference between a sprite and a blur. The grid is counted
+across the canvas' short side rather than sized in device pixels, so the cube
+keeps the same apparent resolution on any display density and as the canvas
+resizes between the hero and chat layouts.
+
+The physics above both passes is untouched: the same refraction, the same
+quaternion integration, the same throwable rigid body. They are the last things
+that happen to the pixel, the way a screen print is the last thing that happens
+to a photograph.
+
+## 8. Token reference
+
+Every theme declares all of these. Grouped as they appear in `themes.css`.
+
+**Ground** `--lg-bg` `--lg-wash` `--lg-wash-blend` `--lg-vignette` `--lg-scrim`
+
+**Ink & accents** `--lg-ink` `--lg-on-accent` `--lg-on-well` `--lg-accent`
+`--lg-accent-soft` `--lg-accent-warm` `--lg-live` `--lg-live-glow`
+
+**Surfaces** `--lg-surface-bg` `--lg-surface-blur` `--lg-surface-shadow`
+`--lg-flat-bg` `--lg-flat-blur` `--lg-flat-shadow`
+
+**Edges** `--lg-border` `--lg-line` `--lg-rim-a` `--lg-rim-b` `--lg-rim-warm`
+`--lg-rim-cool` `--lg-rim-hot` `--lg-hairline-display` `--lg-specular-display`
+
+**Fills** `--lg-send-fill` `--lg-send-shadow` `--lg-busy-fill`
+`--lg-focus-bloom` `--lg-avatar-fill` `--lg-avatar-shadow` `--lg-bullet-fill`
+`--lg-bloom-blur` `--lg-bloom-saturation` `--lg-media-filter` `--lg-quote-line`
+
+`--lg-media-filter` lands on the project thumbnails. Like
+`--lg-bloom-saturation` it is the system's answer to content a theme cannot
+choose: the artwork is fixed, but whether this surface shows it scanned and
+photocopied is a theme decision, and the anti-polish theme's own CSS line asks
+for exactly `grayscale() contrast()`.
+
+**Layout** `--lg-measure` `--lg-measure-wide` `--lg-leading`
+
+The layout group arrived with the minimal theme and is the system's answer to a
+style whose argument is spacing rather than surface. `--lg-measure` is the
+column the conversation reads in, `--lg-measure-wide` the landing dock's; a
+theme that wants a single column sets both to the same value. These replaced
+`max-w-[720px]`, `max-w-[840px]` and `leading-[1.68]` — literals that had been
+sitting in the markup in violation of §5.2 since before there were themes.
+
+`--lg-bloom-saturation` is a smaller version of the same idea. A project's
+accent colour is *content*, not theme, so a theme cannot choose it — but it can
+decide how saturated content is allowed to be on its surface, which is how a
+four-colour theme avoids gaining a fifth through the back door.
+
+**Prism well** `--lg-spectrum` `--lg-spectrum-blur` `--lg-spectrum-blur-hover`
+`--lg-well-fill` `--lg-well-shadow`
+
+**A11y & motion** `--lg-focus-ring` `--lg-scroll-thumb`
+`--lg-scroll-thumb-hover` `--lg-theme-transition`
+
+**Type** `--lg-font` `--lg-font-display` `--lg-ligatures`
+`--lg-tracking-tight` `--lg-display-transform` `--lg-display-shadow`
+`--lg-weight-strong` `--lg-display-weight` `--lg-label-transform`
+`--lg-label-tracking`
+
+`--lg-display-weight` is split from `--lg-weight-strong` because the Swiss
+theme wants a 400 headline over 500 labels. Every other theme declares the two
+equal, which is the point of declaring both rather than defaulting one to the
+other: a theme states its typography rather than inheriting it by accident.
+
+A theme that ships its own typeface names it in `--lg-font` and lists the
+stylesheet as `fonts` in `themes.js`; `ThemeProvider` injects the `<link>` the
+first time that theme is selected, so a face nobody picks is never downloaded.
+`--lg-ligatures` exists because faces built for pixel grids often ship an
+`fi`/`fl` ligature that is unreadable at UI sizes — Pixelify Sans draws "first"
+as something closer to "Arst". A face like that turns ligatures off through its
+own token instead of being ruled out.
+
+The rim stops (`--lg-rim-warm/cool/hot`) are bare channel triplets, e.g.
+`255 122 61`, because the prompt bar's conic rim mixes a spring-driven alpha
+into them with `rgb(… / a)` — a variable cannot be spliced into the middle of a
+legacy `rgba(r,g,b,a)`.
+
+## 9. Accessibility
+
+- Focus rings are tokenised and re-coloured per theme; every interactive
+  element keeps `.lg-focus`.
+- The drawer is keyboard-complete: Escape, click-away, focus-out, and radio
+  semantics that announce the current theme.
+- The light theme's alpha ladder is compressed (§4) so muted text keeps its
+  contrast on paper rather than inheriting a ratio tuned for black.
+- `prefers-reduced-motion` already stopped the canvas loop and the CSS
+  animations; it now also stops the theme cross-fade.
+- Nothing in the system communicates through colour alone — the active theme
+  carries a check mark as well as a highlight.
+
+## 10. Adding a theme
+
+See [`src/design/README.md`](../src/design/README.md). It is two files, and if
+a third file needs editing, the change belongs in a token instead.

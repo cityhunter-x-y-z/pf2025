@@ -1,0 +1,8 @@
+packages:
+  - 'packages/*'
+
+# Native/postinstall builds we trust and require:
+#   esbuild (Vite), sharp (image optimizer plugin + image scripts)
+allowBuilds:
+  esbuild: true
+  sharp: true

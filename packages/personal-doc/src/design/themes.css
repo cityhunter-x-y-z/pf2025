@@ -1,0 +1,1958 @@
+/* ===========================================================================
+ * Home 2.2 design tokens.
+ *
+ * Read design/README.md before editing. The short version:
+ *
+ *   Layer 1  tokens        — this file. Every theme declares the same keys.
+ *   Layer 2  primitives    — liquid-glass.css. Consumes tokens, never literals.
+ *   Layer 3  utility remap — `--color-white` is rebound per theme so Tailwind's
+ *                            `text-white/60`-style utilities follow the ink of
+ *                            the surface instead of being literally white.
+ *
+ * Themes are selected by `data-lg-theme` on <html> (ThemeProvider owns that
+ * write). Tokens sit on the document so portals and tooltips inherit them;
+ * the Layer 3 remap is scoped to `.lg-root` so it can never leak into the rest
+ * of the site, which is a different, untouched design.
+ *
+ * Every theme MUST declare every token. A missing key does not fall back to a
+ * sensible default, it falls back to the *other* theme's cascade position and
+ * looks broken in one specific state you will not notice until later.
+ * ======================================================================== */
+
+/* --------------------------------------------------------------- 1. glass */
+/* Also the unthemed default, so a missing/failed attribute renders the
+ * original surface rather than nothing. */
+
+:root,
+[data-lg-theme='glass'] {
+  /* ground */
+  --lg-bg: #060609;
+  --lg-wash:
+    radial-gradient(120% 70% at 18% 8%, rgba(167, 88, 255, 0.13) 0%, rgba(0, 0, 0, 0) 58%),
+    radial-gradient(100% 60% at 88% 22%, rgba(82, 146, 255, 0.10) 0%, rgba(0, 0, 0, 0) 55%),
+    radial-gradient(90% 55% at 50% 108%, rgba(255, 74, 214, 0.09) 0%, rgba(0, 0, 0, 0) 60%);
+  --lg-wash-blend: normal;
+  --lg-vignette: radial-gradient(130% 90% at 50% 50%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.55) 100%);
+  --lg-scrim: linear-gradient(180deg, #060609 18%, rgba(6, 6, 9, 0.75) 55%, rgba(6, 6, 9, 0) 100%);
+
+  /* ink & accents */
+  --lg-ink: #ffffff;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #ffffff;
+  --lg-accent: #a758ff;
+  --lg-accent-soft: #c98bff;
+  --lg-accent-warm: #ff7a3d;
+  --lg-live: #5ee9a4;
+  --lg-live-glow: 0 0 10px 1px rgba(94, 233, 164, 0.8);
+
+  /* surfaces */
+  --lg-surface-bg:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
+    rgba(13, 13, 18, 0.6);
+  --lg-surface-blur: blur(20px) saturate(150%);
+  --lg-surface-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.5),
+    0 20px 50px -20px rgba(0, 0, 0, 0.9);
+  --lg-flat-bg: rgba(255, 255, 255, 0.045);
+  --lg-flat-blur: blur(14px) saturate(140%);
+  --lg-flat-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+
+  /* edges — in glass the border is absent and a gradient rim does the work */
+  --lg-border: 0px;
+  --lg-line: transparent;
+  --lg-rim-a: rgba(255, 255, 255, 0.22);
+  --lg-rim-b: rgba(255, 255, 255, 0.04);
+  /* bare channels: the prompt bar's conic rim mixes its own alpha in */
+  --lg-rim-warm: 255 122 61;
+  --lg-rim-cool: 82 146 255;
+  --lg-rim-hot: 255 255 255;
+  --lg-hairline-display: block;
+  --lg-specular-display: block;
+
+  /* fills */
+  --lg-send-fill: linear-gradient(135deg, #ff4ad6 0%, #a758ff 52%, #5292ff 100%);
+  --lg-send-shadow: 0 6px 22px -8px rgba(167, 88, 255, 0.95);
+  --lg-busy-fill: rgba(255, 255, 255, 0.14);
+  --lg-focus-bloom: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 24px 70px -30px rgba(167, 88, 255, 0.8);
+  --lg-avatar-fill: radial-gradient(circle at 32% 28%, #ff6ade 0%, #a758ff 46%, #3c3aa8 100%);
+  --lg-avatar-shadow: 0 0 16px -4px rgba(167, 88, 255, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  --lg-bullet-fill: linear-gradient(135deg, #ff4ad6, #5292ff);
+  --lg-media-filter: none;
+  --lg-bloom-blur: 24px;
+  --lg-bloom-saturation: 1;
+  --lg-quote-line: rgba(167, 88, 255, 0.6);
+
+  /* the prism well on the theme trigger */
+  --lg-spectrum: conic-gradient(from 0deg, #ff2d55, #ff9500, #ffd60a, #34c759, #32ade6, #5e5ce6, #bf5af2, #ff2d55);
+  --lg-spectrum-blur: 6px;
+  --lg-spectrum-blur-hover: 9px;
+  --lg-well-fill: radial-gradient(120% 120% at 50% 0%, #26262c 0%, #121216 60%, #0d0d10 100%);
+  --lg-well-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 0 -2px 6px rgba(0, 0, 0, 0.7);
+
+  /* a11y + motion */
+  --lg-focus-ring: rgba(167, 88, 255, 0.85);
+  --lg-scroll-thumb: rgba(255, 255, 255, 0.13);
+  --lg-scroll-thumb-hover: rgba(255, 255, 255, 0.24);
+  --lg-theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+
+  /* layout — the column the surface reads in, and the rhythm inside it */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.68;
+
+  /* type — `inherit` keeps the site's own face; a theme that ships a typeface
+     names it here and lists the stylesheet in themes.js */
+  --lg-font: inherit;
+  --lg-font-display: inherit;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.03em;
+  --lg-display-transform: none;
+  --lg-display-shadow: none;
+  --lg-weight-strong: 500;
+  --lg-display-weight: 500;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.14em;
+}
+
+/* ----------------------------------------------------------------- 2. neo */
+/* Neo-brutalism: paper, ink, a single electric accent, and shadows that are
+ * offsets rather than light. Nothing blurs, nothing glows — every token that
+ * models light in the glass theme becomes a flat geometric fact here.
+ *
+ * Ground stays paper-light behind *all* running text on purpose. The obvious
+ * move is the reference's full-bleed blue band, but ink on #0a6cff measures
+ * ~3.4:1 — under AA for the 13-16px copy that covers most of this surface.
+ * The blue survives as fills, edges and corner blocks instead, where it never
+ * has small text on top of it. */
+
+[data-lg-theme='neo'] {
+  /* ground */
+  --lg-bg: #efede6;
+  --lg-wash:
+    radial-gradient(circle at 6% 6%, #f6a93b 0 min(20vw, 190px), rgba(0, 0, 0, 0) min(20vw, 190px)),
+    radial-gradient(circle at 97% 12%, #d98cf2 0 min(16vw, 150px), rgba(0, 0, 0, 0) min(16vw, 150px)),
+    radial-gradient(circle at 96% 92%, #0a6cff 0 min(18vw, 170px), rgba(0, 0, 0, 0) min(18vw, 170px));
+  /* the dot grid — a printed sheet, not a vignette */
+  --lg-wash-blend: normal;
+  --lg-vignette: radial-gradient(rgba(11, 11, 15, 0.16) 1.2px, rgba(0, 0, 0, 0) 1.2px) 0 0 / 22px 22px;
+  --lg-scrim: linear-gradient(180deg, #efede6 30%, rgba(239, 237, 230, 0.86) 62%, rgba(239, 237, 230, 0) 100%);
+
+  /* ink & accents */
+  --lg-ink: #0b0b0f;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #ffffff;
+  --lg-accent: #0a6cff;
+  --lg-accent-soft: #0a6cff;
+  --lg-accent-warm: #ff4d1f;
+  --lg-live: #16c46a;
+  --lg-live-glow: 0 0 0 2px #0b0b0f;
+
+  /* surfaces — opaque paper, no backdrop work at all */
+  --lg-surface-bg: #ffffff;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: 4px 4px 0 0 #0b0b0f;
+  --lg-flat-bg: #ffffff;
+  --lg-flat-blur: none;
+  --lg-flat-shadow: 2px 2px 0 0 #0b0b0f;
+
+  /* edges — the border is the whole idea, so the gradient rim switches off */
+  --lg-border: 2px;
+  --lg-line: #0b0b0f;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 246 169 59;
+  --lg-rim-cool: 10 108 255;
+  --lg-rim-hot: 11 11 15;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills */
+  --lg-send-fill: #0a6cff;
+  --lg-send-shadow: 3px 3px 0 0 #0b0b0f;
+  --lg-busy-fill: #f6a93b;
+  --lg-focus-bloom: 0 0 0 2px #0b0b0f;
+  --lg-avatar-fill: #f6a93b;
+  --lg-avatar-shadow: 0 0 0 2px #0b0b0f;
+  --lg-bullet-fill: #0a6cff;
+  --lg-media-filter: none;
+  --lg-bloom-blur: 0px;
+  --lg-bloom-saturation: 1;
+  --lg-quote-line: #0b0b0f;
+
+  --lg-spectrum: conic-gradient(from 0deg, #0a6cff 0 25%, #f6a93b 0 50%, #d98cf2 0 75%, #16c46a 0);
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 0px;
+  --lg-well-fill: #0b0b0f;
+  --lg-well-shadow: none;
+
+  /* a11y + motion */
+  --lg-focus-ring: #0a6cff;
+  --lg-scroll-thumb: #0b0b0f;
+  --lg-scroll-thumb-hover: #0a6cff;
+  --lg-theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+
+  /* layout — the column the surface reads in, and the rhythm inside it */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.68;
+
+  /* type */
+  --lg-font: inherit;
+  --lg-font-display: inherit;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.02em;
+  --lg-display-transform: none;
+  --lg-display-shadow: none;
+  --lg-weight-strong: 700;
+  --lg-display-weight: 700;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.12em;
+}
+
+/* ----------------------------------------------------------------- 3. gba */
+/* A 16-bit handheld held in sunlight: one flat yellow field, sprites and UI
+ * cut out of it with a dark plum outline, and everything lit by exactly two
+ * tones — a highlight half and a shadow half, split on a hard edge. That split
+ * is the whole grammar of the era's art, so every gradient in this theme is a
+ * two-stop with both stops at the same position. Nothing feathers.
+ *
+ * The cream panels carry a double ring — plum outside, bone inside — which is
+ * how the reference draws a window frame, and it costs nothing here because
+ * --lg-surface-shadow can hold an inset and an offset at once.
+ */
+
+[data-lg-theme='gba'] {
+  /* ground */
+  --lg-bg: #fbdd65;
+  --lg-wash:
+    radial-gradient(circle at 8% 96%, #ffffff 0 min(17vw, 160px), rgba(0, 0, 0, 0) min(17vw, 160px)),
+    radial-gradient(circle at 24% 104%, #ffffff 0 min(15vw, 140px), rgba(0, 0, 0, 0) min(15vw, 140px)),
+    radial-gradient(circle at 92% 98%, #ffffff 0 min(16vw, 150px), rgba(0, 0, 0, 0) min(16vw, 150px)),
+    radial-gradient(circle at 76% 106%, #ffffff 0 min(13vw, 120px), rgba(0, 0, 0, 0) min(13vw, 120px)),
+    radial-gradient(circle at 3% 5%, #ffffff 0 min(9vw, 84px), rgba(0, 0, 0, 0) min(9vw, 84px)),
+    radial-gradient(circle at 98% 3%, #ffffff 0 min(8vw, 76px), rgba(0, 0, 0, 0) min(8vw, 76px));
+  /* scanlines: the handheld's own screen, not a filter laid over the design */
+  --lg-wash-blend: normal;
+  --lg-vignette: repeating-linear-gradient(
+    180deg,
+    rgba(43, 26, 47, 0.07) 0 2px,
+    rgba(0, 0, 0, 0) 2px 4px
+  );
+  --lg-scrim: linear-gradient(180deg, #fbdd65 32%, rgba(251, 221, 101, 0.88) 64%, rgba(251, 221, 101, 0) 100%);
+
+  /* ink & accents */
+  --lg-ink: #2b1a2f;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #ffffff;
+  --lg-accent: #3e9bd8;
+  --lg-accent-soft: #2f86c6;
+  --lg-accent-warm: #e6892b;
+  --lg-live: #57c93a;
+  --lg-live-glow: 0 0 0 2px #2b1a2f;
+
+  /* surfaces — cream window panels, blue control pills */
+  --lg-surface-bg: #f7dfa2;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: inset 0 0 0 3px #fff6dc, 5px 5px 0 0 #2b1a2f;
+  --lg-flat-bg: linear-gradient(180deg, #5cb4e8 0 46%, #3e9bd8 46%);
+  --lg-flat-blur: none;
+  --lg-flat-shadow: inset 0 0 0 2px #2b1a2f, 3px 3px 0 0 #2b1a2f;
+
+  /* edges */
+  --lg-border: 3px;
+  --lg-line: #2b1a2f;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 230 137 43;
+  --lg-rim-cool: 62 155 216;
+  --lg-rim-hot: 43 26 47;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills */
+  --lg-send-fill: linear-gradient(180deg, #5cb4e8 0 46%, #3e9bd8 46%);
+  --lg-send-shadow: 3px 3px 0 0 #2b1a2f;
+  --lg-busy-fill: #e23b2e;
+  --lg-focus-bloom: 0 0 0 3px #2b1a2f;
+  --lg-avatar-fill: #e23b2e;
+  --lg-avatar-shadow: 0 0 0 3px #2b1a2f;
+  --lg-bullet-fill: #e23b2e;
+  --lg-media-filter: none;
+  --lg-bloom-blur: 0px;
+  --lg-bloom-saturation: 1;
+  --lg-quote-line: #3e9bd8;
+
+  --lg-spectrum: conic-gradient(from 0deg, #e23b2e 0 25%, #f4a62a 0 50%, #57c93a 0 75%, #3e9bd8 0);
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 0px;
+  --lg-well-fill: #2b1a2f;
+  --lg-well-shadow: none;
+
+  /* a11y + motion */
+  --lg-focus-ring: #e23b2e;
+  --lg-scroll-thumb: #2b1a2f;
+  --lg-scroll-thumb-hover: #3e9bd8;
+  --lg-theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+
+  /* layout — the column the surface reads in, and the rhythm inside it */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.68;
+
+  /* type — Pixelify Sans stays readable at body sizes, which Press Start-style
+     faces do not; Silkscreen carries the display line. Both load only while
+     this theme is selected (see `fonts` in themes.js). */
+  --lg-font: 'Pixelify Sans', 'Outfit', sans-serif;
+  --lg-font-display: 'Silkscreen', 'Pixelify Sans', monospace;
+  --lg-ligatures: none;
+  --lg-tracking-tight: 0.01em;
+  --lg-display-transform: none;
+  --lg-display-shadow: none;
+  --lg-weight-strong: 700;
+  --lg-display-weight: 700;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.2em;
+}
+
+/* ---------------------------------------------------------------- 4. neub */
+/* Neubrutalism, built to uistyleguide.com/style/neubrutalism: 3px black
+ * outlines, 5px hard shadows, flat saturated primaries, sharp corners, no
+ * gradients. Its own summary is "a modern, playful take on brutalism … think
+ * Figma and Notion", and that is the distance from theme 2: `neo` is the paper
+ * and ink reading of brutalism, one accent and a quiet ground; this is the
+ * 2020s product reading, a whole primary palette used at once.
+ *
+ * The guide's stated palette is #FFEB3B / #FF5252 / #2196F3 / #000000 /
+ * #4CAF50 / #FF9800, and the reference implementation grounds it on ivory
+ * rather than white. Two places deviate, both for contrast: the active-state
+ * pink is darkened to #db2777 (5.0:1 on white, where the reference's #f472b6
+ * is 2.2:1), and the send button takes the reference's own black-on-white
+ * button rather than a mid-tone primary.
+ */
+
+[data-lg-theme='neub'] {
+  /* ground */
+  --lg-bg: #fefce8;
+  /* Hard-edged blocks, not blobs — and capped in both axes, so they stay
+     roughly square rather than stretching into stripes on a wide screen.
+     They also scale with the viewport: at a fixed size they reach into the
+     720px reading column on a narrow window, and running text crossing a
+     block edge reads as an accident even when the contrast holds. */
+  --lg-wash:
+    linear-gradient(#f472b6 0 0) 0 0 / min(19vw, 240px) min(24vh, 210px) no-repeat,
+    linear-gradient(#67e8f9 0 0) 100% 8% / min(15vw, 180px) min(20vh, 180px) no-repeat,
+    linear-gradient(#4ade80 0 0) 0 100% / min(16vw, 200px) min(17vh, 150px) no-repeat,
+    linear-gradient(#fde047 0 0) 100% 100% / min(20vw, 260px) min(14vh, 120px) no-repeat;
+  --lg-wash-blend: normal;
+  --lg-vignette: none;
+  --lg-scrim: linear-gradient(180deg, #fefce8 34%, rgba(254, 252, 232, 0.9) 66%, rgba(254, 252, 232, 0) 100%);
+
+  /* ink & accents */
+  --lg-ink: #000000;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #ffffff;
+  --lg-accent: #2196f3;
+  --lg-accent-soft: #db2777;
+  --lg-accent-warm: #ff5252;
+  --lg-live: #4caf50;
+  --lg-live-glow: 0 0 0 3px #000000;
+
+  /* surfaces — white panels, yellow control chips, everything outlined */
+  --lg-surface-bg: #ffffff;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: 5px 5px 0 0 #000000;
+  --lg-flat-bg: #fde047;
+  --lg-flat-blur: none;
+  --lg-flat-shadow: 3px 3px 0 0 #000000;
+
+  /* edges */
+  --lg-border: 3px;
+  --lg-line: #000000;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 255 152 0;
+  --lg-rim-cool: 33 150 243;
+  --lg-rim-hot: 0 0 0;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills */
+  --lg-send-fill: #000000;
+  --lg-send-shadow: 3px 3px 0 0 #000000;
+  --lg-busy-fill: #ff5252;
+  --lg-focus-bloom: 0 0 0 3px #000000;
+  --lg-avatar-fill: #f472b6;
+  --lg-avatar-shadow: 0 0 0 3px #000000;
+  --lg-bullet-fill: #2196f3;
+  --lg-media-filter: none;
+  --lg-bloom-blur: 0px;
+  --lg-bloom-saturation: 1;
+  --lg-quote-line: #000000;
+
+  /* the guide's six colours, unmixed */
+  --lg-spectrum: conic-gradient(
+    from 0deg,
+    #ffeb3b 0 16.66%,
+    #ff5252 0 33.33%,
+    #2196f3 0 50%,
+    #000000 0 66.66%,
+    #4caf50 0 83.33%,
+    #ff9800 0
+  );
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 0px;
+  --lg-well-fill: #000000;
+  --lg-well-shadow: none;
+
+  /* a11y + motion */
+  --lg-focus-ring: #db2777;
+  --lg-scroll-thumb: #000000;
+  --lg-scroll-thumb-hover: #db2777;
+  --lg-theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+
+  /* layout — the column the surface reads in, and the rhythm inside it */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.68;
+
+  /* type */
+  --lg-font: 'Inter', system-ui, sans-serif;
+  --lg-font-display: 'Inter', system-ui, sans-serif;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.03em;
+  --lg-display-transform: none;
+  --lg-display-shadow: none;
+  --lg-weight-strong: 900;
+  --lg-display-weight: 900;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.08em;
+}
+
+/* -------------------------------------------------------------- 5. brutal */
+/* Brutalism, built to uistyleguide.com/style/brutalism: raw, unpolished,
+ * stark, high contrast, anti-design. Its CSS line is
+ * `border-radius: 0px, transition: none, font-weight: 700+, border: 2-4px`,
+ * and its palette is the seven unmixed primaries — #ff0000, #0000ff, #ffff00,
+ * #000000, #ffffff, #00ff00, #ff00ff.
+ *
+ * The distance from theme 4 is the whole point. Neubrutalism is brutalism made
+ * friendly: soft ivory, playful primaries, and a drop shadow on everything.
+ * Strip the shadow and the warmth back off and what is left is this — white,
+ * black, hairline structure, and type that has not been art-directed.
+ *
+ * Two things this theme does that no other does:
+ *
+ *   No shadow at all. --lg-*-shadow is `none`, not an offset. A surface is
+ *   told apart from the ground by its border and nothing else, which is the
+ *   honest-materials argument the architecture made.
+ *
+ *   No transitions. The guide asks for instant state change, so the theme
+ *   cross-fade is off and the utility transitions inside the surface are
+ *   overridden. Framer's spring-driven layout motion is JS and still runs;
+ *   `prefers-reduced-motion` remains the thing that stops it.
+ *
+ * The typeface is deliberately NOT loaded. "Default fonts" is in the style's
+ * own description, so this asks for the system's own mono and grotesque rather
+ * than downloading a face that imitates them. It is the only theme with no
+ * `fonts` entry and it should stay that way.
+ */
+
+[data-lg-theme='brutal'] {
+  /* ground — exposed column rules, the layout grid left visible */
+  --lg-bg: #ffffff;
+  --lg-wash: repeating-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.16) 0 1px,
+    rgba(0, 0, 0, 0) 1px 12.5%
+  );
+  --lg-wash-blend: normal;
+  --lg-vignette: none;
+  --lg-scrim: linear-gradient(180deg, #ffffff 36%, rgba(255, 255, 255, 0.92) 68%, rgba(255, 255, 255, 0) 100%);
+
+  /* ink & accents — unmixed, no tints */
+  --lg-ink: #000000;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #ffffff;
+  --lg-accent: #0000ff;
+  --lg-accent-soft: #0000ff;
+  --lg-accent-warm: #ff0000;
+  --lg-live: #00ff00;
+  --lg-live-glow: 0 0 0 3px #000000;
+
+  /* surfaces — a border and nothing else */
+  --lg-surface-bg: #ffffff;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: none;
+  --lg-flat-bg: transparent;
+  --lg-flat-blur: none;
+  --lg-flat-shadow: none;
+
+  /* edges */
+  --lg-border: 4px;
+  --lg-line: #000000;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 255 0 0;
+  --lg-rim-cool: 0 0 255;
+  --lg-rim-hot: 0 0 0;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills */
+  --lg-send-fill: #ff0000;
+  --lg-send-shadow: none;
+  --lg-busy-fill: #0000ff;
+  --lg-focus-bloom: 0 0 0 4px #000000;
+  --lg-avatar-fill: #ff00ff;
+  --lg-avatar-shadow: 0 0 0 3px #000000;
+  --lg-bullet-fill: #000000;
+  --lg-media-filter: none;
+  --lg-bloom-blur: 0px;
+  --lg-bloom-saturation: 1;
+  --lg-quote-line: #000000;
+
+  /* the seven primaries, unmixed and in order */
+  --lg-spectrum: conic-gradient(
+    from 0deg,
+    #ff0000 0 14.28%,
+    #0000ff 0 28.57%,
+    #ffff00 0 42.85%,
+    #000000 0 57.14%,
+    #ffffff 0 71.42%,
+    #00ff00 0 85.71%,
+    #ff00ff 0
+  );
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 0px;
+  --lg-well-fill: #000000;
+  --lg-well-shadow: none;
+
+  /* a11y + motion */
+  --lg-focus-ring: #ff0000;
+  --lg-scroll-thumb: #000000;
+  --lg-scroll-thumb-hover: #ff0000;
+  /* the guide's `transition: none`, kept as a value the switcher reads */
+  --lg-theme-transition: none;
+
+  /* layout — the column the surface reads in, and the rhythm inside it */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.68;
+
+  /* type — the system's own faces, at weights it already has */
+  --lg-font: ui-monospace, SFMono-Regular, Menlo, 'Courier New', monospace;
+  --lg-font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.045em;
+  --lg-display-transform: uppercase;
+  --lg-display-shadow: none;
+  --lg-weight-strong: 900;
+  --lg-display-weight: 900;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.1em;
+}
+
+/* ----------------------------------------------------------------- 6. min */
+/* Minimal & Direct, built to uistyleguide.com/style/minimal-direct: "strips
+ * away everything unnecessary. One message, one action, maximum clarity."
+ * Its CSS line is about layout rather than decoration — `max-width: 640px,
+ * line-height: 1.75, single-column` — which is why this is the theme that
+ * finally made measure and leading into tokens.
+ *
+ * The palette is four colours and this theme uses exactly four: black, white,
+ * #6b7280 grey, #3b82f6 blue. There is no second accent, no warm state, no
+ * status colour — the "listening" state and the live dot are the same blue as
+ * everything else, because a fifth colour would be the thing the style exists
+ * to remove. The one extension is the grey *ramp* (#e5e7eb for rules, #f9fafb
+ * for chips); the stated #6b7280 is its anchor, and the reference
+ * implementation does the same.
+ *
+ * Nothing decorates the ground. No wash, no vignette, no shadow on any
+ * surface — a panel is told apart from the page by a 1px rule and by the space
+ * around it. That is the whole style.
+ *
+ * Radius is deliberately NOT overridden. The reference sits at 12px, softer
+ * than this surface's 16-26px but the same family, and the blanket override
+ * that a sharp-cornered theme uses would also square the avatar and the pills,
+ * which would read as a different style rather than this one.
+ */
+
+[data-lg-theme='min'] {
+  /* ground — nothing on it at all */
+  --lg-bg: #ffffff;
+  --lg-wash: none;
+  --lg-wash-blend: normal;
+  --lg-vignette: none;
+  --lg-scrim: linear-gradient(180deg, #ffffff 38%, rgba(255, 255, 255, 0.92) 70%, rgba(255, 255, 255, 0) 100%);
+
+  /* ink & accents — the four colours, and only the four */
+  --lg-ink: #111827;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #ffffff;
+  --lg-accent: #3b82f6;
+  --lg-accent-soft: #2563eb;
+  --lg-accent-warm: #3b82f6;
+  --lg-live: #3b82f6;
+  --lg-live-glow: none;
+
+  /* surfaces — a hairline and space, nothing else */
+  --lg-surface-bg: #ffffff;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: none;
+  --lg-flat-bg: #f9fafb;
+  --lg-flat-blur: none;
+  --lg-flat-shadow: none;
+
+  /* edges */
+  --lg-border: 1px;
+  --lg-line: #e5e7eb;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 59 130 246;
+  --lg-rim-cool: 59 130 246;
+  --lg-rim-hot: 17 24 39;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills — the single CTA is the reference's own black button */
+  --lg-send-fill: #111827;
+  --lg-send-shadow: none;
+  --lg-busy-fill: #e5e7eb;
+  --lg-focus-bloom: 0 0 0 1px #e5e7eb;
+  --lg-avatar-fill: #111827;
+  --lg-avatar-shadow: none;
+  --lg-bullet-fill: #9ca3af;
+  --lg-media-filter: none;
+  --lg-bloom-blur: 0px;
+  /* A project's accent colour is content, not theme — but a four-colour theme
+     does not get a fifth colour through the back door, so it arrives in grey. */
+  --lg-bloom-saturation: 0;
+  --lg-quote-line: #e5e7eb;
+
+  /* a ring that is mostly not there */
+  --lg-spectrum: conic-gradient(from 210deg, #e5e7eb 0 72%, #3b82f6 0);
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 0px;
+  --lg-well-fill: #111827;
+  --lg-well-shadow: none;
+
+  /* a11y + motion */
+  --lg-focus-ring: #3b82f6;
+  --lg-scroll-thumb: #e5e7eb;
+  --lg-scroll-thumb-hover: #d1d5db;
+  --lg-theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+
+  /* layout — the style's two actual numbers. One column: the landing dock and
+     the conversation read at the same width instead of two. */
+  --lg-measure: 640px;
+  --lg-measure-wide: 640px;
+  --lg-leading: 1.75;
+
+  /* type */
+  --lg-font: 'Inter', system-ui, sans-serif;
+  --lg-font-display: 'Inter', system-ui, sans-serif;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.025em;
+  --lg-display-transform: none;
+  --lg-display-shadow: none;
+  --lg-weight-strong: 700;
+  --lg-display-weight: 700;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.1em;
+}
+
+/* --------------------------------------------------------------- 7. chaos */
+/* Gen Z Chaos / Maximalism, built to
+ * uistyleguide.com/style/gen-z-chaos-maximalism: "chaos and maximalism with
+ * sticker overlays, collage aesthetics, and internet culture references."
+ * Its CSS line is `mix-blend-mode: multiply/screen, transform: rotate(random),
+ * animation: jitter`, and the reference is pure #ffff00 ground, Inter 900 with
+ * a 4px magenta text-shadow, and flat cards tilted one to two degrees.
+ *
+ * This is the first theme whose argument is neither colour nor layout but
+ * *placement*, and it needs three things the token layer alone cannot say. All
+ * three live in the block below rather than in a component:
+ *
+ *   Tilt. Written with the independent `rotate` property, NOT `transform`.
+ *   Framer writes `transform` inline on every motion element it drives, and an
+ *   inline style always wins — a `transform: rotate()` rule here would work on
+ *   the plain elements and silently do nothing on the animated ones. `rotate`
+ *   composes with an inline transform instead of being overwritten by it.
+ *
+ *   Variety. nth-child cycles the angle and the fill, so a row of identical
+ *   components reads as a collage. Keyed to `[role="list"]` — a semantic
+ *   attribute, not a generated class name.
+ *
+ *   Jitter. On hover and focus only. A permanent shake across a page of
+ *   controls is the one part of this style that stops being a joke and starts
+ *   being an accessibility problem; on hover it is still the effect, and it
+ *   stops entirely under prefers-reduced-motion.
+ */
+
+[data-lg-theme='chaos'] {
+  /* ground — overprint, not layers */
+  --lg-bg: #ffff00;
+  /* Blobs sit in the corners and the blue is a stripe set rather than a fifth
+     blob: a circle parked mid-canvas puts black display type on #0000ff at
+     2.4:1, and the wash cannot know where the text will land. Stripes tint
+     evenly, so every word keeps the ground's contrast wherever it falls. */
+  --lg-wash:
+    repeating-linear-gradient(45deg, rgba(255, 0, 255, 0.22) 0 18px, rgba(0, 0, 0, 0) 18px 46px),
+    radial-gradient(circle at 12% 18%, #4ecdc4 0 min(13vw, 130px), rgba(0, 0, 0, 0) min(13vw, 130px)),
+    radial-gradient(circle at 92% 8%, #00ff00 0 min(10vw, 100px), rgba(0, 0, 0, 0) min(10vw, 100px)),
+    radial-gradient(circle at 96% 88%, #ff6b6b 0 min(12vw, 120px), rgba(0, 0, 0, 0) min(12vw, 120px)),
+    repeating-linear-gradient(-38deg, rgba(0, 0, 255, 0.13) 0 10px, rgba(0, 0, 0, 0) 10px 52px);
+  --lg-wash-blend: multiply;
+  --lg-vignette: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.1) 0 3px,
+    rgba(0, 0, 0, 0) 3px 26px
+  );
+  --lg-scrim: linear-gradient(180deg, #ffff00 30%, rgba(255, 255, 0, 0.86) 62%, rgba(255, 255, 0, 0) 100%);
+
+  /* ink & accents — the six, unmixed */
+  --lg-ink: #000000;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #ffffff;
+  --lg-accent: #ff00ff;
+  --lg-accent-soft: #cc00cc;
+  --lg-accent-warm: #ff6b6b;
+  --lg-live: #00ff00;
+  --lg-live-glow: 0 0 0 3px #000000;
+
+  /* surfaces — white where words live, colour where labels do (see the
+     nth-child block below) */
+  --lg-surface-bg: #ffffff;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: 6px 6px 0 0 #000000;
+  --lg-flat-bg: #4ecdc4;
+  --lg-flat-blur: none;
+  --lg-flat-shadow: 3px 3px 0 0 #000000;
+
+  /* edges */
+  --lg-border: 4px;
+  --lg-line: #000000;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 255 107 107;
+  --lg-rim-cool: 78 205 196;
+  --lg-rim-hot: 255 0 255;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills */
+  --lg-send-fill: #000000;
+  --lg-send-shadow: 3px 3px 0 0 #ff00ff;
+  --lg-busy-fill: #ff6b6b;
+  --lg-focus-bloom: 0 0 0 4px #ff00ff;
+  --lg-avatar-fill: #ff00ff;
+  --lg-avatar-shadow: 0 0 0 3px #000000;
+  --lg-bullet-fill: #0000ff;
+  --lg-media-filter: none;
+  --lg-bloom-blur: 0px;
+  --lg-bloom-saturation: 1.6;
+  --lg-quote-line: #ff00ff;
+
+  --lg-spectrum: conic-gradient(
+    from 0deg,
+    #ff00ff 0 16.66%,
+    #00ff00 0 33.33%,
+    #ffff00 0 50%,
+    #0000ff 0 66.66%,
+    #ff6b6b 0 83.33%,
+    #4ecdc4 0
+  );
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 0px;
+  --lg-well-fill: #000000;
+  --lg-well-shadow: none;
+
+  /* a11y + motion */
+  --lg-focus-ring: #0000ff;
+  --lg-scroll-thumb: #ff00ff;
+  --lg-scroll-thumb-hover: #000000;
+  --lg-theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+
+  /* layout */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.6;
+
+  /* type — the reference's own display treatment, magenta offset and all */
+  --lg-font: 'Inter', system-ui, sans-serif;
+  --lg-font-display: 'Inter', system-ui, sans-serif;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.035em;
+  --lg-display-transform: uppercase;
+  --lg-display-shadow: 4px 4px 0 #ff00ff;
+  --lg-weight-strong: 900;
+  --lg-display-weight: 900;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.06em;
+}
+
+/* ---- the placement rules, which no token can express --------------------- */
+
+/* Tilt. `rotate`, not `transform` — see the note above. */
+[data-lg-theme='chaos'] .lg-root [role='list'] > *:nth-child(3n + 1) { rotate: -1.6deg; }
+[data-lg-theme='chaos'] .lg-root [role='list'] > *:nth-child(3n + 2) { rotate: 1.3deg; }
+[data-lg-theme='chaos'] .lg-root [role='list'] > *:nth-child(3n) { rotate: -0.7deg; }
+
+/* Collage. The same component, four fills, so a row stops reading as a row. */
+[data-lg-theme='chaos'] .lg-root [role='list'] > *:nth-child(4n + 1) { background: #4ecdc4; }
+[data-lg-theme='chaos'] .lg-root [role='list'] > *:nth-child(4n + 2) { background: #ff6b6b; }
+[data-lg-theme='chaos'] .lg-root [role='list'] > *:nth-child(4n + 3) { background: #00ff00; }
+/* Not #ffff00 — that is the ground, and the card would vanish into it. */
+[data-lg-theme='chaos'] .lg-root [role='list'] > *:nth-child(4n) { background: #ff00ff; }
+
+/* Jitter, on hover and focus only. */
+@keyframes lg-jitter {
+  0%, 100% { translate: 0 0; }
+  25% { translate: -1.5px 1px; }
+  50% { translate: 1.5px -1px; }
+  75% { translate: -1px -1.5px; }
+}
+
+:is([data-lg-theme='chaos'], [data-lg-theme='raw']) .lg-root .lg-surface-flat:hover,
+:is([data-lg-theme='chaos'], [data-lg-theme='raw']) .lg-root .lg-surface-flat:focus-visible,
+:is([data-lg-theme='chaos'], [data-lg-theme='raw']) .lg-root [role='list'] > *:hover {
+  animation: lg-jitter 0.24s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is([data-lg-theme='chaos'], [data-lg-theme='raw']) .lg-root .lg-surface-flat:hover,
+  :is([data-lg-theme='chaos'], [data-lg-theme='raw']) .lg-root .lg-surface-flat:focus-visible,
+  :is([data-lg-theme='chaos'], [data-lg-theme='raw']) .lg-root [role='list'] > *:hover {
+    animation: none;
+  }
+}
+
+/* ----------------------------------------------------------------- 8. raw */
+/* Anti-Polish / Raw, built to uistyleguide.com/style/anti-polish-raw-aesthetic:
+ * "celebrates imperfection and human touch with hand-drawn elements, scanned
+ * textures, and an unfinished aesthetic." Its CSS line is
+ * `background: url(paper-texture.png), filter: grayscale() contrast(),
+ * sketch-style fonts`, and its effects are "no smooth transitions, paper
+ * texture overlays, jitter".
+ *
+ * Three things here are taken verbatim from the reference implementation, all
+ * three measured off it rather than eyeballed: the 2px #1a1a1a edge, the ±0.5°
+ * tilt, and the hand-drawn corner —
+ *
+ *     border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px
+ *
+ * which is the oldest trick in this style and still the best one. Horizontal
+ * and vertical radii disagree at every corner, so the browser draws four
+ * different ellipse segments and the box stops looking machined. CSS scales
+ * the radii down proportionally when they exceed the box, so the same one
+ * value works on a 760px prompt bar and a 36px button.
+ *
+ * The paper is an inline SVG feTurbulence rather than an image: real grain, no
+ * asset, and it resolves at any density. The guide asks for a texture file; a
+ * data-URI filter is the same thing without a download.
+ *
+ * Readability note: the body face is a handwriting one, which the style
+ * requires and which costs something at 15px. Patrick Hand was chosen over the
+ * more expressive options because it holds up at body sizes — this surface is
+ * mostly running prose, and a theme that cannot be read is not a theme.
+ */
+
+[data-lg-theme='raw'] {
+  /* ground — paper, and the grain on it */
+  --lg-bg: #fafaf8;
+  --lg-wash:
+    radial-gradient(circle at 6% 8%, rgba(196, 167, 125, 0.34) 0 min(15vw, 150px), rgba(0, 0, 0, 0) min(15vw, 150px)),
+    radial-gradient(circle at 95% 92%, rgba(212, 196, 168, 0.4) 0 min(13vw, 130px), rgba(0, 0, 0, 0) min(13vw, 130px));
+  --lg-wash-blend: multiply;
+  --lg-vignette: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23p)' opacity='0.16'/%3E%3C/svg%3E");
+  --lg-scrim: linear-gradient(180deg, #fafaf8 34%, rgba(250, 250, 248, 0.9) 66%, rgba(250, 250, 248, 0) 100%);
+
+  /* ink & accents — the six, all of them earth */
+  --lg-ink: #1a1a1a;
+  --lg-on-accent: #fafaf8;
+  --lg-on-well: #fafaf8;
+  --lg-accent: #8b4513;
+  --lg-accent-soft: #8b4513;
+  --lg-accent-warm: #a9622a;
+  --lg-live: #8b4513;
+  --lg-live-glow: 0 0 0 2px #1a1a1a;
+
+  /* surfaces — cream paper, drawn edges, nothing cast */
+  --lg-surface-bg: #fffdf2;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: none;
+  --lg-flat-bg: #d4c4a8;
+  --lg-flat-blur: none;
+  --lg-flat-shadow: none;
+
+  /* edges */
+  --lg-border: 2px;
+  --lg-line: #1a1a1a;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 139 69 19;
+  --lg-rim-cool: 196 167 125;
+  --lg-rim-hot: 26 26 26;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills */
+  --lg-send-fill: #1a1a1a;
+  --lg-send-shadow: none;
+  --lg-busy-fill: #c4a77d;
+  --lg-focus-bloom: 0 0 0 2px #8b4513;
+  --lg-avatar-fill: #c4a77d;
+  --lg-avatar-shadow: 0 0 0 2px #1a1a1a;
+  --lg-bullet-fill: #8b4513;
+  --lg-media-filter: grayscale(1) contrast(1.2) sepia(0.35);
+  --lg-bloom-blur: 10px;
+  --lg-bloom-saturation: 0.2;
+  --lg-quote-line: #8b4513;
+
+  /* a smudged pencil ring rather than a printed one */
+  --lg-spectrum: conic-gradient(from 20deg, #8b4513, #c4a77d, #d4c4a8, #4a4a4a, #8b4513);
+  --lg-spectrum-blur: 2px;
+  --lg-spectrum-blur-hover: 3px;
+  --lg-well-fill: #1a1a1a;
+  --lg-well-shadow: none;
+
+  /* a11y + motion — the guide asks for no smooth transitions */
+  --lg-focus-ring: #8b4513;
+  --lg-scroll-thumb: #c4a77d;
+  --lg-scroll-thumb-hover: #8b4513;
+  --lg-theme-transition: none;
+
+  /* layout */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.72;
+
+  /* type — the reference's own stack, Comic Sans fallback and all */
+  --lg-font: 'Patrick Hand', 'Comic Sans MS', cursive;
+  --lg-font-display: 'Patrick Hand', 'Comic Sans MS', cursive;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: 0;
+  --lg-display-transform: none;
+  --lg-display-shadow: none;
+  --lg-weight-strong: 400;
+  --lg-display-weight: 400;
+  --lg-label-transform: none;
+  --lg-label-tracking: 0.04em;
+}
+
+/* Hand-drawn corners and a drawn-by-eye tilt. Same two mechanisms the chaos
+ * theme uses — the radius layer and the independent `rotate` property — at a
+ * quarter of the volume. */
+
+[data-lg-theme='raw'] .lg-root [class*='rounded'] {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+/* The reference draws every card with the same corner. One hand does not, so
+   alternate items get the mirrored value — the same trick, read backwards. */
+[data-lg-theme='raw'] .lg-root [role='list'] > *:nth-child(2n) [class*='rounded'],
+[data-lg-theme='raw'] .lg-root [role='list'] > *:nth-child(2n)[class*='rounded'] {
+  border-radius: 15px 225px 15px 255px / 225px 15px 255px 15px;
+}
+
+[data-lg-theme='raw'] .lg-root [role='list'] > *:nth-child(2n + 1) { rotate: -0.5deg; }
+[data-lg-theme='raw'] .lg-root [role='list'] > *:nth-child(2n) { rotate: 0.5deg; }
+
+/* ----------------------------------------------------------------- 9. mag */
+/* Editorial Grid / Magazine, built to
+ * uistyleguide.com/style/editorial-grid-magazine: "print magazine aesthetics
+ * with asymmetric grids, pull quotes, and editorial typography." Its CSS line
+ * is `display: grid with named areas, column-count for text, ::first-letter
+ * for drop caps`, and its palette is four: black, white, #dc2626, #6b7280.
+ *
+ * The reference is worth reading rather than paraphrasing: it has no boxes at
+ * all. Stories are separated by rules and space, kickers are red and set in
+ * caps above the headline, and nothing has a corner. So this theme spends its
+ * budget on rules rather than on containers — a hairline box holds the
+ * overlays together (a drawer floating over white needs an edge), and a heavy
+ * 2px black rule sits on top of every surface, which is the device the
+ * reference uses to start a column.
+ *
+ * Two structural hooks were added to the components for this theme, and they
+ * are the first of their kind: `data-lg-block` on the lead paragraph and
+ * `data-lg-kicker` on the two label elements. A drop cap has to name "the
+ * first paragraph of an answer" and a kicker has to name "the label above a
+ * card" — neither is something a token can say or a Tailwind class means.
+ * They are semantic hooks the design system owns, not utility-layer reaches.
+ *
+ * NOT implemented, on purpose: `column-count`. Multi-column body text is the
+ * signature of the style and it is actively wrong here — this transcript
+ * streams a word at a time, and text reflowing between two columns while it
+ * arrives is unreadable. The device assumes finished text. Everything else the
+ * guide asks for is present.
+ */
+
+[data-lg-theme='mag'] {
+  /* ground — a page, not a canvas */
+  --lg-bg: #ffffff;
+  --lg-wash: none;
+  --lg-wash-blend: normal;
+  --lg-vignette: none;
+  --lg-scrim: linear-gradient(180deg, #ffffff 38%, rgba(255, 255, 255, 0.92) 70%, rgba(255, 255, 255, 0) 100%);
+
+  /* ink & accents */
+  --lg-ink: #000000;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #ffffff;
+  --lg-accent: #dc2626;
+  --lg-accent-soft: #dc2626;
+  --lg-accent-warm: #dc2626;
+  --lg-live: #dc2626;
+  --lg-live-glow: none;
+
+  /* surfaces — see the rules block below; the box is only for overlays */
+  --lg-surface-bg: #ffffff;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: none;
+  --lg-flat-bg: transparent;
+  --lg-flat-blur: none;
+  --lg-flat-shadow: none;
+
+  /* edges */
+  --lg-border: 1px;
+  --lg-line: #e5e7eb;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 220 38 38;
+  --lg-rim-cool: 107 114 128;
+  --lg-rim-hot: 0 0 0;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills */
+  --lg-send-fill: #dc2626;
+  --lg-send-shadow: none;
+  --lg-busy-fill: #6b7280;
+  --lg-focus-bloom: 0 0 0 1px #e5e7eb;
+  --lg-avatar-fill: #dc2626;
+  --lg-avatar-shadow: none;
+  --lg-bullet-fill: #dc2626;
+  --lg-media-filter: none;
+  --lg-bloom-blur: 0px;
+  --lg-bloom-saturation: 0.35;
+  --lg-quote-line: #dc2626;
+
+  --lg-spectrum: conic-gradient(from 0deg, #000000 0 50%, #dc2626 0);
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 0px;
+  --lg-well-fill: #000000;
+  --lg-well-shadow: none;
+
+  /* a11y + motion */
+  --lg-focus-ring: #dc2626;
+  --lg-scroll-thumb: #000000;
+  --lg-scroll-thumb-hover: #dc2626;
+  --lg-theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+
+  /* layout */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.6;
+
+  /* type */
+  --lg-font: 'Inter', system-ui, sans-serif;
+  --lg-font-display: 'Inter', system-ui, sans-serif;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.025em;
+  --lg-display-transform: none;
+  --lg-display-shadow: none;
+  --lg-weight-strong: 700;
+  --lg-display-weight: 700;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.12em;
+}
+
+/* ---- the rules, which are the whole layout ------------------------------ */
+
+/* Every panel is closed by a heavy rule along its foot, which is where print
+ * puts the rule under a standfirst or a column. The hairline from --lg-line
+ * stays on the other three sides so an overlay floating over a white page
+ * still has an edge.
+ *
+ * Bottom rather than top so the panel and the chips inside it agree: the chips
+ * are underlined, and a panel ruled along its head reads as a different
+ * device sitting above one ruled along its foot. */
+[data-lg-theme='mag'] .lg-root .lg-surface {
+  border-bottom: 2px solid #000000;
+}
+
+/* Chips are underlined, not boxed. */
+[data-lg-theme='mag'] .lg-root .lg-surface-flat {
+  border-width: 0 0 2px 0;
+  border-bottom-color: #000000;
+}
+
+/* A rule between stories. */
+[data-lg-theme='mag'] .lg-root [role='log'] > * + * {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+}
+
+/* Kickers are red and in caps — the device the reference puts above every
+ * headline. */
+[data-lg-theme='mag'] .lg-root [data-lg-kicker] {
+  color: #dc2626;
+}
+
+/* The drop cap, on the lead paragraph of an answer only. */
+[data-lg-theme='mag'] .lg-root [data-lg-block='p']:first-child::first-letter {
+  float: left;
+  padding: 0.04em 0.09em 0 0;
+  font-size: 3.1em;
+  font-weight: 800;
+  line-height: 0.82;
+  color: #dc2626;
+}
+
+/* --------------------------------------------------------------- 10. swiss */
+/* Minimalism & Swiss Style, built to
+ * uistyleguide.com/style/minimalism-swiss-style: "rooted in the Swiss
+ * International Style of the 1950s … clarity, readability, objectivity.
+ * Grid-based layouts, sans-serif typography, generous white space." Its CSS
+ * line is `display: grid, gap: 2rem, font-family: sans-serif, max-width:
+ * 1200px`, and its effects are "subtle hover (200-250ms), sharp shadows if
+ * any". Three of those numbers appear here literally: the 2rem gap, the wide
+ * container, and a 220ms transition.
+ *
+ * It shares a neutral palette with two earlier themes and has to earn its own
+ * ground, so: paper is #f5f1e8 rather than white (the palette's own bone),
+ * cards are white *on* that paper, and the grid is wide where the minimal
+ * theme's column is narrow. Those are opposite arguments — minimal removes
+ * until one thing is left, Swiss organises until everything has a place.
+ *
+ * Two details carry more than their weight:
+ *
+ *   The headline is LIGHT. A Swiss headline is large, not heavy, and that is
+ *   the single clearest tell against the magazine theme's Inter 700. It is why
+ *   --lg-display-weight exists as a token separate from --lg-weight-strong:
+ *   the display line wants 400 while the labels still want 500.
+ *
+ *   The cards are numbered. The reference numbers everything — 01, 02, 03 —
+ *   and a CSS counter does it here without a line of markup.
+ */
+
+[data-lg-theme='swiss'] {
+  /* ground — paper, and nothing on it */
+  --lg-bg: #f5f1e8;
+  --lg-wash: none;
+  --lg-wash-blend: normal;
+  --lg-vignette: none;
+  --lg-scrim: linear-gradient(180deg, #f5f1e8 38%, rgba(245, 241, 232, 0.92) 70%, rgba(245, 241, 232, 0) 100%);
+
+  /* ink & accents */
+  --lg-ink: #000000;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #ffffff;
+  --lg-accent: #b38b6d;
+  /* the tan darkened to 4.8:1 for the places it has to be read rather than
+     seen; #b38b6d itself is 2.6:1 on white and is used only as a fill */
+  --lg-accent-soft: #8a6a4f;
+  --lg-accent-warm: #8a6a4f;
+  --lg-live: #b38b6d;
+  --lg-live-glow: none;
+
+  /* surfaces — white cards on bone, hairline, nothing cast */
+  --lg-surface-bg: #ffffff;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: none;
+  --lg-flat-bg: #ffffff;
+  --lg-flat-blur: none;
+  --lg-flat-shadow: none;
+
+  /* edges */
+  --lg-border: 1px;
+  --lg-line: #000000;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 179 139 109;
+  --lg-rim-cool: 128 128 128;
+  --lg-rim-hot: 0 0 0;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills */
+  --lg-send-fill: #000000;
+  --lg-send-shadow: none;
+  --lg-busy-fill: #808080;
+  --lg-focus-bloom: 0 0 0 1px #000000;
+  --lg-avatar-fill: #b38b6d;
+  --lg-avatar-shadow: none;
+  --lg-bullet-fill: #000000;
+  --lg-media-filter: none;
+  --lg-bloom-blur: 0px;
+  --lg-bloom-saturation: 0.3;
+  --lg-quote-line: #b38b6d;
+
+  --lg-spectrum: conic-gradient(from 0deg, #000000 0 62%, #808080 0 80%, #b38b6d 0);
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 0px;
+  --lg-well-fill: #000000;
+  --lg-well-shadow: none;
+
+  /* a11y + motion — the guide's own 200-250ms */
+  --lg-focus-ring: #000000;
+  --lg-scroll-thumb: #808080;
+  --lg-scroll-thumb-hover: #000000;
+  --lg-theme-transition: background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+
+  /* layout — wide where the minimal theme is narrow. The guide's 1200px is a
+     container, not a measure: running text still stops at a readable line
+     length, because legibility is the whole argument of this style. */
+  --lg-measure: 780px;
+  --lg-measure-wide: 1120px;
+  --lg-leading: 1.65;
+
+  /* type */
+  --lg-font: 'Inter', Helvetica, Arial, sans-serif;
+  --lg-font-display: 'Inter', Helvetica, Arial, sans-serif;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.03em;
+  --lg-display-transform: none;
+  --lg-display-shadow: none;
+  --lg-weight-strong: 500;
+  --lg-display-weight: 400;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.14em;
+}
+
+/* ---- the grid, and the counting ----------------------------------------- */
+
+/* The guide's 2rem, replacing the surface's default 10px. */
+[data-lg-theme='swiss'] .lg-root [role='list'] {
+  counter-reset: lg-item;
+  gap: 2rem;
+}
+
+/* Numbered, the way the reference numbers everything. No markup involved —
+ * ::after is free on these cards, which carry .lg-surface but not
+ * .lg-specular. */
+[data-lg-theme='swiss'] .lg-root [role='list'] > * {
+  counter-increment: lg-item;
+}
+
+[data-lg-theme='swiss'] .lg-root [role='list'] > *::after {
+  content: counter(lg-item, decimal-leading-zero);
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #808080;
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------- 11. real */
+/* Realism. No style guide for this one — it is built from the reference
+ * images: a machined keyboard with moulded keycaps and one orange accent key,
+ * a sheet of paper, brushed aluminium, and glossy moulded beads.
+ *
+ * Every other theme in this set flattens. This one is the only one that adds
+ * depth back, and the rule it follows is the one skeuomorphism actually ran
+ * on: a surface is lit from above, so the top edge catches light, the bottom
+ * edge falls into shadow, and the object casts onto whatever is beneath it.
+ * Three shadows do that work everywhere here — an inset highlight along the
+ * top, an inset core shadow along the bottom, and a real cast shadow below.
+ *
+ *   The plate is aluminium: a vertical sheen with a fine brushed grain.
+ *   The panels are paper: warm white, fibre grain, a tight contact shadow
+ *     under a broad ambient one — which is what makes a sheet look like it is
+ *     resting on the desk rather than painted onto it.
+ *   The chips are keycaps: a moulded gradient, a 2px sidewall, and a press
+ *     that actually travels (see the :active rule below).
+ *   The send key is the orange one.
+ *
+ * The cube keeps `flat: 0`. It is the only theme besides glass to do that and
+ * the only one where it is the point: this theme is built on real materials,
+ * and the one genuinely physically-rendered object on the page should stay
+ * one. It becomes the glass paperweight on the desk.
+ *
+ * On the icons: nothing is imported. The 3D icon sets that exist (3dicons is
+ * CC0, jolloficons is MIT) are 200-odd large decorative renders — rocket,
+ * bulb, trophy — with no UI glyphs in them at all, and a 3/4-angle raster at
+ * 17px reads as mud. Atlas Icons is MIT and excellent but is a line set. So
+ * the glyphs stay the ones we have and get engraved into the key instead: a
+ * white drop-shadow one pixel below the stroke, which is how a legend stamped
+ * into a moulded cap catches the same overhead light as everything else.
+ */
+
+[data-lg-theme='real'] {
+  /* ground — the anodised plate.
+     Real brushed aluminium, not a gradient pretending to be one: ambientCG
+     Metal032 (CC0), greyscaled and tone-mapped to sit centred on mid-grey so
+     an `overlay` blend contributes grain without shifting the hue. 256px
+     tile, 1.9KB. See the blend rules below. */
+  /* Deliberately darker than it first looks it should be. The plate carries a
+     sheen gradient, a vignette and an overlay-blended texture on top of it,
+     and each of those lightens; tuned by eye on the flat colour, the ground
+     came out near-white and the paper stopped separating from it. A surface
+     that will be lit has to start below the value you want to end at. */
+  --lg-bg: url('../assets/textures/plate-brushed.webp') 0 0 / 300px 300px repeat, #c2c4c7;
+  --lg-wash:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0) 42%, rgba(0, 0, 0, 0.08) 100%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.022) 0 1px, rgba(255, 255, 255, 0.03) 1px 3px);
+  --lg-wash-blend: normal;
+  --lg-vignette: radial-gradient(120% 80% at 50% 0%, rgba(255, 255, 255, 0.26) 0%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.13) 100%);
+  --lg-scrim: linear-gradient(180deg, #c6c8cb 34%, rgba(198, 200, 203, 0.9) 66%, rgba(198, 200, 203, 0) 100%);
+
+  /* ink & accents */
+  --lg-ink: #1c1d1f;
+  --lg-on-accent: #ffffff;
+  --lg-on-well: #f2f2f2;
+  --lg-accent: #f0621b;
+  --lg-accent-soft: #c94b0d;
+  --lg-accent-warm: #f0621b;
+  --lg-live: #4ad06a;
+  --lg-live-glow: 0 0 6px 1px rgba(74, 208, 106, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  /* surfaces — a sheet of paper, resting on the plate.
+     Photographed fibre rather than fractal noise: ambientCG Paper001 (CC0),
+     compressed toward white so a `multiply` blend darkens the fibres and
+     leaves everything else alone. 256px tile, 5.3KB. */
+  --lg-surface-bg:
+    url('../assets/textures/paper-fibre.webp') 0 0 / 210px 210px repeat,
+    linear-gradient(180deg, #fdfcfa 0%, #f5f3ef 100%);
+  --lg-surface-blur: none;
+  --lg-surface-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05),
+    0 1px 1px rgba(0, 0, 0, 0.16),
+    0 8px 18px -6px rgba(0, 0, 0, 0.26);
+
+  /* flat surfaces — moulded keycaps */
+  --lg-flat-bg: linear-gradient(180deg, #ffffff 0%, #f2f0ed 52%, #e4e1dc 100%);
+  --lg-flat-blur: none;
+  --lg-flat-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.07),
+    0 2px 0 #bdb9b3,
+    0 3px 5px rgba(0, 0, 0, 0.26);
+
+  /* edges */
+  --lg-border: 1px;
+  --lg-line: #c7c3bd;
+  --lg-rim-a: rgba(255, 255, 255, 0.9);
+  --lg-rim-b: rgba(0, 0, 0, 0.06);
+  --lg-rim-warm: 240 98 27;
+  --lg-rim-cool: 176 178 181;
+  --lg-rim-hot: 255 255 255;
+  --lg-hairline-display: block;
+  --lg-specular-display: block;
+
+  /* fills */
+  --lg-send-fill: linear-gradient(180deg, #ff9450 0%, #f0621b 55%, #d44f0c 100%);
+  --lg-send-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.18),
+    0 2px 0 #a73d08,
+    0 3px 6px rgba(0, 0, 0, 0.32);
+  --lg-busy-fill: linear-gradient(180deg, #e9e6e1 0%, #d6d2cc 100%);
+  --lg-focus-bloom: 0 0 0 2px rgba(240, 98, 27, 0.45), 0 10px 22px -8px rgba(0, 0, 0, 0.35);
+  /* a moulded bead, lit from the same place as everything else */
+  --lg-avatar-fill: radial-gradient(circle at 34% 26%, #ffd0b0 0%, #f0621b 44%, #9c3a06 100%);
+  --lg-avatar-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --lg-bullet-fill: radial-gradient(circle at 35% 28%, #ffffff 0%, #b9b5af 55%, #8d8984 100%);
+  --lg-media-filter: none;
+  --lg-bloom-blur: 22px;
+  --lg-bloom-saturation: 0.75;
+  --lg-quote-line: #f0621b;
+
+  /* the theme control's well becomes a machined knob */
+  --lg-spectrum: conic-gradient(
+    from 210deg,
+    #f4f4f4, #9d9d9d, #ffffff, #8e8e8e, #ededed, #a6a6a6, #f4f4f4
+  );
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 1px;
+  --lg-well-fill: linear-gradient(180deg, #4a4b4d 0%, #2a2b2d 60%, #1b1c1e 100%);
+  --lg-well-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -2px 4px rgba(0, 0, 0, 0.7);
+
+  /* a11y + motion */
+  --lg-focus-ring: #f0621b;
+  --lg-scroll-thumb: #b0aca6;
+  --lg-scroll-thumb-hover: #8e8a85;
+  --lg-theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+
+  /* layout */
+  --lg-measure: 720px;
+  --lg-measure-wide: 860px;
+  --lg-leading: 1.68;
+
+  /* type — the platform's own face, the way a physical UI borrows the OS */
+  --lg-font: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  --lg-font-display: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.02em;
+  --lg-display-transform: none;
+  --lg-display-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+  --lg-weight-strong: 600;
+  --lg-display-weight: 600;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.1em;
+}
+
+/* ---- the materials ------------------------------------------------------- */
+
+/* The two textures are CC0 from ambientCG — Metal032 and Paper001 — reduced
+ * here to 256px greyscale tiles totalling 7KB, and loaded only by this theme.
+ * They carry grain, not colour: the plate tile is centred on mid-grey and
+ * blends `overlay`, the paper tile is pushed to near-white and blends
+ * `multiply`, so in both cases the token underneath still decides the hue and
+ * the photograph only decides the surface. Swapping the palette does not mean
+ * re-baking the textures. */
+
+[data-lg-theme='real'] .lg-root {
+  background-blend-mode: overlay, normal;
+}
+
+[data-lg-theme='real'] .lg-root .lg-surface {
+  background-blend-mode: multiply, normal;
+}
+
+/* ---- the physics --------------------------------------------------------- */
+
+/* A key that does not move when pressed is a picture of a key.
+ *
+ * Written with the independent `translate` property rather than `transform`,
+ * for the reason the maximalism theme documents: Framer owns `transform`
+ * inline on every element it drives, and a transform here would work on the
+ * plain buttons and silently do nothing on the animated ones.
+ *
+ * Down is faster than up. A cap is driven down by a finger and returned by a
+ * spring, and those are not the same force — 32ms falling against 90ms
+ * rising is the cheapest way to make a button feel sprung rather than
+ * switched. The `:active` rule carries its own transition-duration, so the
+ * fast time applies going in and the slow one applies coming out. */
+[data-lg-theme='real'] .lg-root .lg-surface-flat,
+[data-lg-theme='real'] .lg-root [data-lg-key] {
+  transition:
+    translate 90ms cubic-bezier(0.22, 0.9, 0.32, 1),
+    box-shadow 90ms cubic-bezier(0.22, 0.9, 0.32, 1),
+    filter 120ms ease;
+}
+
+/* A keycap does not move when a cursor is merely over it. It does catch a
+ * little more light. */
+[data-lg-theme='real'] .lg-root .lg-surface-flat:hover {
+  filter: brightness(1.03);
+}
+
+/* Pressed: the cap travels 2px, its 2px sidewall collapses to nothing so the
+ * cast shadow closes up underneath, the inner shadow deepens because the
+ * recess now occludes itself, and the whole face darkens slightly — less of
+ * the overhead light reaches a surface that has dropped below its neighbours. */
+[data-lg-theme='real'] .lg-root .lg-surface-flat:active {
+  translate: 0 2px;
+  transition-duration: 32ms;
+  filter: brightness(0.97);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 3px 5px rgba(0, 0, 0, 0.18),
+    0 0 0 #bdb9b3,
+    0 1px 2px rgba(0, 0, 0, 0.34);
+}
+
+/* The orange key travels the same way. Its sidewall is darker, so it collapses
+ * to a darker line. */
+[data-lg-theme='real'] .lg-root [data-lg-key='send']:active {
+  translate: 0 2px;
+  transition-duration: 32ms;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 3px 5px rgba(0, 0, 0, 0.3),
+    0 0 0 #a73d08,
+    0 1px 2px rgba(0, 0, 0, 0.36);
+}
+
+/* A sheet that lifts casts further. The suggestion cards rise 2px on hover
+ * (Framer drives that), and a shadow that does not change while its object
+ * moves is the single fastest way to break the illusion: it reads as a
+ * sticker sliding, not a card lifting. So the shadow softens, spreads and
+ * loses contact as the card comes off the plate. */
+[data-lg-theme='real'] .lg-root [role='list'] > *:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05),
+    0 2px 3px rgba(0, 0, 0, 0.12),
+    0 16px 30px -8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 160ms ease;
+}
+
+/* The legend is stamped into the cap, so it catches the same overhead light. */
+[data-lg-theme='real'] .lg-root svg {
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.75));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-lg-theme='real'] .lg-root .lg-surface-flat:active,
+  [data-lg-theme='real'] .lg-root [data-lg-key='send']:active {
+    translate: none;
+  }
+}
+
+/* ----------------------------------------------------------------- 12. y2k */
+/* Y2K Aesthetic, built to uistyleguide.com/style/y2k-aesthetic: "early 2000s
+ * digital optimism with chrome textures, bubblegum colours, and
+ * futuristic-retro aesthetics." Palette #ff69b4 / #00ffff / #c0c0c0 /
+ * #9400d3 / #ffd700 / #ff1493; effects "metallic gradients, glossy buttons,
+ * 3D chrome, glow".
+ *
+ * Two things carried over from the reference implementation exactly: the card
+ * — linear-gradient(145deg, white .9, white .7) with a 0 20px 40px drop and a
+ * -5px inset — and the pill CTA's 90deg pink-to-violet.
+ *
+ * One thing deliberately not carried over: the reference sets its display line
+ * in flat white on a saturated pink-to-cyan ground, which measures 2.8:1. That
+ * is under AA even at large-bold, and this surface's headline is a control you
+ * click, not decoration. So the ground is softened to bubblegum-lavender-cyan
+ * — where near-black body copy clears 9:1 everywhere — and the display line
+ * gets the treatment the era actually reached for more often than flat white:
+ * chrome. A silver gradient painted into the glyphs carries its own mid-tones,
+ * and the violet offset the guide specifies gives it a hard edge.
+ *
+ * This is the first theme to paint text rather than colour it, and it needed
+ * the third content hook: `data-lg-display`. A gradient in glyphs is not
+ * something a colour token can say.
+ */
+
+[data-lg-theme='y2k'] {
+  /* ground — the guide's two anchors with a violet between them */
+  --lg-bg: linear-gradient(135deg, #ff8ecb 0%, #c79bff 46%, #8ceeff 100%);
+  --lg-wash:
+    radial-gradient(70% 50% at 18% 6%, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0) 62%),
+    radial-gradient(60% 45% at 88% 92%, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 62%);
+  --lg-wash-blend: normal;
+  /* the sheen down a glossy surface */
+  --lg-vignette: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 26%);
+  --lg-scrim: linear-gradient(180deg, #ffa3d6 30%, rgba(255, 163, 214, 0.75) 62%, rgba(255, 163, 214, 0) 100%);
+
+  /* ink & accents */
+  --lg-ink: #1b1036;
+  --lg-on-accent: #ffffff;
+  /* chrome is light, so the glyph on it is dark */
+  --lg-on-well: #1b1036;
+  --lg-accent: #9400d3;
+  --lg-accent-soft: #9400d3;
+  --lg-accent-warm: #ff1493;
+  --lg-live: #00e5ff;
+  --lg-live-glow: 0 0 8px 2px rgba(0, 229, 255, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+  /* surfaces — the reference's frosted card, with a gloss line added along the
+     top edge because everything in this era had one */
+  --lg-surface-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
+  --lg-surface-blur: blur(12px) saturate(150%);
+  --lg-surface-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -5px 20px rgba(0, 0, 0, 0.05),
+    0 20px 40px rgba(76, 20, 110, 0.22);
+  /* chips are Aqua pills: a hard split at the equator, gloss above, tint below */
+  --lg-flat-bg:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0 48%, rgba(233, 213, 255, 0.86) 48%, rgba(246, 236, 255, 0.92) 100%);
+  --lg-flat-blur: blur(8px) saturate(140%);
+  --lg-flat-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(148, 0, 211, 0.12),
+    0 4px 10px -4px rgba(76, 20, 110, 0.4);
+
+  /* edges — a white rim, not a dark line */
+  --lg-border: 1px;
+  --lg-line: rgba(255, 255, 255, 0.8);
+  --lg-rim-a: rgba(255, 255, 255, 0.95);
+  --lg-rim-b: rgba(148, 0, 211, 0.18);
+  --lg-rim-warm: 255 105 180;
+  --lg-rim-cool: 0 229 255;
+  --lg-rim-hot: 255 255 255;
+  --lg-hairline-display: block;
+  --lg-specular-display: block;
+
+  /* fills */
+  --lg-send-fill: linear-gradient(90deg, #ff69b4 0%, #9400d3 100%);
+  --lg-send-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 6px 18px -6px rgba(148, 0, 211, 0.9);
+  --lg-busy-fill: linear-gradient(180deg, #f2f2f2 0%, #c0c0c0 52%, #9aa0a6 100%);
+  --lg-focus-bloom: 0 0 0 2px rgba(148, 0, 211, 0.55), 0 20px 40px -12px rgba(76, 20, 110, 0.5);
+  --lg-avatar-fill: radial-gradient(circle at 32% 26%, #ffffff 0%, #ffd7f2 26%, #ff69b4 58%, #9400d3 100%);
+  --lg-avatar-shadow: inset 0 -2px 4px rgba(76, 20, 110, 0.45), 0 2px 6px rgba(76, 20, 110, 0.4);
+  --lg-bullet-fill: linear-gradient(135deg, #ff69b4, #00e5ff);
+  --lg-media-filter: none;
+  --lg-bloom-blur: 26px;
+  --lg-bloom-saturation: 1.5;
+  --lg-quote-line: #9400d3;
+
+  /* the hologram the cube could not have */
+  --lg-spectrum: conic-gradient(from 0deg, #ff69b4, #ffd700, #00ffff, #9400d3, #ff1493, #ff69b4);
+  --lg-spectrum-blur: 4px;
+  --lg-spectrum-blur-hover: 7px;
+  --lg-well-fill: linear-gradient(180deg, #ffffff 0%, #dfe3e8 44%, #9aa0a6 52%, #e8ebee 100%);
+  --lg-well-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+
+  /* a11y + motion */
+  --lg-focus-ring: #9400d3;
+  --lg-scroll-thumb: rgba(148, 0, 211, 0.45);
+  --lg-scroll-thumb-hover: rgba(148, 0, 211, 0.75);
+  --lg-theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+
+  /* layout */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.66;
+
+  /* type */
+  --lg-font: 'Inter', system-ui, sans-serif;
+  --lg-font-display: 'Inter', system-ui, sans-serif;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: -0.02em;
+  --lg-display-transform: uppercase;
+  /* the guide's own recipe: violet at 3px, silver at 6px */
+  --lg-display-shadow: 3px 3px 0 #9400d3, 6px 6px 0 rgba(192, 192, 192, 0.85);
+  --lg-weight-strong: 800;
+  --lg-display-weight: 900;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.12em;
+}
+
+/* ---- chrome type --------------------------------------------------------- */
+
+/* A silver gradient painted into the glyphs. `color: transparent` lets the
+ * background through the letterforms; the text-shadow above still paints,
+ * because a shadow is cast from the glyph outline rather than from its fill.
+ *
+ * The ghost half of the headline sets its own colour, so it stays grey and
+ * only the typed half goes chrome — which is the right split anyway. */
+[data-lg-theme='y2k'] .lg-root [data-lg-display] {
+  /* A chrome ramp needs a dark horizon. The first attempt ran white → light
+     grey → white and was unreadable on a pale ground — it had no value below
+     60%, so the glyphs had nothing to hold an edge with. Real chrome is a
+     reflection of a sky meeting a ground, and the dark band at the join is
+     both what makes it look like metal and what makes it legible. */
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #d7dde5 30%,
+    #39434f 47%,
+    #2b3440 53%,
+    #ffffff 68%,
+    #aab3bd 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Stars on the kickers, the way every banner in 2001 had them. */
+[data-lg-theme='y2k'] .lg-root [data-lg-kicker]::before {
+  content: '✦ ';
+}
+
+/* Glow on approach rather than glow forever — the guide asks for glow
+ * animations, and a permanently pulsing control is a different thing from a
+ * period detail. */
+[data-lg-theme='y2k'] .lg-root [data-lg-key='send']:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 8px 26px -4px rgba(148, 0, 211, 1);
+}
+
+/* --------------------------------------------------------------- 13. pixel */
+/* Pixel Art. The second theme in this set built out of pixels, and it has to
+ * earn that — so it is deliberately the opposite half of the idea from the
+ * 16-bit handheld one. That theme is the *console*: a sunlit screen, cream
+ * window panels, the UI a game draws around itself. This one is the *canvas*:
+ * the dark editor the sprite is drawn on, at half the resolution, in a palette
+ * with a name.
+ *
+ * The palette is PICO-8's sixteen, unmodified — #1d2b53 ground, #fff1e8 ink,
+ * #ff004d, #ffa300, #ffec27, #00e436, #29adff, #ff77a8. Using a real fantasy
+ * console palette rather than inventing sixteen plausible colours is the
+ * difference between pixel art and pixel-ish: the constraint is the medium.
+ *
+ * It is also the first dark theme since glass, which is why there is no
+ * --color-white remap and no entry in the opacity floor below. The light
+ * themes needed those; a dark ground is what the utilities were written for.
+ *
+ * Three structural moves:
+ *
+ *   The grid. An 8px rule in a slightly lighter blue, which is the pixel grid
+ *   every sprite editor draws over the canvas.
+ *
+ *   Stepped corners. A clip-path that removes a 3px square from each corner —
+ *   the way a pixel artist draws a rounded box, since there is no such thing
+ *   as a curve at this resolution. The hard shadow is `filter: drop-shadow`
+ *   rather than `box-shadow`, because a filter follows the clipped silhouette
+ *   and a box-shadow would be clipped away with it.
+ *
+ *   No easing. Nothing in a game of this era interpolates, so the theme
+ *   transition is off and the utility transitions are reset, as in brutal.
+ */
+
+[data-lg-theme='pixel'] {
+  /* ground — the canvas, with its grid on */
+  --lg-bg: #1d2b53;
+  /* repeating-, not plain: a linear-gradient paints its ramp once across the
+     box and the grid silently did not exist. */
+  --lg-wash:
+    repeating-linear-gradient(0deg, rgba(41, 173, 255, 0.09) 0 1px, rgba(0, 0, 0, 0) 1px 8px),
+    repeating-linear-gradient(90deg, rgba(41, 173, 255, 0.09) 0 1px, rgba(0, 0, 0, 0) 1px 8px);
+  --lg-wash-blend: normal;
+  --lg-vignette: radial-gradient(130% 90% at 50% 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.45) 100%);
+  --lg-scrim: linear-gradient(180deg, #1d2b53 22%, rgba(29, 43, 83, 0.8) 58%, rgba(29, 43, 83, 0) 100%);
+
+  /* ink & accents — PICO-8, unmodified */
+  --lg-ink: #fff1e8;
+  --lg-on-accent: #fff1e8;
+  --lg-on-well: #fff1e8;
+  --lg-accent: #ff004d;
+  --lg-accent-soft: #ffa300;
+  --lg-accent-warm: #ff77a8;
+  --lg-live: #00e436;
+  --lg-live-glow: 0 0 0 3px #000000;
+
+  /* surfaces — a black dialog box with a cream border, which is what every
+     game of this era drew when it had something to say */
+  --lg-surface-bg: #000000;
+  --lg-surface-blur: none;
+  --lg-surface-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.55);
+  --lg-flat-bg: #7e2553;
+  --lg-flat-blur: none;
+  --lg-flat-shadow: none;
+
+  /* edges */
+  --lg-border: 3px;
+  --lg-line: #fff1e8;
+  --lg-rim-a: transparent;
+  --lg-rim-b: transparent;
+  --lg-rim-warm: 255 163 0;
+  --lg-rim-cool: 41 173 255;
+  --lg-rim-hot: 255 241 232;
+  --lg-hairline-display: none;
+  --lg-specular-display: none;
+
+  /* fills */
+  --lg-send-fill: #ff004d;
+  --lg-send-shadow: none;
+  --lg-busy-fill: #5f574f;
+  --lg-focus-bloom: 0 0 0 3px #ffec27;
+  --lg-avatar-fill: #ff77a8;
+  --lg-avatar-shadow: 0 0 0 3px #000000;
+  --lg-bullet-fill: #ffec27;
+  --lg-media-filter: saturate(1.35) contrast(1.15);
+  --lg-bloom-blur: 0px;
+  --lg-bloom-saturation: 1.3;
+  --lg-quote-line: #29adff;
+
+  --lg-spectrum: conic-gradient(
+    from 0deg,
+    #ff004d 0 12.5%,
+    #ffa300 0 25%,
+    #ffec27 0 37.5%,
+    #00e436 0 50%,
+    #29adff 0 62.5%,
+    #83769c 0 75%,
+    #ff77a8 0 87.5%,
+    #fff1e8 0
+  );
+  --lg-spectrum-blur: 0px;
+  --lg-spectrum-blur-hover: 0px;
+  --lg-well-fill: #000000;
+  --lg-well-shadow: none;
+
+  /* a11y + motion */
+  --lg-focus-ring: #ffec27;
+  --lg-scroll-thumb: #29adff;
+  --lg-scroll-thumb-hover: #ffec27;
+  --lg-theme-transition: none;
+
+  /* layout */
+  --lg-measure: 720px;
+  --lg-measure-wide: 840px;
+  --lg-leading: 1.7;
+
+  /* type — VT323 reads at body sizes where Press Start 2P does not, so the
+     latter is kept for the small caps labels where its width is an asset */
+  --lg-font: 'VT323', ui-monospace, monospace;
+  --lg-font-display: 'VT323', ui-monospace, monospace;
+  --lg-ligatures: normal;
+  --lg-tracking-tight: 0;
+  --lg-display-transform: uppercase;
+  --lg-display-shadow: 3px 3px 0 #ff004d;
+  --lg-weight-strong: 400;
+  --lg-display-weight: 400;
+  --lg-label-transform: uppercase;
+  --lg-label-tracking: 0.06em;
+}
+
+/* ---- drawn at this resolution -------------------------------------------- */
+
+/* Press Start 2P on the labels only. At 11px its width is the point; at body
+   size it would be unreadable, which is why VT323 carries everything else. */
+[data-lg-theme='pixel'] .lg-root [data-lg-kicker] {
+  font-family: 'Press Start 2P', ui-monospace, monospace;
+  font-size: 8.5px;
+}
+
+/* The pixel corner: a 3px square removed from each corner, because there is no
+ * curve at this resolution. `filter: drop-shadow` rather than box-shadow — a
+ * filter follows the clipped silhouette, a box-shadow is clipped away with it.
+ *
+ * Not applied to .lg-surface as a whole, deliberately. `filter` makes an
+ * element a containing block for `position: fixed` descendants, and the prompt
+ * bar is a .lg-surface containing the depth/tone menus whose click-away layer
+ * is `fixed inset-0`. Filtering it would trap that layer inside the bar and
+ * the menus would stop dismissing on an outside click. These two selectors
+ * have no fixed descendants. */
+[data-lg-theme='pixel'] .lg-root .lg-surface-flat,
+[data-lg-theme='pixel'] .lg-root [role='list'] > * {
+  clip-path: polygon(
+    0 3px, 3px 3px, 3px 0,
+    calc(100% - 3px) 0, calc(100% - 3px) 3px, 100% 3px,
+    100% calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%,
+    3px 100%, 3px calc(100% - 3px), 0 calc(100% - 3px)
+  );
+  filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.6));
+}
+
+/* ------------------------------------------------ 14. the utility remap */
+/* Tailwind v4 compiles `text-white/60` to
+ *     color: color-mix(in oklab, var(--color-white) 60%, transparent)
+ * so rebinding --color-white inside this subtree retargets every white-alpha
+ * utility in one move — which is what lets a light theme exist without
+ * rewriting a single className. The two places that must stay literally white
+ * (the send icon, the prism well icon) name --lg-on-accent / --lg-on-well
+ * explicitly and are unaffected.
+ *
+ * Scoped to .lg-root: the rest of the site is a separate design and must not
+ * see this. Browsers without color-mix() fall back to Tailwind's baked #fff,
+ * which is the pre-existing behaviour, not a regression. */
+
+[data-lg-theme='neo'] .lg-root {
+  --color-white: #0b0b0f;
+}
+
+[data-lg-theme='gba'] .lg-root {
+  --color-white: #2b1a2f;
+}
+
+[data-lg-theme='neub'] .lg-root,
+[data-lg-theme='brutal'] .lg-root {
+  --color-white: #000000;
+}
+
+[data-lg-theme='min'] .lg-root {
+  --color-white: #111827;
+}
+
+[data-lg-theme='chaos'] .lg-root {
+  --color-white: #000000;
+}
+
+[data-lg-theme='raw'] .lg-root {
+  --color-white: #1a1a1a;
+}
+
+[data-lg-theme='mag'] .lg-root,
+[data-lg-theme='swiss'] .lg-root {
+  --color-white: #000000;
+}
+
+[data-lg-theme='real'] .lg-root {
+  --color-white: #1c1d1f;
+}
+
+[data-lg-theme='y2k'] .lg-root {
+  --color-white: #1b1036;
+}
+
+/* ----------------------------------------- 14b. the opacity floor (light) */
+/* Alpha is not perceptually symmetric across grounds. White at 28% over near
+ * black still reads as text; ink at 28% over paper is a smudge — the eye is
+ * far more forgiving of light-on-dark than of dark-on-light at the same alpha.
+ * So a light theme cannot simply inherit the dark theme's tint ladder, it has
+ * to compress it: the same six semantic steps, re-mapped to alphas that hold
+ * their contrast on paper.
+ *
+ * Targeting Tailwind's generated class names is deliberate and confined to
+ * this block. It is the one place the system reaches into the utility layer,
+ * and it is what buys the rest of the surface the right to keep its markup.
+ *
+ * Every light theme joins the :is() list. `:is()` takes the specificity of its
+ * strongest argument, so adding one never quietly outranks the others.
+ *
+ * The utility class sits inside `:where()`, which contributes no specificity.
+ * That is deliberate and it is what makes this a *floor* rather than a
+ * ceiling: it still outranks the bare utility (0,2,0 against 0,1,0), but any
+ * theme rule that wants to colour one of these elements — a red kicker, say —
+ * outranks it in turn instead of tying and losing on source order. Found the
+ * hard way: the magazine theme's kicker rule matched, computed, and was
+ * silently overridden by this block because both landed on (0,3,0). */
+
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/20) { color: color-mix(in oklab, var(--color-white) 42%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/25) { color: color-mix(in oklab, var(--color-white) 46%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/28) { color: color-mix(in oklab, var(--color-white) 52%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/30) { color: color-mix(in oklab, var(--color-white) 54%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/35) { color: color-mix(in oklab, var(--color-white) 58%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/40) { color: color-mix(in oklab, var(--color-white) 62%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/45) { color: color-mix(in oklab, var(--color-white) 64%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/50) { color: color-mix(in oklab, var(--color-white) 68%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/55) { color: color-mix(in oklab, var(--color-white) 72%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/60) { color: color-mix(in oklab, var(--color-white) 76%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/70) { color: color-mix(in oklab, var(--color-white) 82%, transparent); }
+:is([data-lg-theme='neo'], [data-lg-theme='gba'], [data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='min'], [data-lg-theme='chaos'], [data-lg-theme='raw'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='real'], [data-lg-theme='y2k']) .lg-root :where(.text-white\/75) { color: color-mix(in oklab, var(--color-white) 86%, transparent); }
+
+/* Hover states resolve to the full ink, which is already the rule. */
+
+/* ------------------------------------------------- 14c. the radius override */
+/* The second — and last — place the system touches the utility layer.
+ *
+ * Corner radius lives in the markup as `rounded-2xl`, `rounded-full`,
+ * `rounded-[26px]` and friends. Tailwind compiles the named steps to
+ * `var(--radius-*)`, which could be rebound like `--color-white` was, but the
+ * pill and the arbitrary-pixel ones compile to literals and would not follow —
+ * leaving a theme half-sharp, which looks like a bug rather than a decision.
+ *
+ * A theme whose whole premise is sharp corners therefore zeroes them outright.
+ * The attribute-substring match catches every rounding utility regardless of
+ * spelling, and squares the circles too: the avatar, the status dot and the
+ * icon wells all become blocks, which is the correct reading of this style
+ * rather than a casualty of it. */
+
+:is([data-lg-theme='neub'], [data-lg-theme='brutal'], [data-lg-theme='chaos'], [data-lg-theme='mag'], [data-lg-theme='swiss'], [data-lg-theme='pixel']) .lg-root [class*='rounded'] {
+  border-radius: 0;
+}
+
+/* ----------------------------------------------------- 15. theme switching */
+/* Tokens are interpolatable, so a change of theme cross-fades the whole
+ * surface rather than cutting. Only the cheap properties are transitioned —
+ * animating box-shadow or backdrop-filter across a page of glass is not.
+ *
+ * It is a token rather than a fixed rule because a theme is allowed to refuse
+ * it: `transition: none` is a stated requirement of the brutal theme, and a
+ * theme that cuts on every other state change should not dissolve into view. */
+
+.lg-root,
+.lg-root .lg-surface,
+.lg-root .lg-surface-flat {
+  transition: var(--lg-theme-transition);
+}
+
+/* The utility layer transitions too — `transition-colors` is on most of the
+ * interactive elements. A theme that has declared no transitions has to mean
+ * it, so the surface's whole subtree is reset. This does not name a generated
+ * class, so it stays a property reset rather than a fourth utility hook.
+ *
+ * Framer's spring-driven layout motion is JS and is unaffected; reduced-motion
+ * is still what stops that. */
+
+:is([data-lg-theme='brutal'], [data-lg-theme='raw'], [data-lg-theme='pixel']) .lg-root,
+:is([data-lg-theme='brutal'], [data-lg-theme='raw'], [data-lg-theme='pixel']) .lg-root * {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-root,
+  .lg-root .lg-surface,
+  .lg-root .lg-surface-flat {
+    transition: none;
+  }
+}
