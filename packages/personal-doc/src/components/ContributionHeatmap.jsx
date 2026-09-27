@@ -42,16 +42,18 @@ const LABEL_H = 18; // room for the month row
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-/* Monochrome on purpose. The site has fourteen themes with grounds from black
- * to bone to acid yellow, and a fixed green ramp would be unreadable on at
- * least four of them. Mixing the ink against the ground instead means the
- * scale re-derives itself per theme and keeps its contrast either way. */
+/* Empty cells stay ink-on-ground, same as before — a heatmap's zero state
+ * should read as "nothing here," not as the palette's faintest color. Filled
+ * cells ramp through `--site-heatmap-voice`, which falls back to
+ * `--site-voice` (the "Aloha" turquoise) everywhere except light mode, where
+ * index.css overrides it with a brighter green — a fill can afford more
+ * saturation than `--site-voice`'s text-contrast-tuned value allows. */
 const LEVEL = [
   'color-mix(in oklab, var(--site-fg) 8%, transparent)',
-  'color-mix(in oklab, var(--site-fg) 26%, transparent)',
-  'color-mix(in oklab, var(--site-fg) 45%, transparent)',
-  'color-mix(in oklab, var(--site-fg) 68%, transparent)',
-  'color-mix(in oklab, var(--site-fg) 92%, transparent)',
+  'color-mix(in oklab, var(--site-heatmap-voice, var(--site-voice)) 35%, transparent)',
+  'color-mix(in oklab, var(--site-heatmap-voice, var(--site-voice)) 55%, transparent)',
+  'color-mix(in oklab, var(--site-heatmap-voice, var(--site-voice)) 75%, transparent)',
+  'color-mix(in oklab, var(--site-heatmap-voice, var(--site-voice)) 95%, transparent)',
 ];
 
 const iso = (d) => d.toISOString().slice(0, 10);

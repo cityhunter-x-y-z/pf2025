@@ -126,6 +126,11 @@
      measures about 1.6:1 on near-white, which is a colour you can see and not
      a colour you can read. */
   --site-voice: #0f766e;
+  /* The heatmap fill is a decorative graphic, not text, so it doesn't carry
+     `--site-voice`'s contrast burden — it can run brighter on paper than a
+     word ever could. This is the same hue pushed back toward the dark pair's
+     saturation instead of muted for legibility. */
+  --site-heatmap-voice: #16a34a;
 }
 
 /*
