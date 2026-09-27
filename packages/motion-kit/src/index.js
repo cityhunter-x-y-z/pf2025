@@ -1,10 +1,10 @@
 /**
- * @pf26/motion - the repo's shared motion language.
+ * @cloud-march/motion - the repo's shared motion language.
  *
  * The root entry is framework-free: it works in Vite, Next, a Phaser game, a
  * MapLibre page, or a plain <script type="module">. React presets live in
- * `@pf26/motion/react`; CSS custom properties in
- * `@pf26/motion/tokens.css`.
+ * `@cloud-march/motion/react`; CSS custom properties in
+ * `@cloud-march/motion/tokens.css`.
  *
  * Everything here respects `prefers-reduced-motion` by default. That is not a
  * nicety bolted on at the end: the helpers below go to the final state
@@ -66,7 +66,7 @@ export function isReducedMotion() {
  * @returns {() => void} stop function - call it on unmount
  *
  * @example
- *   import { revealOnScroll } from '@pf26/motion';
+ *   import { revealOnScroll } from '@cloud-march/motion';
  *   const stop = revealOnScroll('.card');
  */
 export function revealOnScroll(target, options = {}) {

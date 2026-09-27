@@ -1,4 +1,4 @@
-# @pf26/motion
+# @cloud-march/motion
 
 The repo's shared motion language, built on [motion.dev](https://motion.dev) (the
 `motion` package, successor to Framer Motion by the same author).
@@ -23,9 +23,9 @@ stops travelling.
 
 | Import | For |
 | --- | --- |
-| `@pf26/motion` | Framework-free. Tokens plus DOM helpers. Vanilla TS/JS, Phaser, MapLibre. |
-| `@pf26/motion/react` | Tokens plus React variants and hooks. Re-exports `motion/react`. |
-| `@pf26/motion/tokens.css` | The same numbers as CSS custom properties, for stylesheet-driven motion. |
+| `@cloud-march/motion` | Framework-free. Tokens plus DOM helpers. Vanilla TS/JS, Phaser, MapLibre. |
+| `@cloud-march/motion/react` | Tokens plus React variants and hooks. Re-exports `motion/react`. |
+| `@cloud-march/motion/tokens.css` | The same numbers as CSS custom properties, for stylesheet-driven motion. |
 
 Take the dependency once. Each entry re-exports what you would otherwise import
 from `motion` directly, so a component needs one import line, and the whole repo
@@ -34,7 +34,7 @@ stays on one pinned version.
 ## React
 
 ```jsx
-import { motion, rise, staggerChildren, useMotionSafe, tappable } from '@pf26/motion/react';
+import { motion, rise, staggerChildren, useMotionSafe, tappable } from '@cloud-march/motion/react';
 
 function ProjectList({ projects }) {
   const item = useMotionSafe(rise());
@@ -60,7 +60,7 @@ function ProjectList({ projects }) {
 Scroll reveal on a single section, without a scroll listener:
 
 ```jsx
-import { motion, useReveal } from '@pf26/motion/react';
+import { motion, useReveal } from '@cloud-march/motion/react';
 
 export function Section({ children }) {
   return <motion.section {...useReveal()}>{children}</motion.section>;
@@ -78,7 +78,7 @@ Available variants: `fade`, `rise(y)`, `pop`, `sheet(from)`, `staggerChildren(co
 ## Vanilla
 
 ```js
-import { revealOnScroll, pressable, animate, duration, ease } from '@pf26/motion';
+import { revealOnScroll, pressable, animate, duration, ease } from '@cloud-march/motion';
 
 const stopReveal = revealOnScroll('.card');   // IntersectionObserver, fires once each
 const stopPress = pressable('button.primary');
@@ -105,7 +105,7 @@ re-export list breaks the first time someone needs the symbol you left off.
 ## CSS
 
 ```css
-@import '@pf26/motion/tokens.css';
+@import '@cloud-march/motion/tokens.css';
 
 .card {
   transition: transform var(--motion-transition), opacity var(--motion-transition);
@@ -139,7 +139,7 @@ exports: an easing generator, a math util, and a delay function. So the tokens
 live under a `tokens` namespace rather than shadowing them:
 
 ```js
-import { tokens, duration, ease } from '@pf26/motion';
+import { tokens, duration, ease } from '@cloud-march/motion';
 
 tokens.spring.soft;      // our preset          spring()   // motion's easing generator
 tokens.stagger.normal;   // our interval        stagger()  // motion's delay function
@@ -161,8 +161,8 @@ eye.
 ## Choosing
 
 - **CSS transition** for hover, focus, and press on a single property. Cheapest thing that works.
-- **`@pf26/motion` (vanilla)** for scroll reveals and imperative sequences outside React.
-- **`@pf26/motion/react`** for enter/exit (`AnimatePresence`), layout animation, gestures, and anything driven by React state.
+- **`@cloud-march/motion` (vanilla)** for scroll reveals and imperative sequences outside React.
+- **`@cloud-march/motion/react`** for enter/exit (`AnimatePresence`), layout animation, gestures, and anything driven by React state.
 - **GSAP or Three.js** only for full-page scrolltelling or canvas work, isolated in a leaf component. Never in the same component tree as `motion` — they fight over the same frames.
 
 ## Related
@@ -195,10 +195,10 @@ Separate module instances mean separate React contexts, so an `AnimatePresence`
 from one copy would not coordinate with a `motion` component from the other.
 
 personal-doc has since been migrated: 27 files moved from `framer-motion` to
-`@pf26/motion/react`, and the direct `framer-motion` dependency was
+`@cloud-march/motion/react`, and the direct `framer-motion` dependency was
 dropped. The only breaking change across 12 → 13 is the removal of
 `@emotion/is-prop-valid`, which affects Styled Components and Emotion users;
 personal-doc uses Tailwind, so it did not apply.
 
 **Do not add `framer-motion` back to any package.** Import through
-`@pf26/motion` so the repo resolves exactly one copy.
+`@cloud-march/motion` so the repo resolves exactly one copy.

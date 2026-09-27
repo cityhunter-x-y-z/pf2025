@@ -6,7 +6,7 @@ import {
   staggerChildren,
   useMotionSafe,
   useReducedMotion,
-} from '@pf26/motion/react';
+} from '@cloud-march/motion/react';
 import './bangalore-times-coming-soon.css';
 
 /*

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion } from '@pf26/motion/react';
+import { motion } from '@cloud-march/motion/react';
 import { Link } from 'react-router-dom';
 
 import GlassCube from '../components/chat/GlassCube';

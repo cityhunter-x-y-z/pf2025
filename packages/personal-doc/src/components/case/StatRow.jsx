@@ -1,4 +1,4 @@
-import { motion, useReducedMotion, duration, ease, staggerFor } from '@pf26/motion/react';
+import { motion, useReducedMotion, duration, ease, staggerFor } from '@cloud-march/motion/react';
 
 /*
  * The outcome band.

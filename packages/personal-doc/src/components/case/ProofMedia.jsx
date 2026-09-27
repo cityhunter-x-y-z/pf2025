@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useReducedMotion } from '@pf26/motion/react';
+import { useReducedMotion } from '@cloud-march/motion/react';
 import LazyImage from '../LazyImage';
 
 /*

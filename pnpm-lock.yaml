@@ -19,7 +19,7 @@ importers:
 
   packages/personal-doc:
     dependencies:
-      '@pf26/motion':
+      '@cloud-march/motion':
         specifier: workspace:*
         version: link:../motion-kit
       react:

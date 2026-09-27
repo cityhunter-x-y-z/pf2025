@@ -1,11 +1,11 @@
 {
-  "name": "@pf26/motion",
+  "name": "@cloud-march/motion",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "description": "The repo's shared motion language: duration/easing/spring tokens, DOM helpers, and React presets, all on top of motion.dev.",
   "scripts": {
-    "build": "node -e \"console.log('@pf26/motion: source-only ESM, nothing to build')\""
+    "build": "node -e \"console.log('@cloud-march/motion: source-only ESM, nothing to build')\""
   },
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

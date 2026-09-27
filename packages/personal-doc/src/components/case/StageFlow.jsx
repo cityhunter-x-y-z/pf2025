@@ -1,5 +1,5 @@
 import { useState, useId } from 'react';
-import { motion, useReducedMotion, duration, ease, staggerFor } from '@pf26/motion/react';
+import { motion, useReducedMotion, duration, ease, staggerFor } from '@cloud-march/motion/react';
 
 /*
  * An ordered flow: N stages, each with an owner, and optionally one marked as

@@ -15,7 +15,7 @@
     "generate:placeholders": "node scripts/generate-placeholders.js"
   },
   "dependencies": {
-    "@pf26/motion": "workspace:*",
+    "@cloud-march/motion": "workspace:*",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-ga4": "^2.1.0",

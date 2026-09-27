@@ -1,12 +1,12 @@
 /*
- * @pf26/motion/tokens.css
+ * @cloud-march/motion/tokens.css
  *
  * The same vocabulary as `tokens.js`, for packages that animate in stylesheets:
  * carcinogen (no build step), game (plain CSS), and anywhere a CSS transition is
  * simply the right tool.
  *
  * Import once near the top of the package's root stylesheet:
- *   @import '@pf26/motion/tokens.css';
+ *   @import '@cloud-march/motion/tokens.css';
  *
  * For a package with no bundler, copy this file in and say where it came from.
  */

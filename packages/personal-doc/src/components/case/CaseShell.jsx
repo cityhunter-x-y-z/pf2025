@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { motion, useScroll, useSpring, useReducedMotion } from '@pf26/motion/react';
+import { motion, useScroll, useSpring, useReducedMotion } from '@cloud-march/motion/react';
 import './case.css';
 
 /*

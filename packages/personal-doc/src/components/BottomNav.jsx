@@ -1,4 +1,4 @@
-import { motion, useScroll, useMotionValueEvent } from '@pf26/motion/react';
+import { motion, useScroll, useMotionValueEvent } from '@cloud-march/motion/react';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -31,10 +31,7 @@ const BottomNav = () => {
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
     >
-      <div
-        className="flex items-center gap-1 p-2 backdrop-blur-lg rounded-nav"
-        style={{ background: 'var(--site-nav)', border: '1px solid var(--site-line)' }}
-      >
+      <div className="site-glass flex items-center gap-1 rounded-nav p-2">
         {navItems.map((item) => (
           <NavLink
             key={item.name}

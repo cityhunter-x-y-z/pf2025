@@ -1,4 +1,4 @@
-import { useReducedMotion, duration, tokens } from '@pf26/motion/react';
+import { useReducedMotion, duration, tokens } from '@cloud-march/motion/react';
 
 /*
  * The one enter recipe the 2.0 case studies share.

@@ -1,0 +1,4 @@
+Synced from ds-test (cloud-march) at 988a092
+on 2026-09-27T19:13:27.925Z
+Packages: motion-kit, personal-doc (game left out; Bangalore Times shows "Coming soon")
+Do not edit packages/ here; change them in ds-test and re-run `pnpm sync:pf26`.

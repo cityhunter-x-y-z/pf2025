@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { motion, useScroll, useMotionValueEvent } from '@pf26/motion/react';
+import { motion, useScroll, useMotionValueEvent } from '@cloud-march/motion/react';
 import { useState } from 'react';
 
 const ProjectNav = () => {

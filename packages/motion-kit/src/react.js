@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * @pf26/motion/react - React presets built on motion.dev.
+ * @cloud-march/motion/react - React presets built on motion.dev.
  *
  * Import variants from here instead of writing `initial`/`animate` objects by
  * hand. That is the whole point: five packages spelling the same fade five

@@ -1,5 +1,5 @@
 /**
- * Types for @pf26/motion (root, framework-free entry).
+ * Types for @cloud-march/motion (root, framework-free entry).
  *
  * Hand-written: the package ships plain ESM with no build step, so these
  * declarations are the contract. Keep them in step with `index.js`.

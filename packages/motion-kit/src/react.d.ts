@@ -1,5 +1,5 @@
 /**
- * Types for @pf26/motion/react.
+ * Types for @cloud-march/motion/react.
  *
  * Hand-written, same as the root entry: no build step, so these declarations are
  * the contract. Keep them in step with `react.js`.

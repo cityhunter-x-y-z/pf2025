@@ -5,7 +5,7 @@ import {
   useReducedMotion,
   duration,
   ease,
-} from '@pf26/motion/react';
+} from '@cloud-march/motion/react';
 
 /*
  * The four moments of a driver's day, as tabs rather than as four more screens

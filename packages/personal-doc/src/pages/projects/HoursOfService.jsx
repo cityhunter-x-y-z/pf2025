@@ -1,4 +1,4 @@
-import { motion } from '@pf26/motion/react';
+import { motion } from '@cloud-march/motion/react';
 import { useState } from 'react';
 import LazyImage from '../../components/LazyImage';
 import useProjectAnalytics from '../../hooks/useProjectAnalytics';

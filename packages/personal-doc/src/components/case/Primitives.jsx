@@ -1,4 +1,4 @@
-import { motion, useReducedMotion, duration, ease } from '@pf26/motion/react';
+import { motion, useReducedMotion, duration, ease } from '@cloud-march/motion/react';
 import { useEnter } from './useEnter';
 
 /*
