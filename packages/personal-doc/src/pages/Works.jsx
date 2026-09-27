@@ -1,5 +1,6 @@
-import { motion } from '@pf26/motion/react';
+import { motion } from '@cloud-march/motion/react';
 import FolderCard from '../components/FolderCard';
+import ContributionHeatmap from '../components/ContributionHeatmap';
 
 /*
  * The work, as a set of folder cards.
@@ -22,6 +23,7 @@ const PROJECTS = [
     note: '3 min read',
     palette: 'citrus',
     link: '/projects/hours-of-service-2',
+    locked: true,
   },
   {
     title: 'Vehicle Health',
@@ -34,6 +36,7 @@ const PROJECTS = [
     note: '3 min read',
     palette: 'ember',
     link: '/projects/vehicle-health-2',
+    locked: true,
   },
   {
     title: 'Ask Amitesh',
@@ -66,7 +69,7 @@ const PROJECTS = [
     description: 'A casual social game set in Bangalore, built with Phaser and React.',
     stat: '1',
     statLabel: 'city',
-    note: 'Coming soon',
+    note: 'Playable',
     palette: 'moss',
     link: '/game/bangalore-times',
   },
@@ -141,6 +144,10 @@ const Works = () => (
   >
     <div className="max-w-[1135px] mx-auto">
       <div className="max-w-[760px] mx-auto grid gap-6 sm:gap-8">
+        {/* Ahead of the list: the work is the cards, this is the evidence that
+            it keeps happening. Empty until an account is set — see the file. */}
+        <ContributionHeatmap />
+
         {PROJECTS.map((project, index) => (
           <FolderCard key={project.title} {...project} index={index} />
         ))}

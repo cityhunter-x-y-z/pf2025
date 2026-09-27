@@ -240,11 +240,13 @@ const TOPICS = [
       ['play', 3], ['side project', 4],
     ],
     quick:
-      'Bangalore Times - Namma Quest - is a casual social game set in Bangalore, built with Phaser and React. It is coming soon to this site.',
+      'Bangalore Times - Namma Quest - is a casual social game set in Bangalore, built with Phaser and React. It runs inside this site rather than linking out, and yes, it is playable right now.',
     balanced: [
       p('It is the side project that keeps me honest. Designing a game means no dashboard patterns to fall back on: if the feedback loop is not satisfying in the first ten seconds, nothing else you did matters. That lesson transfers back into product work more often than it has any right to.'),
     ],
-    deep: [],
+    deep: [
+      p('It is lazy-loaded so the Phaser bundle only downloads if you actually open it - about a megabyte nobody visiting the portfolio should have to pay for.'),
+    ],
     study: [],
     cardIds: ['bangalore-times'],
     followUps: ['What else do you build for yourself?', 'Tell me about your process'],
@@ -312,7 +314,7 @@ const TOPICS = [
     balanced: [
       links([
         { label: 'amiteshdebnath98@gmail.com', href: 'mailto:amiteshdebnath98@gmail.com', external: true },
-        { label: 'Download resume (PDF)', href: '/Amitesh_SPD.pdf', external: true },
+        { label: 'Download resume (PDF)', href: '/Amitesh%20Debnath_SPD.pdf', external: true },
         { label: 'Behance - archisapien', href: 'https://www.behance.net/archisapien', external: true },
       ]),
     ],
@@ -359,7 +361,7 @@ const TOPICS = [
         'Vehicle Health - inspections and defect management, 40% faster completion.',
         'Gazebo Complex Organisms - the load-bearing end of a design system.',
         'Telugu Streaming and Vending Analytics - earlier platform work, under NDA.',
-        'Bangalore Times - a Phaser game, coming soon.',
+        'Bangalore Times - a Phaser game, playable inside this site.',
       ]),
     ],
     deep: [],
@@ -497,7 +499,6 @@ export const SUGGESTIONS = [
   { icon: 'grid', label: 'Design systems', prompt: 'What did you build for the Gazebo design system?' },
   { icon: 'pulse', label: 'Outcomes', prompt: 'How do you measure whether a design worked?' },
   { icon: 'spark', label: 'Process', prompt: 'What does your design process actually look like?' },
-  { icon: 'mail', label: 'Get in touch', prompt: 'How can I reach you about a role?' },
 ];
 
 /* The rotating headline. These read as things a real visitor would type. */
@@ -507,4 +508,9 @@ export const TYPED_PROMPTS = [
   'What belongs in a design system?',
   'Show me something you shipped under pressure',
   'Are you actually an AI?',
+  'What do you do when research says no?',
+  'How do you design for someone under time pressure?',
+  'Which decision here would you take back?',
+  'What does a defect lifecycle actually look like?',
+  'How can I reach you about a role?',
 ];
