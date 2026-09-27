@@ -8,18 +8,18 @@ import { useEffect, useMemo, useState } from 'react';
  * empty and the component renders the same grid with every day at zero, which
  * is the state it ships in.
  *
- * ── Why a third party ──────────────────────────────────────────────────────
- * Contribution counts are public — anyone can read them off a profile page —
- * but GitHub serves that page without an `Access-Control-Allow-Origin` header,
- * so a browser cannot fetch it directly. The official GraphQL API does expose
- * `contributionsCollection`, and it needs a token, which cannot ship in code
- * a visitor downloads. So the options are a public proxy, which is this, or a
- * build-time fetch with a CI token writing a static file, which never goes
- * down but goes stale between deploys.
+ * ── Where the data comes from ──────────────────────────────────────────────
+ * Contribution counts are public, but GitHub serves its profile page without
+ * an `Access-Control-Allow-Origin` header, so a browser cannot fetch it
+ * directly, and the official GraphQL API needs a token that cannot ship in
+ * code a visitor downloads. So this reads a static `/contributions.json`
+ * instead: a scheduled GitHub Actions workflow (see
+ * .github/workflows/update-contributions.yml) calls the authenticated GraphQL
+ * API with a token kept as a repo secret and commits the refreshed file.
+ * The browser only ever sees the plain JSON, never the token.
  *
- * Nothing here is authenticated and the endpoint is read-only, so the worst
- * case is that it stops answering. When it does, the grid stays at zero rather
- * than showing an error: a portfolio should not have a broken panel on it.
+ * When the file is missing or stale, the grid stays at zero rather than
+ * showing an error: a portfolio should not have a broken panel on it.
  *
  * ── Note on what the graph actually contains ───────────────────────────────
  * Work in private repositories does not count toward it unless the account has
@@ -31,8 +31,7 @@ import { useEffect, useMemo, useState } from 'react';
 /** The account to display. Empty renders the zero-state grid. */
 const GITHUB_USERNAME = 'cityhunter-x-y-z';
 
-const API = (user) =>
-  `https://github-contributions-api.jogruber.de/v4/${encodeURIComponent(user)}?y=last`;
+const DATA_URL = '/contributions.json';
 
 const WEEKS = 53;
 const CELL = 10;
@@ -90,11 +89,11 @@ export default function ContributionHeatmap({ username = GITHUB_USERNAME }) {
     if (!username) return undefined;
 
     const ac = new AbortController();
-    fetch(API(username), { signal: ac.signal })
+    fetch(DATA_URL, { signal: ac.signal })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
       .then((json) => {
         const byDate = new Map(json.contributions.map((c) => [c.date, c]));
-        setData({ byDate, total: json.total?.lastYear ?? 0 });
+        setData({ byDate, total: json.total ?? 0 });
       })
       .catch((err) => {
         if (err.name !== 'AbortError') {

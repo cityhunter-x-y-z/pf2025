@@ -1,0 +1,42 @@
+name: Update GitHub contributions
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-contributions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch contribution calendar
+        env:
+          GH_CONTRIB_TOKEN: ${{ secrets.GH_CONTRIB_TOKEN }}
+        run: |
+          curl -s -H "Authorization: bearer ${GH_CONTRIB_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"query":"query { user(login: \"cityhunter-x-y-z\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } } } } }"}' \
+            https://api.github.com/graphql > raw-contributions.json
+
+      - name: Build static contributions.json
+        run: node packages/personal-doc/scripts/build-contributions.mjs raw-contributions.json packages/personal-doc/public/contributions.json
+
+      - name: Clean up
+        run: rm -f raw-contributions.json
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add packages/personal-doc/public/contributions.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh GitHub contribution data"
+            git push
+          else
+            echo "No contribution data changes."
+          fi
