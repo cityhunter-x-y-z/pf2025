@@ -431,7 +431,7 @@ const About = () => {
             className="flex flex-col gap-8"
           >
             <h2 className="font-space text-2xl leading-[1.36em] text-text-secondary" style={{ letterSpacing: '-0.24px', fontWeight: 'var(--site-weight-display)' }}>
-              Happy Hours
+              Happy hours
             </h2>
 
             {/* Carousel */}
