@@ -14,8 +14,11 @@ if (!inputPath || !outputPath) {
 }
 
 const raw = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
-if (raw.errors) {
-  console.error('GraphQL errors:', JSON.stringify(raw.errors));
+if (raw.errors || raw.message || !raw.data?.user) {
+  console.error(
+    'GitHub API did not return a user calendar:',
+    JSON.stringify(raw.errors ?? raw.message ?? raw),
+  );
   process.exit(1);
 }
 
