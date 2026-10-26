@@ -1,4 +1,8 @@
-Synced from ds-test (cloud-march) at 988a092
-on 2026-09-27T19:13:27.925Z
+Synced from ds-test (cloud-march) at 38a936f
+on 2026-10-26T10:04:55.129139Z
 Packages: motion-kit, personal-doc (game left out; Bangalore Times shows "Coming soon")
+Selective sync: upstream additions + upstream-only edits applied; pf26 hand-edits kept
+(Works.jsx 3-way merged against 988a092).
+Retained in pf26 though upstream no longer ships them: old resume PDF, contributions.json,
+scripts/build-contributions.mjs, BangaloreTimesComingSoon.jsx + .css.
 Do not edit packages/ here; change them in ds-test and re-run `pnpm sync:pf26`.

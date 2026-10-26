@@ -39,6 +39,19 @@ const PROJECTS = [
     locked: true,
   },
   {
+    title: 'Driver AI App',
+    eyebrow: 'Netradyne\nAI integration',
+    subtitle: 'Look and feel, and a voice',
+    description:
+      'An AI layer over the driver app, then a voice agent that lets a new fleet ask instead of hunt.',
+    stat: '7',
+    statLabel: 'driver personas',
+    note: 'In progress',
+    palette: 'signal',
+    link: '/projects/driver-ai-app',
+    locked: true,
+  },
+  {
     title: 'Ask Amitesh',
     eyebrow: 'This site\nHome 2.2',
     subtitle: 'A portfolio you can talk to',
@@ -69,9 +82,21 @@ const PROJECTS = [
     description: 'A casual social game set in Bangalore, built with Phaser and React.',
     stat: '1',
     statLabel: 'city',
-    note: 'Playable',
+    note: 'Design doc',
     palette: 'moss',
     link: '/game/bangalore-times',
+  },
+  {
+    title: 'Gazelle',
+    eyebrow: 'Side project\nJogging app',
+    subtitle: 'Run. Collect. Keep.',
+    description:
+      'A jogging app for India where every run earns a collectible animal card with a serial number only you hold.',
+    stat: '1',
+    statLabel: 'card per run',
+    note: 'Design doc',
+    palette: 'tide',
+    link: '/projects/gazelle',
   },
   {
     title: 'Gazebo Design System',
