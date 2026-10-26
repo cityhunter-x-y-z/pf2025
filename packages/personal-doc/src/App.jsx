@@ -13,13 +13,14 @@ import HoursOfService from './pages/projects/HoursOfService';
 import HoursOfServiceV2 from './pages/projects/HoursOfServiceV2';
 import VehicleHealth from './pages/projects/VehicleHealth';
 import VehicleHealthV2 from './pages/projects/VehicleHealthV2';
+import DriverAiApp from './pages/projects/DriverAiApp';
 import GazeboComplexOrganisms from './pages/projects/GazeboComplexOrganisms';
 import GazeboComplexOrganismsV2 from './pages/projects/GazeboComplexOrganismsV2';
 import VendingAnalytics from './pages/projects/VendingAnalytics';
 import VendingAnalyticsV2 from './pages/projects/VendingAnalyticsV2';
 import TeluguStreaming from './pages/projects/TeluguStreaming';
 import TeluguStreamingV2 from './pages/projects/TeluguStreamingV2';
-import BangaloreTimesComingSoon from './pages/BangaloreTimesComingSoon';
+import DocPage from './components/case/DocPage';
 import PasswordGate from './components/PasswordGate';
 
 // Home 2.2 — the chat-native surface. Lazy so its canvas material and chat
@@ -29,8 +30,9 @@ const HomeV22 = lazy(() => import('./pages/HomeV22'));
 // Museum renders the same live canvases, so it is split out for the same reason.
 const Museum = lazy(() => import('./pages/Museum'));
 
-// The Bangalore Times build is parked behind a holding screen, so the game
-// package is deliberately not imported here and Phaser stays out of the bundle.
+// Bangalore Times shows its design document rather than the Phaser build, so
+// the game package is deliberately not imported here and Phaser stays out of
+// the bundle.
 
 const FULL_SHELL_ROUTES = ['/home-2.2', '/museum'];
 
@@ -109,13 +111,34 @@ function App() {
                 </PasswordGate>
               }
             />
+            <Route
+              path="/projects/driver-ai-app"
+              element={
+                <PasswordGate title="Driver AI App is under wraps">
+                  <DriverAiApp />
+                </PasswordGate>
+              }
+            />
             <Route path="/projects/gazebo-complex-organisms" element={<GazeboComplexOrganisms />} />
             <Route path="/projects/gazebo-complex-organisms-2" element={<GazeboComplexOrganismsV2 />} />
             <Route path="/projects/vending-analytics" element={<VendingAnalytics />} />
             <Route path="/projects/vending-analytics-2" element={<VendingAnalyticsV2 />} />
             <Route path="/projects/telugu-streaming" element={<TeluguStreaming />} />
             <Route path="/projects/telugu-streaming-2" element={<TeluguStreamingV2 />} />
-            <Route path="/game/bangalore-times" element={<BangaloreTimesComingSoon />} />
+            <Route
+              path="/projects/gazelle"
+              element={<DocPage project="Gazelle" src="/docs/gazelle.html" title="Gazelle design document" />}
+            />
+            <Route
+              path="/game/bangalore-times"
+              element={
+                <DocPage
+                  project="Bangalore Times"
+                  src="/docs/bangalore-times.html"
+                  title="Bangalore Times design document"
+                />
+              }
+            />
           </Routes>
         </AnimatePresence>
 
