@@ -4,6 +4,7 @@
 
 ## Current state
 - Branch `deepseek-driver-ai-app` off `master` `6fd6af4`, committed and pushed 2026-10-26. `master` untouched, not merged.
+- `deepseek-home-featured` is stacked on it (2026-10-26): the home page now features Bangalore Times, Gazelle and Driver AI App instead of Hours of Service, Vehicle Health and Gazebo Design System.
 - Adds the Driver AI App case study, design-doc pages (Gazelle, Bangalore Times) and embedded prototypes; first commit of `AGENTS.md`/`CLAUDE.md`/`HANDOFF.md`/`DECISIONS.md`.
 - Portfolio site (Vite + React) in `packages/personal-doc`, motion package in `packages/motion-kit`. Deployed via Netlify; `vercel.json` also present.
 - Latest repo work: GitHub contributions heatmap moved to a build-time snapshot (`public/contributions.json`), refreshed by a 6-hourly workflow that skips when `GH_CONTRIB_TOKEN` is unset.
@@ -40,5 +41,6 @@ No tasks specified by the owner yet. TODO: owner to supply. Classification rule:
 - `vite.config.js` has game-art comments (`assets/game/`) while the game package is not in this repo.
 
 ## Last session
+- 2026-10-26 (DeepSeek): swapped the home page's three featured cards to Bangalore Times, Gazelle and Driver AI App (HANDOFF branch `deepseek-home-featured`); `pnpm build` passes, lint unchanged at 64 pre-existing errors.
 - 2026-10-26 (DeepSeek): committed the Driver AI App case study, doc/prototype pages and the agent docs on `deepseek-driver-ai-app`, pushed to `origin`; `pnpm build` passes, `pnpm lint` still fails on the pre-existing unused-`motion` imports.
 - 2026-10-25 (Claude Code): created AGENTS.md, CLAUDE.md, HANDOFF.md, DECISIONS.md; no source changes, nothing committed.
