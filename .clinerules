@@ -1,0 +1,16 @@
+# Cline rules live in AGENTS.md
+
+Read [`AGENTS.md`](AGENTS.md) at the repo root first — it is the contract for every agent.
+Nothing is restated here on purpose.
+
+Status: [`HANDOFF.md`](HANDOFF.md). History: [`DECISIONS.md`](DECISIONS.md).
+
+Area docs referenced by the contract:
+
+- `packages/personal-doc/src/design/README.md` and `packages/personal-doc/docs/design-system.md`
+  — `/home-2.2` theme system.
+- `packages/personal-doc/docs/glass-nav.md` — nav glass.
+- `packages/personal-doc/docs/ask-amitesh-content.md` — chat copy snapshot.
+- `packages/motion-kit/README.md` — motion tokens.
+
+If a rule is missing, propose it in `AGENTS.md` rather than adding it here.
