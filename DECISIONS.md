@@ -4,6 +4,17 @@ Newest first. Append; never re-litigate an entry — supersede it with a new one
 
 Each entry: date, one-line title, **Decision**, **Why**, **Affects** (files), **Rejected alternative**.
 
+## 2026-10-27: Vercel is a warm backup host; `vercel.json` mirrors `netlify.toml`
+- Decision: Netlify stays primary for `archisapien.xyz`. `vercel.json` now carries the same SPA
+  rewrite, security headers and cache rules as `netlify.toml`, so a Vercel project on this repo
+  serves an identical site at `*.vercel.app`. Failover is a manual DNS change by the owner.
+- Why: protects against Netlify itself failing. It does not protect against a bad header in
+  the repo: each host reads only its own file (Vercel ignores `netlify.toml` and `_headers`), so
+  a header change must be made in **both** `netlify.toml` and `vercel.json`, plus `_headers`.
+- Affects: `vercel.json`.
+- Rejected alternative: moving hosting to Vercel outright — still a single host, and it throws
+  away a working Netlify setup for no gain.
+
 ## 2026-10-27: `netlify.toml` sends `X-Frame-Options: SAMEORIGIN`
 - Decision: change the `/*` security header in `netlify.toml` from `DENY` to `SAMEORIGIN`,
   matching `public/_headers`. Completes the 2026-10-26 static-HTML entry below.

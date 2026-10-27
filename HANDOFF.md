@@ -13,6 +13,9 @@ one-liners. Move anything longer than a few lines into `DECISIONS.md` and link i
   (`deepseek-agent-contract`). All four branches merged 2026-10-26; working tree clean.
 - CI: no workflow builds, lints or tests. The only workflow refreshes contribution data.
   Netlify builds `pnpm --filter personal-doc build` from the default branch — the real gate.
+- Hosting: Netlify is primary (`archisapien.xyz`). Vercel is the backup; `vercel.json` mirrors
+  `netlify.toml`. **Any header, rewrite or cache change goes in both files** (and `_headers`) —
+  `DECISIONS.md` 2026-10-27.
 - Gates as measured 2026-10-26 on merged `master`: `pnpm build` passes; `pnpm lint` fails with
   **64 pre-existing `no-unused-vars` errors** (mostly one unused `motion` import per project
   page, which the core rule cannot see inside JSX). Baseline, not new breakage.
@@ -28,9 +31,10 @@ one-liners. Move anything longer than a few lines into `DECISIONS.md` and link i
 
 ## NEXT SESSION — START HERE
 
-1. Once `claude/fix-frame-options` is merged and deployed, confirm
-   `curl -sI https://archisapien.xyz/docs/gazelle.html` shows `X-Frame-Options: SAMEORIGIN` and
-   `/projects/gazelle` and `/game/bangalore-times` render their documents.
+1. (Owner) Merge `claude/vercel-backup`, then import `cityhunter-x-y-z/pf2025` into Vercel
+   (root directory = repo root; `vercel.json` sets the rest). If install fails on pnpm 11, add
+   env var `ENABLE_EXPERIMENTAL_COREPACK=1`. Then check the `*.vercel.app` URL: a deep link
+   such as `/projects/gazelle` loads, and `curl -sI` shows `X-Frame-Options: SAMEORIGIN`.
 2. Answer the four open questions in `AGENTS.md` (gate, `packages/` edits, lint cleanup,
    prototype weight).
 3. Re-run the recorded baseline: `pnpm install && pnpm build`, then `pnpm lint` (expect 64).
@@ -79,11 +83,11 @@ Checked against `git log` and `DECISIONS.md` on 2026-10-26; fixed items removed.
 
 ## Last session
 
+- 2026-10-27 (Claude): `vercel.json` made a full mirror of `netlify.toml` (SPA rewrite, security
+  and cache headers) on `claude/vercel-backup`, unpushed; `pnpm build` passes. No Vercel project
+  exists yet — owner step above.
 - 2026-10-27 (Claude): production blocked the Gazelle / Bangalore Times embeds ("refused to
-  connect") because `netlify.toml` sent `X-Frame-Options: DENY`, overriding `_headers`. Set it
-  to `SAMEORIGIN` on `claude/fix-frame-options`; `pnpm build` passes. Merged `deepseek-*`
-  branches were already deleted locally and on `origin`.
+  connect") because `netlify.toml` sent `X-Frame-Options: DENY`, overriding `_headers`. Fixed to
+  `SAMEORIGIN`, merged and pushed (`4b93893`); verified live on `archisapien.xyz`.
 - 2026-10-26 (DeepSeek): owner-approved merge of the four `deepseek-*` branches into `master` and
-  push — history below.
-- 2026-10-26 (DeepSeek): rewrote AGENTS/CLAUDE/HANDOFF/DECISIONS per the shared contract and added
-  `.gemini/rules.md` + `.clinerules` pointers.
+  push — history in `DECISIONS.md`.
