@@ -28,14 +28,12 @@ one-liners. Move anything longer than a few lines into `DECISIONS.md` and link i
 
 ## NEXT SESSION — START HERE
 
-1. Confirm the Netlify deploy of `master` built (the merge is the first push since 2026-10-21).
+1. Once `claude/fix-frame-options` is merged and deployed, confirm
+   `curl -sI https://archisapien.xyz/docs/gazelle.html` shows `X-Frame-Options: SAMEORIGIN` and
+   `/projects/gazelle` and `/game/bangalore-times` render their documents.
 2. Answer the four open questions in `AGENTS.md` (gate, `packages/` edits, lint cleanup,
    prototype weight).
-3. Check `netlify.toml` vs `public/_headers` on `X-Frame-Options` (Known issues) — the embedded
-   docs are the risk.
-4. Re-run the recorded baseline: `pnpm install && pnpm build`, then `pnpm lint` (expect 64).
-5. Delete the four merged `deepseek-*` branches locally and on `origin` if you do not want them
-   kept as historical refs.
+3. Re-run the recorded baseline: `pnpm install && pnpm build`, then `pnpm lint` (expect 64).
 
 ## Environment notes
 
@@ -66,14 +64,11 @@ one-liners. Move anything longer than a few lines into `DECISIONS.md` and link i
 - (Design-decision-gated) Whether to wire `GH_CONTRIB_TOKEN` so the 6-hourly workflow works.
 - (DeepSeek, after the owner confirms intended state) README drift: wrong package name and the
   claimed `src/lib/game.js`.
-- (Owner) Decide whether the four merged `deepseek-*` branches stay on `origin`.
 
 ## Known issues
 
 Checked against `git log` and `DECISIONS.md` on 2026-10-26; fixed items removed.
 
-- `netlify.toml` sends `X-Frame-Options: DENY` while `public/_headers` says `SAMEORIGIN`. The
-  embedded docs/prototypes may be blocked in production — owner call needed.
 - `README.md` calls the motion package `@pf26/motion` (it is `@cloud-march/motion`) and claims
   `src/lib/game.js` exists; it does not.
 - `.synced-from` says `packages/` must not be edited here; later commits did (open question 2).
@@ -84,8 +79,11 @@ Checked against `git log` and `DECISIONS.md` on 2026-10-26; fixed items removed.
 
 ## Last session
 
+- 2026-10-27 (Claude): production blocked the Gazelle / Bangalore Times embeds ("refused to
+  connect") because `netlify.toml` sent `X-Frame-Options: DENY`, overriding `_headers`. Set it
+  to `SAMEORIGIN` on `claude/fix-frame-options`; `pnpm build` passes. Merged `deepseek-*`
+  branches were already deleted locally and on `origin`.
 - 2026-10-26 (DeepSeek): owner-approved merge of the four `deepseek-*` branches into `master` and
   push — history below.
 - 2026-10-26 (DeepSeek): rewrote AGENTS/CLAUDE/HANDOFF/DECISIONS per the shared contract and added
   `.gemini/rules.md` + `.clinerules` pointers.
-- 2026-10-26 (DeepSeek): refreshed the contribution snapshot on `deepseek-contributions-refresh`.

@@ -4,6 +4,17 @@ Newest first. Append; never re-litigate an entry — supersede it with a new one
 
 Each entry: date, one-line title, **Decision**, **Why**, **Affects** (files), **Rejected alternative**.
 
+## 2026-10-27: `netlify.toml` sends `X-Frame-Options: SAMEORIGIN`
+- Decision: change the `/*` security header in `netlify.toml` from `DENY` to `SAMEORIGIN`,
+  matching `public/_headers`. Completes the 2026-10-26 static-HTML entry below.
+- Why: Netlify applied the `netlify.toml` value, so production served `DENY` and every
+  `DocPage`/`PrototypeEmbed` iframe showed "refused to connect" (owner report, confirmed with
+  `curl -sI`). Other origins still cannot frame the site.
+- Affects: `netlify.toml`.
+- Rejected alternative: a path-scoped `SAMEORIGIN` only for `/docs/*` and `/prototypes/*` —
+  the iframe check is on the framed file, so it would also work, but two overlapping rules for
+  one header are easier to get wrong than one site-wide value.
+
 ## 2026-10-26: Owner authorised one-off merges into `master` by DeepSeek
 - Decision: the owner asked DeepSeek, in chat, to merge and push the four `deepseek-*` branches in
   dependency order (`driver-ai-app` → `home-featured` → `agent-contract` → `contributions-refresh`).
