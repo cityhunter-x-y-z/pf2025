@@ -31,10 +31,12 @@ one-liners. Move anything longer than a few lines into `DECISIONS.md` and link i
 
 ## NEXT SESSION — START HERE
 
-1. (Owner) Merge `claude/vercel-backup`, then import `cityhunter-x-y-z/pf2025` into Vercel
-   (root directory = repo root; `vercel.json` sets the rest). If install fails on pnpm 11, add
-   env var `ENABLE_EXPERIMENTAL_COREPACK=1`. Then check the `*.vercel.app` URL: a deep link
-   such as `/projects/gazelle` loads, and `curl -sI` shows `X-Frame-Options: SAMEORIGIN`.
+1. (Owner) The Vercel project already exists — `archisapien0s-projects/pf2025`, building every
+   push to `master` (latest: `4b93893`, success). It sits behind Vercel Deployment Protection
+   (302 to Vercel SSO), so the public cannot reach it. Merge `claude/vercel-backup`, then in
+   Vercel either turn protection off for Production or add a backup domain. Then check a deep
+   link such as `/projects/gazelle` loads and `curl -sI` shows `X-Frame-Options: SAMEORIGIN`.
+   Note: `pf2025.vercel.app` is someone else's site, not this project.
 2. Answer the four open questions in `AGENTS.md` (gate, `packages/` edits, lint cleanup,
    prototype weight).
 3. Re-run the recorded baseline: `pnpm install && pnpm build`, then `pnpm lint` (expect 64).
