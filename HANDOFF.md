@@ -85,11 +85,12 @@ Checked against `git log` and `DECISIONS.md` on 2026-10-26; fixed items removed.
 
 ## Last session
 
+- 2026-10-27 (Claude): theme button's metallic ring was missing below `sm` because
+  `ThemeSwitcher` swapped `PrismButton` for a plain round button there. It now renders
+  `PrismButton` at every width (60px pill on mobile); checked at 375px, `pnpm build` passes.
 - 2026-10-27 (Claude): `vercel.json` made a full mirror of `netlify.toml` (SPA rewrite, security
   and cache headers) on `claude/vercel-backup`, unpushed; `pnpm build` passes. No Vercel project
   exists yet — owner step above.
 - 2026-10-27 (Claude): production blocked the Gazelle / Bangalore Times embeds ("refused to
   connect") because `netlify.toml` sent `X-Frame-Options: DENY`, overriding `_headers`. Fixed to
   `SAMEORIGIN`, merged and pushed (`4b93893`); verified live on `archisapien.xyz`.
-- 2026-10-26 (DeepSeek): owner-approved merge of the four `deepseek-*` branches into `master` and
-  push — history in `DECISIONS.md`.

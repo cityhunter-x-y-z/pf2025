@@ -110,35 +110,16 @@ export default function ThemeSwitcher() {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {/* Same two-density arrangement the header already used: the full prism
-          pill where there is room, a plain round button where there is not. */}
-      <span className="hidden sm:block">
-        <PrismButton
-          label="Theme"
-          showLabel={false}
-          icon={IconTheme}
-          onFocus={() => setHover(true)}
-          {...trigger}
-        />
-      </span>
-      {/* `--site-fg`, not `text-white/80`.
-          The white-alpha utilities only follow the ink inside `.lg-root`,
-          where `--color-white` is rebound per theme. This button lives in the
-          navbar, so the utility stayed literally white and the half-disc was
-          white-on-white the moment the theme's ground went light — invisible
-          in eleven of the fourteen. Full ink rather than the secondary the
-          light/dark toggle beside it uses: this one is the trigger for the
-          whole appearance system, and the filled half of the disc is what
-          makes it read as a contrast glyph at all. */}
-      <button
-        type="button"
-        aria-label="Theme"
-        className="lg-surface lg-focus grid h-10 w-10 place-items-center rounded-full sm:hidden"
-        style={{ color: 'var(--site-fg)' }}
+      {/* The prism pill at every width. It used to give way to a plain round
+          button below `sm`, which has no ring layers — so on a phone the
+          control that carries the theme's metal ring showed no ring at all. */}
+      <PrismButton
+        label="Theme"
+        showLabel={false}
+        icon={IconTheme}
+        onFocus={() => setHover(true)}
         {...trigger}
-      >
-        <IconTheme size={17} />
-      </button>
+      />
 
       {/* tooltip — suppressed while the drawer is open, where it would just
           cover the thing it is describing */}
